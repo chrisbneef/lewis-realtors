@@ -132,19 +132,34 @@ import site from "../data/site.json";
       position: fixed;
       inset: 98px 0 0 0;
       flex-direction: column;
-      justify-content: center;
-      gap: 2.5rem;
+      justify-content: flex-start;
+      align-items: stretch;
+      gap: 1.5rem;
       background: var(--bg);
-      padding: 2rem var(--gutter) 4rem;
-      transform: translateX(100%);
-      transition: transform 0.45s var(--ease);
+      padding: 1.75rem var(--gutter) 3rem;
       overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      /* hide in place (no off-screen transform) so the page cannot be swiped to it */
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: opacity 0.3s var(--ease), transform 0.35s var(--ease), visibility 0.3s;
     }
-    .nav.is-open { transform: none; }
-    .nav-list { flex-direction: column; gap: 1.6rem; }
-    .nav-list a { font-size: 0.95rem; }
-    .nav-cta { flex-direction: column; gap: 1.5rem; }
-    .nav-cta .btn--compact { font-size: 0.82rem; padding: 1em 1.8em; }
+    .nav.is-open { opacity: 1; visibility: visible; transform: none; }
+
+    .nav-list { flex-direction: column; gap: 0; width: 100%; }
+    .nav-list li { border-bottom: 1px solid var(--line); }
+    .nav-list a {
+      display: block;
+      width: 100%;
+      padding-block: 1.05rem;
+      font-size: 1.05rem;
+      color: var(--ink);
+    }
+    .nav-list a::after { display: none; }
+
+    .nav-cta { flex-direction: column; gap: 1.5rem; margin-top: 1rem; }
+    .nav-cta .btn--compact { width: 100%; font-size: 0.82rem; padding: 1.1em 1.8em; }
   }
 
   /* keep the bigger logo from crowding at tablet widths */
