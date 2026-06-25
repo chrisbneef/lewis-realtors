@@ -1,0 +1,26 @@
+[
+  {
+    "q": "What is a neighborhood market report?",
+    "a": "It is a short, plain-English stat sheet for one West Linn neighborhood. It covers median sale price, price per square foot, days on market, list-to-sale ratio, active inventory, months of supply, and the year-over-year price trend, plus a few recent sold comps. We refresh it every month from current RMLS data."
+  },
+  {
+    "q": "How current is the data?",
+    "a": "Reports are rebuilt by hand each month from live RMLS pulls, so the numbers reflect what is actually closing in that neighborhood. We never estimate or invent figures. If a number is not ready yet, the page says so plainly."
+  },
+  {
+    "q": "Why focus only on West Linn?",
+    "a": "Depth beats breadth. Knowing one market block by block, including which streets feed which schools and how Bolton differs from Skyline Ridge, lets Melissa price and negotiate with real local evidence rather than broad regional averages."
+  },
+  {
+    "q": "Do you help buyers as well as sellers?",
+    "a": "Yes. Lewis Realtors represents buyers, sellers, first-time buyers, investors, and relocating families. Each service page links to the neighborhoods it fits best so you can start where it matters to you."
+  },
+  {
+    "q": "Can you help with financing?",
+    "a": "Financing is handled by a trusted mortgage partner. When you are ready, we hand you off directly so you have a pre-approval in place before you start touring homes."
+  },
+  {
+    "q": "What happens after I request a report?",
+    "a": "You enter your name and email, and the full report for that neighborhood is sent to your inbox. Melissa is notified at the same time, so if you have a question about the numbers, a real local answer is close behind."
+  }
+]

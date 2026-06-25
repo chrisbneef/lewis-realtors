@@ -1,0 +1,89 @@
+---
+const blocks = [
+  {
+    key: "Buy",
+    title: "Buy",
+    copy: "Tour West Linn with someone who knows which streets feed which schools and where the value really sits.",
+    href: "/services",
+  },
+  {
+    key: "Sell",
+    title: "Sell",
+    copy: "Price and market your home on real neighborhood sold data, with staging and reach behind it.",
+    href: "/services",
+  },
+  {
+    key: "Refer",
+    title: "Refer",
+    copy: "Send a client our way. We treat every referral like our own and keep you in the loop start to finish.",
+    href: "/contact",
+  },
+];
+---
+
+<section class="bsr section--ink" aria-label="Buy, sell, or refer">
+  <div class="bsr-grid">
+    {blocks.map((b, i) => (
+      <a class="bsr-block" href={b.href} data-reveal style={`--reveal-delay: ${i * 90}ms`}>
+        <span class="bsr-index">0{i + 1}</span>
+        <h2 class="bsr-title">{b.title}</h2>
+        <p class="bsr-copy">{b.copy}</p>
+        <span class="link bsr-link">Start here <span class="arrow">&rarr;</span></span>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+  .bsr { padding: 0; }
+  .bsr-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .bsr-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: clamp(3rem, 2rem + 4vw, 5.5rem) clamp(1.6rem, 1rem + 2vw, 3rem);
+    border-right: 1px solid var(--line-onDark);
+    overflow: hidden;
+    isolation: isolate;
+    transition: background var(--dur) var(--ease);
+  }
+  .bsr-block:last-child { border-right: 0; }
+  .bsr-block::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--grad-gold);
+    transform: translateY(100%);
+    transition: transform 0.6s var(--ease-out);
+  }
+  .bsr-block:hover::before { transform: translateY(0); }
+  .bsr-block:hover { color: var(--noir); }
+  .bsr-block:hover .bsr-title,
+  .bsr-block:hover .bsr-index,
+  .bsr-block:hover .bsr-link { color: var(--noir); }
+
+  .bsr-index {
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    color: var(--gold-bright);
+    transition: color var(--dur) var(--ease);
+  }
+  .bsr-title {
+    font-size: clamp(2.4rem, 1.8rem + 3vw, 4rem);
+    color: var(--ink-onDark);
+    line-height: 1;
+  }
+  .bsr-copy { color: var(--ink-onDark-soft); max-width: 32ch; flex-grow: 1; }
+  .bsr-block:hover .bsr-copy { color: color-mix(in srgb, var(--noir) 78%, transparent); }
+  .bsr-link::after { display: none; }
+
+  @media (max-width: 760px) {
+    .bsr-grid { grid-template-columns: 1fr; }
+    .bsr-block { border-right: 0; border-bottom: 1px solid var(--line-onDark); }
+  }
+</style>

@@ -1,0 +1,47 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import NeighborhoodCard from "../components/NeighborhoodCard.astro";
+import neighborhoods from "../data/neighborhoods.json";
+import { realEstateAgent } from "../lib/schema.js";
+
+const hoods = [...neighborhoods].sort((a, b) => a.order - b.order);
+const ready = hoods.filter((h) => h.complete).length;
+---
+
+<Base
+  title="Market Reports"
+  description="Monthly West Linn neighborhood market reports: median price, days on market, list-to-sale ratio, inventory, and recent sold comps, refreshed from live RMLS data."
+  jsonLd={[realEstateAgent()]}
+>
+  <PageHero
+    crumb="Market Reports"
+    eyebrow="The conversion centerpiece"
+    title={`Every West Linn<br/>neighborhood, <span class="script">measured</span>.`}
+    lead="One report per neighborhood, refreshed every month by hand from live RMLS data. Pick a neighborhood to see its snapshot and request the full report."
+  />
+
+  <section class="section--tight">
+    <div class="wrap">
+      <p class="mr-status" data-reveal>
+        <span class="pill pill--gold">{ready} live now</span>
+        <span class="pill pill--placeholder">{hoods.length - ready} publishing soon</span>
+      </p>
+      <div class="mr-grid">
+        {hoods.map((hood) => <NeighborhoodCard hood={hood} />)}
+      </div>
+      <p class="mr-note" data-reveal>
+        Reports are rebuilt monthly from the office RMLS pulls. We never estimate or invent figures.
+        Where a number is not ready, the page says so plainly.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .mr-status { display: flex; gap: 0.7rem; margin-bottom: 2.5rem; }
+  .mr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
+  .mr-note { margin-top: 2.5rem; font-size: 0.85rem; color: var(--ink-muted); max-width: 70ch; }
+  @media (max-width: 980px) { .mr-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .mr-grid { grid-template-columns: 1fr; } }
+</style>

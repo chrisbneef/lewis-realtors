@@ -1,0 +1,107 @@
+---
+import site from "../data/site.json";
+const a = site.agent;
+---
+
+<section class="melissa section--cream" id="about-melissa">
+  <div class="wrap melissa-inner">
+    <figure class="melissa-figure" data-reveal>
+      <div class="melissa-frame">
+        <img src={a.headshot} alt={`${a.name}, ${a.role}`} width="520" height="640" loading="lazy" />
+      </div>
+      <figcaption class="melissa-badge">
+        <span class="script">Melissa</span>
+        <span class="badge-role">{a.role}</span>
+      </figcaption>
+    </figure>
+
+    <div class="melissa-copy">
+      <p class="eyebrow" data-reveal>Meet your agent</p>
+      <h2 data-reveal style="--reveal-delay: 80ms">{a.name}</h2>
+      <p class="melissa-desig" data-reveal style="--reveal-delay: 140ms">
+        {a.designations.join("  ·  ")}
+      </p>
+      <div class="melissa-bio stack" data-reveal style="--reveal-delay: 200ms">
+        {a.bio.map((para) => <p>{para}</p>)}
+      </div>
+      <ul class="melissa-stats" role="list" data-reveal style="--reveal-delay: 280ms">
+        {a.stats.map((s) => (
+          <li>
+            <span class="ms-val">{s.value}</span>
+            <span class="ms-label">{s.label}</span>
+          </li>
+        ))}
+      </ul>
+      <div class="melissa-actions" data-reveal style="--reveal-delay: 340ms">
+        <a class="btn" href="/contact">Work with Melissa</a>
+        <a class="phone-link" href={site.contact.phoneHref}>{site.contact.phone}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .melissa-inner {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: clamp(2rem, 1rem + 4vw, 5rem);
+    align-items: center;
+  }
+  .melissa-figure { position: relative; margin: 0; }
+  .melissa-frame {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background:
+      radial-gradient(120% 90% at 50% 0%, rgba(200,160,74,0.30), transparent 60%),
+      linear-gradient(180deg, var(--cream-deep), var(--azure) 320%);
+    box-shadow: var(--shadow-lg);
+  }
+  .melissa-frame img { width: 100%; height: auto; display: block; }
+  .melissa-badge {
+    position: absolute;
+    bottom: 1.2rem; left: 1.2rem;
+    background: color-mix(in srgb, var(--bg-elevated) 92%, transparent);
+    backdrop-filter: blur(6px);
+    border-radius: var(--radius);
+    padding: 0.7rem 1.2rem;
+    box-shadow: var(--shadow);
+  }
+  .melissa-badge .script { display: block; font-size: 2rem; line-height: 0.8; }
+  .badge-role { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); }
+
+  .melissa-desig {
+    margin-top: 0.8rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+  }
+  .melissa-bio { --flow: 1rem; margin-top: 1.6rem; color: var(--ink-soft); }
+  .melissa-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+  .ms-val {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.3rem);
+    font-weight: 600;
+    color: var(--gold-deep);
+    line-height: 1;
+  }
+  .ms-label { display: block; margin-top: 0.5rem; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); }
+  .melissa-actions { display: flex; align-items: center; gap: 1.5rem; margin-top: 2.4rem; flex-wrap: wrap; }
+  .phone-link { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; }
+  .phone-link:hover { color: var(--gold-deep); }
+
+  @media (max-width: 900px) {
+    .melissa-inner { grid-template-columns: 1fr; }
+    .melissa-figure { max-width: 420px; }
+  }
+</style>

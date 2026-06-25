@@ -1,0 +1,37 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import faq from "../data/faq.json";
+import { realEstateAgent, faqSchema } from "../lib/schema.js";
+---
+
+<Base
+  title="FAQ"
+  description="Common questions about Lewis Realtors neighborhood market reports, data, and how we work in West Linn, Oregon."
+  jsonLd={[realEstateAgent(), faqSchema(faq)]}
+>
+  <PageHero
+    crumb="FAQ"
+    eyebrow="Good questions"
+    title={`Frequently<br/><span class="script">asked</span>.`}
+    lead="How the reports work, where the data comes from, and what to expect when you reach out."
+  />
+
+  <section class="section--tight">
+    <div class="wrap faq-narrow">
+      <FaqAccordion items={faq} />
+      <p class="faq-more">
+        Still have a question? Call <a href="tel:+15034898367">(503) 489-8367</a> or
+        <a href="/contact">send a message</a>.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .faq-narrow { max-width: 820px; }
+  .faq-more { margin-top: 2.5rem; color: var(--ink-soft); }
+  .faq-more a { color: var(--gold-deep); }
+  .faq-more a:hover { text-decoration: underline; }
+</style>

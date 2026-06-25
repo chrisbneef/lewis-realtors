@@ -1,0 +1,48 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import MeetMelissa from "../components/MeetMelissa.astro";
+import site from "../data/site.json";
+import { realEstateAgent } from "../lib/schema.js";
+---
+
+<Base
+  title="About"
+  description="Meet Melissa Shaw, founder of Lewis Realtors. Over two decades and more than $108 million sold in West Linn, Oregon real estate."
+  jsonLd={[realEstateAgent()]}
+>
+  <PageHero
+    crumb="About"
+    eyebrow="The office"
+    title={`Local on purpose,<br/>not by <span class="script">accident</span>.`}
+    lead="Lewis Realtors goes deep on one market instead of thin across many. The result is block-by-block knowledge of West Linn that shows up in pricing, negotiation, and the calm in a tricky transaction."
+  />
+
+  <MeetMelissa />
+
+  <section class="section">
+    <div class="wrap about-values">
+      <div class="about-val" data-reveal>
+        <h3>Neighborly, never salesy</h3>
+        <p>We lead with information, not pressure. If a home or a moment is not right, we say so.</p>
+      </div>
+      <div class="about-val" data-reveal style="--reveal-delay: 80ms">
+        <h3>Real data, never guesses</h3>
+        <p>Every number we share comes from live RMLS pulls. We do not invent figures to win a listing.</p>
+      </div>
+      <div class="about-val" data-reveal style="--reveal-delay: 160ms">
+        <h3>Two states, one standard</h3>
+        <p>{site.agent.designations.join(" and ")}, with the same care on both sides of the river.</p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .about-values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .about-val { padding-top: 1.6rem; border-top: 2px solid transparent; border-image: var(--grad-gold) 1; }
+  .about-val:nth-child(2) { border-image: var(--grad-azure) 1; }
+  .about-val h3 { font-size: 1.5rem; }
+  .about-val p { color: var(--ink-soft); margin-top: 0.7rem; font-size: 0.95rem; }
+  @media (max-width: 820px) { .about-values { grid-template-columns: 1fr; gap: 1.5rem; } }
+</style>

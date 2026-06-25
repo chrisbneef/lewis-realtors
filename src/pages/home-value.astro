@@ -1,0 +1,59 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import MarketReportForm from "../components/MarketReportForm.astro";
+import { realEstateAgent } from "../lib/schema.js";
+
+const steps = [
+  { n: "01", t: "Tell us about your home", d: "Address, a few details, and how soon you are thinking of selling." },
+  { n: "02", t: "Melissa pulls the real comps", d: "Actual recent sales on your street and in your neighborhood, not an algorithm." },
+  { n: "03", t: "You get a grounded number", d: "A price range with the reasoning behind it, plus what it means for your timing." },
+];
+---
+
+<Base
+  title="What Is My Home Worth?"
+  description="Request a personalized West Linn home valuation from Melissa Shaw, built on real neighborhood sold comps rather than an automated estimate."
+  jsonLd={[realEstateAgent()]}
+>
+  <PageHero
+    crumb="Home Value"
+    eyebrow="For sellers"
+    title={`What is your<br/>home <span class="script">worth</span>?`}
+    lead="An automated estimate guesses. Melissa prepares a valuation from the actual sold comps on your street, then walks you through what it means for your price and timing."
+  />
+
+  <section class="section--tight">
+    <div class="wrap hv-layout">
+      <ol class="hv-steps" role="list">
+        {steps.map((s) => (
+          <li data-reveal>
+            <span class="hv-num">{s.n}</span>
+            <div>
+              <h3>{s.t}</h3>
+              <p>{s.d}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+      <div class="hv-form" data-reveal style="--reveal-delay: 100ms">
+        <MarketReportForm
+          formType="valuation"
+          neighborhood="west-linn"
+          neighborhoodName="West Linn"
+          cta="Request my valuation"
+        />
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hv-layout { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: center; }
+  .hv-steps { display: flex; flex-direction: column; gap: 0; }
+  .hv-steps li { display: grid; grid-template-columns: 60px 1fr; gap: 1.2rem; padding: 1.8rem 0; border-bottom: 1px solid var(--line); }
+  .hv-num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; color: var(--gold-deep); }
+  .hv-steps h3 { font-size: 1.4rem; }
+  .hv-steps p { color: var(--ink-soft); margin-top: 0.4rem; font-size: 0.95rem; }
+  @media (max-width: 860px) { .hv-layout { grid-template-columns: 1fr; } }
+</style>

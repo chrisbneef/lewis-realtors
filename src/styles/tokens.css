@@ -1,0 +1,112 @@
+/* ==========================================================================
+   Lewis Realtors - Design Tokens
+   Brand: Matte Noir, Gilded Edge Gold, Azure Sky Blue, Parchment Cream
+   ========================================================================== */
+
+:root {
+  /* --- Brand core --------------------------------------------------------- */
+  --noir: #1a1a1a;
+  --noir-soft: #242422;
+  --gold: #c8a04a;
+  --gold-bright: #e8cd8a;
+  --gold-deep: #a9842f;
+  --azure: #6c82a5;
+  --azure-deep: #4d6488;
+  --azure-bright: #a3b8d6;
+  --azure-tint: #eef2f7;
+  --cream: #f6f1e7;
+  --cream-deep: #ece4d2;
+
+  /* metallic gold gradient used for the script accent, rules, and hovers */
+  --grad-gold: linear-gradient(105deg, #a9842f 0%, #d8b65f 38%, #f3e3ad 55%, #c8a04a 78%, #a9842f 100%);
+  /* azure gradient: the "data + place" accent (maps, charts, wayfinding) */
+  --grad-azure: linear-gradient(160deg, #4d6488 0%, #6c82a5 55%, #97aed0 100%);
+
+  /* --- Semantic (light theme = default) ---------------------------------- */
+  --bg: #fbfaf6;
+  --bg-alt: var(--cream);
+  --bg-elevated: #ffffff;
+  --surface-ink: var(--noir);
+
+  --ink: #1d1c1a;
+  --ink-soft: #45433f;
+  --ink-muted: #76726a;
+  --ink-onDark: #f4efe4;
+  --ink-onDark-soft: #b9b2a2;
+
+  --line: rgba(29, 28, 26, 0.12);
+  --line-strong: rgba(29, 28, 26, 0.22);
+  --line-onDark: rgba(244, 239, 228, 0.16);
+
+  --accent: var(--gold);
+  --accent-deep: var(--gold-deep);
+
+  /* --- Typography --------------------------------------------------------- */
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-body: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --font-script: "Pinyon Script", "Cormorant Garamond", cursive;
+
+  /* fluid type scale */
+  --fs-eyebrow: 0.74rem;
+  --fs-body: clamp(1rem, 0.97rem + 0.18vw, 1.075rem);
+  --fs-lead: clamp(1.12rem, 1.04rem + 0.4vw, 1.32rem);
+  --fs-h4: clamp(1.2rem, 1.1rem + 0.5vw, 1.45rem);
+  --fs-h3: clamp(1.55rem, 1.3rem + 1.1vw, 2.1rem);
+  --fs-h2: clamp(2.1rem, 1.6rem + 2.4vw, 3.4rem);
+  --fs-h1: clamp(2.9rem, 2rem + 4.6vw, 5.6rem);
+  --fs-display: clamp(3.4rem, 1.8rem + 7vw, 8rem);
+
+  --tracking-eyebrow: 0.34em;
+  --tracking-label: 0.18em;
+  --leading-tight: 1.04;
+  --leading-snug: 1.18;
+  --leading-body: 1.65;
+
+  /* --- Space + layout ----------------------------------------------------- */
+  --maxw: 1280px;
+  --maxw-text: 64ch;
+  --gutter: clamp(1.25rem, 0.6rem + 3vw, 4rem);
+  --section-y: clamp(4.5rem, 3rem + 7vw, 9rem);
+
+  --radius-sm: 4px;
+  --radius: 10px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 2px 10px rgba(26, 24, 20, 0.06);
+  --shadow: 0 18px 50px -24px rgba(26, 24, 20, 0.32);
+  --shadow-lg: 0 40px 90px -40px rgba(26, 24, 20, 0.45);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur: 0.5s;
+
+  color-scheme: light;
+}
+
+/* --- Dark theme ----------------------------------------------------------- */
+:root[data-theme="dark"] {
+  --bg: #141311;
+  --bg-alt: #1c1a17;
+  --bg-elevated: #201d19;
+  --surface-ink: #0e0d0b;
+
+  --ink: #f1ece0;
+  --ink-soft: #cdc6b6;
+  --ink-muted: #948d7d;
+  --ink-onDark: #f4efe4;
+  --ink-onDark-soft: #b9b2a2;
+
+  /* azure reads brighter on dark surfaces; tint becomes a deep slate */
+  --azure: #8ba2c4;
+  --azure-deep: #a3b8d6;
+  --azure-tint: #1b2230;
+
+  --line: rgba(244, 239, 228, 0.12);
+  --line-strong: rgba(244, 239, 228, 0.22);
+
+  --bg-alt: #1a1815;
+  --shadow: 0 18px 50px -24px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 40px 90px -40px rgba(0, 0, 0, 0.8);
+
+  color-scheme: dark;
+}

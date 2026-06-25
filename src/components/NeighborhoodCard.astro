@@ -1,0 +1,65 @@
+---
+const { hood } = Astro.props;
+const href = `/neighborhoods/${hood.slug}`;
+const num = String(hood.order).padStart(2, "0");
+---
+
+<a class="hood-card card" href={href} data-reveal>
+  <div class="hood-photo" aria-hidden="true">
+    <span class="hood-num">{num}</span>
+    {hood.complete
+      ? <span class="pill pill--gold">Report ready</span>
+      : <span class="pill pill--placeholder">Report soon</span>}
+  </div>
+  <div class="hood-body">
+    <h3 class="hood-name">{hood.name}</h3>
+    <p class="hood-tagline">{hood.tagline}</p>
+    <div class="hood-foot">
+      <span class="hood-range">{hood.range}</span>
+      <span class="link arrow-only" aria-hidden="true"><span class="arrow">&rarr;</span></span>
+    </div>
+  </div>
+</a>
+
+<style>
+  .hood-card { display: flex; flex-direction: column; overflow: hidden; }
+  .hood-photo {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    background:
+      linear-gradient(160deg, rgba(108,130,165,0.22), rgba(200,160,74,0.18)),
+      var(--cream-deep);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .hood-num {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: rgba(26, 24, 20, 0.22);
+    line-height: 1;
+  }
+  .pill { background: var(--bg-elevated); }
+  .hood-body { padding: 1.4rem 1.5rem 1.6rem; display: flex; flex-direction: column; gap: 0.7rem; flex-grow: 1; }
+  .hood-name { font-size: 1.6rem; }
+  .hood-tagline { font-size: 0.92rem; color: var(--ink-soft); flex-grow: 1; }
+  .hood-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.6rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+  }
+  .hood-range {
+    font-size: 0.74rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+  }
+  .arrow-only::after { display: none; }
+  .hood-card:hover .arrow { transform: translateX(5px); color: var(--gold-deep); }
+</style>

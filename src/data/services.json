@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "buyer-representation",
+    "name": "Buyer Representation",
+    "num": "01",
+    "summary": "Local guidance from first showing to keys in hand, with an eye on the comps and the negotiation.",
+    "for": "Move-up and relocating buyers"
+  },
+  {
+    "slug": "seller-listing",
+    "name": "Seller & Listing",
+    "num": "02",
+    "summary": "Staging, marketing reach, and pricing built on real West Linn sold data, not guesswork.",
+    "for": "Homeowners ready to sell"
+  },
+  {
+    "slug": "luxury",
+    "name": "Luxury",
+    "num": "03",
+    "summary": "Discreet representation for ridge-line and view properties, with an off-market network behind it.",
+    "for": "View and executive homes"
+  },
+  {
+    "slug": "first-time-buyer",
+    "name": "First-Time Buyer",
+    "num": "04",
+    "summary": "A patient, plain-English walk through your first West Linn purchase, schools and budget included.",
+    "for": "Buyers new to ownership"
+  },
+  {
+    "slug": "investor-adu",
+    "name": "Investor & ADU",
+    "num": "05",
+    "summary": "Reading lots and corridors for rental and accessory-dwelling potential before you commit.",
+    "for": "Investors and ADU builders"
+  },
+  {
+    "slug": "relocation",
+    "name": "Relocation",
+    "num": "06",
+    "summary": "Neighborhood-by-neighborhood orientation for families moving into the area from out of town.",
+    "for": "Families moving to West Linn"
+  }
+]

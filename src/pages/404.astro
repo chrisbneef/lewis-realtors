@@ -1,0 +1,26 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Page Not Found" description="That page could not be found.">
+  <section class="nf">
+    <div class="wrap nf-inner">
+      <p class="script nf-mark">Lost?</p>
+      <h1>This street is not on our map.</h1>
+      <p class="nf-lead">The page you are after may have moved or never existed. Let's get you back to West Linn.</p>
+      <div class="nf-actions">
+        <a class="btn btn--gold btn--lg" href="/">Back home</a>
+        <a class="btn btn--ghost btn--lg" href="/market-reports">Browse neighborhoods</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .nf { min-height: 64vh; display: grid; place-items: center; padding-block: var(--section-y); text-align: center; }
+  .nf-inner { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; }
+  .nf-mark { font-size: clamp(4rem, 3rem + 5vw, 7rem); }
+  .nf h1 { font-size: clamp(2rem, 1.5rem + 3vw, 3.5rem); }
+  .nf-lead { color: var(--ink-soft); max-width: 44ch; }
+  .nf-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; }
+</style>

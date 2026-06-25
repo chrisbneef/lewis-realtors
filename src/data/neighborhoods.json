@@ -1,0 +1,162 @@
+[
+  {
+    "slug": "bolton",
+    "name": "Bolton",
+    "complete": true,
+    "order": 1,
+    "range": "$550K to $850K",
+    "tagline": "Historic Craftsman streets with the Willamette at the foot of the hill.",
+    "character": "Historic, Craftsman, river access",
+    "serviceFit": "First-time buyer and fixer",
+    "serviceSlug": "first-time-buyer",
+    "map": {
+      "center": [45.3585, -122.6285],
+      "zoom": 14,
+      "boundary": [
+        [45.3668, -122.6388],
+        [45.3672, -122.6188],
+        [45.3548, -122.6155],
+        [45.3492, -122.6262],
+        [45.3528, -122.6402]
+      ]
+    },
+    "narrative": [
+      "Bolton sits on the hillside just above the Willamette River, one of West Linn's oldest and most characterful pockets. The streets are lined with Craftsman bungalows and early cottages, many on generous lots with mature trees, and a short walk often leads to a river view or a tucked-away staircase down toward the water.",
+      "It rewards buyers who want personality over polish. Some homes are beautifully kept, others are honest fixers waiting for the right hands, and the range of prices reflects that spread. If you are buying your first home in West Linn, or you want a project with good bones in a walkable historic setting, Bolton is usually the first neighborhood worth a serious look."
+    ],
+    "rightFor": [
+      "First-time buyers who want into West Linn schools without a luxury price tag",
+      "Renovators looking for character homes with room to add value",
+      "Buyers who value walkability and river access over square footage"
+    ],
+    "propertyTypes": ["Craftsman bungalows", "Early cottages", "Mid-century updates", "Select new infill"],
+    "schools": {
+      "elementary": "Bolton Primary",
+      "middle": "Rosemont Ridge Middle",
+      "high": "West Linn High"
+    },
+    "headlineStat": { "value": "Sample", "label": "Median sale price", "note": "Real figure loads from the monthly RMLS pull" },
+    "statChart": [
+      { "label": "12 mo ago", "value": 58 },
+      { "label": "9 mo", "value": 62 },
+      { "label": "6 mo", "value": 67 },
+      { "label": "3 mo", "value": 72 },
+      { "label": "Now", "value": 78 }
+    ],
+    "comps": [
+      { "address": "Sold comp pending RMLS pull", "beds": "x", "baths": "x", "sqft": "x,xxx", "price": "$xxx,xxx" },
+      { "address": "Sold comp pending RMLS pull", "beds": "x", "baths": "x", "sqft": "x,xxx", "price": "$xxx,xxx" },
+      { "address": "Sold comp pending RMLS pull", "beds": "x", "baths": "x", "sqft": "x,xxx", "price": "$xxx,xxx" }
+    ]
+  },
+  {
+    "slug": "willamette",
+    "name": "Willamette",
+    "complete": false,
+    "order": 2,
+    "range": "$575K to $900K",
+    "tagline": "The historic heart, with a walkable Main Street all its own.",
+    "character": "Historic heart, walkable downtown",
+    "serviceFit": "First-time buyer and lifestyle",
+    "serviceSlug": "first-time-buyer"
+  },
+  {
+    "slug": "robinwood",
+    "name": "Robinwood",
+    "complete": false,
+    "order": 3,
+    "range": "$600K to $950K",
+    "tagline": "A practical corridor neighborhood with real ADU potential.",
+    "character": "Highway corridor, ADU potential",
+    "serviceFit": "Investor and ADU",
+    "serviceSlug": "investor-adu"
+  },
+  {
+    "slug": "sunset",
+    "name": "Sunset",
+    "complete": false,
+    "order": 4,
+    "range": "$650K to $1.1M",
+    "tagline": "Waterfront-adjacent and family-oriented, close to the river.",
+    "character": "Waterfront, family-oriented",
+    "serviceFit": "Move-up buyer",
+    "serviceSlug": "buyer-representation"
+  },
+  {
+    "slug": "rosemont-summit",
+    "name": "Rosemont Summit",
+    "complete": false,
+    "order": 5,
+    "range": "$750K to $1.2M",
+    "tagline": "School-centric and established, a relocation favorite.",
+    "character": "School-centric, established",
+    "serviceFit": "Family and relocation",
+    "serviceSlug": "relocation"
+  },
+  {
+    "slug": "marylhurst",
+    "name": "Marylhurst",
+    "complete": false,
+    "order": 6,
+    "range": "$700K to $1.2M",
+    "tagline": "A former campus setting with room for custom builds.",
+    "character": "Former campus, custom builds",
+    "serviceFit": "New construction and custom",
+    "serviceSlug": "luxury"
+  },
+  {
+    "slug": "hidden-springs",
+    "name": "Hidden Springs",
+    "complete": false,
+    "order": 7,
+    "range": "$800K to $1.3M",
+    "tagline": "A newer family development with a settled feel.",
+    "character": "Newer family development",
+    "serviceFit": "Move-up buyer",
+    "serviceSlug": "buyer-representation"
+  },
+  {
+    "slug": "parker-crest",
+    "name": "Parker Crest",
+    "complete": false,
+    "order": 8,
+    "range": "$850K to $1.5M",
+    "tagline": "Ridge-line views and executive homes above the valley.",
+    "character": "Ridge-line views, executive homes",
+    "serviceFit": "Luxury and seller",
+    "serviceSlug": "luxury"
+  },
+  {
+    "slug": "skyline-ridge",
+    "name": "Skyline Ridge",
+    "complete": false,
+    "order": 9,
+    "range": "$950K to $2M+",
+    "tagline": "Newer luxury with Mt. Hood on the horizon.",
+    "character": "Mt. Hood views, newer luxury",
+    "serviceFit": "Luxury and seller",
+    "serviceSlug": "luxury"
+  },
+  {
+    "slug": "savanna-oaks",
+    "name": "Savanna Oaks",
+    "complete": false,
+    "order": 10,
+    "range": "$1M to $2.5M+",
+    "tagline": "Premier luxury with panoramic valley views.",
+    "character": "Premier luxury, panoramic views",
+    "serviceFit": "Luxury and seller",
+    "serviceSlug": "luxury"
+  },
+  {
+    "slug": "bht-enclaves",
+    "name": "Barrington, Hidden Creek & Tanner Creek",
+    "complete": false,
+    "order": 11,
+    "range": "Price on request",
+    "tagline": "Newer planned enclaves for move-up and luxury buyers.",
+    "character": "Newer planned enclaves",
+    "serviceFit": "Move-up and luxury",
+    "serviceSlug": "luxury"
+  }
+]

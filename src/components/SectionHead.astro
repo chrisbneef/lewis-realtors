@@ -1,0 +1,18 @@
+---
+const { eyebrow, title, lead, align = "left" } = Astro.props;
+---
+
+<div class={`sec-head sec-head--${align}`} data-reveal>
+  {eyebrow && <p class={`eyebrow ${align === "center" ? "eyebrow--center" : ""}`}>{eyebrow}</p>}
+  {title && <h2 class="sec-title" set:html={title} />}
+  {lead && <p class="sec-lead measure">{lead}</p>}
+  <slot />
+</div>
+
+<style>
+  .sec-head { display: flex; flex-direction: column; gap: 1.1rem; max-width: 60ch; }
+  .sec-head--center { align-items: center; text-align: center; margin-inline: auto; }
+  .sec-title { margin-top: 0.3rem; }
+  .sec-lead { font-size: var(--fs-lead); color: var(--ink-soft); font-weight: 300; }
+  :global(.sec-title .script) { font-size: 1.25em; line-height: 0.85; display: inline-block; }
+</style>

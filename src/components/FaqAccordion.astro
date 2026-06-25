@@ -1,0 +1,65 @@
+---
+import faq from "../data/faq.json";
+const { items = faq } = Astro.props;
+---
+
+<div class="acc" data-accordion>
+  {items.map((item, i) => (
+    <div class="acc-item" data-acc-item data-reveal style={`--reveal-delay: ${i * 50}ms`}>
+      <button class="acc-trigger" data-acc-trigger aria-expanded="false">
+        <span class="acc-q">{item.q}</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" data-acc-panel>
+        <p>{item.a}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .acc { border-top: 1px solid var(--line-strong); }
+  .acc-item { border-bottom: 1px solid var(--line-strong); }
+  .acc-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.6rem 0;
+    text-align: left;
+    transition: color var(--dur) var(--ease);
+  }
+  .acc-q {
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .acc-trigger:hover .acc-q { color: var(--gold-deep); }
+  .acc-icon {
+    position: relative;
+    flex-shrink: 0;
+    width: 18px; height: 18px;
+  }
+  .acc-icon::before, .acc-icon::after {
+    content: "";
+    position: absolute;
+    background: var(--gold-deep);
+    transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
+  }
+  .acc-icon::before { top: 8px; left: 0; width: 18px; height: 2px; }
+  .acc-icon::after { left: 8px; top: 0; width: 2px; height: 18px; }
+  .acc-item.is-open .acc-icon::after { transform: scaleY(0); opacity: 0; }
+
+  .acc-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s var(--ease);
+  }
+  .acc-panel p {
+    padding-bottom: 1.7rem;
+    max-width: 70ch;
+    color: var(--ink-soft);
+  }
+</style>

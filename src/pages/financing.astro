@@ -1,0 +1,63 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import site from "../data/site.json";
+import { realEstateAgent } from "../lib/schema.js";
+
+// The mortgage partner's referral link goes here once provided.
+const PARTNER_URL = "#";
+---
+
+<Base
+  title="Financing Partner"
+  description="Lewis Realtors hands West Linn buyers to a trusted mortgage partner so you can shop with a pre-approval already in hand."
+  jsonLd={[realEstateAgent()]}
+>
+  <PageHero
+    crumb="Financing"
+    eyebrow="Buyers, start here"
+    title={`Get pre-approved<br/>before you <span class="script">tour</span>.`}
+    lead="Lewis Realtors keeps financing simple: we hand you to a trusted mortgage partner so you walk into showings with a pre-approval already in place and real negotiating strength."
+  />
+
+  <section class="section--tight">
+    <div class="wrap fin-layout">
+      <div class="fin-copy" data-reveal>
+        <h2>Why a pre-approval first</h2>
+        <ul class="fin-list" role="list">
+          <li>Sellers take pre-approved offers more seriously</li>
+          <li>You shop in the right price range from day one</li>
+          <li>You move fast when the right West Linn home appears</li>
+        </ul>
+        <p class="fin-note">
+          Financing is handled by our partner, not by Lewis Realtors. When you are ready, we connect
+          you directly so the conversation is warm from the first call.
+        </p>
+      </div>
+      <aside class="fin-card card" data-reveal style="--reveal-delay: 100ms">
+        <p class="eyebrow">Mortgage partner</p>
+        <h3>Ready when you are</h3>
+        <p class="fin-card-body">
+          The referral link to our preferred lender will live here. For now, reach out and Melissa
+          will make the introduction personally.
+        </p>
+        <a class="btn btn--gold" href={PARTNER_URL} aria-disabled={PARTNER_URL === "#"}>Visit our lender</a>
+        <a class="link" href={site.contact.phoneHref}>Or call {site.contact.phone} <span class="arrow">&rarr;</span></a>
+        <p class="tag-sample">Partner link pending</p>
+      </aside>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .fin-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: clamp(2rem, 1rem + 4vw, 4.5rem); align-items: start; }
+  .fin-copy h2 { font-size: clamp(1.8rem, 1.4rem + 1.6vw, 2.6rem); }
+  .fin-list { margin-top: 1.6rem; display: flex; flex-direction: column; gap: 0.9rem; }
+  .fin-list li { position: relative; padding-left: 1.8rem; color: var(--ink-soft); }
+  .fin-list li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 9px; height: 9px; background: var(--grad-gold); border-radius: 50%; }
+  .fin-note { margin-top: 2rem; color: var(--ink-muted); font-size: 0.9rem; max-width: 56ch; }
+  .fin-card { padding: 2rem; display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; }
+  .fin-card h3 { font-size: 1.7rem; }
+  .fin-card-body { color: var(--ink-soft); font-size: 0.95rem; }
+  @media (max-width: 820px) { .fin-layout { grid-template-columns: 1fr; } }
+</style>

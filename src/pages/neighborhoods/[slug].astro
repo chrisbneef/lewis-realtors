@@ -1,0 +1,333 @@
+---
+import Base from "../../layouts/Base.astro";
+import SectionHead from "../../components/SectionHead.astro";
+import MarketReportForm from "../../components/MarketReportForm.astro";
+import site from "../../data/site.json";
+import neighborhoods from "../../data/neighborhoods.json";
+import services from "../../data/services.json";
+import faq from "../../data/faq.json";
+import { realEstateAgent, placeSchema, faqSchema, breadcrumb } from "../../lib/schema.js";
+
+export function getStaticPaths() {
+  return neighborhoods.map((hood) => ({
+    params: { slug: hood.slug },
+    props: { hood },
+  }));
+}
+
+const { hood } = Astro.props;
+const service = services.find((s) => s.slug === hood.serviceSlug);
+
+const jsonLd = [
+  realEstateAgent(),
+  placeSchema(hood),
+  breadcrumb([
+    { name: "Home", path: "/" },
+    { name: "Neighborhoods", path: "/#neighborhoods" },
+    { name: hood.name, path: `/neighborhoods/${hood.slug}` },
+  ]),
+];
+if (hood.complete) jsonLd.push(faqSchema(faq));
+
+const mapData = hood.complete && hood.map ? JSON.stringify(hood.map) : null;
+const chartMax = hood.complete && hood.statChart
+  ? Math.max(...hood.statChart.map((d) => d.value))
+  : 0;
+---
+
+<Base
+  title={`${hood.name}, West Linn`}
+  description={`${hood.name} in West Linn, Oregon: ${hood.tagline} Price range ${hood.range}. Get the monthly ${hood.name} market report from Lewis Realtors.`}
+  jsonLd={jsonLd}
+>
+  {hood.complete && (
+    <Fragment slot="head">
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""
+      />
+    </Fragment>
+  )}
+
+  <!-- Breadcrumb + hero -->
+  <section class="nb-hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>/</span>
+        <a href="/#neighborhoods">Neighborhoods</a><span>/</span>
+        <span aria-current="page">{hood.name}</span>
+      </nav>
+
+      <div class="nb-hero-grid">
+        <div class="nb-hero-copy" data-reveal>
+          <p class="eyebrow">West Linn &middot; {hood.character}</p>
+          <h1>{hood.name}</h1>
+          <p class="nb-tagline">{hood.tagline}</p>
+          <div class="nb-meta">
+            <span class="pill pill--gold">{hood.range}</span>
+            <span class="pill pill--azure">Fits: {hood.serviceFit}</span>
+            {hood.complete
+              ? <span class="pill pill--gold">Report ready</span>
+              : <span class="pill pill--placeholder">Report publishing soon</span>}
+          </div>
+        </div>
+        <div class="nb-hero-aside" data-reveal style="--reveal-delay: 120ms">
+          <a class="btn btn--gold btn--lg" href="#nb-report">Get the {hood.name} report</a>
+          <a class="phone-link" href={site.contact.phoneHref}>or call {site.contact.phone}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {hood.complete ? (
+    <>
+      <!-- Map -->
+      <section class="section--tight">
+        <div class="wrap">
+          <div class="nb-map card" data-reveal>
+            <div id="hood-map" class="hood-map"></div>
+            <script type="application/json" id="hood-map-data" set:html={mapData} is:inline></script>
+            <p class="nb-map-note">Approximate boundary. Final polygon confirmed against county parcel lines.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Narrative + who it's right for -->
+      <section class="section">
+        <div class="wrap nb-narrative">
+          <div class="nb-story" data-reveal>
+            <SectionHead eyebrow="The read" title={`Who ${hood.name} is <span class="script">right for</span>.`} />
+            <div class="nb-story-body stack">
+              {hood.narrative.map((p) => <p>{p}</p>)}
+            </div>
+          </div>
+          <aside class="nb-fit card" data-reveal style="--reveal-delay: 100ms">
+            <h3 class="nb-fit-h">Right for</h3>
+            <ul class="nb-fit-list" role="list">
+              {hood.rightFor.map((r) => <li>{r}</li>)}
+            </ul>
+            <hr class="rule" style="margin-block: 1.6rem;" />
+            <h3 class="nb-fit-h">Property types</h3>
+            <ul class="nb-types" role="list">
+              {hood.propertyTypes.map((t) => <li>{t}</li>)}
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Schools -->
+      <section class="section--tight section--cream">
+        <div class="wrap nb-schools" data-reveal>
+          <div>
+            <p class="eyebrow">School feeders</p>
+            <h2>{site.district}</h2>
+          </div>
+          <ol class="feeder-row" role="list">
+            <li><span class="feeder-step">Elementary</span><span class="feeder-name">{hood.schools.elementary}</span></li>
+            <li class="feeder-arrow" aria-hidden="true">&rarr;</li>
+            <li><span class="feeder-step">Middle</span><span class="feeder-name">{hood.schools.middle}</span></li>
+            <li class="feeder-arrow" aria-hidden="true">&rarr;</li>
+            <li><span class="feeder-step">High</span><span class="feeder-name">{hood.schools.high}</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Market stats teaser -->
+      <section class="section">
+        <div class="wrap nb-stats">
+          <div class="nb-stats-copy" data-reveal>
+            <SectionHead eyebrow="Market snapshot" title="The teaser, then the full report." />
+            <p class="nb-stats-lead">
+              Here is the headline. The full {hood.name} report adds price per square foot,
+              list-to-sale ratio, months of supply, the year-over-year trend, and three recent
+              sold comps. Every figure below loads from the monthly RMLS pull.
+            </p>
+            <div class="nb-headline">
+              <span class="nb-headline-val">{hood.headlineStat.value}</span>
+              <span class="nb-headline-label">
+                {hood.headlineStat.label}
+                <span class="tag-sample">Sample until RMLS pull</span>
+              </span>
+            </div>
+            <p class="nb-headline-note">{hood.headlineStat.note}</p>
+          </div>
+          <div class="nb-chart card" data-reveal style="--reveal-delay: 100ms">
+            <div class="nb-chart-head">
+              <span>Median price trend</span>
+              <span class="tag-sample">Sample shape</span>
+            </div>
+            <div class="bars" role="img" aria-label="Sample 12 month price trend, shape only">
+              {hood.statChart.map((d) => (
+                <div class="bar-col">
+                  <span class="bar" style={`--h: ${Math.round((d.value / chartMax) * 100)}%`}></span>
+                  <span class="bar-label">{d.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sold comps -->
+      <section class="section--tight">
+        <div class="wrap">
+          <div class="comps-head" data-reveal>
+            <SectionHead eyebrow="Recent activity" title="Three recent sold comps" />
+            <span class="tag-sample">Placeholder until RMLS pull</span>
+          </div>
+          <div class="comps-grid">
+            {hood.comps.map((c) => (
+              <div class="comp card" data-reveal>
+                <span class="comp-tag">Sold</span>
+                <p class="comp-addr">{c.address}</p>
+                <p class="comp-price">{c.price}</p>
+                <ul class="comp-meta" role="list">
+                  <li>{c.beds} bd</li><li>{c.baths} ba</li><li>{c.sqft} sqft</li>
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Recommended service -->
+      {service && (
+        <section class="section--tight">
+          <div class="wrap">
+            <a class="rec card" href={`/services#${service.slug}`} data-reveal>
+              <div>
+                <p class="eyebrow">Recommended for {hood.name}</p>
+                <h3>{service.name}</h3>
+                <p class="rec-sum">{service.summary}</p>
+              </div>
+              <span class="link">Explore this service <span class="arrow">&rarr;</span></span>
+            </a>
+          </div>
+        </section>
+      )}
+    </>
+  ) : (
+    <!-- Coming-soon state for neighborhoods awaiting their first data pull -->
+    <section class="section">
+      <div class="wrap nb-soon" data-reveal>
+        <p class="nb-soon-num">{String(hood.order).padStart(2, "0")} of 11</p>
+        <h2>The {hood.name} report is on the way.</h2>
+        <p class="nb-soon-lead measure">
+          We are building {hood.name} the same way we built Bolton: real boundaries, school
+          feeders, sold comps, and a monthly market report straight from RMLS data. Enter your
+          email and you will be first to get it the moment it publishes.
+        </p>
+        <a class="link" href="/neighborhoods/bolton">See a finished neighborhood: Bolton <span class="arrow">&rarr;</span></a>
+      </div>
+    </section>
+  )}
+
+  <!-- Gated report form (every neighborhood) -->
+  <section class="section section--ink" id="nb-report">
+    <div class="wrap nb-form-layout">
+      <div class="nb-form-copy" data-reveal>
+        <SectionHead
+          eyebrow="Get the report"
+          title={`The ${hood.name} <span class="script">market report</span>.`}
+        />
+        <p class="nb-form-lead">
+          One page, plain English, refreshed monthly from live RMLS data. Melissa is notified the
+          moment you request it, so a real local answer is never far behind.
+        </p>
+      </div>
+      <div class="nb-form" data-reveal style="--reveal-delay: 100ms">
+        <MarketReportForm
+          formType="market-report"
+          neighborhood={hood.slug}
+          neighborhoodName={hood.name}
+          cta={`Send the ${hood.name} report`}
+        />
+      </div>
+    </div>
+  </section>
+
+  {hood.complete && (
+    <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  )}
+  {hood.complete && <script src="../../scripts/map.js"></script>}
+</Base>
+
+<style>
+  .nb-hero { padding-block: clamp(1.5rem, 1rem + 2vw, 3rem) clamp(2rem, 1.5rem + 2vw, 3.5rem); }
+  .crumb { display: flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 2.5rem; }
+  .crumb a:hover { color: var(--gold-deep); }
+  .crumb span[aria-current] { color: var(--ink); }
+
+  .nb-hero-grid { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 2.5rem; align-items: end; }
+  .nb-hero h1 { font-size: clamp(2.6rem, 1.8rem + 4vw, 5rem); margin-block: 1rem 0; }
+  .nb-tagline { font-family: var(--font-display); font-size: clamp(1.3rem, 1.1rem + 1vw, 1.9rem); font-style: italic; color: var(--ink-soft); margin-top: 0.8rem; max-width: 30ch; }
+  .nb-meta { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.6rem; }
+  .nb-hero-aside { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; }
+  .phone-link { font-size: 0.85rem; color: var(--ink-muted); }
+  .phone-link:hover { color: var(--gold-deep); }
+
+  .nb-map { padding: 0.7rem; overflow: hidden; }
+  .hood-map { height: clamp(320px, 45vh, 520px); width: 100%; border-radius: var(--radius); background: var(--cream-deep); z-index: 0; }
+  .nb-map-note { font-size: 0.72rem; color: var(--ink-muted); padding: 0.8rem 0.4rem 0.3rem; }
+
+  .nb-narrative { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(2rem, 1rem + 4vw, 4rem); align-items: start; }
+  .nb-story-body { --flow: 1.1rem; margin-top: 1.6rem; color: var(--ink-soft); font-size: var(--fs-lead); font-weight: 300; }
+  .nb-fit { padding: 1.8rem; position: sticky; top: 122px; }
+  .nb-fit-h { font-family: var(--font-body); font-size: 0.7rem; font-weight: 600; letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1rem; }
+  .nb-fit-list li { padding: 0.6rem 0 0.6rem 1.5rem; position: relative; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+  .nb-fit-list li::before { content: ""; position: absolute; left: 0; top: 1.1em; width: 7px; height: 7px; border-radius: 50%; background: var(--grad-gold); }
+  .nb-types { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .nb-types li { font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--line-strong); border-radius: 100px; padding: 0.35em 0.8em; }
+
+  .nb-schools { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .feeder-row { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+  .feeder-row > li:not(.feeder-arrow) { display: flex; flex-direction: column; gap: 0.3rem; padding: 0.9rem 1.2rem; border-radius: var(--radius-sm); background: var(--azure-tint); border: 1px solid color-mix(in srgb, var(--azure) 28%, transparent); }
+  .feeder-arrow { color: var(--azure-deep); font-size: 1.4rem; }
+  .feeder-step { font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--azure-deep); }
+  .feeder-name { font-family: var(--font-display); font-size: 1.3rem; font-weight: 500; }
+
+  .nb-stats { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 1rem + 4vw, 4rem); align-items: center; }
+  .nb-stats-lead { color: var(--ink-soft); margin-top: 1.2rem; }
+  .nb-headline { display: flex; align-items: baseline; gap: 1rem; margin-top: 2rem; padding-top: 1.6rem; border-top: 1px solid var(--line); }
+  .nb-headline-val { font-family: var(--font-display); font-size: clamp(2.4rem, 1.8rem + 3vw, 4rem); font-weight: 600; color: var(--gold-deep); line-height: 1; }
+  .nb-headline-label { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); display: flex; flex-direction: column; gap: 0.4rem; }
+  .nb-headline-note { font-size: 0.78rem; color: var(--ink-muted); margin-top: 0.8rem; }
+
+  .nb-chart { padding: 1.8rem; }
+  .nb-chart-head { display: flex; align-items: center; justify-content: space-between; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 1.8rem; }
+  .bars { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.8rem; align-items: end; height: 200px; }
+  .bar-col { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 0.7rem; height: 100%; }
+  .bar { width: 100%; max-width: 46px; height: var(--h); background: var(--grad-azure); border-radius: 4px 4px 0 0; transition: height 0.8s var(--ease); }
+  .bar-col:last-child .bar { background: var(--grad-gold); }
+  .bar-label { font-size: 0.6rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); }
+
+  .comps-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .comps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+  .comp { padding: 1.6rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .comp-tag { align-self: flex-start; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--noir); background: var(--grad-gold); padding: 0.3em 0.7em; border-radius: 100px; }
+  .comp-addr { font-size: 0.92rem; color: var(--ink-soft); margin-top: 0.4rem; }
+  .comp-price { font-family: var(--font-display); font-size: 1.8rem; font-weight: 600; }
+  .comp-meta { display: flex; gap: 1rem; font-size: 0.78rem; color: var(--ink-muted); }
+
+  .rec { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 2.2rem; flex-wrap: wrap; }
+  .rec h3 { font-size: 2rem; margin-top: 0.4rem; }
+  .rec-sum { color: var(--ink-soft); margin-top: 0.6rem; max-width: 52ch; }
+
+  .nb-soon { text-align: center; max-width: 60ch; margin-inline: auto; display: flex; flex-direction: column; align-items: center; gap: 1.2rem; padding-block: clamp(2rem, 1rem + 4vw, 4rem); }
+  .nb-soon-num { font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); }
+  .nb-soon h2 { font-size: clamp(2rem, 1.5rem + 2.5vw, 3.2rem); }
+  .nb-soon-lead { color: var(--ink-soft); font-size: var(--fs-lead); font-weight: 300; }
+
+  .nb-form-layout { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 1rem + 4vw, 4.5rem); align-items: center; }
+  .nb-form-lead { color: var(--ink-onDark-soft); margin-top: 1.4rem; }
+
+  @media (max-width: 900px) {
+    .nb-hero-grid, .nb-narrative, .nb-stats, .nb-form-layout { grid-template-columns: 1fr; }
+    .nb-hero-aside { align-items: flex-start; }
+    .nb-fit { position: static; }
+    .comps-grid { grid-template-columns: 1fr; }
+  }
+</style>
