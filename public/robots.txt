@@ -1,4 +1,21 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.lewisrealtors.com/sitemap-index.xml
+# AI answer-engine crawlers are explicitly welcome
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://lewis-realtors.vercel.app/sitemap-0.xml
+Sitemap: https://lewis-realtors.vercel.app/sitemap-index.xml

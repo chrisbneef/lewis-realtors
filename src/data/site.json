@@ -26,6 +26,11 @@
     "phone": "(503) 489-8367",
     "phoneHref": "tel:+15034898367",
     "emailLabel": "Send us an email",
+    "hoursText": "Monday to Friday, 9am to 6pm. Saturday by appointment.",
+    "hoursSpec": [
+      { "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00" },
+      { "days": ["Saturday"], "opens": "10:00", "closes": "15:00" }
+    ],
     "social": [
       { "label": "Instagram", "href": "#" },
       { "label": "Facebook", "href": "#" },

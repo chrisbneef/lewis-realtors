@@ -15,7 +15,7 @@ const year = 2026;
       </div>
 
       <nav class="foot-col" aria-label="Footer">
-        <h4 class="foot-h">Explore</h4>
+        <h3 class="foot-h">Explore</h3>
         <ul role="list">
           {site.nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
           <li><a href="/financing">Financing Partner</a></li>
@@ -23,10 +23,11 @@ const year = 2026;
       </nav>
 
       <div class="foot-col">
-        <h4 class="foot-h">Talk now</h4>
+        <h3 class="foot-h">Talk now</h3>
         <a class="foot-phone" href={site.contact.phoneHref}>{site.contact.phone}</a>
         <a class="link" href="/contact">{site.contact.emailLabel}<span class="arrow">&rarr;</span></a>
-        <h4 class="foot-h foot-h--social">Follow</h4>
+        <p class="foot-hours">{site.contact.hoursText}</p>
+        <h3 class="foot-h foot-h--social">Follow</h3>
         <ul role="list" class="foot-social">
           {site.contact.social.map((s) => <li><a href={s.href}>{s.label}</a></li>)}
         </ul>
@@ -80,6 +81,7 @@ const year = 2026;
     margin-bottom: 1.2rem;
   }
   .foot-h--social { margin-top: 2rem; }
+  .foot-hours { margin-top: 0.8rem; font-size: 0.82rem; color: var(--ink-onDark-soft); max-width: 24ch; }
   .foot-col ul { display: flex; flex-direction: column; gap: 0.75rem; }
   .foot-col a {
     font-size: 0.9rem;

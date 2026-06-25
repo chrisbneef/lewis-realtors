@@ -24,6 +24,9 @@ const a = site.agent;
       <div class="melissa-bio stack" data-reveal style="--reveal-delay: 200ms">
         {a.bio.map((para) => <p>{para}</p>)}
       </div>
+      <p class="melissa-byline" data-reveal style="--reveal-delay: 240ms">
+        West Linn market insight by <a rel="author" href="/about">{a.name}</a>, {a.designations[0]}.
+      </p>
       <ul class="melissa-stats" role="list" data-reveal style="--reveal-delay: 280ms">
         {a.stats.map((s) => (
           <li>
@@ -79,6 +82,9 @@ const a = site.agent;
     color: var(--gold-deep);
   }
   .melissa-bio { --flow: 1rem; margin-top: 1.6rem; color: var(--ink-soft); }
+  .melissa-byline { margin-top: 1rem; font-size: 0.85rem; color: var(--ink-muted); }
+  .melissa-byline a { color: var(--gold-deep); font-weight: 500; }
+  .melissa-byline a:hover { text-decoration: underline; }
   .melissa-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
