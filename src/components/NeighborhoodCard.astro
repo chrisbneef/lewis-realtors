@@ -5,7 +5,9 @@ const num = String(hood.order).padStart(2, "0");
 ---
 
 <a class="hood-card card" href={href} data-reveal>
-  <div class="hood-photo" aria-hidden="true">
+  <div class="hood-photo">
+    <img src={hood.image} alt={`${hood.name}, West Linn, Oregon`} loading="lazy" width="704" height="440" />
+    <span class="hood-scrim" aria-hidden="true"></span>
     <span class="hood-num">{num}</span>
     {hood.complete
       ? <span class="pill pill--gold">Report ready</span>
@@ -26,22 +28,38 @@ const num = String(hood.order).padStart(2, "0");
   .hood-photo {
     position: relative;
     aspect-ratio: 16 / 10;
-    background:
-      linear-gradient(160deg, rgba(108,130,165,0.22), rgba(200,160,74,0.18)),
-      var(--cream-deep);
+    overflow: hidden;
+    background: var(--cream-deep);
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     padding: 1rem;
   }
+  .hood-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease);
+  }
+  .hood-card:hover .hood-photo img { transform: scale(1.05); }
+  .hood-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(20,18,15,0.45) 0%, rgba(20,18,15,0) 38%);
+    pointer-events: none;
+  }
   .hood-num {
+    position: relative;
     font-family: var(--font-display);
     font-size: 2.6rem;
     font-weight: 600;
-    color: rgba(26, 24, 20, 0.22);
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
     line-height: 1;
   }
-  .pill { background: var(--bg-elevated); }
+  .pill { position: relative; background: var(--bg-elevated); box-shadow: 0 2px 8px rgba(0,0,0,0.18); }
   .hood-body { padding: 1.4rem 1.5rem 1.6rem; display: flex; flex-direction: column; gap: 0.7rem; flex-grow: 1; }
   .hood-name { font-size: 1.6rem; }
   .hood-tagline { font-size: 0.92rem; color: var(--ink-soft); flex-grow: 1; }

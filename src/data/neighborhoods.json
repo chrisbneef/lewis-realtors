@@ -10,14 +10,32 @@
     "serviceFit": "First-time buyer and fixer",
     "serviceSlug": "first-time-buyer",
     "map": {
-      "center": [45.3585, -122.6285],
+      "center": [
+        45.3585,
+        -122.6285
+      ],
       "zoom": 14,
       "boundary": [
-        [45.3668, -122.6388],
-        [45.3672, -122.6188],
-        [45.3548, -122.6155],
-        [45.3492, -122.6262],
-        [45.3528, -122.6402]
+        [
+          45.3668,
+          -122.6388
+        ],
+        [
+          45.3672,
+          -122.6188
+        ],
+        [
+          45.3548,
+          -122.6155
+        ],
+        [
+          45.3492,
+          -122.6262
+        ],
+        [
+          45.3528,
+          -122.6402
+        ]
       ]
     },
     "narrative": [
@@ -29,25 +47,68 @@
       "Renovators looking for character homes with room to add value",
       "Buyers who value walkability and river access over square footage"
     ],
-    "propertyTypes": ["Craftsman bungalows", "Early cottages", "Mid-century updates", "Select new infill"],
+    "propertyTypes": [
+      "Craftsman bungalows",
+      "Early cottages",
+      "Mid-century updates",
+      "Select new infill"
+    ],
     "schools": {
       "elementary": "Bolton Primary",
       "middle": "Rosemont Ridge Middle",
       "high": "West Linn High"
     },
-    "headlineStat": { "value": "Sample", "label": "Median sale price", "note": "Real figure loads from the monthly RMLS pull" },
+    "headlineStat": {
+      "value": "Sample",
+      "label": "Median sale price",
+      "note": "Real figure loads from the monthly RMLS pull"
+    },
     "statChart": [
-      { "label": "12 mo ago", "value": 58 },
-      { "label": "9 mo", "value": 62 },
-      { "label": "6 mo", "value": 67 },
-      { "label": "3 mo", "value": 72 },
-      { "label": "Now", "value": 78 }
+      {
+        "label": "12 mo ago",
+        "value": 58
+      },
+      {
+        "label": "9 mo",
+        "value": 62
+      },
+      {
+        "label": "6 mo",
+        "value": 67
+      },
+      {
+        "label": "3 mo",
+        "value": 72
+      },
+      {
+        "label": "Now",
+        "value": 78
+      }
     ],
     "comps": [
-      { "address": "Sold comp pending RMLS pull", "beds": "x", "baths": "x", "sqft": "x,xxx", "price": "$xxx,xxx" },
-      { "address": "Sold comp pending RMLS pull", "beds": "x", "baths": "x", "sqft": "x,xxx", "price": "$xxx,xxx" },
-      { "address": "Sold comp pending RMLS pull", "beds": "x", "baths": "x", "sqft": "x,xxx", "price": "$xxx,xxx" }
-    ]
+      {
+        "address": "Sold comp pending RMLS pull",
+        "beds": "x",
+        "baths": "x",
+        "sqft": "x,xxx",
+        "price": "$xxx,xxx"
+      },
+      {
+        "address": "Sold comp pending RMLS pull",
+        "beds": "x",
+        "baths": "x",
+        "sqft": "x,xxx",
+        "price": "$xxx,xxx"
+      },
+      {
+        "address": "Sold comp pending RMLS pull",
+        "beds": "x",
+        "baths": "x",
+        "sqft": "x,xxx",
+        "price": "$xxx,xxx"
+      }
+    ],
+    "image": "/assets/neighborhoods/bolton.jpg"
   },
   {
     "slug": "willamette",
@@ -58,7 +119,8 @@
     "tagline": "The historic heart, with a walkable Main Street all its own.",
     "character": "Historic heart, walkable downtown",
     "serviceFit": "First-time buyer and lifestyle",
-    "serviceSlug": "first-time-buyer"
+    "serviceSlug": "first-time-buyer",
+    "image": "/assets/neighborhoods/willamette.jpg"
   },
   {
     "slug": "robinwood",
@@ -69,7 +131,8 @@
     "tagline": "A practical corridor neighborhood with real ADU potential.",
     "character": "Highway corridor, ADU potential",
     "serviceFit": "Investor and ADU",
-    "serviceSlug": "investor-adu"
+    "serviceSlug": "investor-adu",
+    "image": "/assets/neighborhoods/robinwood.jpg"
   },
   {
     "slug": "sunset",
@@ -80,7 +143,8 @@
     "tagline": "Waterfront-adjacent and family-oriented, close to the river.",
     "character": "Waterfront, family-oriented",
     "serviceFit": "Move-up buyer",
-    "serviceSlug": "buyer-representation"
+    "serviceSlug": "buyer-representation",
+    "image": "/assets/neighborhoods/sunset.jpg"
   },
   {
     "slug": "rosemont-summit",
@@ -91,7 +155,8 @@
     "tagline": "School-centric and established, a relocation favorite.",
     "character": "School-centric, established",
     "serviceFit": "Family and relocation",
-    "serviceSlug": "relocation"
+    "serviceSlug": "relocation",
+    "image": "/assets/neighborhoods/rosemont-summit.jpg"
   },
   {
     "slug": "marylhurst",
@@ -102,7 +167,8 @@
     "tagline": "A former campus setting with room for custom builds.",
     "character": "Former campus, custom builds",
     "serviceFit": "New construction and custom",
-    "serviceSlug": "luxury"
+    "serviceSlug": "luxury",
+    "image": "/assets/neighborhoods/marylhurst.jpg"
   },
   {
     "slug": "hidden-springs",
@@ -113,7 +179,8 @@
     "tagline": "A newer family development with a settled feel.",
     "character": "Newer family development",
     "serviceFit": "Move-up buyer",
-    "serviceSlug": "buyer-representation"
+    "serviceSlug": "buyer-representation",
+    "image": "/assets/neighborhoods/hidden-springs.jpg"
   },
   {
     "slug": "parker-crest",
@@ -124,7 +191,8 @@
     "tagline": "Ridge-line views and executive homes above the valley.",
     "character": "Ridge-line views, executive homes",
     "serviceFit": "Luxury and seller",
-    "serviceSlug": "luxury"
+    "serviceSlug": "luxury",
+    "image": "/assets/neighborhoods/parker-crest.png"
   },
   {
     "slug": "skyline-ridge",
@@ -135,7 +203,8 @@
     "tagline": "Newer luxury with Mt. Hood on the horizon.",
     "character": "Mt. Hood views, newer luxury",
     "serviceFit": "Luxury and seller",
-    "serviceSlug": "luxury"
+    "serviceSlug": "luxury",
+    "image": "/assets/neighborhoods/skyline-ridge.jpg"
   },
   {
     "slug": "savanna-oaks",
@@ -146,7 +215,8 @@
     "tagline": "Premier luxury with panoramic valley views.",
     "character": "Premier luxury, panoramic views",
     "serviceFit": "Luxury and seller",
-    "serviceSlug": "luxury"
+    "serviceSlug": "luxury",
+    "image": "/assets/neighborhoods/savanna-oaks.jpg"
   },
   {
     "slug": "bht-enclaves",
@@ -157,6 +227,7 @@
     "tagline": "Newer planned enclaves for move-up and luxury buyers.",
     "character": "Newer planned enclaves",
     "serviceFit": "Move-up and luxury",
-    "serviceSlug": "luxury"
+    "serviceSlug": "luxury",
+    "image": "/assets/neighborhoods/bht-enclaves.jpg"
   }
 ]

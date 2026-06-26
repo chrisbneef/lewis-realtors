@@ -78,6 +78,10 @@ const chartMax = hood.complete && hood.statChart
           <a class="phone-link" href={site.contact.phoneHref}>or call {site.contact.phone}</a>
         </div>
       </div>
+
+      <figure class="nb-banner" data-reveal style="--reveal-delay: 180ms">
+        <img src={hood.image} alt={`${hood.name}, West Linn, Oregon`} width="1280" height="560" />
+      </figure>
     </div>
   </section>
 
@@ -266,6 +270,16 @@ const chartMax = hood.complete && hood.statChart
   .nb-tagline { font-family: var(--font-display); font-size: clamp(1.3rem, 1.1rem + 1vw, 1.9rem); font-style: italic; color: var(--ink-soft); margin-top: 0.8rem; max-width: 30ch; }
   .nb-meta { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.6rem; }
   .nb-hero-aside { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; }
+
+  .nb-banner {
+    margin: clamp(1.5rem, 1rem + 2vw, 2.5rem) 0 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    aspect-ratio: 21 / 9;
+  }
+  .nb-banner img { width: 100%; height: 100%; object-fit: cover; }
+  @media (max-width: 700px) { .nb-banner { aspect-ratio: 16 / 10; } }
   .phone-link { font-size: 0.85rem; color: var(--ink-muted); }
   .phone-link:hover { color: var(--gold-deep); }
 

@@ -1,0 +1,118 @@
+{
+  "categories": [
+    {
+      "id": "mortgage",
+      "label": "Mortgage & Lending"
+    },
+    {
+      "id": "inspection",
+      "label": "Home Inspection"
+    },
+    {
+      "id": "title",
+      "label": "Title & Escrow"
+    },
+    {
+      "id": "insurance",
+      "label": "Insurance"
+    },
+    {
+      "id": "contractor",
+      "label": "Remodel & Contractors"
+    },
+    {
+      "id": "handyman",
+      "label": "Handyman & Repair"
+    },
+    {
+      "id": "landscaping",
+      "label": "Landscaping & Exterior"
+    },
+    {
+      "id": "staging",
+      "label": "Staging & Cleaning"
+    },
+    {
+      "id": "moving",
+      "label": "Moving & Storage"
+    }
+  ],
+  "vendors": [
+    {
+      "name": "Renegade Home Mortgage",
+      "category": "mortgage",
+      "url": "https://renegadehomemtg.com",
+      "phone": "(503) 974-3571",
+      "phoneHref": "tel:+15039743571",
+      "location": "West Linn, Oregon",
+      "serviceArea": "West Linn, Lake Oswego, Oregon City, Wilsonville, Tualatin, Canby, and Milwaukie",
+      "tagline": "Your local mortgage expert",
+      "blurb": "A West Linn independent mortgage broker that shops a wide network of lenders to find the right fit, with conventional, FHA, VA, USDA, jumbo, and investor options.",
+      "programs": [
+        "Conventional",
+        "FHA",
+        "VA",
+        "USDA",
+        "Jumbo",
+        "Investor / DSCR",
+        "Bank statement",
+        "All-in-one HELOC"
+      ],
+      "license": "NMLS 227081",
+      "featured": true,
+      "recommended": true,
+      "placeholder": false,
+      "logo": "/assets/renegade-logo.png"
+    },
+    {
+      "name": "A trusted home inspector",
+      "category": "inspection",
+      "blurb": "We are finalizing the West Linn home inspector we refer most. Ask Melissa for a name in the meantime.",
+      "featured": true,
+      "placeholder": true
+    },
+    {
+      "name": "A local title & escrow team",
+      "category": "title",
+      "blurb": "A West Linn title and escrow partner who keeps closings smooth and on schedule. Listing soon.",
+      "featured": true,
+      "placeholder": true
+    },
+    {
+      "name": "An independent insurance agent",
+      "category": "insurance",
+      "blurb": "A local agent for homeowners and bundled coverage in West Linn and Clackamas County. Listing soon.",
+      "placeholder": true
+    },
+    {
+      "name": "A remodel & general contractor",
+      "category": "contractor",
+      "blurb": "A licensed West Linn contractor for kitchens, baths, and additions done right. Listing soon.",
+      "placeholder": true
+    },
+    {
+      "name": "A go-to handyman",
+      "category": "handyman",
+      "blurb": "The reliable handyman we send clients to for repairs and pre-listing punch lists. Listing soon.",
+      "placeholder": true
+    },
+    {
+      "name": "A landscaping & exterior pro",
+      "category": "landscaping",
+      "blurb": "Curb appeal, cleanups, and exterior care across West Linn. Listing soon.",
+      "placeholder": true
+    },
+    {
+      "name": "A stager & deep-clean crew",
+      "category": "staging",
+      "blurb": "Staging and move-out cleaning that helps West Linn homes show their best. Listing soon.",
+      "placeholder": true
+    },
+    {
+      "name": "A local moving company",
+      "category": "moving",
+      "blurb": "Movers our clients trust for local West Linn and metro relocations. Listing soon.",
+      "placeholder": true
+    }
+  ]
+}
