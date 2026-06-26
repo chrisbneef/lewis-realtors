@@ -11,6 +11,7 @@ import MarketReportForm from "../components/MarketReportForm.astro";
 import ValuationCTA from "../components/ValuationCTA.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import Testimonial from "../components/Testimonial.astro";
+import LocalProsBridge from "../components/LocalProsBridge.astro";
 
 import site from "../data/site.json";
 import neighborhoods from "../data/neighborhoods.json";
@@ -67,6 +68,9 @@ const jsonLd = [realEstateAgent(), faqSchema(faq)];
       </div>
     </div>
   </section>
+
+  <!-- Local pros bridge -->
+  <LocalProsBridge />
 
   <!-- Schools -->
   <section class="section">

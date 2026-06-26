@@ -1,0 +1,42 @@
+---
+// A bridge from "what Melissa does" to "who she trusts" -> /local-pros.
+---
+
+<section class="section--tight">
+  <div class="wrap">
+    <div class="pros-bridge" data-reveal>
+      <div class="pros-bridge-copy">
+        <p class="eyebrow">Beyond the sale</p>
+        <h2 class="pros-bridge-title">
+          In addition to my services, here are the <span class="script">local pros</span> I trust.
+        </h2>
+        <p class="pros-bridge-lead">
+          From your mortgage to your home inspection, the West Linn professionals Melissa knows and
+          refers, so you never have to guess who to call.
+        </p>
+      </div>
+      <a class="btn btn--gold btn--lg" href="/local-pros">Meet our local pros</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pros-bridge {
+    display: grid;
+    grid-template-columns: 1.5fr auto;
+    gap: clamp(1.5rem, 1rem + 3vw, 3.5rem);
+    align-items: center;
+    padding: clamp(1.8rem, 1.2rem + 2vw, 2.8rem) clamp(1.6rem, 1rem + 2vw, 3rem);
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--gold-deep);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+  }
+  .pros-bridge-title { font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.3rem); }
+  .pros-bridge-title .script { font-size: 1.2em; line-height: 0.85; display: inline-block; }
+  .pros-bridge-lead { margin-top: 0.8rem; color: var(--ink-soft); max-width: 60ch; }
+  @media (max-width: 760px) {
+    .pros-bridge { grid-template-columns: 1fr; }
+  }
+</style>

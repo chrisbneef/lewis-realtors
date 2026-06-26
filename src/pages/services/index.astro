@@ -2,6 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import PageHero from "../../components/PageHero.astro";
 import MarketReportForm from "../../components/MarketReportForm.astro";
+import LocalProsBridge from "../../components/LocalProsBridge.astro";
 import services from "../../data/services.json";
 import neighborhoods from "../../data/neighborhoods.json";
 import { realEstateAgent } from "../../lib/schema.js";
@@ -48,6 +49,8 @@ const hoodsByService = (slug) => neighborhoods.filter((h) => h.serviceSlug === s
       })}
     </div>
   </section>
+
+  <LocalProsBridge />
 
   <section class="section section--ink">
     <div class="wrap form-narrow">
