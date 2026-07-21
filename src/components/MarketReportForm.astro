@@ -107,13 +107,14 @@ const defaultBlurb = isValuation
     gap: 1.4rem;
     background: var(--bg-elevated);
     border: 1px solid var(--line);
-    border-top: 3px solid transparent;
-    border-image: var(--grad-gold) 1;
+    border-top: 3px solid var(--gold-deep);
     border-radius: var(--radius-lg);
     padding: clamp(1.6rem, 1rem + 2vw, 2.6rem);
     box-shadow: var(--shadow);
   }
-  .lead-title { font-size: clamp(1.5rem, 1.2rem + 1.3vw, 2.1rem); }
+  /* The card is always light (even inside a dark section), so pin the heading
+     to ink - otherwise the .section--ink h2/h3 rule repaints it near-white. */
+  .lead-title { font-size: clamp(1.5rem, 1.2rem + 1.3vw, 2.1rem); color: var(--ink); }
   .lead-blurb { margin-top: 0.7rem; color: var(--ink-soft); font-size: 0.95rem; }
   .lead-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .field--full { grid-column: 1 / -1; }

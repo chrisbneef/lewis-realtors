@@ -90,7 +90,15 @@ const labelled = pts.filter((p) => p.isMax || p.isMin || p.isLast);
 
       {labelled.map((p) => (
         <span
-          class:list={["tchart-vlabel", { "is-current": p.isLast, below: p.isMin && !p.isLast && !p.isMax }]}
+          class:list={[
+            "tchart-vlabel",
+            {
+              "is-current": p.isLast,
+              below: p.isMin && !p.isLast && !p.isMax,
+              "edge-left": p.x <= 8,
+              "edge-right": p.x >= 92,
+            },
+          ]}
           style={`left:${p.x}%;top:${p.y}%`}
         >{money(p.v)}</span>
       ))}
@@ -172,6 +180,11 @@ const labelled = pts.filter((p) => p.isMax || p.isMin || p.isLast);
     white-space: nowrap; pointer-events: none;
   }
   .tchart-vlabel.below { transform: translate(-50%, 60%); }
+  /* Clamp edge-point labels inside the plot so first/last don't overhang. */
+  .tchart-vlabel.edge-left { transform: translate(0, -160%); }
+  .tchart-vlabel.edge-right { transform: translate(-100%, -160%); }
+  .tchart-vlabel.edge-left.below { transform: translate(0, 60%); }
+  .tchart-vlabel.edge-right.below { transform: translate(-100%, 60%); }
   .tchart-vlabel.is-current { color: var(--gold-deep); font-weight: 500; }
 
   .tchart-xaxis {
