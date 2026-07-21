@@ -1,0 +1,22 @@
+{
+  "note": "Monthly snapshots of median asking price (single-family + multi-family). Built up over time to chart real per-neighborhood trends.",
+  "months": {
+    "2026-07": {
+      "generatedAt": "2026-07-21T00:43:53.029Z",
+      "city": 974950,
+      "neighborhoods": {
+        "bolton": 699999,
+        "willamette": 875000,
+        "robinwood": 1222225,
+        "sunset": 785000,
+        "rosemont-summit": 849900,
+        "marylhurst": 799925,
+        "hidden-springs": 839000,
+        "parker-crest": 759900,
+        "skyline-ridge": 975000,
+        "savanna-oaks": 1275000,
+        "stafford": 2349000
+      }
+    }
+  }
+}

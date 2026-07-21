@@ -6,6 +6,7 @@ import TrendChart from "../../components/TrendChart.astro";
 import site from "../../data/site.json";
 import neighborhoods from "../../data/neighborhoods.json";
 import market from "../../data/market.json";
+import marketHistory from "../../data/market-history.json";
 import boundaries from "../../data/neighborhood-boundaries.json";
 import services from "../../data/services.json";
 import faq from "../../data/faq.json";
@@ -46,7 +47,27 @@ const showNeighborhood = nb?.publishable === true;
 const range = priceLabel(hood.slug);
 
 const money = (n) => (n == null ? null : `$${Math.round(n).toLocaleString()}`);
-const trend = city.trend ?? [];
+// Chart source: prefer this neighborhood's own accumulated monthly history once
+// enough months exist; until then, fall back to the city-wide RentCast trend.
+// (A real per-neighborhood price history has to be banked over time - RentCast
+// only provides ZIP-level history - so this auto-upgrades as snapshots pile up.)
+const MIN_TREND_MONTHS = 5;
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const ymLabel = (ym) => { const [y, m] = ym.split("-"); return `${MONTHS[+m - 1]} ${y.slice(2)}`; };
+const nbHistory = Object.keys(marketHistory.months || {})
+  .sort()
+  .map((ym) => ({ ym, v: marketHistory.months[ym].neighborhoods?.[hood.slug] }))
+  .filter((x) => typeof x.v === "number");
+const useNbTrend = nbHistory.length >= MIN_TREND_MONTHS;
+
+const trend = useNbTrend
+  ? nbHistory.map((x) => ({ label: ymLabel(x.ym), month: x.ym, medianAskingPrice: x.v }))
+  : (city.trend ?? []);
+const trendTitle = useNbTrend ? `${hood.name} median asking price` : "West Linn median asking price";
+const trendCaption = useNbTrend
+  ? `Median asking price for single-family and multi-family homes in ${hood.name}, from monthly snapshots.`
+  : "Median asking price across all West Linn home types.";
+
 const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
   month: "long", day: "numeric", year: "numeric",
 });
@@ -145,16 +166,15 @@ const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
       <!-- Schools -->
       <section class="section--tight section--cream">
         <div class="wrap nb-schools" data-reveal>
-          <div>
+          <div class="nb-schools-head">
             <p class="eyebrow">School feeders</p>
-            <h2>{site.district}</h2>
+            <h2 class="nb-schools-title">{site.district}</h2>
+            <p class="nb-schools-sub">The elementary, middle, and high school path for {hood.name}.</p>
           </div>
-          <ol class="feeder-row" role="list">
-            <li><span class="feeder-step">Elementary</span><span class="feeder-name">{hood.schools.elementary}</span></li>
-            <li class="feeder-arrow" aria-hidden="true">&rarr;</li>
-            <li><span class="feeder-step">Middle</span><span class="feeder-name">{hood.schools.middle}</span></li>
-            <li class="feeder-arrow" aria-hidden="true">&rarr;</li>
-            <li><span class="feeder-step">High</span><span class="feeder-name">{hood.schools.high}</span></li>
+          <ol class="feeder-path" role="list">
+            <li class="feeder-card"><span class="feeder-step">Elementary</span><span class="feeder-name">{hood.schools.elementary}</span></li>
+            <li class="feeder-card"><span class="feeder-step">Middle</span><span class="feeder-name">{hood.schools.middle}</span></li>
+            <li class="feeder-card"><span class="feeder-step">High</span><span class="feeder-name">{hood.schools.high}</span></li>
           </ol>
         </div>
       </section>
@@ -232,7 +252,7 @@ const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
         </p>
       </div>
 
-      <TrendChart trend={trend} />
+      <TrendChart trend={trend} title={trendTitle} caption={trendCaption} />
     </div>
   </section>
 
@@ -345,12 +365,53 @@ const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
   .nb-types { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .nb-types li { font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--line-strong); border-radius: 100px; padding: 0.35em 0.8em; }
 
-  .nb-schools { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
-  .feeder-row { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
-  .feeder-row > li:not(.feeder-arrow) { display: flex; flex-direction: column; gap: 0.3rem; padding: 0.9rem 1.2rem; border-radius: var(--radius-sm); background: var(--azure-tint); border: 1px solid color-mix(in srgb, var(--azure) 28%, transparent); }
-  .feeder-arrow { color: var(--azure-deep); font-size: 1.4rem; }
+  .nb-schools-head { margin-bottom: 1.8rem; max-width: 60ch; }
+  .nb-schools-title { font-size: clamp(1.55rem, 1.2rem + 1.3vw, 2.15rem); margin-top: 0.5rem; }
+  .nb-schools-sub { color: var(--ink-soft); margin-top: 0.6rem; font-size: 0.95rem; }
+  .feeder-path {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.4rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .feeder-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 1.2rem 1.4rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--azure-deep);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+  }
+  /* connector arrow sits centered in the grid gap, not as a list item */
+  .feeder-card:not(:last-child)::after {
+    content: "\2192";
+    position: absolute;
+    top: 50%;
+    right: -1.2rem;
+    transform: translate(50%, -50%);
+    color: var(--azure-deep);
+    font-size: 1.15rem;
+    line-height: 1;
+  }
   .feeder-step { font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--azure-deep); }
-  .feeder-name { font-family: var(--font-display); font-size: 1.3rem; font-weight: 500; }
+  .feeder-name { font-family: var(--font-display); font-size: clamp(1.1rem, 1rem + 0.4vw, 1.35rem); line-height: 1.2; }
+  @media (max-width: 640px) {
+    .feeder-path { grid-template-columns: 1fr; gap: 2.2rem; }
+    .feeder-card:not(:last-child)::after {
+      content: "\2193";
+      top: auto;
+      right: auto;
+      bottom: -1.1rem;
+      left: 50%;
+      transform: translate(-50%, 50%);
+    }
+  }
 
   .nb-stats { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 1rem + 4vw, 4rem); align-items: center; }
   .nb-stats-lead { color: var(--ink-soft); margin-top: 1.2rem; }

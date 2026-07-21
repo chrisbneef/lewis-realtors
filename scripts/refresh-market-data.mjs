@@ -21,6 +21,7 @@ import { assignNeighborhood } from "../src/lib/geo.js";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = resolve(ROOT, "src/data/market.json");
+const HISTORY = resolve(ROOT, "src/data/market-history.json");
 const HOODS = resolve(ROOT, "src/data/neighborhoods.json");
 const BOUNDS = resolve(ROOT, "src/data/neighborhood-boundaries.json");
 
@@ -323,6 +324,36 @@ async function main() {
   writeFileSync(tmp, JSON.stringify(payload, null, 2) + "\n");
   renameSync(tmp, OUT);
   console.log(`\nWrote ${OUT}`);
+
+  appendHistory(payload);
+}
+
+/**
+ * Append this month's snapshot to market-history.json so a real per-neighborhood
+ * price trend accumulates over time. Keyed by YYYY-MM and idempotent (re-running
+ * in the same month overwrites, never duplicates). Once enough months exist, the
+ * neighborhood pages switch their chart from the city trend to their own history.
+ */
+function appendHistory(payload) {
+  const month = payload.generatedAt.slice(0, 7); // YYYY-MM
+  const hist = existsSync(HISTORY)
+    ? JSON.parse(readFileSync(HISTORY, "utf8"))
+    : { note: "Monthly snapshots of median asking price (single-family + multi-family). Built up over time to chart real per-neighborhood trends.", months: {} };
+
+  const neighborhoods = {};
+  for (const [slug, n] of Object.entries(payload.neighborhoods)) {
+    if (n.publishable && n.medianAskingPrice) neighborhoods[slug] = n.medianAskingPrice;
+  }
+  hist.months[month] = {
+    generatedAt: payload.generatedAt,
+    city: payload.cityData.medianAskingPrice,
+    neighborhoods,
+  };
+
+  const tmp = `${HISTORY}.tmp`;
+  writeFileSync(tmp, JSON.stringify(hist, null, 2) + "\n");
+  renameSync(tmp, HISTORY);
+  console.log(`Updated ${HISTORY} (${Object.keys(hist.months).length} month(s) recorded)`);
 }
 
 main().catch((err) => {

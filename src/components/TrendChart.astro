@@ -4,7 +4,11 @@
 // non-zero baseline (it encodes position, not length), so the month-to-month
 // movement is visible and honest as long as the axis range is labeled and the
 // zoom is disclosed. Single series -> the title names it, no legend box.
-const { trend, title = "West Linn median asking price" } = Astro.props;
+const {
+  trend,
+  title = "West Linn median asking price",
+  caption = "Median asking price across all West Linn home types.",
+} = Astro.props;
 
 const n = trend.length;
 const vals = trend.map((d) => d.medianAskingPrice);
@@ -112,8 +116,7 @@ const labelled = pts.filter((p) => p.isMax || p.isMin || p.isLast);
   </div>
 
   <p class="tchart-note">
-    Median asking price across all West Linn home types. The vertical axis is zoomed
-    (starts near {money(yMin)}) to show month-to-month movement.
+    {caption} The vertical axis is zoomed (starts near {money(yMin)}) to show month-to-month movement.
   </p>
 
   <table class="visually-hidden">
