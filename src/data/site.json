@@ -1,6 +1,7 @@
 {
   "brand": "Lewis Realtors",
   "tagline": "West Linn, block by block.",
+  "motto": "Making Your Move Happen",
   "city": "West Linn",
   "state": "Oregon",
   "county": "Clackamas County",
@@ -9,44 +10,109 @@
   "agent": {
     "name": "Melissa Shaw",
     "role": "Founder of Lewis Realtors",
-    "designations": ["Principal Broker in Oregon", "Designated Broker in Washington"],
+    "designations": [
+      "Principal Broker in Oregon",
+      "Designated Broker in Washington"
+    ],
     "headshot": "/assets/melissa-shaw.png",
-    "bioShort": "Two decades in West Linn real estate, more than $108 million sold since 2016, and over a thousand buyers and sellers served.",
+    "bioShort": "23 years in West Linn real estate, more than $128 million sold since 2016, and over a thousand buyers and sellers served.",
     "bio": [
-      "Melissa consistently gets the job done, following through in a professional, friendly, and efficient manner. With over two decades of real estate experience, she has sold more than $108 million in home volume since 2016 and has served over a thousand buyers and sellers.",
+      "Melissa consistently gets the job done, following through in a professional, friendly, and efficient manner. With 23 years of real estate experience, she has sold more than $128 million in home volume since 2016 and has served over a thousand buyers and sellers.",
       "Detail-oriented, naturally attentive, and dedicated to problem-solving, Melissa employs keen negotiating skills and takes a proactive approach to ensure smooth transactions for her clients, always grounded in a deep understanding of her clients' unique personal and financial needs."
     ],
     "stats": [
-      { "value": "$108M+", "label": "In home volume sold since 2016" },
-      { "value": "1,000+", "label": "Buyers and sellers served" },
-      { "value": "20+ yrs", "label": "Of West Linn market experience" }
+      {
+        "value": "$128M+",
+        "label": "In home volume sold since 2016"
+      },
+      {
+        "value": "1,000+",
+        "label": "Buyers and sellers served"
+      },
+      {
+        "value": "23 yrs",
+        "label": "Of West Linn market experience"
+      }
     ]
   },
   "contact": {
     "phone": "(503) 489-8367",
     "phoneHref": "tel:+15034898367",
     "emailLabel": "Send us an email",
+    "poBox": "",
+    "calendly": "",
+    "linktree": "https://linktr.ee/lewisrealtors",
     "hoursText": "Monday to Friday, 9am to 6pm. Saturday by appointment.",
     "hoursSpec": [
-      { "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00" },
-      { "days": ["Saturday"], "opens": "10:00", "closes": "15:00" }
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      {
+        "days": [
+          "Saturday"
+        ],
+        "opens": "10:00",
+        "closes": "15:00"
+      }
     ],
     "social": [
-      { "label": "Instagram", "href": "#" },
-      { "label": "Facebook", "href": "#" },
-      { "label": "LinkedIn", "href": "#" }
+      {
+        "label": "Facebook",
+        "href": "https://www.facebook.com/LewisRealtors"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/lewisrealtors/"
+      },
+      {
+        "label": "YouTube",
+        "href": "https://www.youtube.com/channel/UCsCKr8Gz0d-bCpCSF77Xepg"
+      }
+    ],
+    "socialPending": [
+      {
+        "label": "Instagram",
+        "href": "https://www.instagram.com/lewis_realtors/",
+        "note": "Account reported spammed/disconnected. Re-add once reconnected."
+      }
     ]
   },
   "compliance": {
     "license": "Oregon Principal Broker and Washington Designated Broker. License numbers available on request.",
-    "idx": "The content relating to real estate for sale on this web site comes in part from the IDX program of the RMLS™ of Portland, Oregon. Real estate listings held by brokerage firms other than Lewis Realtors are marked with the RMLS™ logo, and detailed information about these properties includes the names of the listing brokers. Listing content is copyright © 2024 RMLS™, Portland, Oregon. This content last updated on 8/21/2024 4:00am. Some properties which appear for sale on this web site may subsequently have sold or may no longer be available. All information provided is deemed reliable but is not guaranteed and should be independently verified."
+    "dataSource": "Market figures shown on this site are asking prices from active single-family and multi-family listings in ZIP 97068 (condos, townhomes, and manufactured homes excluded), refreshed monthly via RentCast; listing records originate from RMLS. Oregon is a non-disclosure state, so closed sale prices are not a matter of public record and are not displayed here; sold figures are available from Melissa directly. All information is deemed reliable but is not guaranteed and should be independently verified."
   },
   "nav": [
-    { "label": "Neighborhoods", "href": "/#neighborhoods" },
-    { "label": "Services", "href": "/services" },
-    { "label": "Market Reports", "href": "/market-reports" },
-    { "label": "Home Value", "href": "/home-value" },
-    { "label": "About", "href": "/about" },
-    { "label": "Contact", "href": "/contact" }
+    {
+      "label": "Neighborhoods",
+      "href": "/#neighborhoods"
+    },
+    {
+      "label": "Services",
+      "href": "/services"
+    },
+    {
+      "label": "Market Reports",
+      "href": "/market-reports"
+    },
+    {
+      "label": "Home Value",
+      "href": "/home-value"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
   ]
 }

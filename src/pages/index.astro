@@ -12,6 +12,7 @@ import ValuationCTA from "../components/ValuationCTA.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import Testimonial from "../components/Testimonial.astro";
 import LocalProsBridge from "../components/LocalProsBridge.astro";
+import LeadMagnets from "../components/LeadMagnets.astro";
 
 import site from "../data/site.json";
 import neighborhoods from "../data/neighborhoods.json";
@@ -25,7 +26,7 @@ const jsonLd = [realEstateAgent(), faqSchema(faq)];
 
 <Base
   title="West Linn, Oregon Real Estate"
-  description="West Linn, Oregon real estate with Melissa Shaw of Lewis Realtors: free monthly market reports, real sold comps, and block-by-block expertise across 11 neighborhoods."
+  description="West Linn, Oregon real estate with Melissa Shaw of Lewis Realtors: free monthly market reports, live listing data, and block-by-block expertise across 12 neighborhoods."
   jsonLd={jsonLd}
 >
   <Hero />
@@ -40,8 +41,8 @@ const jsonLd = [realEstateAgent(), faqSchema(faq)];
       <div class="hoods-head">
         <SectionHead
           eyebrow="The neighborhoods"
-          title={`Eleven West Linn neighborhoods,<br/>each with its own <span class="script">report</span>.`}
-          lead="The neighborhood is the unit that matters. Start with the one you are watching and pull its market report. Bolton is live now, with the rest publishing as each month's data comes in."
+          title={`Twelve West Linn neighborhoods,<br/>each with its own <span class="script">report</span>.`}
+          lead="The neighborhood is the unit that matters, from the Stafford acreage to historic Bolton. Start with the one you are watching and pull its market report. Bolton is live now, with the rest publishing as each month's data comes in."
         />
         <a class="btn btn--ghost" href="/market-reports">All market reports</a>
       </div>
@@ -69,11 +70,14 @@ const jsonLd = [realEstateAgent(), faqSchema(faq)];
     </div>
   </section>
 
+  <!-- Buyer / seller lead-magnet paths -->
+  <LeadMagnets />
+
   <!-- Local pros bridge -->
   <LocalProsBridge />
 
   <!-- Schools -->
-  <section class="section">
+  <section class="section" style="padding-top: clamp(2rem, 1rem + 3vw, 4rem);">
     <div class="wrap schools" data-reveal>
       <div class="schools-copy">
         <p class="eyebrow">Schools matter here</p>
@@ -108,13 +112,13 @@ const jsonLd = [realEstateAgent(), faqSchema(faq)];
           title={`Real numbers,<br/>not a <span class="script">guess</span>.`}
         />
         <p class="report-lead">
-          Each report is a one-page, plain-English read on a single neighborhood: median price,
-          price per square foot, days on market, list-to-sale ratio, inventory, months of supply,
-          the year-over-year trend, and three recent sold comps. Refreshed every month.
+          Each report is a one-page, plain-English read on a single neighborhood: median asking
+          price, price per square foot, days on market, how many homes are for sale, and the
+          twelve-month West Linn price trend. Refreshed every month.
         </p>
         <ul class="report-points" role="list">
-          <li>Built by hand from live RMLS data</li>
-          <li>Three recent sold comps per neighborhood</li>
+          <li>Refreshed monthly from live listing data</li>
+          <li>Real asking prices, never estimates</li>
           <li>A real local answer one call behind every report</li>
         </ul>
       </div>

@@ -1,0 +1,785 @@
+{
+  "generatedAt": "2026-07-21T00:43:53.029Z",
+  "source": "RentCast",
+  "sourceNote": "Active single-family and multi-family listing data for West Linn, Oregon, sourced from RentCast, assigned to neighborhoods by official boundary (Oregon Metro / Clackamas County). Condos, townhouses, and manufactured homes are excluded. Listing records originate from RMLS. Oregon is a non-disclosure state, so closed sale prices are not available in public records; all figures here are asking prices and listing activity.",
+  "zipCode": "97068",
+  "city": "West Linn",
+  "state": "OR",
+  "propertyTypes": [
+    "Single Family",
+    "Multi-Family"
+  ],
+  "minListingsForMedian": 5,
+  "listingsAssigned": 150,
+  "callsUsed": 2,
+  "cityData": {
+    "medianAskingPrice": 974950,
+    "averageAskingPrice": 1467856,
+    "medianPricePerSqft": 333,
+    "medianDaysOnMarket": 46,
+    "averageDaysOnMarket": 69,
+    "totalListings": 150,
+    "trend": [
+      {
+        "label": "Aug 25",
+        "month": "2025-08",
+        "medianAskingPrice": 880000
+      },
+      {
+        "label": "Sep 25",
+        "month": "2025-09",
+        "medianAskingPrice": 875000
+      },
+      {
+        "label": "Oct 25",
+        "month": "2025-10",
+        "medianAskingPrice": 849900
+      },
+      {
+        "label": "Nov 25",
+        "month": "2025-11",
+        "medianAskingPrice": 855000
+      },
+      {
+        "label": "Dec 25",
+        "month": "2025-12",
+        "medianAskingPrice": 869900
+      },
+      {
+        "label": "Jan 26",
+        "month": "2026-01",
+        "medianAskingPrice": 850000
+      },
+      {
+        "label": "Feb 26",
+        "month": "2026-02",
+        "medianAskingPrice": 828000
+      },
+      {
+        "label": "Mar 26",
+        "month": "2026-03",
+        "medianAskingPrice": 850000
+      },
+      {
+        "label": "Apr 26",
+        "month": "2026-04",
+        "medianAskingPrice": 850000
+      },
+      {
+        "label": "May 26",
+        "month": "2026-05",
+        "medianAskingPrice": 799995
+      },
+      {
+        "label": "Jun 26",
+        "month": "2026-06",
+        "medianAskingPrice": 815000
+      },
+      {
+        "label": "Jul 26",
+        "month": "2026-07",
+        "medianAskingPrice": 849000
+      }
+    ],
+    "lastUpdated": "2026-07-20T00:00:00.000Z"
+  },
+  "neighborhoods": {
+    "bolton": {
+      "activeListings": 9,
+      "sufficient": true,
+      "boundarySource": "official",
+      "publishable": true,
+      "medianAskingPrice": 699999,
+      "medianPricePerSqft": 269.43,
+      "medianDaysOnMarket": 54,
+      "priceRange": {
+        "low": 625000,
+        "high": 1075000
+      },
+      "prices": [
+        499999,
+        569000,
+        625000,
+        685000,
+        699999,
+        825000,
+        1075000,
+        1225000,
+        1295000
+      ],
+      "samples": [
+        {
+          "formattedAddress": "21635 Willamette Dr, West Linn, OR 97068",
+          "price": 569000,
+          "bedrooms": 4,
+          "bathrooms": 2,
+          "squareFootage": 2526,
+          "propertyType": "Single Family",
+          "daysOnMarket": 7,
+          "listedDate": "2026-07-14T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "6343 Failing St, West Linn, OR 97068",
+          "price": 625000,
+          "bedrooms": 3,
+          "bathrooms": 2.5,
+          "squareFootage": 1961,
+          "propertyType": "Single Family",
+          "daysOnMarket": 26,
+          "listedDate": "2026-06-25T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "6021 Caufield St, West Linn, OR 97068",
+          "price": 1295000,
+          "bedrooms": 5,
+          "bathrooms": 3.5,
+          "squareFootage": 5762,
+          "propertyType": "Single Family",
+          "daysOnMarket": 34,
+          "listedDate": "2026-06-17T00:00:00.000Z"
+        }
+      ]
+    },
+    "willamette": {
+      "activeListings": 21,
+      "sufficient": true,
+      "boundarySource": "official",
+      "publishable": true,
+      "medianAskingPrice": 875000,
+      "medianPricePerSqft": 302.98,
+      "medianDaysOnMarket": 39,
+      "priceRange": {
+        "low": 749000,
+        "high": 1150000
+      },
+      "prices": [
+        579900,
+        619900,
+        639000,
+        675000,
+        699000,
+        749000,
+        750000,
+        789000,
+        799000,
+        824000,
+        875000,
+        925000,
+        950000,
+        1049000,
+        1115000,
+        1150000,
+        1168000,
+        1275000,
+        1423200,
+        1445545,
+        1514245
+      ],
+      "samples": [
+        {
+          "formattedAddress": "2423 Tipperary Ct, West Linn, OR 97068",
+          "price": 1150000,
+          "bedrooms": 5,
+          "bathrooms": 3.5,
+          "squareFootage": 4287,
+          "propertyType": "Single Family",
+          "daysOnMarket": 4,
+          "listedDate": "2026-07-17T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "1088 Dollar St, West Linn, OR 97068",
+          "price": 1168000,
+          "bedrooms": 4,
+          "bathrooms": 2.5,
+          "squareFootage": 3902,
+          "propertyType": "Single Family",
+          "daysOnMarket": 2,
+          "listedDate": "2026-07-17T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "23060 Bland Cir, West Linn, OR 97068",
+          "price": 1049000,
+          "bedrooms": 5,
+          "bathrooms": 4,
+          "squareFootage": 3948,
+          "propertyType": "Single Family",
+          "daysOnMarket": 5,
+          "listedDate": "2026-07-16T00:00:00.000Z"
+        }
+      ]
+    },
+    "robinwood": {
+      "activeListings": 12,
+      "sufficient": true,
+      "boundarySource": "official",
+      "publishable": true,
+      "medianAskingPrice": 1222225,
+      "medianPricePerSqft": 378,
+      "medianDaysOnMarket": 58,
+      "priceRange": {
+        "low": 779975,
+        "high": 1589203
+      },
+      "prices": [
+        670000,
+        675000,
+        719900,
+        800000,
+        899900,
+        1204990,
+        1239460,
+        1314990,
+        1585604,
+        1599999,
+        2590000,
+        2950000
+      ],
+      "samples": [
+        {
+          "formattedAddress": "5075 Mapleton Dr, West Linn, OR 97068",
+          "price": 2950000,
+          "bedrooms": 6,
+          "bathrooms": 4.5,
+          "squareFootage": 6196,
+          "propertyType": "Single Family",
+          "daysOnMarket": 6,
+          "listedDate": "2026-07-15T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "19490 Wilderness Dr, West Linn, OR 97068",
+          "price": 719900,
+          "bedrooms": 3,
+          "bathrooms": 2.5,
+          "squareFootage": 1852,
+          "propertyType": "Single Family",
+          "daysOnMarket": 19,
+          "listedDate": "2026-07-02T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "2785 Arbor Dr, West Linn, OR 97068",
+          "price": 800000,
+          "bedrooms": 4,
+          "bathrooms": 3,
+          "squareFootage": 2435,
+          "propertyType": "Single Family",
+          "daysOnMarket": 26,
+          "listedDate": "2026-06-25T00:00:00.000Z"
+        }
+      ]
+    },
+    "sunset": {
+      "activeListings": 22,
+      "sufficient": true,
+      "boundarySource": "official",
+      "publishable": true,
+      "medianAskingPrice": 785000,
+      "medianPricePerSqft": 312,
+      "medianDaysOnMarket": 68,
+      "priceRange": {
+        "low": 641225,
+        "high": 983500
+      },
+      "prices": [
+        425000,
+        450000,
+        567000,
+        609900,
+        619000,
+        625000,
+        689900,
+        724900,
+        724950,
+        759000,
+        775000,
+        795000,
+        795000,
+        799900,
+        899000,
+        949000,
+        995000,
+        1000000,
+        1290000,
+        1325000,
+        1350000,
+        2500000
+      ],
+      "samples": [
+        {
+          "formattedAddress": "4355 Riverview Ave, West Linn, OR 97068",
+          "price": 2500000,
+          "bedrooms": 3,
+          "bathrooms": 2,
+          "squareFootage": 13500,
+          "propertyType": "Multi-Family",
+          "daysOnMarket": 6,
+          "listedDate": "2026-07-15T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "2613 Beacon Hill Dr, West Linn, OR 97068",
+          "price": 949000,
+          "bedrooms": 4,
+          "bathrooms": 2.5,
+          "squareFootage": 3491,
+          "propertyType": "Single Family",
+          "daysOnMarket": 12,
+          "listedDate": "2026-07-09T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "2551 Cambridge St, West Linn, OR 97068",
+          "price": 425000,
+          "bedrooms": 3,
+          "bathrooms": 1,
+          "squareFootage": 996,
+          "propertyType": "Single Family",
+          "daysOnMarket": 12,
+          "listedDate": "2026-07-09T00:00:00.000Z"
+        }
+      ]
+    },
+    "rosemont-summit": {
+      "activeListings": 9,
+      "sufficient": true,
+      "boundarySource": "official",
+      "publishable": true,
+      "medianAskingPrice": 849900,
+      "medianPricePerSqft": 359.09,
+      "medianDaysOnMarket": 68,
+      "priceRange": {
+        "low": 783500,
+        "high": 1699999
+      },
+      "prices": [
+        699500,
+        775000,
+        783500,
+        799950,
+        849900,
+        1175000,
+        1699999,
+        1749500,
+        1895000
+      ],
+      "samples": [
+        {
+          "formattedAddress": "21818 Shannon Ln, West Linn, OR 97068",
+          "price": 1895000,
+          "bedrooms": 5,
+          "bathrooms": 4.5,
+          "squareFootage": 4688,
+          "propertyType": "Single Family",
+          "daysOnMarket": 4,
+          "listedDate": "2026-07-17T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "21280 Serango Dr, West Linn, OR 97068",
+          "price": 849900,
+          "bedrooms": 3,
+          "bathrooms": 3,
+          "squareFootage": 2945,
+          "propertyType": "Single Family",
+          "daysOnMarket": 32,
+          "listedDate": "2026-06-19T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "5099 Woodwinds Ct, West Linn, OR 97068",
+          "price": 699500,
+          "bedrooms": 4,
+          "bathrooms": 2.5,
+          "squareFootage": 2788,
+          "propertyType": "Single Family",
+          "daysOnMarket": 39,
+          "listedDate": "2026-06-12T00:00:00.000Z"
+        }
+      ]
+    },
+    "marylhurst": {
+      "activeListings": 8,
+      "sufficient": true,
+      "boundarySource": "official",
+      "publishable": true,
+      "medianAskingPrice": 799925,
+      "medianPricePerSqft": 321,
+      "medianDaysOnMarket": 56,
+      "priceRange": {
+        "low": 790500,
+        "high": 915500
+      },
+      "prices": [
+        749900,
+        765000,
+        799000,
+        799900,
+        799950,
+        879000,
+        1025000,
+        1275000
+      ],
+      "samples": [
+        {
+          "formattedAddress": "725 Marylhurst Dr, West Linn, OR 97068",
+          "price": 879000,
+          "bedrooms": 4,
+          "bathrooms": 3,
+          "squareFootage": 2400,
+          "propertyType": "Single Family",
+          "daysOnMarket": 11,
+          "listedDate": "2026-07-10T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "2592 Hillcrest Ct, West Linn, OR 97068",
+          "price": 765000,
+          "bedrooms": 3,
+          "bathrooms": 3,
+          "squareFootage": 2466,
+          "propertyType": "Single Family",
+          "daysOnMarket": 26,
+          "listedDate": "2026-06-25T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "2695 Hillcrest Dr, West Linn, OR 97068",
+          "price": 799950,
+          "bedrooms": 3,
+          "bathrooms": 2.5,
+          "squareFootage": 3368,
+          "propertyType": "Single Family",
+          "daysOnMarket": 40,
+          "listedDate": "2026-06-11T00:00:00.000Z"
+        }
+      ]
+    },
+    "hidden-springs": {
+      "activeListings": 15,
+      "sufficient": true,
+      "boundarySource": "official",
+      "publishable": true,
+      "medianAskingPrice": 839000,
+      "medianPricePerSqft": 289.18,
+      "medianDaysOnMarket": 21,
+      "priceRange": {
+        "low": 737450,
+        "high": 934950
+      },
+      "prices": [
+        689999,
+        724900,
+        729000,
+        729900,
+        745000,
+        775000,
+        799900,
+        839000,
+        850000,
+        875900,
+        899900,
+        970000,
+        1150000,
+        1189000,
+        1896000
+      ],
+      "samples": [
+        {
+          "formattedAddress": "19602 Wildwood Dr, West Linn, OR 97068",
+          "price": 850000,
+          "bedrooms": 4,
+          "bathrooms": 3,
+          "squareFootage": 2802,
+          "propertyType": "Single Family",
+          "daysOnMarket": 5,
+          "listedDate": "2026-07-16T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "19757 Bellevue Way, West Linn, OR 97068",
+          "price": 899900,
+          "bedrooms": 4,
+          "bathrooms": 2.5,
+          "squareFootage": 3278,
+          "propertyType": "Single Family",
+          "daysOnMarket": 5,
+          "listedDate": "2026-07-16T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "2935 Ascot Cir, West Linn, OR 97068",
+          "price": 729000,
+          "bedrooms": 4,
+          "bathrooms": 2.5,
+          "squareFootage": 2230,
+          "propertyType": "Single Family",
+          "daysOnMarket": 9,
+          "listedDate": "2026-07-12T00:00:00.000Z"
+        }
+      ]
+    },
+    "parker-crest": {
+      "activeListings": 7,
+      "sufficient": true,
+      "boundarySource": "official",
+      "publishable": true,
+      "medianAskingPrice": 759900,
+      "medianPricePerSqft": 332.96,
+      "medianDaysOnMarket": 26,
+      "priceRange": {
+        "low": 624450,
+        "high": 962200
+      },
+      "prices": [
+        579000,
+        599000,
+        649900,
+        759900,
+        949500,
+        974900,
+        1269500
+      ],
+      "samples": [
+        {
+          "formattedAddress": "3204 Sabo Ln, West Linn, OR 97068",
+          "price": 649900,
+          "bedrooms": 4,
+          "bathrooms": 2.5,
+          "squareFootage": 2519,
+          "propertyType": "Single Family",
+          "daysOnMarket": 4,
+          "listedDate": "2026-07-17T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "3618 Wild Rose Loop, West Linn, OR 97068",
+          "price": 579000,
+          "bedrooms": 3,
+          "bathrooms": 2.5,
+          "squareFootage": 1733,
+          "propertyType": "Single Family",
+          "daysOnMarket": 5,
+          "listedDate": "2026-07-16T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "4823 Ireland Ln, West Linn, OR 97068",
+          "price": 1269500,
+          "bedrooms": 5,
+          "bathrooms": 3.5,
+          "squareFootage": 3605,
+          "propertyType": "Single Family",
+          "daysOnMarket": 24,
+          "listedDate": "2026-06-27T00:00:00.000Z"
+        }
+      ]
+    },
+    "skyline-ridge": {
+      "activeListings": 5,
+      "sufficient": true,
+      "boundarySource": "official",
+      "publishable": true,
+      "medianAskingPrice": 975000,
+      "medianPricePerSqft": 283.2,
+      "medianDaysOnMarket": 6,
+      "priceRange": {
+        "low": 929900,
+        "high": 1285000
+      },
+      "prices": [
+        889000,
+        929900,
+        975000,
+        1285000,
+        1399000
+      ],
+      "samples": [
+        {
+          "formattedAddress": "1334 Troon Dr, West Linn, OR 97068",
+          "price": 975000,
+          "bedrooms": 4,
+          "bathrooms": 3,
+          "squareFootage": 3614,
+          "propertyType": "Single Family",
+          "daysOnMarket": 4,
+          "listedDate": "2026-07-17T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "1496 Braemar Dr, West Linn, OR 97068",
+          "price": 929900,
+          "bedrooms": 3,
+          "bathrooms": 2.5,
+          "squareFootage": 3380,
+          "propertyType": "Single Family",
+          "daysOnMarket": 4,
+          "listedDate": "2026-07-17T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "1607 Arran Ct, West Linn, OR 97068",
+          "price": 1285000,
+          "bedrooms": 4,
+          "bathrooms": 3.5,
+          "squareFootage": 3471,
+          "propertyType": "Single Family",
+          "daysOnMarket": 6,
+          "listedDate": "2026-07-15T00:00:00.000Z"
+        }
+      ]
+    },
+    "savanna-oaks": {
+      "activeListings": 15,
+      "sufficient": true,
+      "boundarySource": "official",
+      "publishable": true,
+      "medianAskingPrice": 1275000,
+      "medianPricePerSqft": 330.62,
+      "medianDaysOnMarket": 25,
+      "priceRange": {
+        "low": 1095000,
+        "high": 1672500
+      },
+      "prices": [
+        950000,
+        980000,
+        999000,
+        1095000,
+        1095000,
+        1175000,
+        1185000,
+        1275000,
+        1275000,
+        1549999,
+        1650000,
+        1695000,
+        2100000,
+        2100000,
+        2375000
+      ],
+      "samples": [
+        {
+          "formattedAddress": "2235 Crestview Dr, West Linn, OR 97068",
+          "price": 1185000,
+          "bedrooms": 6,
+          "bathrooms": 3,
+          "squareFootage": 4021,
+          "propertyType": "Single Family",
+          "daysOnMarket": 4,
+          "listedDate": "2026-07-17T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "2751 Dahlia Dr, West Linn, OR 97068",
+          "price": 1095000,
+          "bedrooms": 5,
+          "bathrooms": 3.5,
+          "squareFootage": 3312,
+          "propertyType": "Single Family",
+          "daysOnMarket": 5,
+          "listedDate": "2026-07-16T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "3371 Coeur D Alene Dr, West Linn, OR 97068",
+          "price": 950000,
+          "bedrooms": 4,
+          "bathrooms": 3,
+          "squareFootage": 3380,
+          "propertyType": "Single Family",
+          "daysOnMarket": 5,
+          "listedDate": "2026-07-16T00:00:00.000Z"
+        }
+      ]
+    },
+    "bht-enclaves": {
+      "activeListings": 3,
+      "sufficient": false,
+      "boundarySource": "official",
+      "publishable": false,
+      "medianAskingPrice": null,
+      "medianPricePerSqft": null,
+      "medianDaysOnMarket": null,
+      "priceRange": null,
+      "prices": [
+        780000,
+        919000,
+        1475000
+      ],
+      "samples": [
+        {
+          "formattedAddress": "3914 Wellington Pl, West Linn, OR 97068",
+          "price": 919000,
+          "bedrooms": 4,
+          "bathrooms": 2.5,
+          "squareFootage": 3170,
+          "propertyType": "Single Family",
+          "daysOnMarket": 12,
+          "listedDate": "2026-07-09T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "3921 Northhampton Ct, West Linn, OR 97068",
+          "price": 1475000,
+          "bedrooms": 5,
+          "bathrooms": 4.5,
+          "squareFootage": 5315,
+          "propertyType": "Single Family",
+          "daysOnMarket": 13,
+          "listedDate": "2026-07-08T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "3821 Fairhaven Dr, West Linn, OR 97068",
+          "price": 780000,
+          "bedrooms": 4,
+          "bathrooms": 2.5,
+          "squareFootage": 2911,
+          "propertyType": "Single Family",
+          "daysOnMarket": 68,
+          "listedDate": "2026-05-14T00:00:00.000Z"
+        }
+      ]
+    },
+    "stafford": {
+      "activeListings": 10,
+      "sufficient": true,
+      "boundarySource": "official",
+      "publishable": true,
+      "medianAskingPrice": 2349000,
+      "medianPricePerSqft": 439,
+      "medianDaysOnMarket": 47,
+      "priceRange": {
+        "low": 1861250,
+        "high": 2487500
+      },
+      "prices": [
+        1500000,
+        1690000,
+        1750000,
+        2195000,
+        2300000,
+        2398000,
+        2450000,
+        2500000,
+        3750000,
+        4295000
+      ],
+      "samples": [
+        {
+          "formattedAddress": "25125 Sw Petes Mountain Rd, West Linn, OR 97068",
+          "price": 3750000,
+          "bedrooms": 4,
+          "bathrooms": 4.5,
+          "squareFootage": 7138,
+          "propertyType": "Single Family",
+          "daysOnMarket": 11,
+          "listedDate": "2026-07-10T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "22234 Sw Ribera Ln, West Linn, OR 97068",
+          "price": 1690000,
+          "bedrooms": 5,
+          "bathrooms": 3,
+          "squareFootage": 3739,
+          "propertyType": "Single Family",
+          "daysOnMarket": 12,
+          "listedDate": "2026-07-09T00:00:00.000Z"
+        },
+        {
+          "formattedAddress": "1488 Sw Borland Rd, West Linn, OR 97068",
+          "price": 1500000,
+          "bedrooms": 5,
+          "bathrooms": 3,
+          "squareFootage": 3100,
+          "propertyType": "Single Family",
+          "daysOnMarket": 16,
+          "listedDate": "2026-07-05T00:00:00.000Z"
+        }
+      ]
+    }
+  }
+}

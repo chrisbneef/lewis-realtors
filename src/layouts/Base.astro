@@ -7,7 +7,7 @@ import { webSite, webPage } from "../lib/schema.js";
 
 const {
   title,
-  description = "Hyper-local West Linn, Oregon real estate with Melissa Shaw of Lewis Realtors. Neighborhood market reports, sold comps, and block-by-block expertise.",
+  description = "Hyper-local West Linn, Oregon real estate with Melissa Shaw of Lewis Realtors. Neighborhood market reports, live listing data, and block-by-block expertise.",
   jsonLd = [],
   ogImage = "/assets/lewis-logo.png",
 } = Astro.props;
@@ -52,11 +52,14 @@ const schemas = [
       document.documentElement.dataset.theme = "light";
     </script>
 
-    <!-- Fonts: elegant serif display, clean sans body, script accent -->
+    <!-- Fonts approximate the Brand Guide faces (Classico / Venti CF / Haute
+         Couture) with Marcellus (elegant display), Jost (clean body), and
+         Parisienne (signature accent). Replace with the licensed brand fonts
+         when available. Cormorant Garamond stays loaded as a display fallback. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Pinyon+Script&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Parisienne&display=swap"
       rel="stylesheet"
     />
 

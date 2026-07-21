@@ -1,12 +1,16 @@
 ---
+import { priceLabel } from "../lib/market.js";
 const { hood } = Astro.props;
 const href = `/neighborhoods/${hood.slug}`;
 const num = String(hood.order).padStart(2, "0");
+const range = priceLabel(hood.slug);
 ---
 
 <a class="hood-card card" href={href} data-reveal>
-  <div class="hood-photo">
-    <img src={hood.image} alt={`${hood.name}, West Linn, Oregon`} loading="lazy" width="704" height="440" />
+  <div class:list={["hood-photo", { "hood-photo--placeholder": !hood.image }]}>
+    {hood.image
+      ? <img src={hood.image} alt={`${hood.name}, West Linn, Oregon`} loading="lazy" width="704" height="440" />
+      : <span class="hood-photo-mark" aria-hidden="true">{hood.character}</span>}
     <span class="hood-scrim" aria-hidden="true"></span>
     <span class="hood-num">{num}</span>
     {hood.complete
@@ -17,7 +21,7 @@ const num = String(hood.order).padStart(2, "0");
     <h3 class="hood-name">{hood.name}</h3>
     <p class="hood-tagline">{hood.tagline}</p>
     <div class="hood-foot">
-      <span class="hood-range">{hood.range}</span>
+      <span class="hood-range">{range}</span>
       <span class="link arrow-only" aria-hidden="true"><span class="arrow">&rarr;</span></span>
     </div>
   </div>
@@ -44,6 +48,25 @@ const num = String(hood.order).padStart(2, "0");
     transition: transform 0.6s var(--ease);
   }
   .hood-card:hover .hood-photo img { transform: scale(1.05); }
+  /* Elegant fallback for neighborhoods still awaiting photography. Num + pill
+     stay top-aligned like photo cards; the character line sits at the bottom so
+     nothing collides with the numeral. */
+  .hood-photo--placeholder {
+    background:
+      radial-gradient(120% 100% at 100% 0%, color-mix(in srgb, var(--gold) 26%, transparent), transparent 60%),
+      linear-gradient(150deg, var(--noir-soft), #2b2924 70%);
+  }
+  .hood-photo-mark {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    max-width: 70%;
+    font-family: var(--font-display);
+    font-size: 0.98rem;
+    line-height: 1.25;
+    color: color-mix(in srgb, var(--gold-bright) 88%, #fff);
+    text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+  }
   .hood-scrim {
     position: absolute;
     inset: 0;

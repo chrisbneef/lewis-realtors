@@ -11,14 +11,14 @@ const ready = hoods.filter((h) => h.complete).length;
 
 <Base
   title="Market Reports"
-  description="Monthly West Linn neighborhood market reports: median price, days on market, list-to-sale ratio, inventory, and recent sold comps, refreshed from live RMLS data."
+  description="Monthly West Linn neighborhood market reports: median asking price, days on market, active inventory, and the twelve-month price trend, refreshed from live listing data."
   jsonLd={[realEstateAgent()]}
 >
   <PageHero
     crumb="Market Reports"
     eyebrow="The conversion centerpiece"
     title={`Every West Linn<br/>neighborhood, <span class="script">measured</span>.`}
-    lead="One report per neighborhood, refreshed every month by hand from live RMLS data. Pick a neighborhood to see its snapshot and request the full report."
+    lead="One report per neighborhood, refreshed every month from live listing data. Pick a neighborhood to see its snapshot and request the full report."
   />
 
   <section class="section--tight">
@@ -31,8 +31,9 @@ const ready = hoods.filter((h) => h.complete).length;
         {hoods.map((hood) => <NeighborhoodCard hood={hood} />)}
       </div>
       <p class="mr-note" data-reveal>
-        Reports are rebuilt monthly from the office RMLS pulls. We never estimate or invent figures.
-        Where a number is not ready, the page says so plainly.
+        Reports refresh monthly from live listing data, whose records originate from RMLS. We never
+        estimate or invent figures, and where a number is not confirmed the page says so plainly.
+        Oregon does not make closed sale prices public record, so Melissa pulls sold figures directly from RMLS and shares them on request.
       </p>
     </div>
   </section>

@@ -27,12 +27,18 @@ or editing copy.
 - Phone: (503) 489-8367.
 - The IDX / RMLS disclaimer lives in the footer and must stay verbatim (see `src/data/site.json`).
 
-## Design system
+## Design system (from the Brand Guide by Chelsey Marie)
 
-- Colors: Matte Noir `#1A1A1A`, Gilded Edge Gold `#C8A04A` (metallic gradient), Azure Sky Blue
-  `#6C82A5`, Parchment Cream `#F6F1E7`. Tokens in `src/styles/tokens.css`.
-- Type: Cormorant Garamond (display serif), Jost (body sans), Pinyon Script (accent only).
-- Light and dark themes both supported; toggle persists to `localStorage`.
+- Motto: **Making Your Move Happen™**. Brand values: Service, Integrity, Experience.
+- Colors: Lux Black `#000000` (used as `--noir` at `#0a0a0a`), White `#FFFFFF`, Soft Grey / cream
+  `#FFF6D5` (used as `--cream`), Matte Gold `#C1AC5E` (metallic gradient), Sky `#9CD3EF`
+  (used as `--azure`; a deeper `--azure-deep` is reserved for text contrast). Tokens in
+  `src/styles/tokens.css`.
+- Type: the brand faces are **Classico** (heading), **Venti CF** (body), **Haute Couture** (accent
+  signature). These are commercial fonts; the site approximates them with **Marcellus** (display),
+  **Jost** (body), and **Parisienne** (script) via Google Fonts. To go pixel-exact, self-host the
+  licensed brand fonts and swap the vars in `tokens.css` + the link in `Base.astro`.
+- Light and dark themes both supported; site is currently locked to light.
 
 ## The neighborhood is the unit
 

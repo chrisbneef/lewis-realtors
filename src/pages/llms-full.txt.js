@@ -4,6 +4,7 @@ import neighborhoods from "../data/neighborhoods.json";
 import services from "../data/services.json";
 import faq from "../data/faq.json";
 import { SITE_URL } from "../lib/site-url.js";
+import { hoodMarket, moneyFull } from "../lib/market.js";
 
 export const prerender = true;
 
@@ -15,7 +16,7 @@ export async function GET() {
   L.push(`# ${site.brand}: ${site.city}, ${site.state} Real Estate`);
   L.push("");
   L.push(
-    `${site.brand} is a hyper-local real estate office serving ${site.city}, ${site.state} (ZIP ${site.zip}, ${site.county}). The strategy treats each neighborhood as its own deep resource: every one of the ${hoods.length} ${site.city} neighborhoods gets a free, monthly market report covering median sale price, price per square foot, days on market, list-to-sale ratio, active inventory, months of supply, the year-over-year trend, and recent sold comps.`
+    `${site.brand} is a hyper-local real estate office serving ${site.city}, ${site.state} (ZIP ${site.zip}, ${site.county}). The strategy treats each neighborhood as its own deep resource: every one of the ${hoods.length} ${site.city} neighborhoods gets a free, monthly market report covering the median asking price, price per square foot, days on market, active inventory, and the twelve-month price trend. Oregon is a non-disclosure state, so closed sale prices are not public record; those come from RMLS via Melissa directly.`
   );
   L.push("");
   L.push(`Phone: ${site.contact.phone}. Hours: ${site.contact.hoursText}. School district: ${site.district}.`);
@@ -36,7 +37,11 @@ export async function GET() {
   L.push(`## ${site.city} neighborhoods`);
   for (const h of hoods) {
     L.push(`### ${h.name}`);
-    L.push(`${h.tagline} Character: ${h.character}. Price range: ${h.range}. Best service fit: ${h.serviceFit}. ${u(`/neighborhoods/${h.slug}`)}`);
+    const m = hoodMarket(h.slug);
+    const mkt = m?.publishable
+      ? `${m.activeListings} active listings; median asking price ${moneyFull(m.medianAskingPrice)} (asking, not sold; Oregon is a non-disclosure state).`
+      : `Active listings are aggregated into the West Linn city figures this month.`;
+    L.push(`${h.tagline} Character: ${h.character}. ${mkt} Best service fit: ${h.serviceFit}. ${u(`/neighborhoods/${h.slug}`)}`);
     if (h.complete) {
       if (h.schools) {
         L.push(`School feeders: ${h.schools.elementary} to ${h.schools.middle} to ${h.schools.high}.`);
@@ -65,7 +70,7 @@ export async function GET() {
   L.push("## Compliance");
   L.push(site.compliance.license);
   L.push("");
-  L.push(site.compliance.idx);
+  L.push(site.compliance.dataSource);
 
   return new Response(L.join("\n") + "\n", {
     headers: { "Content-Type": "text/plain; charset=utf-8" },

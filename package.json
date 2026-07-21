@@ -7,7 +7,12 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "refresh:market": "node scripts/refresh-market-data.mjs",
+    "refresh:market:dry": "node scripts/refresh-market-data.mjs --dry-run"
+  },
+  "engines": {
+    "node": ">=20 <23"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

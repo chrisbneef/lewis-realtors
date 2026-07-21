@@ -1,0 +1,72 @@
+---
+// Two distinct conversion paths so buyers and sellers are routed to the right
+// resource instead of the same page. These front the "Moving to West Linn" and
+// "Moving from West Linn" guides Melissa is preparing; until the PDFs are ready
+// each card sends the visitor to the matching form (neighborhood reports for
+// incoming buyers, a home valuation for outgoing sellers).
+const magnets = [
+  {
+    tag: "For buyers & relocating families",
+    title: "Moving to West Linn",
+    copy: "The insider's guide to landing in the right West Linn neighborhood: school feeders, commute, price ranges, and what each pocket is really like, from Stafford acreage to historic Bolton.",
+    cta: "Get the relocation guide",
+    href: "/#market-report",
+    accent: "gold",
+  },
+  {
+    tag: "For sellers & snowbirds",
+    title: "Moving from West Linn",
+    copy: "Downsizing, chasing the winter sun, or moving closer to family? See what your home is worth today and how Melissa markets it with custom video and community-first reach.",
+    cta: "Start with your home value",
+    href: "/home-value",
+    accent: "azure",
+  },
+];
+---
+
+<section class="section" id="guides" aria-label="Free guides for buyers and sellers">
+  <div class="wrap">
+    <div class="lm-head" data-reveal>
+      <p class="eyebrow eyebrow--center">Free guides</p>
+      <h2 class="center">Whether you are moving <span class="script">in</span> or moving <span class="script">on</span>.</h2>
+    </div>
+    <div class="lm-grid">
+      {magnets.map((m, i) => (
+        <div class:list={["lm-card card", `lm-card--${m.accent}`]} data-reveal style={`--reveal-delay: ${i * 100}ms`}>
+          <p class="lm-tag">{m.tag}</p>
+          <h3 class="lm-title">{m.title}</h3>
+          <p class="lm-copy">{m.copy}</p>
+          <a class:list={["btn", { "btn--gold": m.accent === "gold", "btn--sky": m.accent === "azure" }]} href={m.href}>{m.cta}</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .lm-head { margin-bottom: 2.6rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+  .lm-head h2 { max-width: 20ch; }
+  .lm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+  .lm-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: clamp(1.8rem, 1.2rem + 2vw, 2.8rem);
+    border-top: 3px solid var(--gold-deep);
+  }
+  .lm-card--azure { border-top-color: var(--azure-deep); }
+  .lm-tag {
+    font-size: 0.7rem;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .lm-title { font-size: clamp(1.7rem, 1.3rem + 1.6vw, 2.4rem); }
+  .lm-copy { color: var(--ink-soft); flex-grow: 1; max-width: 46ch; }
+  .lm-card .btn { margin-top: 0.6rem; }
+
+  @media (max-width: 760px) {
+    .lm-grid { grid-template-columns: 1fr; }
+  }
+</style>

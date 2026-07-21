@@ -1,5 +1,6 @@
 // JSON-LD builders for Lewis Realtors. Keep these factual; do not invent data.
 import site from "../data/site.json";
+import boundaries from "../data/neighborhood-boundaries.json";
 import { SITE_URL } from "./site-url.js";
 
 const ORIGIN = SITE_URL;
@@ -114,12 +115,14 @@ export function placeSchema(hood) {
       postalCode: site.zip,
       addressCountry: "US",
     },
-    ...(hood.map?.center
+    // Centroid from the official boundary (stored [lng, lat]); every
+    // neighborhood carries coordinates now, not just Bolton.
+    ...(boundaries.neighborhoods[hood.slug]?.centroid
       ? {
           geo: {
             "@type": "GeoCoordinates",
-            latitude: hood.map.center[0],
-            longitude: hood.map.center[1],
+            latitude: boundaries.neighborhoods[hood.slug].centroid[1],
+            longitude: boundaries.neighborhoods[hood.slug].centroid[0],
           },
         }
       : {}),

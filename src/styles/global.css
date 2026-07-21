@@ -28,7 +28,7 @@ body {
   color: var(--ink);
   font-family: var(--font-body);
   font-size: var(--fs-body);
-  font-weight: 300;
+  font-weight: 400;
   line-height: var(--leading-body);
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
@@ -45,9 +45,11 @@ ul[role="list"] { list-style: none; padding: 0; }
 /* --- Headings ----------------------------------------------------------- */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 500;
+  /* Marcellus ships a single weight; 400 keeps headings elegant and avoids
+     synthetic faux-bold. Letter-spacing eased since Marcellus sets wider. */
+  font-weight: 400;
   line-height: var(--leading-tight);
-  letter-spacing: -0.012em;
+  letter-spacing: -0.005em;
   color: var(--ink);
   overflow-wrap: break-word;
 }
@@ -163,6 +165,16 @@ h4 { font-size: var(--fs-h4); }
 }
 .btn--gold::after { background: var(--noir); }
 .btn--gold:hover { color: var(--gold-bright); border-color: var(--noir); }
+
+.btn--sky {
+  --btn-bg: transparent;
+  --btn-fg: var(--noir);
+  color: var(--noir);
+  border-color: var(--azure-deep);
+  background: var(--grad-azure);
+}
+.btn--sky::after { background: var(--noir); }
+.btn--sky:hover { color: var(--azure-bright); border-color: var(--noir); }
 
 .btn--ghost {
   --btn-bg: transparent;
@@ -282,6 +294,8 @@ h4 { font-size: var(--fs-h4); }
   padding: 0.25em 0.7em;
   vertical-align: middle;
 }
+/* on dark surfaces the deep sky reads too dim; use the bright sky instead */
+.section--ink .tag-sample { color: var(--azure-bright); border-color: color-mix(in srgb, var(--azure-bright) 60%, transparent); }
 
 /* --- Scroll reveal ------------------------------------------------------ */
 [data-reveal] {

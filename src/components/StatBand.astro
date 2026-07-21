@@ -1,28 +1,33 @@
 ---
-// West Linn market overview. Values are clearly-labeled placeholders until the
-// first RMLS pull is loaded. Per brand rules we never invent market numbers.
+// West Linn market overview, refreshed monthly from src/data/market.json.
+// These are ASKING prices and listing activity. Oregon is a non-disclosure
+// state, so closed sale prices are not public record - never relabel these
+// as sale/sold figures.
+import market from "../data/market.json";
+import neighborhoods from "../data/neighborhoods.json";
+
+const c = market.cityData;
+const money = (n) => (n == null ? null : `$${Math.round(n).toLocaleString()}`);
+
 const stats = [
-  { value: "97068", label: "West Linn ZIP", sample: false },
-  { value: "11", label: "Neighborhoods we cover", sample: false },
-  { value: "Sample", label: "Median sale price", sample: true },
-  { value: "Sample", label: "Avg days on market", sample: true },
-];
+  { value: market.zipCode, label: "West Linn ZIP", market: false },
+  { value: String(neighborhoods.length), label: "Neighborhoods we cover", market: false },
+  { value: money(c.medianAskingPrice), label: "Median asking price", market: true },
+  { value: String(c.averageDaysOnMarket), label: "Avg days on market", market: true },
+].filter((s) => s.value != null);
 ---
 
 <section class="band section--ink">
   <div class="wrap band-inner">
     <p class="band-intro" data-reveal>
-      One city, gone deep. Here is West Linn at a glance, refreshed monthly from
-      live RMLS data.
+      One city, gone deep. Here is what is on the market in West Linn right now,
+      refreshed monthly from live listing data.
     </p>
     <ul class="band-stats" role="list">
       {stats.map((s, i) => (
         <li data-reveal style={`--reveal-delay: ${i * 80}ms`}>
-          <span class={`band-val ${s.sample ? "band-val--market" : "band-val--place"}`}>{s.value}</span>
-          <span class="band-label">
-            {s.label}
-            {s.sample && <span class="tag-sample">Sample</span>}
-          </span>
+          <span class={`band-val ${s.market ? "band-val--market" : "band-val--place"}`}>{s.value}</span>
+          <span class="band-label">{s.label}</span>
         </li>
       ))}
     </ul>
@@ -62,7 +67,9 @@ const stats = [
     font-weight: 600;
     line-height: 1;
   }
-  .band-val--market { color: var(--gold-bright); }
+  /* Thin display strokes read faint in gold on near-black; brighten + a soft
+     glow so the placeholder value stays clearly legible on the dark band. */
+  .band-val--market { color: #f2e4b0; text-shadow: 0 0 20px rgba(242, 228, 176, 0.35); }
   .band-val--place { color: var(--azure-bright); }
   .band-label {
     display: block;

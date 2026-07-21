@@ -4,6 +4,7 @@ import site from "../data/site.json";
 import neighborhoods from "../data/neighborhoods.json";
 import services from "../data/services.json";
 import { SITE_URL } from "../lib/site-url.js";
+import { hoodMarket, money } from "../lib/market.js";
 
 export const prerender = true;
 
@@ -19,7 +20,7 @@ export async function GET() {
   );
   L.push("");
   L.push(
-    `${site.agent.name} has 20+ years of experience, more than $108 million in homes sold since 2016, and has served 1,000+ buyers and sellers. Phone: ${site.contact.phone}. Hours: ${site.contact.hoursText}`
+    `${site.agent.name} has 23 years of experience, more than $128 million in homes sold since 2016, and has served 1,000+ buyers and sellers. Motto: "${site.motto}." Phone: ${site.contact.phone}. Hours: ${site.contact.hoursText}`
   );
   L.push("");
 
@@ -36,13 +37,16 @@ export async function GET() {
 
   L.push(`## ${site.city} neighborhoods`);
   for (const h of hoods) {
-    L.push(`- [${h.name}](${u(`/neighborhoods/${h.slug}`)}): ${h.character}; price range ${h.range}; fits ${h.serviceFit.toLowerCase()}.`);
+    const m = hoodMarket(h.slug);
+    const price = m?.publishable ? `median asking ${money(m.medianAskingPrice)}` : `part of the West Linn market`;
+    L.push(`- [${h.name}](${u(`/neighborhoods/${h.slug}`)}): ${h.character}; ${price}; fits ${h.serviceFit.toLowerCase()}.`);
   }
   L.push("");
 
   L.push("## Notes");
   L.push(`- School district: ${site.district}.`);
-  L.push("- Market figures are refreshed monthly from RMLS data. Sample values are clearly labeled until the first live pull.");
+  L.push("- Site market figures are asking prices from active listings, refreshed monthly from RentCast; listing records originate from RMLS.");
+  L.push("- Oregon is a non-disclosure state, so closed sale prices are not public record. Melissa provides sold figures from RMLS on request.");
   L.push("- Content is neighborly and factual; market numbers are never invented.");
 
   return new Response(L.join("\n") + "\n", {

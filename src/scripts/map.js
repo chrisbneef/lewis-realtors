@@ -1,5 +1,6 @@
 /* Lewis Realtors - neighborhood boundary map (Leaflet via CDN).
-   Reads center / zoom / boundary polygon from a JSON script tag on the page. */
+   Reads a simplified official boundary from a JSON script tag:
+   { display: MultiPolygon coordinates ([lng,lat]), bbox: [minLng,minLat,maxLng,maxLat] }. */
 
 (function () {
   "use strict";
@@ -13,10 +14,14 @@
   } catch (e) {
     return;
   }
+  if (!cfg || !Array.isArray(cfg.display) || !cfg.display.length) return;
+
+  const [minLng, minLat, maxLng, maxLat] = cfg.bbox || [-122.65, 45.35, -122.6, 45.38];
+  const center = [(minLat + maxLat) / 2, (minLng + maxLng) / 2]; // [lat, lng]
 
   const map = L.map(el, {
-    center: cfg.center,
-    zoom: cfg.zoom || 14,
+    center,
+    zoom: 14,
     scrollWheelZoom: false,
     zoomControl: true,
     attributionControl: true,
@@ -32,13 +37,12 @@
     }
   ).addTo(map);
 
-  if (Array.isArray(cfg.boundary) && cfg.boundary.length) {
-    const poly = L.polygon(cfg.boundary, {
-      color: "#4d6488",
-      weight: 2,
-      fillColor: "#6c82a5",
-      fillOpacity: 0.16,
-    }).addTo(map);
-    map.fitBounds(poly.getBounds(), { padding: [28, 28] });
-  }
+  // display is already MultiPolygon coordinates in [lng,lat]; L.geoJSON flips
+  // to Leaflet's [lat,lng] internally, so no manual conversion here.
+  const layer = L.geoJSON(
+    { type: "Feature", geometry: { type: "MultiPolygon", coordinates: cfg.display } },
+    { style: { color: "#9a812f", weight: 2, fillColor: "#c1ac5e", fillOpacity: 0.14 } }
+  ).addTo(map);
+
+  map.fitBounds(layer.getBounds(), { padding: [28, 28] });
 })();
