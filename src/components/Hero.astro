@@ -1,12 +1,16 @@
 ---
 import site from "../data/site.json";
+import BgVideo from "./BgVideo.astro";
 ---
 
 <section class="hero">
-  <div class="hero-bg" aria-hidden="true">
-    <span class="orb orb-1"></span>
-    <span class="orb orb-2"></span>
-  </div>
+  <BgVideo
+    src="/assets/video/hero-westlinn.mp4"
+    srcMobile="/assets/video/hero-westlinn-720.mp4"
+    poster="/assets/video/hero-westlinn.jpg"
+    class="hero-media"
+  />
+  <div class="hero-scrim" aria-hidden="true"></div>
 
   <div class="wrap hero-inner">
     <div class="hero-copy">
@@ -71,24 +75,18 @@ import site from "../data/site.json";
     padding-block: clamp(1.25rem, 0.5rem + 2.5vw, 2.75rem);
     overflow: hidden;
   }
-  .hero-bg { position: absolute; inset: 0; z-index: -1; }
-  .orb {
+  /* darken the video toward the copy side so light text stays legible and the
+     white agent card pops */
+  .hero-scrim {
     position: absolute;
-    border-radius: 50%;
-    filter: blur(70px);
-    opacity: 0.5;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(94deg, rgba(8,8,8,0.82) 0%, rgba(8,8,8,0.56) 44%, rgba(8,8,8,0.14) 100%),
+      linear-gradient(0deg, rgba(8,8,8,0.45) 0%, transparent 42%);
   }
-  .orb-1 {
-    width: 40vw; height: 40vw;
-    top: -10%; right: -8%;
-    background: radial-gradient(circle, rgba(200,160,74,0.5), transparent 70%);
-  }
-  .orb-2 {
-    width: 40vw; height: 40vw;
-    bottom: -18%; left: -12%;
-    background: radial-gradient(circle, rgba(108,130,165,0.55), transparent 70%);
-    opacity: 0.7;
-  }
+  .hero-copy { position: relative; color: var(--ink-onDark); }
+  .hero-copy .eyebrow { color: var(--gold-bright); }
 
   .hero-inner {
     width: 100%;
@@ -100,6 +98,8 @@ import site from "../data/site.json";
   .hero h1 {
     margin-block: 1rem 0;
     font-size: clamp(2.8rem, 1.7rem + 4vw, 5rem);
+    color: var(--ink-onDark);
+    text-shadow: 0 1px 30px rgba(0, 0, 0, 0.35);
   }
   .hero h1 .script {
     display: inline-block;
@@ -110,8 +110,9 @@ import site from "../data/site.json";
   .hero-lead {
     margin-top: 1.3rem;
     font-size: var(--fs-lead);
-    color: var(--ink-soft);
+    color: var(--ink-onDark-soft);
     font-weight: 300;
+    text-shadow: 0 1px 20px rgba(0, 0, 0, 0.3);
   }
   .hero-actions {
     display: flex;
@@ -131,14 +132,14 @@ import site from "../data/site.json";
     gap: clamp(1.25rem, 1rem + 2vw, 2.75rem);
     margin-top: 2rem;
     padding-top: 1.6rem;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--line-onDark);
   }
   .proof-val {
     display: block;
     font-family: var(--font-display);
     font-size: clamp(1.8rem, 1.45rem + 1.3vw, 2.5rem);
     font-weight: 500;
-    color: var(--gold-deep);
+    color: var(--gold-bright);
     line-height: 1;
   }
   .proof-label {
@@ -147,9 +148,10 @@ import site from "../data/site.json";
     font-size: 0.72rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--ink-muted);
+    color: var(--ink-onDark-soft);
     max-width: 18ch;
   }
+  .hero-actions .btn--ghost { color: var(--ink-onDark); border-color: var(--line-onDark); }
 
   .hero-figure { position: relative; margin: 0; justify-self: end; align-self: center; width: 100%; max-width: 400px; }
   .hero-card {

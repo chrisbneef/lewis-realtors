@@ -1,0 +1,41 @@
+---
+// Full-bleed background video with a poster fallback. Autoplays muted + looped
+// (the only way browsers allow autoplay); falls back to the still poster for
+// prefers-reduced-motion and while the video loads. Decorative -> aria-hidden.
+const { src, srcMobile, poster, class: cls = "" } = Astro.props;
+---
+
+<div class:list={["bgvideo-wrap", cls]} aria-hidden="true">
+  <img class="bgvideo-poster" src={poster} alt="" loading="eager" decoding="async" />
+  <video class="bgvideo" autoplay muted loop playsinline preload="metadata" poster={poster}>
+    {srcMobile && <source src={srcMobile} type="video/mp4" media="(max-width: 700px)" />}
+    <source src={src} type="video/mp4" />
+  </video>
+</div>
+
+<style>
+  .bgvideo-wrap { position: absolute; inset: 0; overflow: hidden; z-index: -1; }
+  .bgvideo-poster,
+  .bgvideo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .bgvideo { opacity: 0; transition: opacity 0.8s ease; }
+  .bgvideo[data-ready] { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    .bgvideo { display: none; }
+  }
+</style>
+
+<script>
+  // Reveal each video once it can actually play, so the poster carries the
+  // first paint and there's no black flash.
+  document.querySelectorAll("video.bgvideo").forEach((v) => {
+    const show = () => v.setAttribute("data-ready", "");
+    if (v.readyState >= 3) show();
+    else v.addEventListener("canplay", show, { once: true });
+  });
+</script>

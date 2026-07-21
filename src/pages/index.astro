@@ -13,6 +13,8 @@ import FaqAccordion from "../components/FaqAccordion.astro";
 import Testimonial from "../components/Testimonial.astro";
 import LocalProsBridge from "../components/LocalProsBridge.astro";
 import LeadMagnets from "../components/LeadMagnets.astro";
+import LifeInWestLinn from "../components/LifeInWestLinn.astro";
+import FeatureVideo from "../components/FeatureVideo.astro";
 
 import site from "../data/site.json";
 import neighborhoods from "../data/neighborhoods.json";
@@ -52,6 +54,9 @@ const jsonLd = [realEstateAgent(), faqSchema(faq)];
       </div>
     </div>
   </section>
+
+  <!-- Life in West Linn (lifestyle video) -->
+  <LifeInWestLinn />
 
   <!-- Services -->
   <section class="section section--cream" id="services">
@@ -102,6 +107,23 @@ const jsonLd = [realEstateAgent(), faqSchema(faq)];
 
   <!-- Meet Melissa -->
   <MeetMelissa />
+
+  <!-- Meet Melissa in the field (video) -->
+  <section class="section section--cream">
+    <div class="wrap mm-video" data-reveal>
+      <SectionHead
+        eyebrow="In the field"
+        title={`See how Melissa <span class="script">works</span>.`}
+        lead="A few minutes with a West Linn family, in their own backyard, on why they love it here."
+        align="center"
+      />
+      <FeatureVideo
+        src="/assets/video/meet-melissa.mp4"
+        poster="/assets/video/meet-melissa.jpg"
+        label="Watch Melissa with a West Linn family"
+      />
+    </div>
+  </section>
 
   <!-- Market report conversion band -->
   <section class="section section--ink" id="market-report">
@@ -164,6 +186,14 @@ const jsonLd = [realEstateAgent(), faqSchema(faq)];
 </Base>
 
 <style>
+  .mm-video {
+    max-width: 920px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.2rem;
+  }
   .hoods-head {
     display: flex;
     align-items: flex-end;

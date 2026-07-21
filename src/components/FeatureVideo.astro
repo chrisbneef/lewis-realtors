@@ -1,0 +1,68 @@
+---
+// Click-to-play feature video (with sound). Nothing downloads until the visitor
+// hits play (preload="none"), so it costs nothing on page load. Poster + play
+// button until clicked, then native controls.
+const { src, poster, label = "Play video", ratio = "16 / 9" } = Astro.props;
+---
+
+<div class="fvideo" data-fvideo style={`--ratio: ${ratio}`}>
+  <video class="fvideo-el" preload="none" playsinline poster={poster}>
+    <source src={src} type="video/mp4" />
+  </video>
+  <button class="fvideo-play" type="button" aria-label={label}>
+    <span class="fvideo-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+    </span>
+    <span class="fvideo-label">{label}</span>
+  </button>
+</div>
+
+<style>
+  .fvideo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: var(--ratio);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background: var(--noir);
+  }
+  .fvideo-el { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .fvideo-play {
+    position: absolute; inset: 0; z-index: 1;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;
+    width: 100%; height: 100%;
+    color: #fff;
+    background: linear-gradient(0deg, rgba(6,6,6,0.45), rgba(6,6,6,0.15));
+    transition: background var(--dur) var(--ease);
+  }
+  .fvideo-play:hover { background: linear-gradient(0deg, rgba(6,6,6,0.55), rgba(6,6,6,0.25)); }
+  .fvideo-icon {
+    display: grid; place-items: center;
+    width: 76px; height: 76px; border-radius: 50%;
+    padding-left: 4px;
+    background: color-mix(in srgb, var(--gold) 92%, transparent);
+    color: var(--noir);
+    box-shadow: 0 10px 40px -8px rgba(0,0,0,0.6);
+    transition: transform var(--dur) var(--ease);
+  }
+  .fvideo-play:hover .fvideo-icon { transform: scale(1.06); }
+  .fvideo-label {
+    font-size: 0.74rem; font-weight: 500; letter-spacing: var(--tracking-label);
+    text-transform: uppercase; text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+  }
+  .fvideo[data-playing] .fvideo-play { display: none; }
+</style>
+
+<script>
+  document.querySelectorAll("[data-fvideo]").forEach((box) => {
+    const video = box.querySelector("video");
+    const btn = box.querySelector(".fvideo-play");
+    btn?.addEventListener("click", () => {
+      box.setAttribute("data-playing", "");
+      video.preload = "auto";
+      video.setAttribute("controls", "");
+      video.play?.().catch(() => {});
+    });
+  });
+</script>
