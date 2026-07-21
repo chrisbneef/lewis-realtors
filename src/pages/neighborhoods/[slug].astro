@@ -2,6 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import SectionHead from "../../components/SectionHead.astro";
 import MarketReportForm from "../../components/MarketReportForm.astro";
+import TrendChart from "../../components/TrendChart.astro";
 import site from "../../data/site.json";
 import neighborhoods from "../../data/neighborhoods.json";
 import market from "../../data/market.json";
@@ -46,7 +47,6 @@ const range = priceLabel(hood.slug);
 
 const money = (n) => (n == null ? null : `$${Math.round(n).toLocaleString()}`);
 const trend = city.trend ?? [];
-const trendMax = trend.length ? Math.max(...trend.map((d) => d.medianAskingPrice)) : 0;
 const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
   month: "long", day: "numeric", year: "numeric",
 });
@@ -232,24 +232,7 @@ const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
         </p>
       </div>
 
-      <div class="nb-chart card" data-reveal style="--reveal-delay: 100ms">
-        <div class="nb-chart-head">
-          <span>West Linn median asking price</span>
-          <span class="nb-chart-range">Last 12 months</span>
-        </div>
-        <div
-          class="bars bars--year"
-          role="img"
-          aria-label={`West Linn median asking price by month, ${trend[0]?.label} to ${trend[trend.length - 1]?.label}`}
-        >
-          {trend.map((d) => (
-            <div class="bar-col">
-              <span class="bar" style={`--h: ${Math.round((d.medianAskingPrice / trendMax) * 100)}%`}></span>
-              <span class="bar-label">{d.label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+      <TrendChart trend={trend} />
     </div>
   </section>
 

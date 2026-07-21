@@ -1,0 +1,194 @@
+---
+// 12-month price trend as an area + line chart with a ZOOMED, labeled axis.
+// A bar chart of near-equal values reads flat; a line legitimately uses a
+// non-zero baseline (it encodes position, not length), so the month-to-month
+// movement is visible and honest as long as the axis range is labeled and the
+// zoom is disclosed. Single series -> the title names it, no legend box.
+const { trend, title = "West Linn median asking price" } = Astro.props;
+
+const n = trend.length;
+const vals = trend.map((d) => d.medianAskingPrice);
+const dMin = Math.min(...vals);
+const dMax = Math.max(...vals);
+
+// Zoomed domain: pad the data range, snap to $5K so ticks read clean.
+const pad = Math.max((dMax - dMin) * 0.35, dMax * 0.012);
+const snap = (v, dir) => (dir < 0 ? Math.floor(v / 5000) : Math.ceil(v / 5000)) * 5000;
+const yMin = snap(dMin - pad, -1);
+const yMax = snap(dMax + pad, 1);
+
+const money = (v) =>
+  v >= 1e6 ? `$${(v / 1e6).toFixed(v % 1e6 ? 1 : 0)}M` : `$${Math.round(v / 1000)}K`;
+const fullYear = (lbl) => {
+  const [m, y] = lbl.split(" ");
+  return `${m} 20${y}`;
+};
+
+const xPct = (i) => (i / (n - 1)) * 100;
+const yPct = (v) => (1 - (v - yMin) / (yMax - yMin)) * 100;
+
+// 4 evenly spaced gridline values, snapped to $5K and de-duped.
+const ticks = [...new Set([1, 2, 3, 4].map((k) => Math.round((yMin + ((yMax - yMin) * k) / 5) / 5000) * 5000))];
+
+const maxI = vals.indexOf(dMax);
+const minI = vals.lastIndexOf(dMin);
+const lastI = n - 1;
+const pts = trend.map((d, i) => ({
+  i,
+  x: +xPct(i).toFixed(2),
+  y: +yPct(d.medianAskingPrice).toFixed(2),
+  v: d.medianAskingPrice,
+  label: d.label,
+  isMax: i === maxI,
+  isMin: i === minI,
+  isLast: i === lastI,
+}));
+
+const linePoints = pts.map((p) => `${p.x},${p.y}`).join(" ");
+const areaPath = `M ${pts[0].x},100 ` + pts.map((p) => `L ${p.x},${p.y}`).join(" ") + ` L ${pts[n - 1].x},100 Z`;
+const rangeLabel = `${fullYear(trend[0].label)} – ${fullYear(trend[n - 1].label)}`;
+const summary = `${title} by month, ${rangeLabel}. Ranges ${money(dMin)} to ${money(dMax)}; latest ${money(vals[lastI])}.`;
+// Which points get an always-on value label (peak, trough, current).
+const labelled = pts.filter((p) => p.isMax || p.isMin || p.isLast);
+---
+
+<figure class="tchart card" role="img" aria-label={summary} data-reveal>
+  <figcaption class="tchart-head">
+    <span class="tchart-title">{title}</span>
+    <span class="tchart-sub">{rangeLabel}</span>
+  </figcaption>
+
+  <div class="tchart-grid-wrap">
+    <div class="tchart-yaxis" aria-hidden="true">
+      {ticks.map((t) => (
+        <span class="tchart-ytick" style={`top:${yPct(t)}%`}>{money(t)}</span>
+      ))}
+    </div>
+
+    <div class="tchart-plot">
+      <svg class="tchart-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="tchart-fill" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="var(--azure)" stop-opacity="0.5"></stop>
+            <stop offset="100%" stop-color="var(--azure)" stop-opacity="0.05"></stop>
+          </linearGradient>
+        </defs>
+        {ticks.map((t) => (
+          <line class="tchart-grid" x1="0" x2="100" y1={yPct(t)} y2={yPct(t)} vector-effect="non-scaling-stroke"></line>
+        ))}
+        <path d={areaPath} fill="url(#tchart-fill)"></path>
+        <polyline class="tchart-line" points={linePoints} fill="none" vector-effect="non-scaling-stroke"></polyline>
+      </svg>
+
+      {pts.map((p) => (
+        <span
+          class:list={["tchart-dot", { "is-current": p.isLast, "is-peak": p.isMax, "is-trough": p.isMin }]}
+          style={`left:${p.x}%;top:${p.y}%`}
+          title={`${fullYear(p.label)}: $${p.v.toLocaleString()}`}
+        ></span>
+      ))}
+
+      {labelled.map((p) => (
+        <span
+          class:list={["tchart-vlabel", { "is-current": p.isLast, below: p.isMin && !p.isLast && !p.isMax }]}
+          style={`left:${p.x}%;top:${p.y}%`}
+        >{money(p.v)}</span>
+      ))}
+    </div>
+
+    <div class="tchart-xaxis" aria-hidden="true">
+      {pts.map((p) => (
+        <span class="tchart-xtick" style={`left:${p.x}%`}>{p.label.split(" ")[0]}</span>
+      ))}
+    </div>
+  </div>
+
+  <p class="tchart-note">
+    Median asking price across all West Linn home types. The vertical axis is zoomed
+    (starts near {money(yMin)}) to show month-to-month movement.
+  </p>
+
+  <table class="visually-hidden">
+    <caption>{title} by month</caption>
+    <thead><tr><th>Month</th><th>Median asking price</th></tr></thead>
+    <tbody>
+      {pts.map((p) => (
+        <tr><td>{fullYear(p.label)}</td><td>${p.v.toLocaleString()}</td></tr>
+      ))}
+    </tbody>
+  </table>
+</figure>
+
+<style>
+  .tchart { padding: 1.6rem 1.6rem 1.4rem; }
+  .tchart-head {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-muted); margin-bottom: 1.4rem; flex-wrap: wrap;
+  }
+  .tchart-title { color: var(--ink-soft); font-weight: 500; }
+  .tchart-sub { white-space: nowrap; }
+
+  /* [y-axis | plot] over [_ | x-axis] */
+  .tchart-grid-wrap {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 0.6rem;
+  }
+  .tchart-yaxis {
+    grid-column: 1; grid-row: 1;
+    position: relative; width: 2.6rem;
+    height: clamp(160px, 16vw + 96px, 220px);
+  }
+  .tchart-ytick {
+    position: absolute; right: 0; transform: translateY(-50%);
+    font-size: 0.62rem; color: var(--ink-muted); white-space: nowrap;
+  }
+  .tchart-plot {
+    grid-column: 2; grid-row: 1;
+    position: relative;
+    height: clamp(160px, 16vw + 96px, 220px);
+  }
+  .tchart-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .tchart-grid { stroke: var(--line); stroke-width: 1; }
+  .tchart-line { stroke: var(--azure-deep); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+
+  .tchart-dot {
+    position: absolute; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--azure-deep); transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 2px var(--bg-elevated); cursor: default;
+  }
+  .tchart-dot.is-peak, .tchart-dot.is-trough { background: var(--azure-deep); width: 8px; height: 8px; }
+  .tchart-dot.is-current {
+    width: 12px; height: 12px; background: var(--gold);
+    box-shadow: 0 0 0 2px var(--bg-elevated), 0 0 0 5px color-mix(in srgb, var(--gold) 35%, transparent);
+    z-index: 2;
+  }
+
+  .tchart-vlabel {
+    position: absolute; transform: translate(-50%, -160%);
+    font-family: var(--font-display); font-size: 0.86rem; color: var(--ink-soft);
+    white-space: nowrap; pointer-events: none;
+  }
+  .tchart-vlabel.below { transform: translate(-50%, 60%); }
+  .tchart-vlabel.is-current { color: var(--gold-deep); font-weight: 500; }
+
+  .tchart-xaxis {
+    grid-column: 2; grid-row: 2; position: relative; height: 1.1rem; margin-top: 0.5rem;
+  }
+  .tchart-xtick {
+    position: absolute; top: 0; transform: translateX(-50%);
+    font-size: 0.6rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-muted);
+  }
+  .tchart-xtick:first-child { transform: translateX(0); }
+  .tchart-xtick:last-child { transform: translateX(-100%); }
+
+  .tchart-note { margin-top: 1rem; font-size: 0.72rem; line-height: 1.5; color: var(--ink-muted); max-width: 54ch; }
+
+  /* Tighten the x labels only where they'd truly collide */
+  @media (max-width: 420px) {
+    .tchart-xtick { font-size: 0.5rem; }
+    .tchart-vlabel { font-size: 0.76rem; }
+  }
+</style>
