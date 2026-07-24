@@ -5,11 +5,14 @@ import services from "../data/services.json";
 import faq from "../data/faq.json";
 import { SITE_URL } from "../lib/site-url.js";
 import { hoodMarket, moneyFull } from "../lib/market.js";
+import { getCollection } from "astro:content";
 
 export const prerender = true;
 
 export async function GET() {
   const u = (p) => `${SITE_URL}${p}`;
+  const posts = (await getCollection("blog", ({ data }) => !data.draft))
+    .sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
   const hoods = [...neighborhoods].sort((a, b) => a.order - b.order);
   const L = [];
 
@@ -65,6 +68,18 @@ export async function GET() {
     L.push(`### ${item.q}`);
     L.push(item.a);
     L.push("");
+  }
+
+  if (posts.length) {
+    L.push("## Journal (weekly articles)");
+    L.push(`Weekly ${site.city} articles, alternating real estate and lifestyle. ${u("/blog")}`);
+    L.push("");
+    for (const p of posts.slice(0, 20)) {
+      const date = new Date(p.data.publishDate).toISOString().slice(0, 10);
+      L.push(`### ${p.data.title}`);
+      L.push(`${date} (${p.data.theme}). ${p.data.description} ${u(`/blog/${p.id}`)}`);
+      L.push("");
+    }
   }
 
   L.push("## Compliance");

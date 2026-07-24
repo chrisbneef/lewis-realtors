@@ -1,0 +1,54 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/PageHero.astro";
+import PostCard from "../../components/PostCard.astro";
+import { getCollection } from "astro:content";
+import { realEstateAgent, blogSchema } from "../../lib/schema.js";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+  (a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
+);
+
+const jsonLd = [
+  realEstateAgent(),
+  blogSchema(
+    posts.map((p) => ({
+      title: p.data.title,
+      slug: p.id,
+      datePublished: new Date(p.data.publishDate).toISOString(),
+    }))
+  ),
+];
+---
+
+<Base
+  title="Journal"
+  description="West Linn, Oregon real estate and lifestyle notes from Melissa Shaw of Lewis Realtors, refreshed weekly. Market reads one week, life in West Linn the next."
+  jsonLd={jsonLd}
+>
+  <PageHero
+    crumb="Journal"
+    eyebrow="The journal"
+    title={`West Linn, <span class="script">week by week</span>.`}
+    lead="A weekly read on West Linn, Oregon. One week the market, the next what it is actually like to live here. Grounded in real neighborhood data, written by Melissa."
+  />
+
+  <section class="section--tight">
+    <div class="wrap">
+      {posts.length > 0 ? (
+        <div class="post-grid">
+          {posts.map((post) => <PostCard post={post} />)}
+        </div>
+      ) : (
+        <p class="post-empty">The first articles are on the way. Check back soon.</p>
+      )}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .post-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
+  .post-empty { color: var(--ink-muted); font-size: var(--fs-lead); }
+  @media (max-width: 980px) { .post-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .post-grid { grid-template-columns: 1fr; } }
+</style>

@@ -107,6 +107,10 @@
       "href": "/home-value"
     },
     {
+      "label": "Journal",
+      "href": "/blog"
+    },
+    {
       "label": "About",
       "href": "/about"
     },

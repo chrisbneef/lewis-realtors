@@ -1,0 +1,131 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection, render } from "astro:content";
+import site from "../../data/site.json";
+import { realEstateAgent, blogPosting, breadcrumb } from "../../lib/schema.js";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+const path = `/blog/${post.id}`;
+const published = new Date(d.publishDate);
+const updated = d.updatedDate ? new Date(d.updatedDate) : null;
+const themeLabel = d.theme === "real-estate" ? "Real estate" : "Life in West Linn";
+const fmt = (dt) => dt.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+
+const jsonLd = [
+  realEstateAgent(),
+  blogPosting({
+    title: d.title,
+    description: d.description,
+    path,
+    datePublished: published.toISOString(),
+    dateModified: (updated || published).toISOString(),
+    keywords: d.keywords,
+    image: d.heroImage,
+  }),
+  breadcrumb([
+    { name: "Home", path: "/" },
+    { name: "Journal", path: "/blog" },
+    { name: d.title, path },
+  ]),
+];
+---
+
+<Base title={d.title} description={d.description} jsonLd={jsonLd} ogImage={d.heroImage || "/assets/lewis-logo.png"}>
+  <article class="post">
+    <div class="wrap post-wrap">
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>/</span>
+        <a href="/blog">Journal</a><span>/</span>
+        <span aria-current="page">{themeLabel}</span>
+      </nav>
+
+      <header class="post-head" data-reveal>
+        <p class="eyebrow">{themeLabel}</p>
+        <h1 class="post-h1">{d.title}</h1>
+        <p class="post-lead measure">{d.description}</p>
+        <p class="post-byline">
+          By <a rel="author" href="/about">{d.author}</a>, {site.agent.designations[0]}
+          <span class="post-dot">&middot;</span>
+          <time datetime={published.toISOString()}>{fmt(published)}</time>
+          {updated && <span class="post-updated"><span class="post-dot">&middot;</span> Updated {fmt(updated)}</span>}
+        </p>
+      </header>
+
+      {d.heroImage && (
+        <figure class="post-figure" data-reveal>
+          <img src={d.heroImage} alt={d.title} width="1280" height="640" />
+        </figure>
+      )}
+
+      <div class="prose" data-reveal>
+        <Content />
+      </div>
+
+      {d.sources.length > 0 && (
+        <footer class="post-sources">
+          <h2 class="post-sources-h">Sources</h2>
+          <ul>
+            {d.sources.map((s) => (
+              <li>{s.url ? <a href={s.url} rel="nofollow">{s.label}</a> : s.label}</li>
+            ))}
+          </ul>
+        </footer>
+      )}
+
+      <aside class="post-cta card">
+        <div>
+          <p class="eyebrow">West Linn, Oregon</p>
+          <h2 class="post-cta-h">Thinking about a move?</h2>
+          <p class="post-cta-lead">Pull a free neighborhood market report, or talk it through with Melissa.</p>
+        </div>
+        <div class="post-cta-actions">
+          <a class="btn btn--gold" href="/market-reports">Get a market report</a>
+          <a class="btn btn--ghost" href={site.contact.phoneHref}>Call {site.contact.phone}</a>
+        </div>
+      </aside>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .post-wrap { max-width: 760px; }
+  .crumb { display: flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-block: clamp(1.5rem, 1rem + 2vw, 2.5rem) 2.2rem; flex-wrap: wrap; }
+  .crumb a:hover { color: var(--gold-deep); }
+  .crumb span[aria-current] { color: var(--ink); }
+
+  .post-h1 { font-size: clamp(2.1rem, 1.5rem + 3vw, 3.4rem); margin-top: 1rem; }
+  .post-lead { margin-top: 1.2rem; font-size: var(--fs-lead); color: var(--ink-soft); font-weight: 300; }
+  .post-byline { margin-top: 1.4rem; font-size: 0.85rem; color: var(--ink-muted); }
+  .post-byline a { color: var(--gold-deep); font-weight: 500; }
+  .post-byline a:hover { text-decoration: underline; }
+  .post-dot { margin-inline: 0.5rem; }
+
+  .post-figure { margin: clamp(1.8rem, 1.2rem + 2vw, 2.8rem) 0 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); aspect-ratio: 2 / 1; }
+  .post-figure img { width: 100%; height: 100%; object-fit: cover; }
+
+  .prose { margin-top: clamp(1.8rem, 1.2rem + 2vw, 2.8rem); }
+
+  .post-sources { margin-top: 3rem; padding-top: 1.6rem; border-top: 1px solid var(--line); }
+  .post-sources-h { font-family: var(--font-body); font-size: 0.7rem; font-weight: 600; letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--ink-muted); margin-bottom: 1rem; }
+  .post-sources ul { display: flex; flex-direction: column; gap: 0.5rem; }
+  .post-sources li { font-size: 0.85rem; color: var(--ink-soft); }
+  .post-sources a { color: var(--gold-deep); }
+
+  .post-cta {
+    margin-top: 3rem;
+    padding: clamp(1.8rem, 1.2rem + 2vw, 2.6rem);
+    display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+    flex-wrap: wrap;
+    border-top: 3px solid var(--gold-deep);
+  }
+  .post-cta-h { font-size: 1.6rem; margin-top: 0.4rem; }
+  .post-cta-lead { margin-top: 0.6rem; color: var(--ink-soft); max-width: 44ch; }
+  .post-cta-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+</style>

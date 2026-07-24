@@ -5,12 +5,15 @@ import neighborhoods from "../data/neighborhoods.json";
 import services from "../data/services.json";
 import { SITE_URL } from "../lib/site-url.js";
 import { hoodMarket, money } from "../lib/market.js";
+import { getCollection } from "astro:content";
 
 export const prerender = true;
 
 export async function GET() {
   const u = (p) => `${SITE_URL}${p}`;
   const hoods = [...neighborhoods].sort((a, b) => a.order - b.order);
+  const posts = (await getCollection("blog", ({ data }) => !data.draft))
+    .sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
   const L = [];
 
   L.push(`# ${site.brand}`);
@@ -33,7 +36,17 @@ export async function GET() {
   L.push(`- [Contact](${u("/contact")}): phone, message, hours, and service area.`);
   L.push(`- [Financing partner](${u("/financing")}): mortgage referral so buyers shop pre-approved.`);
   L.push(`- [FAQ](${u("/faq")}): how the reports and the buying or selling process work.`);
+  L.push(`- [Journal](${u("/blog")}): weekly ${site.city} articles, alternating real estate and lifestyle.`);
   L.push("");
+
+  if (posts.length) {
+    L.push("## Latest articles");
+    for (const p of posts.slice(0, 12)) {
+      const date = new Date(p.data.publishDate).toISOString().slice(0, 10);
+      L.push(`- [${p.data.title}](${u(`/blog/${p.id}`)}) (${date}): ${p.data.description}`);
+    }
+    L.push("");
+  }
 
   L.push(`## ${site.city} neighborhoods`);
   for (const h of hoods) {

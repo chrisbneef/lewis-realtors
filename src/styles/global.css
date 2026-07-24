@@ -310,6 +310,45 @@ h4 { font-size: var(--fs-h4); }
   [data-reveal] { opacity: 1; transform: none; }
 }
 
+/* --- Long-form prose (blog body; unscoped so rendered Markdown is styled) -- */
+.prose {
+  max-width: 68ch;
+  font-size: var(--fs-lead);
+  line-height: 1.75;
+  color: var(--ink-soft);
+  font-weight: 300;
+}
+.prose > * + * { margin-top: 1.3rem; }
+.prose h2 {
+  font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.1rem);
+  color: var(--ink);
+  margin-top: 2.8rem;
+  line-height: var(--leading-snug);
+}
+.prose h3 {
+  font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.55rem);
+  color: var(--ink);
+  margin-top: 2rem;
+}
+.prose p { color: var(--ink-soft); }
+.prose a { color: var(--gold-deep); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.prose a:hover { color: var(--noir); }
+.prose strong { color: var(--ink); font-weight: 500; }
+.prose ul, .prose ol { padding-left: 1.3rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.prose li { padding-left: 0.3rem; }
+.prose li::marker { color: var(--gold-deep); }
+.prose blockquote {
+  margin-inline: 0;
+  padding: 0.4rem 0 0.4rem 1.4rem;
+  border-left: 3px solid var(--gold);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.15em;
+}
+.prose img { border-radius: var(--radius); margin-block: 1.6rem; }
+.prose hr { border: 0; height: 1px; background: var(--line); margin-block: 2.4rem; }
+.prose h2 + p, .prose h3 + p { margin-top: 0.9rem; }
+
 /* --- Utilities ---------------------------------------------------------- */
 .visually-hidden {
   position: absolute;

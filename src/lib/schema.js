@@ -153,3 +153,49 @@ export function breadcrumb(trail) {
     })),
   };
 }
+
+// A single blog article. Author is the shared Melissa Person (E-E-A-T);
+// publisher is the agent/org node. Dates come from post frontmatter.
+export function blogPosting({ title, description, path, datePublished, dateModified, keywords, image }) {
+  const url = `${ORIGIN}${path}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: title,
+    description,
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${url}#webpage` },
+    datePublished,
+    dateModified: dateModified || datePublished,
+    author: {
+      "@type": "Person",
+      name: site.agent.name,
+      jobTitle: site.agent.role,
+      url: `${ORIGIN}/about`,
+    },
+    publisher: { "@id": AGENT_ID },
+    inLanguage: "en-US",
+    ...(keywords && keywords.length ? { keywords: keywords.join(", ") } : {}),
+    ...(image ? { image: `${ORIGIN}${image}` } : {}),
+  };
+}
+
+// The /blog index as a Blog node listing its posts.
+export function blogSchema(posts) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": `${ORIGIN}/blog#blog`,
+    url: `${ORIGIN}/blog`,
+    name: `${site.brand} Journal`,
+    description: `West Linn, ${site.state} real estate and lifestyle notes from ${site.agent.name}.`,
+    publisher: { "@id": AGENT_ID },
+    blogPost: posts.map((p) => ({
+      "@type": "BlogPosting",
+      headline: p.title,
+      url: `${ORIGIN}/blog/${p.slug}`,
+      datePublished: p.datePublished,
+    })),
+  };
+}
