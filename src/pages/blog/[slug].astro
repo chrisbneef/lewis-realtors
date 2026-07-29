@@ -95,7 +95,8 @@ const jsonLd = [
 </Base>
 
 <style>
-  .post-wrap { max-width: 760px; }
+  /* Full site width, so the article frame lines up with the header nav
+     instead of sitting in a narrow column. Reading measure is set on .prose. */
   .crumb { display: flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-block: clamp(1.5rem, 1rem + 2vw, 2.5rem) 2.2rem; flex-wrap: wrap; }
   .crumb a:hover { color: var(--gold-deep); }
   .crumb span[aria-current] { color: var(--ink); }

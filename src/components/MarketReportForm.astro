@@ -9,12 +9,27 @@ const {
 } = Astro.props;
 
 const isValuation = formType === "valuation";
+const isContact = formType === "contact";
+
 const defaultHeading = isValuation
   ? "What is my home worth?"
-  : `Get the ${neighborhoodName} market report`;
+  : isContact
+    ? "Send us a message"
+    : `Get the ${neighborhoodName} market report`;
 const defaultBlurb = isValuation
   ? "Tell us about your home and Melissa will prepare a personalized valuation built on real neighborhood sold data, not an automated guess."
-  : `Median asking price, days on market, and what is currently for sale in ${neighborhoodName}, plus the twelve-month West Linn price trend. Refreshed every month from live listing data and sent straight to your inbox.`;
+  : isContact
+    ? "Tell us what you are looking for and the best way to reach you. Melissa will get back to you personally."
+    : `Median asking price, days on market, and what is currently for sale in ${neighborhoodName}, plus the twelve-month West Linn price trend. Refreshed every month from live listing data and sent straight to your inbox.`;
+
+// Unique id prefix so several forms can live on one page without colliding.
+const uid = `${formType}-${neighborhood}`;
+
+const roles = [
+  { value: "buyer", label: "Buying" },
+  { value: "seller", label: "Selling" },
+  { value: "both", label: "Both" },
+];
 ---
 
 <form class="lead-form" data-lead-form data-form-type={formType} data-neighborhood={neighborhood}>
@@ -25,19 +40,63 @@ const defaultBlurb = isValuation
 
   <div class="lead-grid">
     <div class="field">
-      <label for={`name-${formType}-${neighborhood}`}>Name</label>
-      <input class="input" id={`name-${formType}-${neighborhood}`} name="name" type="text" autocomplete="name" placeholder="Your name" required />
+      <label for={`first-${uid}`}>First name</label>
+      <input class="input" id={`first-${uid}`} name="firstName" type="text" autocomplete="given-name" placeholder="First name" required />
     </div>
     <div class="field">
-      <label for={`email-${formType}-${neighborhood}`}>Email</label>
-      <input class="input" id={`email-${formType}-${neighborhood}`} name="email" type="email" autocomplete="email" placeholder="you@email.com" required />
+      <label for={`last-${uid}`}>Last name</label>
+      <input class="input" id={`last-${uid}`} name="lastName" type="text" autocomplete="family-name" placeholder="Last name" required />
+    </div>
+    <div class="field">
+      <label for={`email-${uid}`}>Email</label>
+      <input class="input" id={`email-${uid}`} name="email" type="email" autocomplete="email" placeholder="you@email.com" required />
+    </div>
+    <div class="field">
+      <label for={`phone-${uid}`}>Phone number</label>
+      <input class="input" id={`phone-${uid}`} name="phone" type="tel" autocomplete="tel" placeholder="(503) 555-0123" required />
     </div>
     {isValuation && (
       <div class="field field--full">
-        <label for={`address-${neighborhood}`}>Property address</label>
-        <input class="input" id={`address-${neighborhood}`} name="address" type="text" autocomplete="street-address" placeholder="Street, West Linn, OR" />
+        <label for={`address-${uid}`}>Property address</label>
+        <input class="input" id={`address-${uid}`} name="address" type="text" autocomplete="street-address" placeholder="Street, West Linn, OR" />
       </div>
     )}
+  </div>
+
+  <fieldset class="role-set">
+    <legend>What best describes you?</legend>
+    <div class="segmented" role="radiogroup">
+      {roles.map((r) => (
+        <div class="seg">
+          <input type="radio" id={`role-${r.value}-${uid}`} name="role" value={r.value} required />
+          <label for={`role-${r.value}-${uid}`}>{r.label}</label>
+        </div>
+      ))}
+    </div>
+  </fieldset>
+
+  {isContact && (
+    <div class="field">
+      <label for={`message-${uid}`}>How can we help?</label>
+      <textarea
+        class="input textarea"
+        id={`message-${uid}`}
+        name="message"
+        rows="4"
+        placeholder="Tell us what brought you here and when is a good time to call you back."
+        required
+      />
+    </div>
+  )}
+
+  <div class="consent">
+    <input type="checkbox" id={`sms-${uid}`} name="smsConsent" value="yes" />
+    <label for={`sms-${uid}`}>
+      Text me updates. By checking this box I agree to receive text messages from
+      Lewis Realtors at the number provided, including messages about my request.
+      Consent is not a condition of purchase. Message and data rates may apply.
+      Reply STOP to opt out at any time.
+    </label>
   </div>
 
   <!-- CAPTCHA mounts here once Cloudflare Turnstile keys are added (see capture-lead.js TODO). -->
@@ -67,11 +126,17 @@ const defaultBlurb = isValuation
       status.textContent = "";
 
       const payload = {
-        name: form.name.value.trim(),
+        firstName: form.firstName.value.trim(),
+        lastName: form.lastName.value.trim(),
         email: form.email.value.trim(),
+        phone: form.phone.value.trim(),
+        role: form.querySelector("input[name='role']:checked")?.value || "",
+        smsConsent: form.smsConsent.checked,
+        message: form.message ? form.message.value.trim() : undefined,
         address: form.address ? form.address.value.trim() : undefined,
         formType: form.dataset.formType,
         neighborhood: form.dataset.neighborhood,
+        pageUrl: window.location.href,
         token: form.querySelector("[name='cf-turnstile-response']")?.value || "dev-stub",
       };
 
@@ -120,6 +185,77 @@ const defaultBlurb = isValuation
   .field--full { grid-column: 1 / -1; }
   .captcha-slot:empty { display: none; }
 
+  .textarea {
+    min-height: 7.5rem;
+    resize: vertical;
+    line-height: 1.55;
+  }
+
+  /* "What best describes you" - segmented pills */
+  .role-set { border: 0; padding: 0; margin: 0; }
+  .role-set legend {
+    padding: 0;
+    margin-bottom: 0.6rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .segmented { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .seg { flex: 1 1 auto; min-width: 0; }
+  .seg input {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .seg label {
+    display: block;
+    text-align: center;
+    padding: 0.72em 1.2em;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--bg);
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease),
+      background var(--dur) var(--ease);
+  }
+  .seg label:hover { border-color: var(--gold); color: var(--ink); }
+  .seg input:checked + label {
+    background: var(--grad-gold);
+    border-color: var(--gold-deep);
+    color: var(--noir);
+  }
+  .seg input:focus-visible + label {
+    outline: 2px solid var(--azure-deep);
+    outline-offset: 2px;
+  }
+
+  /* SMS consent */
+  .consent { display: flex; align-items: flex-start; gap: 0.65rem; }
+  .consent input {
+    flex: none;
+    width: 18px; height: 18px;
+    margin-top: 0.15rem;
+    accent-color: var(--gold-deep);
+    cursor: pointer;
+  }
+  .consent label {
+    font-size: 0.76rem;
+    line-height: 1.5;
+    color: var(--ink-muted);
+    cursor: pointer;
+  }
+
   .lead-submit { position: relative; align-self: flex-start; }
   .lead-submit .submit-spin {
     width: 15px; height: 15px;
@@ -140,5 +276,6 @@ const defaultBlurb = isValuation
 
   @media (max-width: 520px) {
     .lead-grid { grid-template-columns: 1fr; }
+    .segmented { flex-direction: column; }
   }
 </style>
