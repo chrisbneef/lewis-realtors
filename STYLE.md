@@ -3,6 +3,10 @@
 The voice and the brand facts for every page on this site. Read this before writing
 or editing copy.
 
+For how Melissa herself writes long-form, see `MELISSA-VOICE.md`, a voice guide
+derived from 206 of her real blog posts (archive in `reference/melissa-blog/`).
+The hard rules below still win wherever the two differ.
+
 ## Tone
 
 - Knowledgeable, neighborly, and calm. Never salesy or pushy.
