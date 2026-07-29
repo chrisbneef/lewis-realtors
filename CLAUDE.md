@@ -11,6 +11,26 @@ clean.
 
 ---
 
+## Git: never commit to main
+
+**Branch before the first commit, always.** Even for a one-line copy fix.
+
+```bash
+git checkout -b <short-topic-name>
+```
+
+Commit there, push the branch, and hand over a PR link. The `high_stakes_gate.py`
+hook blocks any push naming `main`, so committing to `main` strands the work in a
+dead end: the agent cannot push it, cannot branch out of it afterwards (the
+permission classifier reads that as routing around the gate), and the human ends
+up running `git push` by hand. A branch avoids all of it, because
+`git push origin <branch>` does not match the pattern.
+
+If work is already sitting on local `main`, say so and stop rather than trying to
+reshuffle it. Moving it is the human's call.
+
+---
+
 ## Weekly search-intent report
 
 The blog publishes one West Linn article per week, alternating themes by ISO
