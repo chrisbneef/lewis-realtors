@@ -15,7 +15,7 @@ import { realEstateAgent } from "../lib/schema.js";
     crumb="Contact"
     eyebrow="Talk now"
     title={`Let's talk about<br/>your <span class="script">move</span>.`}
-    lead="Whether you are buying, selling, or sending a client our way, a real local answer is one call or message away."
+    lead="Whether you're buying, selling, or sending a client my way, a real local answer is one call or message away."
   />
 
   <section class="section--tight">
@@ -33,7 +33,9 @@ import { realEstateAgent } from "../lib/schema.js";
         <div class="contact-block">
           <p class="eyebrow">Follow</p>
           <ul class="contact-social" role="list">
-            {site.contact.social.map((s) => <li><a href={s.href}>{s.label}</a></li>)}
+            {site.contact.social.map((s) => (
+              <li><a href={s.href} target="_blank" rel="noopener noreferrer">{s.label}</a></li>
+            ))}
           </ul>
         </div>
         <div class="contact-block">
@@ -48,8 +50,8 @@ import { realEstateAgent } from "../lib/schema.js";
           formType="contact"
           neighborhood="west-linn"
           neighborhoodName="West Linn"
-          heading="Send us a message"
-          blurb="Tell us what you are looking for and the best way to reach you. Melissa will get back to you personally."
+          heading="Send me a message"
+          blurb="Tell me what you're looking for and the best way to reach you. I'll get back to you personally."
           cta="Send message"
         />
       </div>

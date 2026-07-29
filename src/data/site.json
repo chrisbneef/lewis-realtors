@@ -17,8 +17,8 @@
     "headshot": "/assets/melissa-shaw.png",
     "bioShort": "23 years in West Linn real estate, more than $128 million sold since 2016, and over a thousand buyers and sellers served.",
     "bio": [
-      "Melissa consistently gets the job done, following through in a professional, friendly, and efficient manner. With 23 years of real estate experience, she has sold more than $128 million in home volume since 2016 and has served over a thousand buyers and sellers.",
-      "Detail-oriented, naturally attentive, and dedicated to problem-solving, Melissa employs keen negotiating skills and takes a proactive approach to ensure smooth transactions for her clients, always grounded in a deep understanding of her clients' unique personal and financial needs."
+      "23 years in real estate, more than $128 million sold since 2016, and over a thousand buyers and sellers. Behind every one of those numbers is a family in the middle of a change, and that's the part I actually care about.",
+      "I'm detail-oriented, I'm a natural problem-solver, and I negotiate hard. But the work really starts with understanding what you need, personally and financially, before anyone talks about price."
     ],
     "stats": [
       {
@@ -38,7 +38,7 @@
   "contact": {
     "phone": "(503) 489-8367",
     "phoneHref": "tel:+15034898367",
-    "emailLabel": "Send us an email",
+    "emailLabel": "Send me an email",
     "poBox": "",
     "calendly": "",
     "linktree": "https://linktr.ee/lewisrealtors",

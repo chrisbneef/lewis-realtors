@@ -203,9 +203,9 @@ const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
         <p class="nb-soon-num">{String(hood.order).padStart(2, "0")} of {neighborhoods.length}</p>
         <h2>The full {hood.name} guide is coming.</h2>
         <p class="nb-soon-lead measure">
-          The live market snapshot and boundary above update monthly. We are still adding the
-          hand-written {hood.name} deep dive Bolton already has: school feeders, the streets that
-          set it apart, and who it fits best. Enter your email and you will be first to get it.
+          The live market snapshot and boundary above update monthly. I'm still writing the
+          {hood.name} deep dive Bolton already has: school feeders, the streets that set it
+          apart, and who it fits best. Enter your email and you'll be first to get it.
         </p>
         <a class="link" href="/neighborhoods/bolton">See a finished neighborhood: Bolton <span class="arrow">&rarr;</span></a>
       </div>
@@ -233,9 +233,9 @@ const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
         ) : (
           <Fragment>
             <p class="nb-stats-lead">
-              We publish neighborhood-level figures only once the {hood.name} boundary is confirmed
+              I publish neighborhood-level figures only once the {hood.name} boundary is confirmed
               against county parcel lines, so a home is never counted in the wrong neighborhood.
-              Until then, here is the West Linn picture, refreshed {refreshed}.
+              Until then, here's the West Linn picture, refreshed {refreshed}.
             </p>
             <ul class="nb-figs" role="list">
               <li><span class="nb-fig-val">{money(city.medianAskingPrice)}</span><span class="nb-fig-label">West Linn median asking price</span></li>
@@ -248,7 +248,7 @@ const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
         <p class="nb-headline-note">
           Asking prices from active single-family and multi-family listings in ZIP {market.zipCode}
           (condos, townhomes, and manufactured homes excluded). Oregon does not make closed sale
-          prices public record, so Melissa pulls sold figures directly from RMLS on request.
+          prices public record, so I pull sold figures directly from RMLS on request.
         </p>
       </div>
 
@@ -287,7 +287,7 @@ const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
           title={`The ${hood.name} <span class="script">market report</span>.`}
         />
         <p class="nb-form-lead">
-          One page, plain English, refreshed monthly from live listing data. Melissa is notified the
+          One page, plain English, refreshed monthly from live listing data. I'm notified the
           moment you request it, so a real local answer is never far behind.
         </p>
       </div>

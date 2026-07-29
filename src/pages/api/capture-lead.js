@@ -57,9 +57,9 @@ export async function POST({ request }) {
   if (!normalizePhone(phoneRaw)) {
     return json({ ok: false, error: "Please enter a valid US phone number." }, 422);
   }
-  if (!role) return json({ ok: false, error: "Please tell us whether you are buying or selling." }, 422);
+  if (!role) return json({ ok: false, error: "Please tell me whether you're buying or selling." }, 422);
   if (formType === "contact" && message.length < 2) {
-    return json({ ok: false, error: "Please tell us how we can help." }, 422);
+    return json({ ok: false, error: "Please tell me how I can help." }, 422);
   }
 
   const lead = {
@@ -105,7 +105,7 @@ export async function POST({ request }) {
       JSON.stringify({ ...lead, recovery: true })
     );
     return json(
-      { ok: false, error: "We could not save that just now. Please call (503) 489-8367." },
+      { ok: false, error: "We couldn't save that just now. Please call (503) 489-8367." },
       502
     );
   }

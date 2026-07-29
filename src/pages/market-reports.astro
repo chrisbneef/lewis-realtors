@@ -16,7 +16,7 @@ const ready = hoods.filter((h) => h.complete).length;
 >
   <PageHero
     crumb="Market Reports"
-    eyebrow="The conversion centerpiece"
+    eyebrow="Every neighborhood"
     title={`Every West Linn<br/>neighborhood, <span class="script">measured</span>.`}
     lead="One report per neighborhood, refreshed every month from live listing data. Pick a neighborhood to see its snapshot and request the full report."
   />
@@ -31,9 +31,9 @@ const ready = hoods.filter((h) => h.complete).length;
         {hoods.map((hood) => <NeighborhoodCard hood={hood} />)}
       </div>
       <p class="mr-note" data-reveal>
-        Reports refresh monthly from live listing data, whose records originate from RMLS. We never
-        estimate or invent figures, and where a number is not confirmed the page says so plainly.
-        Oregon does not make closed sale prices public record, so Melissa pulls sold figures directly from RMLS and shares them on request.
+        Reports refresh monthly from live listing data, whose records originate from RMLS. I never
+        estimate or invent figures, and where a number isn't confirmed the page says so plainly.
+        Oregon does not make closed sale prices public record, so I pull sold figures directly from RMLS and share them on request.
       </p>
     </div>
   </section>

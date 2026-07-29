@@ -31,7 +31,9 @@ const year = 2026;
         <p class="foot-hours">{site.contact.hoursText}</p>
         <h3 class="foot-h foot-h--social">Follow</h3>
         <ul role="list" class="foot-social">
-          {site.contact.social.map((s) => <li><a href={s.href}>{s.label}</a></li>)}
+          {site.contact.social.map((s) => (
+            <li><a href={s.href} target="_blank" rel="noopener noreferrer">{s.label}</a></li>
+          ))}
         </ul>
       </div>
     </div>

@@ -15,8 +15,11 @@ The hard rules below still win wherever the two differ.
 
 ## Hard rules
 
-- **Never use em-dashes (—) or en-dashes (–) anywhere in site copy.** Use commas, periods,
-  or the word "to" for ranges (for example "$550K to $850K").
+- **Never use em-dashes (—) or en-dashes (–) as conversational punctuation.** Where a sentence
+  wants a dash, use a comma, a period, or a rewrite.
+  - **Exception:** a dash between two numbers or dates is fine as a range separator (for
+    example a chart label reading "Jan 2025 – Jun 2026"). In running prose, still prefer the
+    word "to" for ranges (for example "$550K to $850K").
 - **Never invent market numbers.** Every stat comes from the office RMLS pull. Until a real
   figure is loaded, label it visibly as a sample (use the `tag-sample` style or a
   `pill--placeholder`). Placeholders must read clearly as placeholders.

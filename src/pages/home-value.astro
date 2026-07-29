@@ -5,8 +5,8 @@ import MarketReportForm from "../components/MarketReportForm.astro";
 import { realEstateAgent } from "../lib/schema.js";
 
 const steps = [
-  { n: "01", t: "Tell us about your home", d: "Address, a few details, and how soon you are thinking of selling." },
-  { n: "02", t: "Melissa pulls the real comps", d: "Actual recent sales on your street and in your neighborhood, not an algorithm." },
+  { n: "01", t: "Tell me about your home", d: "Address, a few details, and how soon you're thinking of selling." },
+  { n: "02", t: "I pull the real comps", d: "Actual recent sales on your street and in your neighborhood, not an algorithm." },
   { n: "03", t: "You get a grounded number", d: "A price range with the reasoning behind it, plus what it means for your timing." },
 ];
 ---
@@ -20,7 +20,7 @@ const steps = [
     crumb="Home Value"
     eyebrow="For sellers"
     title={`What is your<br/>home <span class="script">worth</span>?`}
-    lead="An automated estimate guesses. Melissa prepares a valuation from the actual sold comps on your street, then walks you through what it means for your price and timing."
+    lead="An automated estimate guesses. I'll build your valuation from the actual sold comps on your street, then walk you through what it means for your price and timing."
   />
 
   <section class="section--tight">
