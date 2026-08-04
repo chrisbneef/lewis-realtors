@@ -112,7 +112,7 @@ const jsonLd = [realEstateAgent(), itemList, faqSchema(faq)];
                     : <span class="pill pill--placeholder">Featured spot</span>}
               </div>
               {v.logo
-                ? <div class="feat-logo"><img src={v.logo} alt={`${v.name} logo`} height="52" loading="lazy" /></div>
+                ? <div class="feat-logo"><img src={v.logo} alt={`${v.name} logo`} width="440" height="170" loading="lazy" /></div>
                 : <div class="feat-mark" aria-hidden="true">+</div>}
               <h2 class="feat-name">{v.name}</h2>
               {v.tagline && <p class="feat-tagline">{v.tagline}</p>}
@@ -293,11 +293,11 @@ const jsonLd = [realEstateAgent(), itemList, faqSchema(faq)];
   .feat-card { display: flex; flex-direction: column; gap: 0.7rem; padding: 1.7rem; min-width: 0; }
   .feat-card.is-open { border-style: dashed; background: transparent; }
   .feat-top { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; }
-  .feat-logo { min-height: 76px; display: flex; align-items: center; margin: 0.3rem 0 0.4rem; }
-  /* Cap both dimensions rather than fixing height: these logos range from wide
-     wordmarks to square badges, and a height-only cap renders the square ones
-     at a fraction of the size. */
-  .feat-logo img { max-height: 76px; max-width: 168px; height: auto; width: auto; border-radius: 4px; }
+  /* Every logo is pre-normalised to the same 440x150 transparent canvas with its
+     mark trimmed and centred, so one rule gives all four an identical footprint
+     regardless of whether the original was a wide wordmark or a square badge. */
+  .feat-logo { display: flex; align-items: center; justify-content: center; margin: 0.3rem 0 0.5rem; }
+  .feat-logo img { width: 100%; max-width: 230px; height: auto; aspect-ratio: 440 / 170; object-fit: contain; }
   .feat-mark {
     display: grid; place-items: center;
     width: 56px; height: 56px; margin: 0.3rem 0 0.4rem;

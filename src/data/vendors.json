@@ -74,7 +74,7 @@
       "featured": true,
       "recommended": true,
       "placeholder": false,
-      "logo": "/assets/renegade-logo.png",
+      "logo": "/assets/pros/renegade.png",
       "schemaAddress": {
         "locality": "West Linn",
         "region": "OR",
@@ -131,7 +131,7 @@
       "featured": true,
       "recommended": true,
       "placeholder": false,
-      "logo": "/assets/pros/rooted-wellness.jpg",
+      "logo": "/assets/pros/rooted-wellness.png",
       "personTitle": "Massage Therapist",
       "headshot": "/assets/pros/melissa-mansour.jpg",
       "phone": "(971) 283-0375",
