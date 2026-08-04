@@ -31,6 +31,10 @@ import { realEstateAgent } from "../lib/schema.js";
           <p class="contact-line">{site.county}</p>
         </div>
         <div class="contact-block">
+          <p class="eyebrow">Hours</p>
+          <p class="contact-line">{site.contact.hoursText}</p>
+        </div>
+        <div class="contact-block">
           <p class="eyebrow">Follow</p>
           <ul class="contact-social" role="list">
             {site.contact.social.map((s) => (
@@ -50,8 +54,8 @@ import { realEstateAgent } from "../lib/schema.js";
           formType="contact"
           neighborhood="west-linn"
           neighborhoodName="West Linn"
-          heading="Send me a message"
-          blurb="Tell me what you're looking for and the best way to reach you. I'll get back to you personally."
+          heading="Send us a message"
+          blurb="Share what you're looking for and the best way to reach you. We'll get back to you personally."
           cta="Send message"
         />
       </div>

@@ -3,42 +3,42 @@
     "slug": "buyer-representation",
     "name": "Buyer Representation",
     "num": "01",
-    "summary": "Local guidance from first showing to keys in hand, with an eye on the comps and the negotiation.",
-    "for": "Move-up and relocating buyers"
+    "summary": "Local guidance from first showing to keys in hand, with an eye on the comps, the negotiation, and your best interests.",
+    "for": "Move-up buyers"
   },
   {
     "slug": "seller-listing",
-    "name": "Seller & Listing",
+    "name": "Seller Representation",
     "num": "02",
-    "summary": "Custom property videos, community-first marketing, staging, and pricing built on real West Linn sold data, not guesswork.",
+    "summary": "Custom property videos, community-first marketing, staging, and pricing built on real West Linn sold data and market knowledge.",
     "for": "Homeowners ready to sell"
   },
   {
     "slug": "luxury",
-    "name": "Luxury",
+    "name": "Luxury Buyer & Seller Representation",
     "num": "03",
-    "summary": "Discreet representation for ridge-line and view properties, with an off-market network behind it.",
-    "for": "View and executive homes"
+    "summary": "Discreet representation for West Linn's view and estate properties, with an off-market network behind it.",
+    "for": "Luxury buyers and sellers"
   },
   {
     "slug": "first-time-buyer",
-    "name": "First-Time Buyer",
+    "name": "First-Time Homebuyer Representation",
     "num": "04",
-    "summary": "A patient, plain-English walk through your first West Linn purchase, schools and budget included.",
+    "summary": "A patient, step-by-step walk through your first West Linn purchase, schools and budget included.",
     "for": "Buyers new to ownership"
   },
   {
-    "slug": "investor-adu",
-    "name": "Investor & ADU",
+    "slug": "investment",
+    "name": "Investment Representation",
     "num": "05",
-    "summary": "Reading lots and corridors for rental and accessory-dwelling potential before you commit.",
-    "for": "Investors and ADU builders"
+    "summary": "Reading lots, corridors, and rental potential across West Linn before you commit.",
+    "for": "Investors"
   },
   {
     "slug": "relocation",
-    "name": "Relocation",
+    "name": "Relocation Expertise",
     "num": "06",
-    "summary": "Neighborhood-by-neighborhood orientation for families moving into the area from out of town.",
-    "for": "Families moving to West Linn"
+    "summary": "Neighborhood-by-neighborhood orientation for buyers moving into the area from out of town.",
+    "for": "Buyers relocating to West Linn"
   }
 ]

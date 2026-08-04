@@ -8,20 +8,22 @@ import neighborhoods from "../../data/neighborhoods.json";
 import { realEstateAgent } from "../../lib/schema.js";
 
 // Neighborhoods grouped by the service each one fits, so every service links to
-// the neighborhoods it serves.
-const hoodsByService = (slug) => neighborhoods.filter((h) => h.serviceSlug === slug);
+// the neighborhoods it serves. A neighborhood can list extra services beyond its
+// primary fit (e.g. Bolton under both first-time and buyer representation).
+const hoodsByService = (slug) =>
+  neighborhoods.filter((h) => h.serviceSlug === slug || h.serviceSlugsExtra?.includes(slug));
 ---
 
 <Base
   title="Services"
-  description="Buyer representation, seller and listing, luxury, first-time buyer, investor and ADU, and relocation services across West Linn, Oregon."
+  description="Buyer, seller, luxury, first-time homebuyer, investment, and relocation representation across West Linn, Oregon."
   jsonLd={[realEstateAgent()]}
 >
   <PageHero
     crumb="Services"
     eyebrow="How we help"
-    title={`Service that fits<br/>the way you <span class="script">move</span>.`}
-    lead="Six ways Lewis Realtors works in West Linn, each tied to the neighborhoods it suits best. This is a starting outline. Full service detail pages follow."
+    title={`Service that's tailored<br/>to your <span class="script">move</span>.`}
+    lead="Whether it's your first purchase or a luxury listing, every service and experience ties back to knowledge of the local neighborhoods and markets."
   />
 
   <section class="section--tight">

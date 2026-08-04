@@ -44,10 +44,10 @@ export async function GET() {
     const mkt = m?.publishable
       ? `${m.activeListings} active listings; median asking price ${moneyFull(m.medianAskingPrice)} (asking, not sold; Oregon is a non-disclosure state).`
       : `Active listings are aggregated into the West Linn city figures this month.`;
-    L.push(`${h.tagline} Character: ${h.character}. ${mkt} Best service fit: ${h.serviceFit}. ${u(`/neighborhoods/${h.slug}`)}`);
+    L.push(`${h.tagline}${h.description ? ` ${h.description}` : ""} Character: ${h.character}. ${mkt} Best service fit: ${h.serviceFit}. ${u(`/neighborhoods/${h.slug}`)}`);
     if (h.complete) {
       if (h.schools) {
-        L.push(`School feeders: ${h.schools.elementary} to ${h.schools.middle} to ${h.schools.high}.`);
+        L.push(`School path: ${h.schools.elementary} to ${h.schools.middle} to ${h.schools.high}.`);
       }
       if (Array.isArray(h.narrative)) {
         L.push("");

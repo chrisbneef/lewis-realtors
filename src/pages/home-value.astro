@@ -5,22 +5,22 @@ import MarketReportForm from "../components/MarketReportForm.astro";
 import { realEstateAgent } from "../lib/schema.js";
 
 const steps = [
-  { n: "01", t: "Tell me about your home", d: "Address, a few details, and how soon you're thinking of selling." },
-  { n: "02", t: "I pull the real comps", d: "Actual recent sales on your street and in your neighborhood, not an algorithm." },
-  { n: "03", t: "You get a grounded number", d: "A price range with the reasoning behind it, plus what it means for your timing." },
+  { n: "01", t: "Tell us about your home", d: "Address, a few details, and how soon you're thinking of selling. A short seller questionnaire follows." },
+  { n: "02", t: "We pull the real comps", d: "Actual recent sales on your street and in your neighborhood, not an algorithm." },
+  { n: "03", t: "You get a grounded number", d: "A price range built on factual data and knowledge of the market's activity." },
 ];
 ---
 
 <Base
   title="What Is My Home Worth?"
-  description="Request a personalized West Linn home valuation from Melissa Shaw, built on real neighborhood sold comps rather than an automated estimate."
+  description="Request a personalized West Linn home valuation from Lewis Realtors, built on real neighborhood sold comps rather than an automated estimate."
   jsonLd={[realEstateAgent()]}
 >
   <PageHero
     crumb="Home Value"
     eyebrow="For sellers"
-    title={`What is your<br/>home <span class="script">worth</span>?`}
-    lead="An automated estimate guesses. I'll build your valuation from the actual sold comps on your street, then walk you through what it means for your price and timing."
+    title={`What is my<br/>home <span class="script">worth</span>?`}
+    lead="Share a few details and receive a preliminary estimate, sight unseen, based on market knowledge and factual data. From there we pull the actual sold comps on your street for a grounded number."
   />
 
   <section class="section--tight">

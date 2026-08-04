@@ -14,12 +14,12 @@ const isContact = formType === "contact";
 const defaultHeading = isValuation
   ? "What is my home worth?"
   : isContact
-    ? "Send me a message"
+    ? "Send us a message"
     : `Get the ${neighborhoodName} market report`;
 const defaultBlurb = isValuation
-  ? "Tell me about your home and I'll build a personalized valuation from real neighborhood sold data, not an automated guess."
+  ? "Tell us about your home for a preliminary estimate based on the information you provide, followed by a personalized valuation from real neighborhood sold data."
   : isContact
-    ? "Tell me what you're looking for and the best way to reach you. I'll get back to you personally."
+    ? "Share what you're looking for and the best way to reach you. We'll get back to you personally."
     : `Median asking price, days on market, and what's currently for sale in ${neighborhoodName}, plus the twelve-month West Linn price trend. Refreshed every month from live listing data and sent straight to your inbox.`;
 
 // Unique id prefix so several forms can live on one page without colliding.

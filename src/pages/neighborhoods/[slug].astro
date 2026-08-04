@@ -103,6 +103,7 @@ const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
           <p class="eyebrow">West Linn &middot; {hood.character}</p>
           <h1>{hood.name}</h1>
           <p class="nb-tagline">{hood.tagline}</p>
+          {hood.description && <p class="nb-desc measure">{hood.description}</p>}
           <div class="nb-meta">
             <span class="pill pill--gold">{range}</span>
             <span class="pill pill--azure">Fits: {hood.serviceFit}</span>
@@ -167,7 +168,7 @@ const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
       <section class="section--tight section--cream">
         <div class="wrap nb-schools" data-reveal>
           <div class="nb-schools-head">
-            <p class="eyebrow">School feeders</p>
+            <p class="eyebrow">Schools</p>
             <h2 class="nb-schools-title">{site.district}</h2>
             <p class="nb-schools-sub">The elementary, middle, and high school path for {hood.name}.</p>
           </div>
@@ -203,8 +204,8 @@ const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
         <p class="nb-soon-num">{String(hood.order).padStart(2, "0")} of {neighborhoods.length}</p>
         <h2>The full {hood.name} guide is coming.</h2>
         <p class="nb-soon-lead measure">
-          The live market snapshot and boundary above update monthly. I'm still writing the
-          {hood.name} deep dive Bolton already has: school feeders, the streets that set it
+          The live market snapshot above updates monthly. I'm still writing the
+          {hood.name} deep dive Bolton already has: school boundaries, the streets that set it
           apart, and who it fits best. Enter your email and you'll be first to get it.
         </p>
         <a class="link" href="/neighborhoods/bolton">See a finished neighborhood: Bolton <span class="arrow">&rarr;</span></a>
@@ -287,7 +288,7 @@ const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
           title={`The ${hood.name} <span class="script">market report</span>.`}
         />
         <p class="nb-form-lead">
-          One page, plain English, refreshed monthly from live listing data. I'm notified the
+          One clear page, refreshed monthly from live listing data. I'm notified the
           moment you request it, so a real local answer is never far behind.
         </p>
       </div>
@@ -318,6 +319,7 @@ const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
   .nb-hero-grid { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 2.5rem; align-items: end; }
   .nb-hero h1 { font-size: clamp(2.6rem, 1.8rem + 4vw, 5rem); margin-block: 1rem 0; }
   .nb-tagline { font-family: var(--font-display); font-size: clamp(1.3rem, 1.1rem + 1vw, 1.9rem); font-style: italic; color: var(--ink-soft); margin-top: 0.8rem; max-width: 30ch; }
+  .nb-desc { margin-top: 1.1rem; color: var(--ink-soft); font-weight: 300; }
   .nb-meta { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.6rem; }
   .nb-hero-aside { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; }
 
