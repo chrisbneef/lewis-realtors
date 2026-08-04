@@ -111,14 +111,15 @@ import { realEstateAgent } from "../lib/schema.js";
         </p>
       </div>
       <div class="giving-cards">
-        <div class="giving-card card" data-reveal style="--reveal-delay: 100ms">
+        <a class="giving-card card" href={site.teamSite.lewisLoves} target="_blank" rel="noopener noreferrer" data-reveal style="--reveal-delay: 100ms">
           <h3 class="gc-name">Lewis <span class="script gc-heart">Loves</span> CommUnity</h3>
           <p class="gc-body">
             Our movement dedicated to serving others with compassion, dignity, and the
             connection of truly being seen. Every closing donates five blankets to
             local emergency rooms.
           </p>
-        </div>
+          <span class="link gc-link">See Lewis Loves <span class="arrow">&rarr;</span></span>
+        </a>
         <div class="giving-card card" data-reveal style="--reveal-delay: 200ms">
           <h3 class="gc-name">Homes for Heroes&reg;</h3>
           <p class="gc-body">
@@ -128,6 +129,25 @@ import { realEstateAgent } from "../lib/schema.js";
           </p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- American Dream TV -->
+  <section class="section--tight">
+    <div class="wrap">
+      <a class="adtv card" href={site.teamSite.americanDreamTv} target="_blank" rel="noopener noreferrer" data-reveal>
+        <div class="adtv-copy">
+          <p class="eyebrow">On television</p>
+          <h2 class="adtv-title">The American Dream TV</h2>
+          <p class="adtv-lead">
+            Melissa hosts the Oregon and Southwest Washington edition of The American Dream TV,
+            a national lifestyle and real estate show about the people, places, and stories that
+            make our communities what they are. It's the same idea as this site, on a bigger
+            screen: {site.connectingLine.toLowerCase()}
+          </p>
+        </div>
+        <span class="link adtv-link">Watch the show <span class="arrow">&rarr;</span></span>
+      </a>
     </div>
   </section>
 
@@ -219,6 +239,20 @@ import { realEstateAgent } from "../lib/schema.js";
   .gc-name { font-size: 1.45rem; color: var(--ink); }
   .gc-heart { color: var(--gold-deep); font-size: 1.2em; padding-inline: 0.08em; }
   .gc-body { color: var(--ink-soft); font-size: 0.92rem; margin-top: 0.7rem; }
+  .gc-link { margin-top: 1rem; display: inline-block; font-size: 0.82rem; }
+  .gc-link::after { display: none; }
+
+  /* American Dream TV */
+  .adtv {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2rem; flex-wrap: wrap;
+    padding: clamp(2rem, 1.5rem + 2vw, 3rem);
+    border-top: 3px solid var(--gold-deep);
+  }
+  .adtv-title { font-size: clamp(1.8rem, 1.4rem + 1.6vw, 2.6rem); margin-top: 0.5rem; }
+  .adtv-lead { color: var(--ink-soft); margin-top: 0.8rem; max-width: 62ch; }
+  .adtv-link { white-space: nowrap; }
+  .adtv-link::after { display: none; }
 
   /* Beyond West Linn */
   .beyond {

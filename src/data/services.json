@@ -3,42 +3,42 @@
     "slug": "buyer-representation",
     "name": "Buyer Representation",
     "num": "01",
-    "summary": "Local guidance from first showing to keys in hand, with an eye on the comps, the negotiation, and your best interests.",
+    "summary": "Local guidance from first showing to keys in hand. Your offer is shaped by current comps and the real-time market activity behind them, so you know what a home is worth before you write one.",
     "for": "Move-up buyers"
   },
   {
     "slug": "seller-listing",
     "name": "Seller Representation",
     "num": "02",
-    "summary": "Custom property videos, community-first marketing, staging, and pricing built on real West Linn sold data and market knowledge.",
+    "summary": "Custom property videos, community-first marketing, and staging, with pricing built on sold data plus the real-time market activity that only comes from being in the field every day.",
     "for": "Homeowners ready to sell"
   },
   {
     "slug": "luxury",
     "name": "Luxury Buyer & Seller Representation",
     "num": "03",
-    "summary": "Discreet representation for West Linn's view and estate properties, with an off-market network behind it.",
+    "summary": "View properties, acreage, and estate homes sell to a smaller pool of buyers, which changes how they should be priced, marketed, and negotiated. Discreet representation with an off-market network behind it.",
     "for": "Luxury buyers and sellers"
   },
   {
     "slug": "first-time-buyer",
     "name": "First-Time Homebuyer Representation",
     "num": "04",
-    "summary": "A patient, step-by-step walk through your first West Linn purchase, schools and budget included.",
+    "summary": "Your first purchase, explained at your pace. You'll know what each document means, what every step costs, and what happens next, and no question is too small to ask.",
     "for": "Buyers new to ownership"
   },
   {
     "slug": "investment",
     "name": "Investment Representation",
     "num": "05",
-    "summary": "Reading lots, corridors, and rental potential across West Linn before you commit.",
+    "summary": "Running the numbers before you commit: realistic rents, carrying costs, and what a property has to do to work as an investment rather than a hope.",
     "for": "Investors"
   },
   {
     "slug": "relocation",
     "name": "Relocation Expertise",
     "num": "06",
-    "summary": "Neighborhood-by-neighborhood orientation for buyers moving into the area from out of town.",
+    "summary": "Neighborhood-by-neighborhood orientation for buyers moving into the area from out of town, so the map makes sense before you ever get on a plane.",
     "for": "Buyers relocating to West Linn"
   }
 ]

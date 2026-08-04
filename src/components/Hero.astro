@@ -21,13 +21,14 @@ import BgVideo from "./BgVideo.astro";
         before you know the home.
       </h1>
       <p class="hero-lead measure" data-reveal style="--reveal-delay: 180ms">
-        I'm Melissa Shaw, and West Linn is the only market I work. 23+ years here, more than
-        $128 million sold since 2016, and a free monthly market report for every neighborhood
-        we cover.
+        I'm Melissa Shaw, a West Linn resident and the founder of Lewis Realtors. 23+ years in
+        real estate, more than $128 million sold since 2016, and a free monthly market report
+        for every neighborhood we cover.
       </p>
       <div class="hero-actions" data-reveal style="--reveal-delay: 280ms">
         <a class="btn btn--gold btn--lg" href="#market-report">Get your market report</a>
         <a class="btn btn--ghost btn--lg" href="/home-value">What is my home worth?</a>
+        <a class="btn btn--ghost btn--lg" href={site.teamSite.homeSearch} target="_blank" rel="noopener noreferrer">Start my home search</a>
       </div>
       <ul class="hero-proof" role="list" data-reveal style="--reveal-delay: 380ms">
         {site.agent.stats.map((s) => (
@@ -53,6 +54,10 @@ import BgVideo from "./BgVideo.astro";
         <figcaption class="hero-meta">
           <p class="meta-name">{site.agent.name}</p>
           <p class="meta-role">{site.agent.role}</p>
+          <ul class="meta-creds" role="list">
+            {site.agent.designations.map((d) => <li>{d}</li>)}
+            <li>{site.agent.resident}</li>
+          </ul>
           <a class="meta-phone" href={site.contact.phoneHref}>
             <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
               <path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5.5a2 2 0 0 1 2-2Z" stroke-linejoin="round"/>
@@ -120,12 +125,14 @@ import BgVideo from "./BgVideo.astro";
     gap: 0.9rem;
     margin-top: 1.8rem;
   }
-  /* equal width, side by side; wrap to stack only when the column is too narrow */
+  /* Three CTAs: the gold report button takes the full first row, the two
+     secondary actions pair up beneath it. */
   .hero-actions .btn {
-    flex: 1 1 240px;
+    flex: 1 1 220px;
     padding-inline: 1.2em;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
   }
+  .hero-actions .btn--gold { flex-basis: 100%; }
   .hero-proof {
     display: flex;
     flex-wrap: wrap;
@@ -185,6 +192,13 @@ import BgVideo from "./BgVideo.astro";
   }
   .meta-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; line-height: 1.05; }
   .meta-role { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); }
+  .meta-creds {
+    display: flex; flex-direction: column; gap: 0.15rem;
+    margin-top: 0.6rem;
+    font-size: 0.7rem;
+    line-height: 1.35;
+    color: var(--ink-soft);
+  }
   .meta-phone {
     display: inline-flex;
     align-items: center;
@@ -213,13 +227,27 @@ import BgVideo from "./BgVideo.astro";
     .hero-figure { justify-self: center; align-self: auto; margin-top: 2rem; max-width: 360px; }
   }
 
-  /* short desktop viewports: compress so it still clears the fold */
-  @media (min-width: 901px) and (max-height: 780px) {
+  /* Desktop viewports shorter than the hero's natural height: compress so it
+     still clears the fold. The threshold has to cover ordinary laptop windows
+     (roughly 800-1000px of viewport), not just unusually short ones, because
+     three CTA buttons plus the credential list push the natural height past
+     1000px. */
+  @media (min-width: 901px) and (max-height: 1040px) {
     .hero h1 { font-size: clamp(2.1rem, 1.4rem + 2.4vw, 3.4rem); }
     .hero-lead { margin-top: 0.9rem; font-size: 1.05rem; }
-    .hero-actions { margin-top: 1.3rem; }
+    .hero-actions { margin-top: 1.3rem; gap: 0.7rem; }
     .hero-proof { margin-top: 1.4rem; padding-top: 1.1rem; }
     /* shrink the whole card (not just height) so the photo still fills its width */
     .hero-figure { max-width: 340px; }
+  }
+  /* Genuinely short windows need a second, harder step. */
+  @media (min-width: 901px) and (max-height: 850px) {
+    .hero h1 { font-size: clamp(1.95rem, 1.3rem + 2vw, 2.9rem); }
+    .hero-lead { margin-top: 0.7rem; font-size: 1rem; }
+    .hero-actions { margin-top: 1rem; }
+    .hero-proof { margin-top: 1rem; padding-top: 0.9rem; }
+    .proof-label { margin-top: 0.3rem; }
+    .hero-figure { max-width: 300px; }
+    .meta-creds { font-size: 0.66rem; }
   }
 </style>

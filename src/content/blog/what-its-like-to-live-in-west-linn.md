@@ -37,7 +37,7 @@ If you like a wine-and-golf weekend, that is here too. Tumwater Vineyard and the
 
 ## The schools are the real draw
 
-For a lot of families, this is the whole reason. The West Linn-Wilsonville School District is consistently ranked among the top districts in Oregon, holds an overall A grade on Niche, and reports a four-year graduation rate around 96 percent, well above the statewide average. West Linn itself lands near the top of Niche's best-suburbs-in-Oregon list with an overall A. If schools are driving your move, this is the short list.
+For a lot of buyers, this is the whole reason. The West Linn-Wilsonville School District is consistently ranked among the top districts in Oregon, holds an overall A grade on Niche, and reports a four-year graduation rate around 96 percent, well above the statewide average. West Linn itself lands near the top of Niche's best-suburbs-in-Oregon list with an overall A. If schools are driving your move, this is the short list.
 
 ## The commute
 

@@ -19,7 +19,7 @@ export async function GET() {
   L.push(`# ${site.brand}`);
   L.push("");
   L.push(
-    `> Hyper-local real estate for ${site.city}, ${site.state} (ZIP ${site.zip}, ${site.county}), led by Principal Broker ${site.agent.name}. ${site.brand} publishes a free monthly market report for each of the ${hoods.length} ${site.city} neighborhoods and represents buyers, sellers, first-time homebuyers, investors, and buyers relocating to the area.`
+    `> Hyper-local real estate for ${site.city}, ${site.state} (ZIP ${site.zip}, ${site.county}), led by ${site.agent.name}, ${site.agent.designations[0]} and a West Linn resident. ${site.brand} publishes a free monthly market report for each of the ${hoods.length} ${site.city} neighborhoods and represents buyers, sellers, first-time homebuyers, investors, and buyers relocating to the area.`
   );
   L.push("");
   L.push(

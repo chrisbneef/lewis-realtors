@@ -11,9 +11,10 @@
     "name": "Melissa Shaw",
     "role": "Founder of Lewis Realtors",
     "designations": [
-      "Principal Broker in Oregon",
+      "Managing Principal Real Estate Broker in Oregon",
       "Designated Broker in Washington"
     ],
+    "resident": "Resident of West Linn, Oregon",
     "headshot": "/assets/melissa-shaw.png",
     "bioShort": "23 years in West Linn real estate, more than $128 million sold since 2016, and over a thousand buyers and sellers served.",
     "bio": [
@@ -30,8 +31,8 @@
         "label": "Buyers and sellers served"
       },
       {
-        "value": "23 yrs",
-        "label": "Of West Linn market experience"
+        "value": "23+ yrs",
+        "label": "Of real estate experience"
       }
     ]
   },
@@ -80,9 +81,13 @@
   ],
   "teamSite": {
     "label": "HomesByLewisRealtors.com",
-    "href": "https://www.homesbylewisrealtors.com",
-    "area": "the Portland metro and Southern Washington"
+    "href": "https://homesbylewisrealtors.com",
+    "area": "the Portland metro and Southwest Washington",
+    "homeSearch": "https://homesbylewisrealtors.com/home-search/",
+    "lewisLoves": "https://homesbylewisrealtors.com/Lewis-Loves",
+    "americanDreamTv": "https://homesbylewisrealtors.com/american-dream-tv-with-melissa-landing-page/"
   },
+  "connectingLine": "Connecting people to community, one home at a time.",
   "contact": {
     "phone": "(503) 489-8367",
     "phoneHref": "tel:+15034898367",

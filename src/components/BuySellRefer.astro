@@ -3,19 +3,19 @@ const blocks = [
   {
     key: "Buy",
     title: "Buy",
-    copy: "Tour West Linn with an experienced local resident who knows every neighborhood, and all the things you won't see on a listing.",
+    copy: "Tour West Linn with peace of mind, backed by local market expertise and insights you won't find in a listing or from simply visiting a home.",
     href: "/services#buyer-representation",
   },
   {
     key: "Sell",
     title: "Sell",
-    copy: "Custom video, community-first marketing, and a price built on real sold data and market knowledge.",
+    copy: "No one-size-fits-all marketing here. We tailor every strategy using more than sold data, incorporating the real-time market activity and neighborhood insights that only come from being in the field every day.",
     href: "/home-value",
   },
   {
     key: "Refer",
     title: "Refer",
-    copy: "Thank you for trusting me with your friends and family. As always, I'll treat them like my own.",
+    copy: "Your referral is the greatest compliment I could receive and will always be treated like my own family. Never any pressure, just service, simply connect us here.",
     href: "/contact",
   },
 ];
@@ -78,7 +78,10 @@ const blocks = [
     color: var(--ink-onDark);
     line-height: 1;
   }
-  .bsr-copy { color: var(--ink-onDark-soft); max-width: 32ch; flex-grow: 1; }
+  /* The three blurbs differ a lot in length (Melissa's own wording), so reserve
+     a common block height instead of letting each column size to its text. Keeps
+     the "Start here" links on a shared baseline without trimming her copy. */
+  .bsr-copy { color: var(--ink-onDark-soft); max-width: 34ch; flex-grow: 1; min-height: 7.5em; }
   .bsr-block:hover .bsr-copy { color: color-mix(in srgb, var(--noir) 78%, transparent); }
   .bsr-link::after { display: none; }
 

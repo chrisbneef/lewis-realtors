@@ -30,7 +30,15 @@ The hard rules below still win wherever the two differ.
 
 - Office: Lewis Realtors. Market: West Linn, Oregon. ZIP 97068, Clackamas County.
 - School district: West Linn-Wilsonville School District.
-- Agent: Melissa Shaw, Founder. Principal Broker in Oregon, Designated Broker in Washington.
+- Agent: Melissa Shaw, Founder. **Managing Principal Real Estate Broker in Oregon**, **Designated
+  Broker in Washington**, and a resident of West Linn, Oregon. (Confirmed by Melissa 2026-07-31;
+  her 2025 print books say "Managing Broker in Washington", which is out of date.)
+- **Never imply West Linn is the only market she works.** This site is the hyper-local West Linn
+  property, but Lewis Realtors serves the greater Portland metro and Southwest Washington. Copy
+  should read as focused, not limited. Point the wider work at the team site
+  (`site.teamSite`, HomesByLewisRealtors.com; LewisRealtors.com redirects there).
+- Mission, core values, team bios, and the rest of the brand canon live in `MELISSA-BOOKS.md`,
+  extracted from her two 2025 client books (PDFs in `reference/melissa-books/`).
 - Phone: (503) 489-8367.
 - The IDX / RMLS disclaimer lives in the footer and must stay verbatim (see `src/data/site.json`).
 
@@ -47,7 +55,7 @@ The hard rules below still win wherever the two differ.
   licensed brand fonts and swap the vars in `tokens.css` + the link in `Base.astro`.
 - Light and dark themes both supported; site is currently locked to light.
 
-## The neighborhood is the unit
+## Neighborhood pages
 
 Each West Linn neighborhood is its own deep page with one conversion: "Get the {Neighborhood}
 market report." A secondary conversion ("What is my home worth?") reuses the same endpoint with
