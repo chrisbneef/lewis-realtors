@@ -35,6 +35,54 @@
       }
     ]
   },
+  "mission": "We help clients live their best lives through real estate: building wealth, strengthening communities, and creating lasting legacies.",
+  "values": [
+    {
+      "name": "Live Your Best Life",
+      "line": "We value wellness, growth, and fulfillment for all we serve."
+    },
+    {
+      "name": "Integrity First",
+      "line": "We lead with honesty, professionalism, and trust."
+    },
+    {
+      "name": "Elevated Service",
+      "line": "We exceed expectations through expert, caring service."
+    },
+    {
+      "name": "Relationship-Driven",
+      "line": "We prioritize genuine connections and community."
+    },
+    {
+      "name": "Generational Impact",
+      "line": "We help create wealth and legacies for the future."
+    }
+  ],
+  "team": [
+    {
+      "name": "Tera Harder",
+      "role": "Licensed Real Estate Broker in Oregon",
+      "photo": "/assets/team/tera-harder.png",
+      "bio": "Tera puts her heart and soul into every client relationship. Drawing from her background in special education, she brings empathy, patience, and problem-solving to every home search or sale, so clients feel heard, supported, and confident every step of the way."
+    },
+    {
+      "name": "Lisa Neef",
+      "role": "Principal Broker in Oregon · Transaction Coordinator",
+      "photo": "/assets/team/lisa-neef.png",
+      "bio": "Lisa has run her own transaction coordination company since 2013. She manages the documents, deadlines, and details of every purchase and sale so nothing slips and closings stay on track."
+    },
+    {
+      "name": "Lora Reed",
+      "role": "Creative, Client Care & Administrative Support",
+      "photo": "/assets/team/lora-reed.png",
+      "bio": "Lora works behind the scenes on the thoughtful touches, from client gifts and moving books to the back-office details, that make every client's experience feel cared for from start to finish."
+    }
+  ],
+  "teamSite": {
+    "label": "HomesByLewisRealtors.com",
+    "href": "https://www.homesbylewisrealtors.com",
+    "area": "the Portland metro and Southern Washington"
+  },
   "contact": {
     "phone": "(503) 489-8367",
     "phoneHref": "tel:+15034898367",
