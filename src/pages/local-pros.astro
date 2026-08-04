@@ -37,27 +37,44 @@ const faq = [
 ];
 
 // ItemList of the real, recommended vendors so answer engines can cite them.
+// Only vendors we can actually describe: a listing still awaiting its details
+// stays out of structured data rather than being asserted with blanks. Address
+// comes from the vendor's own record, never assumed to be West Linn.
+const SCHEMA_TYPE = {
+  mortgage: "MortgageBroker",
+  financial: "FinancialService",
+  benefits: "InsuranceAgency",
+  insurance: "InsuranceAgency",
+  wellness: "HealthAndBeautyBusiness",
+};
 const itemList = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Local home and real estate professionals recommended by Lewis Realtors in West Linn, Oregon",
   itemListElement: recommended
+    .filter((v) => !v.needsDetail)
     .map((v, i) => ({
       "@type": "ListItem",
       position: i + 1,
       item: {
-        "@type": v.category === "mortgage" ? "MortgageBroker" : "LocalBusiness",
+        "@type": SCHEMA_TYPE[v.category] || "LocalBusiness",
         name: v.name,
-        url: v.url,
-        telephone: v.phone,
-        areaServed: v.serviceArea,
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "West Linn",
-          addressRegion: "OR",
-          postalCode: "97068",
-          addressCountry: "US",
-        },
+        ...(v.url ? { url: v.url } : {}),
+        ...(v.phone ? { telephone: v.phone } : {}),
+        ...(v.serviceArea ? { areaServed: v.serviceArea } : {}),
+        ...(v.person ? { employee: { "@type": "Person", name: v.person, ...(v.personTitle ? { jobTitle: v.personTitle } : {}) } } : {}),
+        ...(v.schemaAddress
+          ? {
+              address: {
+                "@type": "PostalAddress",
+                ...(v.schemaAddress.street ? { streetAddress: v.schemaAddress.street } : {}),
+                addressLocality: v.schemaAddress.locality,
+                addressRegion: v.schemaAddress.region,
+                ...(v.schemaAddress.postal ? { postalCode: v.schemaAddress.postal } : {}),
+                addressCountry: "US",
+              },
+            }
+          : {}),
         ...(v.license ? { identifier: v.license } : {}),
       },
     })),
@@ -82,30 +99,50 @@ const jsonLd = [realEstateAgent(), itemList, faqSchema(faq)];
   {featured.length > 0 && (
     <section class="lp-featured">
       <div class="wrap">
-        <p class="eyebrow" data-reveal>Featured</p>
+        <p class="eyebrow" data-reveal>People we actually refer</p>
         <div class="feat-grid">
           {featured.map((v, i) => (
             <article class={`feat-card card ${v.recommended ? "" : "is-open"}`} data-reveal style={`--reveal-delay: ${i * 90}ms`}>
               <div class="feat-top">
                 <span class="vcat">{catLabel(v.category)}</span>
-                {v.recommended
-                  ? <span class="pill pill--gold">Recommended</span>
-                  : <span class="pill pill--placeholder">Featured spot</span>}
+                {v.needsDetail
+                  ? <span class="pill pill--placeholder">Profile coming soon</span>
+                  : v.recommended
+                    ? <span class="pill pill--gold">Recommended</span>
+                    : <span class="pill pill--placeholder">Featured spot</span>}
               </div>
               {v.logo
-                ? <div class="feat-logo"><img src={v.logo} alt={`${v.name} logo`} width="512" height="198" loading="lazy" /></div>
+                ? <div class="feat-logo"><img src={v.logo} alt={`${v.name} logo`} height="52" loading="lazy" /></div>
                 : <div class="feat-mark" aria-hidden="true">+</div>}
               <h2 class="feat-name">{v.name}</h2>
               {v.tagline && <p class="feat-tagline">{v.tagline}</p>}
+              {v.person && (
+                <div class="feat-person">
+                  {v.headshot
+                    ? <img class="feat-face" src={v.headshot} alt={v.person} width="88" height="88" loading="lazy" />
+                    : <span class="feat-face feat-face--empty" aria-hidden="true">{v.person.charAt(0)}</span>}
+                  <span class="feat-person-text">
+                    <span class="feat-person-name">{v.person}</span>
+                    {v.personTitle && <span class="feat-person-title">{v.personTitle}</span>}
+                  </span>
+                </div>
+              )}
               <p class="feat-blurb">{v.blurb}</p>
-              {v.license && <p class="feat-meta">{v.license} &middot; {v.location}</p>}
+              {(v.license || v.address) && (
+                <p class="feat-meta">{v.license ? v.license : v.address}{v.license && v.location ? ` · ${v.location}` : ""}</p>
+              )}
+              {v.disclosure && <p class="feat-disclosure">{v.disclosure}</p>}
               <div class="feat-foot">
-                {v.url
-                  ? <>
-                      <a class="btn btn--gold btn--compact" href={v.url} target="_blank" rel="noopener">Visit {v.name.split(" ")[0]}</a>
-                      {v.phone && <a class="link vfoot-phone" href={v.phoneHref}>{v.phone}</a>}
-                    </>
-                  : <a class="link" href="/contact">Inquire about this spot <span class="arrow">&rarr;</span></a>}
+                {v.url ? (
+                  <>
+                    <a class="btn btn--gold btn--compact" href={v.url} target="_blank" rel="noopener">Visit {v.name.split(" ")[0]}</a>
+                    {v.phone && <a class="link vfoot-phone" href={v.phoneHref}>{v.phone}</a>}
+                  </>
+                ) : v.phone ? (
+                  <a class="btn btn--gold btn--compact" href={v.phoneHref}>Call {v.phone}</a>
+                ) : (
+                  <a class="link" href="/contact">Ask about {v.name.split(" ")[0]} <span class="arrow">&rarr;</span></a>
+                )}
               </div>
             </article>
           ))}
@@ -223,12 +260,34 @@ const jsonLd = [realEstateAgent(), itemList, faqSchema(faq)];
   .lp-directory { padding-block: clamp(1.25rem, 0.75rem + 1.5vw, 1.75rem) clamp(3rem, 2rem + 4vw, 4.5rem); }
 
   /* Featured row (three cards) */
-  .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 0.9rem; }
+  .feat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 0.9rem; }
+  .feat-person { display: flex; align-items: center; gap: 0.75rem; margin-top: 0.2rem; }
+  .feat-face {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid var(--line);
+  }
+  .feat-face--empty {
+    display: grid; place-items: center;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--gold-deep);
+    background: var(--cream-deep);
+  }
+  .feat-person-text { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
+  .feat-person-name { font-size: 0.92rem; font-weight: 500; }
+  .feat-person-title { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); }
+  .feat-disclosure { font-size: 0.68rem; line-height: 1.6; color: var(--ink-muted); }
   .feat-card { display: flex; flex-direction: column; gap: 0.7rem; padding: 1.7rem; }
   .feat-card.is-open { border-style: dashed; background: transparent; }
   .feat-top { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; }
-  .feat-logo { min-height: 56px; display: flex; align-items: center; margin: 0.3rem 0 0.4rem; }
-  .feat-logo img { height: 52px; width: auto; max-width: 100%; border-radius: 4px; }
+  .feat-logo { min-height: 76px; display: flex; align-items: center; margin: 0.3rem 0 0.4rem; }
+  /* Cap both dimensions rather than fixing height: these logos range from wide
+     wordmarks to square badges, and a height-only cap renders the square ones
+     at a fraction of the size. */
+  .feat-logo img { max-height: 76px; max-width: 168px; height: auto; width: auto; border-radius: 4px; }
   .feat-mark {
     display: grid; place-items: center;
     width: 56px; height: 56px; margin: 0.3rem 0 0.4rem;
@@ -288,6 +347,9 @@ const jsonLd = [realEstateAgent(), itemList, faqSchema(faq)];
 
   @media (max-width: 900px) {
     .feat-grid { grid-template-columns: 1fr; }
+  }
+  @media (min-width: 761px) and (max-width: 1100px) {
+    .feat-grid { grid-template-columns: repeat(2, 1fr); }
     .dir-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 600px) {

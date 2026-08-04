@@ -13,8 +13,20 @@
       "label": "Title & Escrow"
     },
     {
+      "id": "financial",
+      "label": "Financial Advisory"
+    },
+    {
+      "id": "benefits",
+      "label": "Health Insurance & Benefits"
+    },
+    {
+      "id": "wellness",
+      "label": "Health & Wellness"
+    },
+    {
       "id": "insurance",
-      "label": "Insurance"
+      "label": "Home Insurance"
     },
     {
       "id": "contractor",
@@ -62,20 +74,76 @@
       "featured": true,
       "recommended": true,
       "placeholder": false,
-      "logo": "/assets/renegade-logo.png"
+      "logo": "/assets/renegade-logo.png",
+      "schemaAddress": {
+        "locality": "West Linn",
+        "region": "OR",
+        "postal": "97068"
+      }
+    },
+    {
+      "name": "Pave Advisory Team",
+      "category": "financial",
+      "person": "Chelsea McGraw, BFA\u2122",
+      "personTitle": "Financial Advisor",
+      "headshot": "/assets/pros/chelsea-mcgraw.jpg",
+      "phone": "(503) 451-2122",
+      "phoneHref": "tel:+15034512122",
+      "location": "West Linn, Oregon",
+      "address": "1660 Willamette Falls Drive, West Linn, OR 97068",
+      "tagline": "Private wealth advisory, right on Willamette Falls Drive",
+      "blurb": "Chelsea advises West Linn families on the money side of a move, from what a mortgage payment does to the rest of the plan to how a sale fits into longer-term goals.",
+      "disclosure": "A private wealth advisory practice of Ameriprise Financial Services, LLC.",
+      "featured": true,
+      "recommended": true,
+      "placeholder": false,
+      "logo": "/assets/pros/pave-advisory.png",
+      "schemaAddress": {
+        "street": "1660 Willamette Falls Drive",
+        "locality": "West Linn",
+        "region": "OR",
+        "postal": "97068"
+      }
+    },
+    {
+      "name": "PDX Benefits LLC",
+      "category": "benefits",
+      "person": "James Russell",
+      "personTitle": "Founder & Principal Consultant",
+      "headshot": "/assets/pros/james-russell.jpg",
+      "phone": "(503) 592-7689",
+      "phoneHref": "tel:+15035927689",
+      "location": "Portland metro, Oregon",
+      "tagline": "Health insurance and employee benefits",
+      "blurb": "James helps employers build competitive benefits packages and helps individuals and families find coverage that fits their needs and budget. He spent more than a decade as a special education teacher first, which is where the listen-first approach comes from.",
+      "license": "License #20759495 \u00b7 OR, WA, CA, AZ, MI",
+      "featured": true,
+      "recommended": true,
+      "placeholder": false,
+      "logo": "/assets/pros/pdx-benefits.png"
+    },
+    {
+      "name": "Rooted Wellness Room",
+      "category": "wellness",
+      "person": "Melissa Mansour",
+      "tagline": "Health and wellness",
+      "blurb": "Melissa Mansour's health and wellness practice. We're adding her full profile shortly.",
+      "featured": true,
+      "recommended": true,
+      "placeholder": false,
+      "needsDetail": true,
+      "logo": "/assets/pros/rooted-wellness.jpg"
     },
     {
       "name": "A trusted home inspector",
       "category": "inspection",
       "blurb": "We are finalizing the West Linn home inspector we refer most. Ask Melissa for a name in the meantime.",
-      "featured": true,
       "placeholder": true
     },
     {
       "name": "A local title & escrow team",
       "category": "title",
       "blurb": "A West Linn title and escrow partner who keeps closings smooth and on schedule. Listing soon.",
-      "featured": true,
       "placeholder": true
     },
     {
