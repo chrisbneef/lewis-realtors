@@ -126,13 +126,23 @@
       "name": "Rooted Wellness Room",
       "category": "wellness",
       "person": "Melissa Mansour",
-      "tagline": "Health and wellness",
-      "blurb": "Melissa Mansour's health and wellness practice. We're adding her full profile shortly.",
+      "tagline": "Intentional, therapeutic massage",
+      "blurb": "Melissa builds personalized sessions that blend relaxation with focused treatment to relieve pain, reduce stress, and restore balance. Deep tissue, myofascial release, cupping, and Gua Sha come as part of the treatment when they fit, never as an add-on.",
       "featured": true,
       "recommended": true,
       "placeholder": false,
-      "needsDetail": true,
-      "logo": "/assets/pros/rooted-wellness.jpg"
+      "logo": "/assets/pros/rooted-wellness.jpg",
+      "personTitle": "Massage Therapist",
+      "headshot": "/assets/pros/melissa-mansour.jpg",
+      "phone": "(971) 283-0375",
+      "phoneHref": "tel:+19712830375",
+      "email": "rootedwellnessroom@gmail.com",
+      "location": "Oregon City, Oregon",
+      "note": "By appointment only",
+      "schemaAddress": {
+        "locality": "Oregon City",
+        "region": "OR"
+      }
     },
     {
       "name": "A trusted home inspector",
