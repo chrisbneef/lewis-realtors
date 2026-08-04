@@ -54,6 +54,9 @@ const magnets = [
     gap: 1rem;
     padding: clamp(1.8rem, 1.2rem + 2vw, 2.8rem);
     border-top: 3px solid var(--gold-deep);
+    /* Grid items default to min-width:auto, so a button that cannot wrap sets
+       the card's floor and pushes the whole track past the viewport. */
+    min-width: 0;
   }
   .lm-card--azure { border-top-color: var(--azure-deep); }
   .lm-tag {
@@ -64,7 +67,15 @@ const magnets = [
   }
   .lm-title { font-size: clamp(1.7rem, 1.3rem + 1.6vw, 2.4rem); }
   .lm-copy { color: var(--ink-soft); flex-grow: 1; max-width: 46ch; }
-  .lm-card .btn { margin-top: 0.6rem; }
+  /* These CTA labels are long enough to exceed a phone-width card on their
+     own, so let them wrap instead of forcing the card wider. */
+  .lm-card .btn {
+    margin-top: 0.6rem;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.5;
+  }
 
   @media (max-width: 760px) {
     .lm-grid { grid-template-columns: 1fr; }
