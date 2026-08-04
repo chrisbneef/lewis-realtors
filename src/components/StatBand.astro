@@ -1,39 +1,48 @@
 ---
-// West Linn market overview, refreshed monthly from src/data/market.json.
-// These are ASKING prices and listing activity. Oregon is a non-disclosure
-// state, so closed sale prices are not public record - never relabel these
-// as sale/sold figures.
-import market from "../data/market.json";
-import neighborhoods from "../data/neighborhoods.json";
+// What West Linn homes actually SOLD for, from Melissa's monthly RMLS pull
+// (src/data/rmls-sold.json). These are closed sale figures, not asking prices,
+// and they are city-wide: detached residential only. The per-neighborhood
+// asking-price data in market.json is a separate dataset and is labelled as
+// asking wherever it appears.
+import { latestSold, rmlsSold } from "../lib/market.js";
 
-const c = market.cityData;
+const m = latestSold();
 const money = (n) => (n == null ? null : `$${Math.round(n).toLocaleString()}`);
 
-const stats = [
-  { value: market.zipCode, label: "West Linn ZIP", market: false },
-  { value: String(neighborhoods.length), label: "Neighborhoods we cover", market: false },
-  { value: money(c.medianAskingPrice), label: "Median asking price", market: true },
-  { value: String(c.averageDaysOnMarket), label: "Avg days on market", market: true },
-].filter((s) => s.value != null);
+const stats = m
+  ? [
+      { value: money(m.sold.medianPrice), label: "Median sold price" },
+      { value: String(m.sold.units), label: "Homes sold" },
+      { value: String(m.daysOnMarket.median), label: "Median days on market" },
+      { value: m.monthsOfInventory.toFixed(1), label: "Months of inventory" },
+    ].filter((s) => s.value != null)
+  : [];
 ---
 
-<section class="band section--ink">
-  <div class="wrap band-inner">
-    <p class="band-intro" data-reveal>
-      Here's what's on the market in West Linn right now,
-      refreshed monthly from live listing data.
-    </p>
-    <ul class="band-stats" role="list">
-      {stats.map((s, i) => (
-        <li data-reveal style={`--reveal-delay: ${i * 80}ms`}>
-          <span class={`band-val ${s.market ? "band-val--market" : "band-val--place"}`}>{s.value}</span>
-          <span class="band-label">{s.label}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-  <span class="band-glow" aria-hidden="true"></span>
-</section>
+{m && (
+  <section class="band section--ink">
+    <div class="wrap band-inner">
+      <div class="band-intro-wrap" data-reveal>
+        <p class="band-intro">
+          What West Linn homes actually sold for in {m.label}.
+        </p>
+        <p class="band-sub">
+          Closed sales, not asking prices, from Melissa's monthly RMLS pull.
+        </p>
+      </div>
+      <ul class="band-stats" role="list">
+        {stats.map((s, i) => (
+          <li data-reveal style={`--reveal-delay: ${i * 80}ms`}>
+            <span class="band-val band-val--market">{s.value}</span>
+            <span class="band-label">{s.label}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <p class="wrap band-source">{`${rmlsSold.criteria.note} ${rmlsSold.attribution}`}</p>
+    <span class="band-glow" aria-hidden="true"></span>
+  </section>
+)}
 
 <style>
   .band { padding-block: clamp(3rem, 2rem + 3vw, 4.5rem); position: relative; overflow: hidden; }
@@ -55,6 +64,22 @@ const stats = [
     color: var(--ink-onDark);
     max-width: 26ch;
   }
+  .band-sub {
+    margin-top: 0.6rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--ink-onDark-soft);
+    max-width: 30ch;
+  }
+  .band-source {
+    position: relative;
+    z-index: 1;
+    margin-top: 2.2rem;
+    font-size: 0.68rem;
+    line-height: 1.7;
+    color: color-mix(in srgb, var(--ink-onDark-soft) 72%, transparent);
+    max-width: 96ch;
+  }
   .band-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -63,9 +88,12 @@ const stats = [
   .band-val {
     display: block;
     font-family: var(--font-display);
-    font-size: clamp(1.8rem, 1.4rem + 1.6vw, 2.8rem);
+    /* Capped lower than the other stat rows on the site: a full "$854,500"
+       overruns its grid column at the larger size. */
+    font-size: clamp(1.6rem, 1.15rem + 1.25vw, 2.3rem);
     font-weight: 600;
     line-height: 1;
+    white-space: nowrap;
   }
   /* Thin display strokes read faint in gold on near-black; brighten + a soft
      glow so the placeholder value stays clearly legible on the dark band. */

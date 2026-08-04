@@ -23,6 +23,9 @@ The hard rules below still win wherever the two differ.
 - **Never invent market numbers.** Every stat comes from the office RMLS pull. Until a real
   figure is loaded, label it visibly as a sample (use the `tag-sample` style or a
   `pill--placeholder`). Placeholders must read clearly as placeholders.
+- **Never call an asking price a sale price.** Per-neighborhood figures (`market.json`) are
+  what sellers are *asking*; the city-wide figures (`rmls-sold.json`) are what homes actually
+  *sold* for. Say which one you mean every time. See the market-data table in `CLAUDE.md`.
 - No leftover mortgage or loan product copy. Financing is a referral out to a partner, not a
   product we sell.
 

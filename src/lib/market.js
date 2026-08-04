@@ -1,8 +1,23 @@
-// Helpers for reading the monthly-refreshed market data (src/data/market.json).
-// All figures are ASKING prices from active listings; never label them as sold.
+// Helpers for the two market datasets, which must never be mixed:
+//
+//   market.json    RentCast ASKING prices from active listings, per neighborhood.
+//                  Never label these as sold.
+//   rmls-sold.json Melissa's monthly RMLS pull: real CLOSED sale figures, but
+//                  city-wide only (detached residential, RMLS area 147).
+//
+// Anything sourced from rmls-sold.json may be called "sold"; anything from
+// market.json may not.
 import market from "../data/market.json";
+import rmlsSold from "../data/rmls-sold.json";
 
-export { market };
+export { market, rmlsSold };
+
+/** The most recent RMLS sold month, or null before any pull is loaded. */
+export function latestSold() {
+  const key = rmlsSold.latest;
+  const month = key ? rmlsSold.months?.[key] : null;
+  return month ? { key, ...month } : null;
+}
 
 /** Compact money: 399000 -> "$399K", 1222225 -> "$1.2M". */
 export function money(n) {

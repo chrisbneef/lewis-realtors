@@ -1,11 +1,11 @@
 [
   {
     "q": "What is a neighborhood market report?",
-    "a": "It's a short, clear stat sheet for one West Linn neighborhood. It covers the median asking price, price per square foot, days on market, how many homes are currently for sale, and the twelve-month West Linn price trend. I refresh it every month from live listing data. Oregon does not make closed sale prices public record, so I pull sold figures directly from RMLS and share them on request."
+    "a": "It's a short, clear stat sheet for one West Linn neighborhood. It covers the median asking price, price per square foot, days on market, how many homes are currently for sale, and the twelve-month West Linn price trend. I refresh it every month from live listing data. Alongside it, the market reports page carries the city-wide sold figures from my monthly RMLS pull, so you can see what homes actually closed at, not just what sellers are asking. Sold data for a specific street or neighborhood is available on request."
   },
   {
     "q": "How current is the data?",
-    "a": "Listing figures refresh automatically every month from live listing data, whose records originate from RMLS. I never estimate or invent numbers, and where a figure isn't confirmed the page says so plainly instead of showing a guess. Oregon does not make closed sale prices public record, so I pull sold figures directly from RMLS and share them on request."
+    "a": "Listing figures refresh automatically every month from live listing data, whose records originate from RMLS, and the city-wide sold figures come from an RMLS report I pull by hand each month, dated on the page so you can see how current it is. I never estimate or invent numbers, and where a figure isn't confirmed the page says so plainly instead of showing a guess."
   },
   {
     "q": "Why is this site all about West Linn?",

@@ -1,0 +1,47 @@
+{
+  "source": "RMLS",
+  "attribution": "© RMLS 2026. All rights reserved. Information not guaranteed and should be verified.",
+  "presentedBy": "Melissa Shaw, Lewis Realtors",
+  "criteria": {
+    "area": "147",
+    "city": "West Linn",
+    "state": "Oregon",
+    "zip": "97068",
+    "propertyCategory": "Residential",
+    "propertyType": "Detached",
+    "note": "Detached residential homes in West Linn (RMLS area 147, ZIP 97068). Attached homes, condominiums, and townhomes are excluded, as are solds that were never listed on RMLS."
+  },
+  "latest": "2026-06",
+  "months": {
+    "2026-06": {
+      "label": "June 2026",
+      "pulledOn": "2026-07-31",
+      "listed": {
+        "units": 57,
+        "volume": 61675089,
+        "averagePrice": 1082019,
+        "medianPrice": 875900
+      },
+      "pendingUnits": 41,
+      "sold": {
+        "units": 50,
+        "volume": 49895884,
+        "minPrice": 415000,
+        "averagePrice": 997918,
+        "medianPrice": 854500,
+        "maxPrice": 2595000,
+        "averagePricePercentChange": 4.21
+      },
+      "activeUnits": 152,
+      "monthsOfInventory": 3.0,
+      "daysOnMarket": {
+        "average": 33,
+        "median": 12
+      },
+      "cumulativeDaysOnMarket": {
+        "average": 40,
+        "median": 14
+      }
+    }
+  }
+}

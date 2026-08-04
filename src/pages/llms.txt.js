@@ -4,7 +4,7 @@ import site from "../data/site.json";
 import neighborhoods from "../data/neighborhoods.json";
 import services from "../data/services.json";
 import { SITE_URL } from "../lib/site-url.js";
-import { hoodMarket, money } from "../lib/market.js";
+import { hoodMarket, money, moneyFull, latestSold, rmlsSold } from "../lib/market.js";
 import { getCollection } from "astro:content";
 
 export const prerender = true;
@@ -56,10 +56,24 @@ export async function GET() {
   }
   L.push("");
 
+  const sold = latestSold();
+  if (sold) {
+    L.push(`## ${site.city} sold data (${sold.label}, RMLS)`);
+    L.push(
+      `- Median sold price: ${moneyFull(sold.sold.medianPrice)}. Average sold price: ${moneyFull(sold.sold.averagePrice)}. ${sold.sold.units} detached homes sold, ranging ${moneyFull(sold.sold.minPrice)} to ${moneyFull(sold.sold.maxPrice)}.`
+    );
+    L.push(
+      `- Median days on market: ${sold.daysOnMarket.median} (average ${sold.daysOnMarket.average}). Active listings: ${sold.activeUnits}. Pending: ${sold.pendingUnits}. Months of inventory: ${sold.monthsOfInventory.toFixed(1)}.`
+    );
+    L.push(`- ${rmlsSold.criteria.note} ${rmlsSold.attribution}`);
+    L.push("");
+  }
+
   L.push("## Notes");
   L.push(`- School district: ${site.district}.`);
-  L.push("- Site market figures are asking prices from active listings, refreshed monthly from RentCast; listing records originate from RMLS.");
-  L.push("- Oregon is a non-disclosure state, so closed sale prices are not public record. Melissa provides sold figures from RMLS on request.");
+  L.push("- Per-neighborhood figures on this site are ASKING prices from active listings, refreshed monthly from RentCast; listing records originate from RMLS.");
+  L.push("- City-wide SOLD figures are closed sale data pulled monthly from RMLS by Melissa Shaw. Oregon is a non-disclosure state, so closed prices are not public record and come from RMLS rather than county records.");
+  L.push("- Never conflate the two: asking prices are not sale prices.");
   L.push("- Content is neighborly and factual; market numbers are never invented.");
 
   return new Response(L.join("\n") + "\n", {

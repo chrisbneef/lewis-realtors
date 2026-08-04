@@ -23,6 +23,32 @@ review pass first.
 
 ---
 
+## Market data: two datasets, never mixed
+
+The site carries two different kinds of numbers, and conflating them is the one
+unforgivable error here.
+
+| File | What it is | May be called |
+|---|---|---|
+| `src/data/market.json` | RentCast **asking** prices from active listings, per neighborhood, refreshed by script | "asking price", "listed at" |
+| `src/data/rmls-sold.json` | Melissa's monthly **RMLS pull**: real closed sales, city-wide only (detached residential, RMLS area 147) | "sold", "closed" |
+
+Read both through `src/lib/market.js`. `latestSold()` returns the newest RMLS month.
+
+### Adding a month of sold data
+
+Melissa emails a "Market Trend Report" PDF (RMLS, Months Back = 1). To load it:
+
+1. Save the PDF to `reference/market-reports/YYYY-MM-west-linn-rmls.pdf`.
+2. Add a key to `months` in `src/data/rmls-sold.json` copying the figures from the
+   report's **Report Data** table and **Report Summary** box, and move `latest` to
+   the new key. Every field maps 1:1; do not compute or interpolate anything.
+3. Rebuild. The homepage stat band, the market-reports sold panel, and `llms.txt`
+   all read from `latest` automatically.
+
+Keep the RMLS attribution string visible wherever the figures appear. The report
+covers detached homes only, so never describe it as all West Linn homes.
+
 ## Weekly search-intent report
 
 The blog publishes one West Linn article per week, alternating themes by ISO

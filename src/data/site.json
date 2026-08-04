@@ -133,7 +133,7 @@
   },
   "compliance": {
     "license": "Oregon Principal Broker and Washington Designated Broker. License numbers available on request.",
-    "dataSource": "Market figures shown on this site are asking prices from active single-family and multi-family listings in ZIP 97068 (condos, townhomes, and manufactured homes excluded), refreshed monthly via RentCast; listing records originate from RMLS. Oregon is a non-disclosure state, so closed sale prices are not a matter of public record and are not displayed here; sold figures are available from Melissa directly. All information is deemed reliable but is not guaranteed and should be independently verified."
+    "dataSource": "This site shows two distinct sets of figures. Per-neighborhood figures are asking prices from active single-family and multi-family listings in ZIP 97068 (condos, townhomes, and manufactured homes excluded), refreshed monthly via RentCast; those listing records originate from RMLS. City-wide sold figures are closed sale data for detached residential homes in RMLS area 147, pulled monthly from RMLS by Melissa Shaw; Oregon is a non-disclosure state, so closed sale prices are not a matter of public record and come from RMLS rather than county records. Sold data for a specific street or neighborhood is available from Melissa on request. © RMLS 2026. All information is deemed reliable but is not guaranteed and should be independently verified."
   },
   "nav": [
     {
