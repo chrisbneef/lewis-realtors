@@ -11,23 +11,15 @@ clean.
 
 ---
 
-## Git: never commit to main
+## Git: main is fine
 
-**Branch before the first commit, always.** Even for a one-line copy fix.
+Commit and push directly to `main` (2026-08-04: Chris removed the old
+branch-first rule and the `high_stakes_gate.py` push-to-main pattern; the
+friction cost more than it saved). Vercel deploys production from `main`, so a
+push to `main` goes live within a couple of minutes.
 
-```bash
-git checkout -b <short-topic-name>
-```
-
-Commit there, push the branch, and hand over a PR link. The `high_stakes_gate.py`
-hook blocks any push naming `main`, so committing to `main` strands the work in a
-dead end: the agent cannot push it, cannot branch out of it afterwards (the
-permission classifier reads that as routing around the gate), and the human ends
-up running `git push` by hand. A branch avoids all of it, because
-`git push origin <branch>` does not match the pattern.
-
-If work is already sitting on local `main`, say so and stop rather than trying to
-reshuffle it. Moving it is the human's call.
+Use a branch + PR only when the change is genuinely risky or Chris asks for a
+review pass first.
 
 ---
 
