@@ -80,8 +80,9 @@
     }
   ],
   "teamSite": {
-    "label": "HomesByLewisRealtors.com",
-    "href": "https://homesbylewisrealtors.com",
+    "label": "LewisRealtors.com",
+    "href": "https://lewisrealtors.com",
+    "canonicalHref": "https://homesbylewisrealtors.com",
     "area": "the Portland metro and Southwest Washington",
     "homeSearch": "https://homesbylewisrealtors.com/home-search/",
     "lewisLoves": "https://homesbylewisrealtors.com/Lewis-Loves",

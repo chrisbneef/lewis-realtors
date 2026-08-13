@@ -9,7 +9,11 @@ const SITE_ID = `${ORIGIN}/#website`;
 
 // Real social/authority profiles only (placeholders are filtered out). The team
 // hub site is included so search engines connect the two Lewis Realtors entities.
-const sameAs = [...(site.contact.social || []).map((s) => s.href), site.teamSite?.href]
+// Use its canonical host here, not the shorter vanity domain that redirects to it.
+const sameAs = [
+  ...(site.contact.social || []).map((s) => s.href),
+  site.teamSite?.canonicalHref || site.teamSite?.href,
+]
   .filter((h) => h && h !== "#" && h.startsWith("http"));
 
 function openingHours() {
