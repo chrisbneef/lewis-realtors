@@ -12,27 +12,31 @@
     "role": "Founder of Lewis Realtors",
     "designations": [
       "Managing Principal Real Estate Broker in Oregon",
-      "Designated Broker in Washington"
+      "Managing Broker in Washington"
     ],
     "resident": "Resident of West Linn, Oregon",
     "headshot": "/assets/melissa-shaw.png",
     "bioShort": "23 years in West Linn real estate, more than $128 million sold since 2016, and over a thousand buyers and sellers served.",
     "bio": [
-      "23 years in real estate, more than $128 million sold since 2016, and over a thousand buyers and sellers. Behind every one of those numbers is a person and a relationship in the middle of a change, and that's the part I actually care about.",
-      "I'm detail-oriented, a natural problem-solver, and I negotiate hard. But the work starts with understanding your desired outcome, personally and financially, before anyone talks about price."
+      "23 years of real estate expertise. Two decades building and leading Lewis Realtors. More than $128 million in homes sold since 2016 and over 1,000 buyers and sellers served.",
+      "Behind every one of those numbers is a person navigating a meaningful change. That's the part of real estate we care about most, helping people make thoughtful decisions about their home, their finances, and what comes next so they can live their best lives."
     ],
     "stats": [
       {
         "value": "$128M+",
-        "label": "In home volume sold since 2016"
+        "label": "Volume sold since 2016"
       },
       {
         "value": "1,000+",
-        "label": "Buyers and sellers served"
+        "label": "Buyers & sellers served"
       },
       {
-        "value": "23+ yrs",
-        "label": "Of real estate experience"
+        "value": "23+ years",
+        "label": "Real estate experience"
+      },
+      {
+        "value": "20 years",
+        "label": "Founder & owner of Lewis Realtors"
       }
     ]
   },
