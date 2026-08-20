@@ -1,9 +1,9 @@
 {
   "meta": {
-    "collected_at": "2026-07-24T02:59:49.335496+00:00",
-    "date": "2026-07-24",
+    "collected_at": "2026-08-20T21:50:39.779256+00:00",
+    "date": "2026-08-20",
     "iso_year": 2026,
-    "iso_week": 30,
+    "iso_week": 34,
     "theme_by_week_parity": "lifestyle",
     "location": "West Linn, OR 97068",
     "note": "Free discovery + demand signal (Autocomplete, DuckDuckGo, local RSS). Precise per-keyword weekly volume needs a paid tool; rank topics on composite signal, not a single number."
@@ -27,12 +27,13 @@
       "west linn oregon homes for sale zillow",
       "west linn new homes for sale",
       "west linn luxury homes for sale",
-      "west linn oregon homes for sale by owner"
+      "west linn waterfront homes for sale"
     ],
     "west linn housing market": [
       "west linn housing market",
       "west linn real estate market",
       "west linn house prices",
+      "west linn oregon housing market",
       "west linn oregon house prices"
     ],
     "west linn home prices": [
@@ -40,6 +41,8 @@
       "west linn home for sale",
       "west linn median home price",
       "west linn average home price",
+      "west linn oregon home for sale",
+      "west linn oregon average home price",
       "west linn oregon average income"
     ],
     "west linn property tax": [
@@ -71,7 +74,7 @@
       "west linn schools",
       "west linn schools calendar",
       "west linn schools closing",
-      "west linn schools jobs",
+      "west linn schools.jobs",
       "west linn school district",
       "west linn school district jobs",
       "west linn school district calendar",
@@ -81,15 +84,15 @@
     ],
     "living in west linn": [
       "living in west linn oregon",
-      "living in west linn",
       "living in west linn oregon reddit",
+      "living in west linn",
       "living in west linn reddit",
       "assisted living in west linn oregon",
       "assisted living in west linn",
       "live music in west linn",
+      "live music in west linn tonight",
       "living_w_linny",
-      "living_w_linny real name",
-      "pros and cons of living in west linn oregon"
+      "living_w_linny real name"
     ],
     "moving to west linn": [],
     "things to do in west linn": [
@@ -97,16 +100,16 @@
       "things to do in west linn",
       "things to do in west linn today",
       "things to do in west linn this weekend",
+      "things to do with kids west linn",
       "things to do in west linn oregon with kids",
-      "things to do in west linn with kids",
       "fun things to do in west linn",
       "fun things to do in west linn oregon"
     ],
     "west linn neighborhoods": [
       "west linn neighborhoods",
       "west linn neighborhood walmart",
-      "west linn neighborhood map",
       "west linn neighborhood associations",
+      "west linn neighborhood map",
       "west linn neighborhood market",
       "west linn neighborhood pool",
       "west linn oregon neighborhoods",
@@ -119,7 +122,6 @@
       "willamette community church west linn",
       "is west linn oregon safe",
       "is west linn oregon a good place to live",
-      "willamette restaurants west linn",
       "is west linn oregon dangerous",
       "west linn oregon average income"
     ]
@@ -128,9 +130,24 @@
     "West Linn OR real estate news": {
       "text": [
         {
+          "title": "97068 Homes For Sale & 97068 Real Estate - 210 Homes | Trulia",
+          "url": "https://www.trulia.com/OR/West_Linn/97068/",
+          "snippet": "Real Estate & Homes For Sale in 97068. Sort: New Listings.4520 Calaroga Dr, West Linn, OR 97068. Use arrow keys to navigate."
+        },
+        {
+          "title": "Former Trail Blazer Damian Lillard unloads West Linn riverfront...",
+          "url": "https://www.oregonlive.com/realestate/2024/11/former-trail-blazer-damian-lillard-unloads-west-linn-riverfront-mansion-for-6m.html",
+          "snippet": "Damian Lillard's West Linn riverfront mansion looked like this in 2017 when he purchased the property from Mark Donegan, CEO of Precision Castparts. 2130 Windham Oaks Ct, West Linn, OR 97068."
+        },
+        {
           "title": "West Linn, OR Real Estate & Homes for Sale - Estately",
           "url": "https://www.estately.com/OR/West_Linn",
-          "snippet": "ORMACK Realty, INC. House For Sale. 18478 Rose Ct, WestLinn, OR.48 photos. Berkshire Hathaway HomeServices NW Real Estate. House For Sale. 23073 Bland Cir, WestLinn, OR."
+          "snippet": "Zoom in for more. West Linn, OR.Trashed. 48 photos. Berkshire Hathaway HomeServices NW Real Estate. House For Sale. 23073 Bland Cir, WestLinn, OR."
+        },
+        {
+          "title": "Apartments For Rent in West Linn OR - 56 Rentals | Zillow",
+          "url": "https://www.zillow.com/west-linn-or/apartments/",
+          "snippet": "Find your next apartment in West Linn OR on Zillow. Use our detailed filters to find the perfect place, then get in touch with the property manager."
         },
         {
           "title": "Krause Real Estate Resource",
@@ -138,24 +155,9 @@
           "snippet": "West Linn Real Estate You are one click away from finding everything you are looking for pertaining to West Linn Real Estate.Real Estate Web Site for the Portland Metro Area The internet is obviously an excellent resource for finding homes to buy and for promoting homes to sell."
         },
         {
-          "title": "6119 Canter Lane, West Linn OR | Updated Hidden Springs Home",
-          "url": "https://monaghanrealestategroup.com/blog/quiet-cul-de-sac-living-meets-thoughtful-updates-in-west-linns-hidden-springs",
-          "snippet": "West Linn Real Estate February 20, 2026.Why Buyers Love West Linn. West Linn is known for its strong sense of community, access to nature, and long-standing reputation for well-supported public services and schools."
-        },
-        {
-          "title": "3307 Fairview Way #A, West Linn, OR 97068 | Zillow",
-          "url": "https://www.zillow.com/homedetails/3307-Fairview-Way-A-West-Linn-OR-97068/456073248_zpid/",
-          "snippet": "18534 Rose Ct, West Linn, OR 97068. $508,100.For listings in Canada, the trademarks REALTOR®, REALTORS®, and the REALTOR® logo are controlled by The Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA."
-        },
-        {
-          "title": "Find Out About Portland, Oregon Real Estate | Oregon Digs",
-          "url": "https://oregondigs.com/",
-          "snippet": "Explore Portland, Oregon real estate with Oregon Digs, founded in 2004.west linn. A scenic suburb south of Portland, known for its historic charm, top schools, and river views."
-        },
-        {
-          "title": "Bolton Open Houses in West Linn, OR - Listings | Trulia",
-          "url": "https://www.trulia.com/OR/West_Linn,Bolton/p_oh/",
-          "snippet": "Homes For Sale in Bolton, West Linn, OR. Browse photos, see new properties, get open house info, and research neighborhoods on Trulia.Cascade Hasson Sotheby's International Realty, Active."
+          "title": "SOLD Phenomenal modern lodge Oregon luxury real estate! - YouTube",
+          "url": "https://www.youtube.com/watch?v=6OmYTJDrK-k",
+          "snippet": "This is Oregon luxury real estate that will steal your heart.29229 SW Petes Mountain Rd, West Linn OR. Hall Group Properties."
         },
         {
           "title": "West Linn Home with ADU - Robbins Realty Group",
@@ -163,39 +165,56 @@
           "snippet": "Licensed Oregon Real Estate Agent. The moment Heather started in real estate she was hooked! She found a passion for helping others achieve their... heatherjones@robbinsrealtygroup.com.Desirable Hidden Valley Condo. 6296 Belmont Way, West Linn, OR. $450,000."
         },
         {
-          "title": "westlinn-realestate.com",
-          "url": "https://westlinn-realestate.com/",
-          "snippet": ""
+          "title": "West Linn New Home Construction",
+          "url": "https://monaghanrealestategroup.com/blog/property-walk-through-of-brand-new-construction-in-west-linn-oregon",
+          "snippet": "What Makes Luxury Real Estate Unique in West Linn, OR? Here’s what you can expect from West Linn’s luxury homes. How to Set the Right Price for Your Home in Today's Market. A Practical Guide to Positioning Your Home Effectively for Buyers. Pet-Friendly Restaurants in West Linn, OR."
         }
       ],
       "news": [
         {
-          "date": "2026-07-02T00:00:00+00:00",
-          "title": "Idyllic Oregon estate that starred in Bruce Willis and Cate Blanchett’s movie ‘Bandits’ is listed for $4 million",
-          "url": "https://www.msn.com/en-us/money/realestate/idyllic-oregon-estate-that-starred-in-bruce-willis-and-cate-blanchett-s-movie-bandits-is-listed-for-4-million/ar-AA274VhG?ocid=BingNewsVerp",
-          "source": "MSN",
-          "snippet": "An Oregon estate that prominently featured alongside Bruce Willis, Billy Bob Thornton, and Cate Blanchett in the 2001 crime-comedy hit “Bandits” has hit the market for $3.99 million. Set on 1.56 acres ..."
+          "date": "2024-08-20T21:51:02+00:00",
+          "title": "These 13 women kept SLO’s railroad running during WWII. ‘A man’s job — but I can...",
+          "url": "https://www.yahoo.com/news/articles/13-women-kept-slo-railroad-130000067.html",
+          "source": "San Luis Obispo Tribune via Yahoo News",
+          "snippet": "Recent construction near West Grand Avenue and North Second Street in Grover Beach unearthed soil..."
         },
         {
-          "date": "2026-07-15T03:00:11+00:00",
-          "title": "West Linn says it will allow testimony on retail, not housing, in 320-unit proposal",
-          "url": "https://www.msn.com/en-us/money/realestate/west-linn-says-it-will-allow-testimony-on-retail-not-housing-in-320-unit-proposal/ar-AA27UGHB?ocid=BingNewsVerp",
-          "source": "OregonLive.com on MSN",
-          "snippet": "The city of West Linn says it plans to open a public hearing for a proposed 11-acre redevelopment despite a new law that limits public testimony on most new housing developments. Officials plan to ..."
+          "date": "2025-08-20T21:51:02+00:00",
+          "title": "In shakeup of MO school board, governor keeps Springfield's Prater, replaces...",
+          "url": "https://www.yahoo.com/news/shakeup-mo-school-board-governor-174707586.html",
+          "source": "Springfield News-Leader via Yahoo News",
+          "snippet": "Springfield eye surgeon Tom Prater joined the Missouri Board of Education nearly a year ago and..."
+        },
+        {
+          "date": "2025-08-20T21:51:02+00:00",
+          "title": "Iowa high school boys basketball state tournament moving to Ames' Hilton...",
+          "url": "https://sports.yahoo.com/article/iowa-high-school-boys-basketball-151038022.html",
+          "source": "The Des Moines Register · via Yahoo Sports",
+          "snippet": "After more than 60 years in Des Moines, the Iowa boys high school basketball state tournament will..."
         }
       ]
     },
     "Homes for sale in West Linn Oregon": {
       "text": [
         {
-          "title": "4243 Spring Rock Cir, West Linn, OR 97068 - See Est. Value, Schools...",
-          "url": "https://www.trulia.com/home/4243-spring-rock-cir-west-linn-or-97068-48243147",
-          "snippet": "See home details for 4243 Spring Rock Cir and find similar homes for sale now in West Linn, OR on Trulia.788 Pleasant Ave #32, Oregon City, OR 97045. See more homes for rent in. West Linn. Take a look."
+          "title": "West Linn, OR 3 Bedroom Homes For Sale - 48 Homes | Trulia",
+          "url": "https://www.trulia.com/for_sale/West_Linn,OR/3_beds/",
+          "snippet": "48 3 Bedroom Homes For Sale in West Linn, OR. Browse photos, see new properties, get open house info, and research neighborhoods on Trulia."
         },
         {
-          "title": "3972 CALAROGA DR, Westlinn, OR 97068, 3850038",
-          "url": "https://www.lakehouse.com/3972-calaroga-dr-westlinn-oregon-97068-p3850038.html",
-          "snippet": "Lake Home For Sale. OPEN SAT 11-2 and SUN 12-3. Opportunity to live in one of West Linn's best neighborhoods on a river fronting street. Willamette River access steps away.Contact Agent. Ad Statistics: Lake Home For Sale in Westlinn, Oregon."
+          "title": "97068 Homes For Sale & 97068 Real Estate - 210 Homes | Trulia",
+          "url": "https://www.trulia.com/OR/West_Linn/97068/",
+          "snippet": "Browse all homes in West Linn, OR. West Linn New Construction Homes for Sale. Oregon City Real Estate."
+        },
+        {
+          "title": "West Linn Waterfront Homes for Sale Portland Floating Homes",
+          "url": "https://portlandfloatinghomes.com/waterfront-homes-for-sale-west-linn-oregon/",
+          "snippet": "West Linn’s waterfront stretches along the Willamette River, often with dramatic topography. You’ll find that some homes in West Linn have a view of the river, and some are riverfront homes for sale down next to the Willamette River."
+        },
+        {
+          "title": "Willamette Valley - Oregon Real Estate - 1892 Homes For Sale | Zillow",
+          "url": "https://www.zillow.com/or/willamette-valley_att/",
+          "snippet": "Zillow has 1892 homes for sale in Oregon matching Willamette Valley. View listing photos, review sales history, and use our detailed real estate filters to find the perfect place.527 SW Hoffman Rd, West Linn, OR 97068."
         },
         {
           "title": "West Linn Oregon | TikTok",
@@ -203,92 +222,103 @@
           "snippet": "Explore West Linn, Oregon! Discover the best local spots, real estate deals, and community insights.PNW treehouse for sale, West Linn real estate, unique Airbnbs in Oregon, tri-level homes in Oregon, luxury treehouse retreat."
         },
         {
-          "title": "These 10 Oregon homes are for sale by their... - oregonlive.com",
-          "url": "https://www.oregonlive.com/realestate/2026/07/these-10-oregon-homes-are-for-sale-by-their-original-owners-why-that-should-be-a-big-deal-for-buyers.html",
-          "snippet": "Oregon has many homes for sale by longtime original owners.A traditional two-story house built in 1989 on 0.41 acres at 1607 Arran Court in West Linn is for sale at $1,285,000. The 3,471-square-foot home on a cul-de-sac in the Skyline Ridge neighborhood has views of Mount Hood."
+          "title": "31553 SW ISLE WAY LN, West Linn, OR 97068, 4927884",
+          "url": "https://www.lakehouse.com/31553-sw-isle-way-ln-west-linn-oregon-97068-p4927884.html",
+          "snippet": "River Home For Sale. Nestled on 4.2 acres of serene Peach Cove peninsula in West Linn, Oregon, this 5 bedroom plus office 5+ bath home is the epitome of rustic elegance. Remodeled to embody the charm of a Pacific Northwest version of a French Country farmhouse at over 5500 square..."
         },
         {
-          "title": "3832 Wellington Ct, WestLinn, OR... | Estately | MLS# 21687454",
-          "url": "https://www.estately.com/listings/info/3832-wellington-ct-westlinn-or-97068",
-          "snippet": "View all homes for sale in West Linn.Listing Courtesy of: RMLS and Luxe Christie's International Real Estate. The content relating to real estate for sale on this web site comes in part from the IDX program of the RMLS™ of Portland, Oregon."
-        },
-        {
-          "title": "32088 SW Peach Cove Rd, West Linn, OR 97068 | Zillow",
-          "url": "https://www.zillow.com/homedetails/32088-SW-Peach-Cove-Rd-West-Linn-OR-97068/2070072171_zpid/",
-          "snippet": "The -- sqft home type unknown home is a -- beds, -- baths property. This home was built in null and last sold on -- for $This property is off market, which means it's not currently listed for sale or rent on Zillow."
+          "title": "2147 Eleanor Dr, WestLinn, OR 97068 | Estately | MLS# 24125492",
+          "url": "https://www.estately.com/listings/info/2147-eleanor-dr-westlinn-or-97068",
+          "snippet": "This house located in West Lynn, West Linn, OR 97068 is currently for sale for $1,202,000. 2147 Eleanor Dr is a 3,216 square foot house with 4 beds and 4 baths that has been on Estately for 2 days."
         },
         {
           "title": "Mobile Homes for Sale near Westlinn, OR",
           "url": "https://www.mhbay.com/mobile-homes-for-sale/oregon/westlinn",
           "snippet": "Other Listing Types in Westlinn. Westlinn Manufactured Houses for Rent. Westlinn Mobile Home Lots for Sale."
-        },
-        {
-          "title": "Now THIS is Livin' - Tiny House for Sale in West Linn, Oregon",
-          "url": "https://tinyhouselistings.com/listings/west-linn-oregon-12-now-this-is-livin",
-          "snippet": "West Linn, Oregon, United States. Click to view map. Tiny House.Mobile. This home can be moved by driving or hitching onto a trailer. Square Feet. 400."
         }
       ],
       "news": [
         {
-          "date": "2026-07-22T03:00:15+00:00",
+          "date": "2025-08-20T21:51:06+00:00",
+          "title": "A boomer escaped California's tricky housing market with over $1 million in...",
+          "url": "https://www.yahoo.com/lifestyle/triple-home-half-price-boomer-080102080.html",
+          "source": "Business Insider · via Yahoo News",
+          "snippet": "Jeremy Smith's home in West Linn, Oregon, was half the price and almost triple the square footage of..."
+        },
+        {
+          "date": "2026-07-21T00:00:00+00:00",
           "title": "These 10 Oregon homes are for sale by their original owners. Why that should be a big deal for buyers",
-          "url": "https://www.msn.com/en-us/money/realestate/these-10-oregon-homes-are-for-sale-by-their-original-owners-why-that-should-be-a-big-deal-for-buyers/ar-AA28osLV?ocid=BingNewsVerp",
+          "url": "https://www.msn.com/en-us/lifestyle/other/these-10-oregon-homes-are-for-sale-by-their-original-owners-why-that-should-be-a-big-deal-for-buyers/ar-AA28osLV?ocid=BingNewsVerp",
           "source": "OregonLive.com on MSN",
           "snippet": "More people are renovating to stay in their home a decade or two into the future, but the wish for a “forever home” is not new. Oregon has many homes for sale by longtime original owners. Buying a ..."
+        },
+        {
+          "date": "2026-05-22T21:51:06+00:00",
+          "title": "Appeal heard over West Linn plan to build on landslide site",
+          "url": "https://www.yahoo.com/news/us/articles/appeal-heard-over-west-linn-184003573.html",
+          "source": "OregonLive.com · via Yahoo News",
+          "snippet": "Hearings officer Tommy A. Brooks will rule after June 18 on whether the $45 million project can..."
+        },
+        {
+          "date": "2025-11-23T21:51:06+00:00",
+          "title": "Housing authority to sell housing near TQL Stadium to rehab City West",
+          "url": "https://www.yahoo.com/news/articles/city-sell-housing-near-tql-060147538.html",
+          "source": "Cincinnati.com | The Enquirer · via Yahoo News",
+          "snippet": "Editor's note: The headline and story was corrected to reflect who is selling the housing...."
+        },
+        {
+          "date": "2026-08-14T21:51:06+00:00",
+          "title": "Oregon inmate sentenced after attempting to post bail with money from stolen...",
+          "url": "https://www.yahoo.com/news/us/articles/oregon-inmate-sentenced-attempting-post-191059467.html",
+          "source": "KOIN · via Yahoo News",
+          "snippet": "A Clackamas County man accused of mail theft earlier this year will spend additional time in custody..."
         }
       ]
     },
     "Willamette neighborhood West Linn": {
       "text": [
         {
-          "title": "Willamette Neighborhood Guide - SkyBlue Portland",
-          "url": "https://www.skyblueportland.com/willamette-neighborhood-guide/",
-          "snippet": "Our Willamette Neighborhood Guide contains a wealth of information on this West Linn community, including location, terrain, parks, and home styles. Most of the large Willamette neighborhood lies low along the banks of the Willamette and Tualatin Rivers."
-        },
-        {
-          "title": "Willamette Neighborhood Guide | Living in Willamette - Homes.com",
-          "url": "https://www.homes.com/local-guide/west-linn-or/willamette-neighborhood/",
-          "snippet": "Willamette Neighborhood Guide. Learn about living in the Willamette neighborhood of West Linn, OR. Get demographics, home values, best schools, crime data & attractions."
-        },
-        {
-          "title": "Willamette | City of West Linn Oregon Official Website",
-          "url": "https://westlinnoregon.gov/willamette",
-          "snippet": "Willamette Neighborhood Association Meetings: Second Wednesdays*, 7pm, West Linn Adult Community Center, 1180 Rosemont Rd. and via Zoom Email: WillametteNA@westlinnoregon.gov President: Kathie Halicki Vice President: Diana Cubbage & Beau Genot Secretary: Elizabeth Rocchia Treasurer: Vicki Hood Current officers elected in July with a one year ..."
-        },
-        {
-          "title": "Willamette, West Linn, OR Homes for Sale & Real Estate | Redfin",
-          "url": "https://www.redfin.com/neighborhood/20572/OR/West-Linn/Willamette",
-          "snippet": "3 hours ago · Willamette, OR Homes for Sale Built in 2008 and situated on a generous corner lot in West Linn's Historic Willamette District, this custom home offers thoughtful design and a location that puts many of the area's favorite destinations within easy reach. Stroll to the Willamette Garage food hall, local restaurants, coffee shops, boutiques, neighborhood events, and Willamette Park, where river ..."
-        },
-        {
-          "title": "Willamette | City of West Linn Oregon Official Website",
-          "url": "https://westlinnoregon.gov/willamette/willamette",
-          "snippet": "Willamette Neighborhood Association. Email: WillametteNA @westlinnoregon.gov. President: Kathie Halicki. Vice Presidents: Diana Cubbage and Beau Genot. Secretary: Elizabeth Rocchia. Treasurer: Vicki Hood. Current officers elected in July with a one year term, first meeting in September. Subscribe to the WNA mailing list: http://eepurl.com/qw1or |."
-        },
-        {
-          "title": "Willamette, West Linn | Everything You Need to Know - Nextdoor",
-          "url": "https://nextdoor.com/neighborhood/willamette--west-linn--or/",
-          "snippet": "Willamette is a charming neighborhood in West Linn, Oregon, known for its historic downtown area. It's a family-friendly place with a mix of residential homes, local shops, and eateries. The community park and excellent schools are also big draws."
-        },
-        {
-          "title": "Willamette, West Linn, OR Homes For Sale ... - Trulia",
-          "url": "https://www.trulia.com/OR/West_Linn,Willamette/",
-          "snippet": "45 Homes For Sale in Willamette, West Linn, OR. Browse photos, see new properties, get open house info, and research neighborhoods on Trulia."
-        },
-        {
           "title": "Historic Willamette Neighborhood, West Linn Oregon - YouTube",
           "url": "https://www.youtube.com/watch?v=HbzktWWZfX4",
           "snippet": "Come visit the Historic Willamette Neighborhood. You'll find some great shopping as well as plenty of places to eat. A lot of events go on here throughout th..."
+        },
+        {
+          "title": "Willamette | Neighborhood Guide",
+          "url": "https://monaghanrealestategroup.com/neighborhoods/willamette",
+          "snippet": "Located in the heart of West Linn, the neighborhood of Willamette is a picturesque and lively community that captures the essence of small-town charm while boasting an array of activities and amenities that cater to a wide range of interests."
+        },
+        {
+          "title": "Willamette West Linn, OR Neighborhood Profile - NeighborhoodScout",
+          "url": "https://www.neighborhoodscout.com/or/west-linn/willamette",
+          "snippet": "Willamette is a suburban neighborhood (based on population density) located in West Linn, Oregon. Willamette real estate is primarily made up of medium sized (three or four bedroom) to large (four, five or more bedroom) single-family homes and apartment complexes/high-rise apartments."
+        },
+        {
+          "title": "Willamette Neighborhood Guide - SkyBlue Portland",
+          "url": "https://www.skyblueportland.com/willamette-neighborhood-guide/",
+          "snippet": "Our Willamette Neighborhood Guide contains a wealth of information on this West Linn community, including location, terrain, parks, and home styles."
+        },
+        {
+          "title": "Living in West Linn, Oregon: 2026 Neighborhood Guide | Heath Watte",
+          "url": "https://heyheath.com/blog/west-linn-neighborhood-guide/",
+          "snippet": "The Willamette neighborhood occupies the historic heart of West Linn, along the bluffs overlooking the Willamette River. This is where you’ll find some of the city’s oldest and most distinguished homes, including Victorian-era properties and stately mid-century homes with river views."
+        },
+        {
+          "title": "Willamette West Linn Real Estate - Willamette West Linn... | Zillow",
+          "url": "https://www.zillow.com/willamette-west-linn-or/",
+          "snippet": "Zillow has 47 homes for sale in Willamette West Linn. View listing photos, review sales history, and use our detailed real estate filters to find the perfect place.807 Alicia Ct, West Linn, OR 97068. Soldera properties, inc."
+        },
+        {
+          "title": "Historic Willamette Main Street",
+          "url": "https://www.historicwillamette.com/",
+          "snippet": "1754 Knapps Alley West Linn, OR 97068.Historic Willamette Main Street's Mission is to celebrate and preserve the rich history and natural beauty of the area, invest in the heart of our downtown by promoting our local businesses."
+        },
+        {
+          "title": "Living in West Linn Oregon (2026) – Pros, Cons, Neighborhoods...",
+          "url": "https://www.livinginoregon.net/livinginwestlinn",
+          "snippet": "West Linn has several distinct neighborhoods — each with its own character and appeal. Here's a breakdown to help you narrow down where to focus your home search. Willamette."
         }
       ],
       "news": [
-        {
-          "date": "2025-08-14T00:00:00+00:00",
-          "title": "Body found in Willamette River near West Linn",
-          "url": "https://www.kgw.com/article/news/local/clackamas-county/body-found-willamette-river-near-west-linn/283-9e15a16e-0c92-4ce2-add4-fc3ac8dae24f",
-          "source": "KGW8",
-          "snippet": "A body was recovered Wednesday from the Willamette River near West Linn. Shortly after 7:45 p.m., a 911 caller reported that a body was seen floating in the middle of the river, near the Interstate ..."
-        },
         {
           "date": "2025-08-14T00:00:00+00:00",
           "title": "Body found floating in Willamette River near West Linn",
@@ -301,14 +331,14 @@
     "West Linn OR property taxes and schools": {
       "text": [
         {
-          "title": "Where do my taxes go? | City of West Linn Oregon Official Website",
-          "url": "https://westlinnoregon.gov/finance/where-do-my-taxes-go-0",
-          "snippet": "Oregon property tax rates are expressed ... For FY 2014-15, the total property tax rate for West Linn residents and businesses is $18.4808 (per $1,000 of Assessed Value) of which $2.5489 or 13% is allocated to the City of West Linn...."
-        },
-        {
           "title": "Property Taxes in West Linn | City of West Linn Oregon Official Website",
           "url": "https://westlinnoregon.gov/finance/property-taxes-west-linn",
           "snippet": "Later, West Linn voters approved ... occurred in late 1996. Today, the permanent property tax rate for the City of West Linn is at $2.12 per $1,000 of taxable assessed value, the lowest property tax rate for cities in the surrounding area...."
+        },
+        {
+          "title": "Where do my taxes go? | City of West Linn Oregon Official Website",
+          "url": "https://westlinnoregon.gov/finance/where-do-my-taxes-go-0",
+          "snippet": "Oregon property tax rates are expressed ... For FY 2014-15, the total property tax rate for West Linn residents and businesses is $18.4808 (per $1,000 of Assessed Value) of which $2.5489 or 13% is allocated to the City of West Linn...."
         },
         {
           "title": "City Tax Rates | City of West Linn Oregon Official Website",
@@ -331,9 +361,9 @@
           "snippet": "One Cost Approach variation says a commercial property’s worth could equal the current expense for a structure replacement while accounting for depreciation and land value. A county assessor generally reassesses your property’s market value once in three years or sooner. That amount is multiplied by the established tax rate which is the sum of all applicable governmental taxing-delegated districts’ levies. They range from the county to West Linn, school district, and many other special purpose entities such as water treatment plants, amusement parks, and property maintenance facilities."
         },
         {
-          "title": "West Linn-Wilsonville School District financial update shows higher revenues from property taxes | News | westlinntidings.com",
-          "url": "https://www.westlinntidings.com/news/west-linn-wilsonville-school-district-financial-update-shows-higher-revenues-from-property-taxes/article_0aef4116-7e9a-11ee-9317-7b9c6ad8d542.html",
-          "snippet": "November 9, 2023 - The West Linn-Wilsonville School District was certified by Washington and Clackamas County for higher permanent property tax revenues than originally forecasted."
+          "title": "Moving to West Linn? Top 10 Questions Realtors Get About Living in West Linn, Oregon (2026) | Living in Oregon",
+          "url": "https://cities.livinginoregon.net/blog/west-linn/top-questions-about-west-linn",
+          "snippet": "June 29, 2026 - On a $738,000 West Linn home, expect property taxes in the range of $6,750 to $8,250 annually — but this varies based on the specific property's assessment history and any bonds or levies in your tax district."
         },
         {
           "title": "West Linn, OR Tax Rates - Income and School Tax Rate Percentages",
@@ -341,19 +371,77 @@
           "snippet": "View the West Linn, OR school tax rate on our Tax Rates database and find out about tax burdens and tax credits."
         }
       ],
-      "news": []
+      "news": [
+        {
+          "date": "2024-08-20T21:51:14+00:00",
+          "title": "Examining Both Sides Of Property Tax Vote For TCS",
+          "url": "https://www.yahoo.com/news/examining-both-sides-property-tax-214130505.html",
+          "source": "Patch · via Yahoo News",
+          "snippet": "TUSCALOOSA, AL — The City of Tuscaloosa is just a few days out from a crucial vote on a property tax increase that, if passed, would provide additional r..."
+        },
+        {
+          "date": "2026-04-22T21:51:14+00:00",
+          "title": "Who's running for Oregon Senate District 6? Meet the candidates",
+          "url": "https://www.yahoo.com/news/articles/whos-running-oregon-senate-district-130123949.html",
+          "source": "Statesman Journal · via Yahoo News",
+          "snippet": "This is part of a series of stories on the candidates running in the May 19 primary election...."
+        },
+        {
+          "date": "2025-10-24T21:51:14+00:00",
+          "title": "Buncombe, Asheville property transfers for Sept. 22-28",
+          "url": "https://www.yahoo.com/news/articles/buncombe-asheville-property-transfers-sept-090133883.html",
+          "source": "Asheville Citizen-Times · via Yahoo News",
+          "snippet": "Sales filed in Buncombe County for Sept. 22-28 Asheville 120 Bowling Park Road, $190,000, West..."
+        },
+        {
+          "date": "2026-03-23T21:51:14+00:00",
+          "title": "These are the candidates in Lane County's Primary Election",
+          "url": "https://www.yahoo.com/news/articles/candidates-lane-countys-primary-election-110319343.html",
+          "source": "The Register-Guard · via Yahoo News",
+          "snippet": "This story has been updated to include additional candidate information, reflect some candidates..."
+        },
+        {
+          "date": "2025-08-20T21:51:14+00:00",
+          "title": "These are the levies, bonds voters in Salem and Mid-Valley will decide in May...",
+          "url": "https://www.yahoo.com/news/levies-bonds-voters-salem-mid-152702701.html",
+          "source": "Statesman Journal · via Yahoo News",
+          "snippet": "The ballot will be crowded in the May 20 election with local governments asking voters to raise..."
+        },
+        {
+          "date": "2025-08-20T21:51:14+00:00",
+          "title": "Chemeketa to put $140 million building and renovation bond to voters in May",
+          "url": "https://www.yahoo.com/news/chemeketa-put-140-million-building-184414781.html",
+          "source": "Statesman Journal · via Yahoo News",
+          "snippet": "Chemeketa Community College’s Board of Education voted unanimously Wednesday night to put a $140 mil..."
+        }
+      ]
     },
     "Buying a home in West Linn vs Lake Oswego": {
       "text": [
         {
           "title": "West Linn vs Lake Oswego: Which Fits You? | Wings NW | Wings NW Real Estate",
           "url": "https://wingsnwre.com/blog/west-linn-vs-lake-oswego-how-to-choose-your-next-move",
-          "snippet": "May 7, 2026 - As of Redfin’s March 2026 market snapshot, the median sale price is $775,000 in West Linn and $862,500 in Lake Oswego. Median sale price per square foot is $323 in West Linn and $380 in Lake Oswego."
+          "snippet": "As of Redfin’s March 2026 market snapshot, the median sale price is $775,000 in West Linn and $862,500 in Lake Oswego. Median sale price per square foot is $323 in West Linn and $380 in Lake Oswego."
+        },
+        {
+          "title": "West Linn vs Lake Oswego Homes: Which Move-Up Fit?",
+          "url": "https://peak.realty/blog/west-linn-or-lake-oswego-for-your-next-move-up-home",
+          "snippet": "July 3, 2026 - West Linn is heavily oriented toward detached single-family homes, while Lake Oswego has a more mixed inventory with detached homes, attached homes, and larger apartment buildings."
         },
         {
           "title": "Moving to Lake Oswego vs. West Linn in 2026: Which is Right for You...",
           "url": "https://tercekrealestate.com/blog/Moving-to-Lake-Oswego-vs--West-Linn-in-2026--Which-is-Right-for-You",
           "snippet": "January 11, 2026 - As a local agent, I see the biggest contrast in what you are buying. In Lake Oswego: High-end new construction is mostly \"infill\"—builders replacing older homes with modern $2.5M+ estates on 0.15-acre lots."
+        },
+        {
+          "title": "Lake Oswego vs West Linn: Which City Fits You Best?",
+          "url": "https://lisahannaproperties.com/blog/lake-oswego-vs-west-linn-which-fits-your-lifestyle",
+          "snippet": "May 14, 2026 - If you want a more amenity-rich setting, more housing variety, a city-focused school district, and a strong arts and events scene, Lake Oswego may be the better match. It also carries the higher typical home values of the two markets, which ..."
+        },
+        {
+          "title": "Lake Oswego vs West Linn: Best Choice for Your Family",
+          "url": "https://athomewithkayla.com/blog/lake-oswego-vs-west-linn-for-families-a-side-by-side-look",
+          "snippet": "If your family likes wooded trails, larger natural areas, and a more tucked-in outdoor feel, West Linn may stand out. If you prefer connected pathways and riverfront parks that feel closer to the center of town, Lake Oswego may be the better ..."
         },
         {
           "title": "Lake Oswego vs. West Linn: Which Portland Suburb Is Right for You?",
@@ -369,21 +457,6 @@
           "title": "Lake Oswego for Families: Why Westside Buyers Move",
           "url": "https://leedavies.com/blog/why-westside-families-choose-lake-oswego",
           "snippet": "February 12, 2026 - Both are known for strong public schools and scenic settings. Lake Oswego centers around a walkable downtown and lake-oriented recreation, while West Linn offers a river valley feel with wooded hillsides."
-        },
-        {
-          "title": "Lake Oswego vs West Linn vs???? (Tigard, Tualatin: homes, neighborhood, schools) - Portland - Oregon (OR) -Portland, OR local forum. Insights on PNW lifestyle, neighborhood safety, housing costs, and the unique culture of the Rose City. - Page 3 - City-Data Forum",
-          "url": "https://www.city-data.com/forum/portland/37192-lake-oswego-vs-west-linn-vs-3.html",
-          "snippet": "January 31, 2008 - Save your money !!! lake oswego is not worth it ! schools are over crowded. Poeple are very materialistic ! high schools with drug problems !no one"
-        },
-        {
-          "title": "The Lake Oswego Realtor's Perspective (2026) | Living in Oregon",
-          "url": "https://cities.livinginoregon.net/blog/lake-oswego/the-lake-oswego-realtors-perspective",
-          "snippet": "June 21, 2026 - The practical tradeoff is straightforward: every city on this list offers a lower price point than Lake Oswego, and most of them are within five minutes of the same commute time. What you're paying for in Lake Oswego is specifically the school ..."
-        },
-        {
-          "title": "On the market: Homes for sale at West Linn and Lake Oswego’s average price of $812,700 - oregonlive.com",
-          "url": "https://www.oregonlive.com/realestate/2021/02/on-the-market-homes-for-sale-at-west-linn-and-lake-oswegos-average-price-of-812700.html",
-          "snippet": "February 13, 2021 - January's housing report found a big gap between the average sale price for the West Linn-Lake Oswego area and usually close second West Portland, which came in at $699,900."
         }
       ],
       "news": []
@@ -391,63 +464,84 @@
     "West Linn Oregon housing market": {
       "text": [
         {
-          "title": "West Linn Housing Market: House Prices & Trends | Redfin",
-          "url": "https://www.redfin.com/city/20123/OR/West-Linn/housing-market",
-          "snippet": "The West Linn, OR housing market is very competitive, scoring 73 out of 100. The average West Linn house price was $825K last month, up 21.2% since last year."
+          "title": "Apartments For Rent in West Linn OR - 56 Rentals | Zillow",
+          "url": "https://www.zillow.com/west-linn-or/apartments/",
+          "snippet": "Find your next apartment in West Linn OR on Zillow. Use our detailed filters to find the perfect place, then get in touch with the property manager.West Linn Houses for Rent."
         },
         {
-          "title": "West Linn, OR Housing Market: 2026 Home Prices & Trends | Zillow",
-          "url": "https://www.zillow.com/home-values/34749/west-linn-or/",
-          "snippet": "3 weeks ago - Oregon · Clackamas County · West Linn · 0.4% 1-yr · The average West Linn, OR home value is · $777,229, up · 0.4% over the past year, and homes go to pending in around 37 days. (Updated on 3/31/2026) Zillow Home Value Index (ZHVI), built from the ground up by measuring monthly changes ..."
+          "title": "westlinnoregon.gov",
+          "url": "https://westlinnoregon.gov/",
+          "snippet": "The City of West Linn, Oregon."
         },
         {
-          "title": "Market Report for West Linn, OR",
-          "url": "https://marketreports.cascadesothebysrealty.com/r/8aaad09deb",
-          "snippet": "Data provided by Oregon DataShare, Regional Multiple Listing Service, and Willamette Valley MLS. All information is deemed reliable but not guaranteed. ... The bar graph below indicates the median days on the market value for each price range breakpoint in West Linn, Oregon."
+          "title": "‘Don’t want to be like the middle of Portland’: West Linn housing...",
+          "url": "https://www.opb.org/article/2026/07/24/west-linn-portland-oregon-housing-rent-apartments/",
+          "snippet": "West Linn’s housing needs analysis from two years ago estimates the city will need 1,005 new homes in the next year. One third of those, according to the analysis, should be affordable for people making up to 80% of the area’s median income."
         },
         {
-          "title": "West Linn, OR Market Trends - Movoto",
-          "url": "https://www.movoto.com/west-linn-or/market-trends/",
-          "snippet": "West Linn, OR market trends. Median values in West Linn are $896,950 list price, 101 days on Movoto, 136 active Inventories and $323/Sqft"
+          "title": "18455 Trillium Dr | West Linn, OR Houses for Rent | Rent.",
+          "url": "https://www.rent.com/oregon/west-linn-houses/18455-trillium-dr-4-lv1231214998",
+          "snippet": "See photos, floor plans and more details about 18455 Trillium Dr in West Linn, Oregon. Visit Rent. now for rental rates and other information about this property."
         },
         {
-          "title": "Willamette, West Linn Housing Market: House Prices & Trends | Redfin",
-          "url": "https://www.redfin.com/neighborhood/20572/OR/West-Linn/Willamette/housing-market",
-          "snippet": "The Willamette, West Linn, OR housing market is somewhat competitive, scoring 68 out of 100. The average Willamette house price was $803K last month, up 4.9% since last year."
+          "title": "West Linn Oregon | TikTok",
+          "url": "https://www.tiktok.com/discover/west-linn-oregon",
+          "snippet": "...Modern home West Linn, Oregon real estate, $950000 home with mountain views, remodeled homes in Portland area, Twyne Design property, family homes in West Linn, 3 bedroom house for sale, spacious deck with views, real estate agent Steve Roesch, Portland housing market."
         },
         {
-          "title": "West Linn Homes For Sale - West Linn OR Real Estate",
-          "url": "https://www.portlandrealestate.com/west-linn/",
-          "snippet": "Home prices in West Linn range from the upper $300,000s well into the multi-millions — sometimes even more than $10 million in the most expensive West Linn neighborhoods. The prices depend on the neighborhood and the size of the house."
+          "title": "Watch: New Oregon housing law causing controversy in West Linn",
+          "url": "https://www.oregonlive.com/business/2026/07/watch-new-oregon-housing-law-causing-controversy-in-west-linn.html",
+          "snippet": "New housing law in Oregon causing controversy in West Linn. Set as Google Preferred Source.West Linn officials will hold a public hearing for a proposed 11-acre redevelopment on Aug. 10 on the commercial aspects of a proposed ten-building development on a Tannler Drive field."
         },
         {
-          "title": "West Linn, Oregon Housing Market Report April 2025 - Rocket Homes",
-          "url": "https://rocket.com/homes/market-reports/or/west-linn",
-          "snippet": "Summary: The West Linn real estate market had 173 homes for sale in Apr 2025, a 21.8 % increase compared to Mar 2025. ... This is the total number of both homes sold and pending in an area."
+          "title": "Allergen Free Comfort Home in West Linn, Oregon... - Airbnb",
+          "url": "https://www.airbnb.com/rooms/946782",
+          "snippet": "Listing highlights. In West Linn, near local parks. About a 5-min walk to Marylhurst Heights Park, with restaurants and markets nearby. Free parking with RV space. Driveway parking for up to five cars, plus a dedicated spot for an RV or trailer up to 30 feet."
         },
         {
-          "title": "West Linn Oregon, Portland Suburbs Housing Trends",
-          "url": "https://www.movoto.com/guide/portland-or-multnomah-county/homes-for-sale-in-west-linn-oregon-portland-suburbs-real-estate-trends/",
-          "snippet": "Here's what you need to know about, home prices, and more. ... West Linn is one of the most active and attractive housing markets near Portland, ideal for families and great for a short commute into the city."
+          "title": "Summerlin Apartments Homes - West Linn, OR - Apartments in West...",
+          "url": "https://www.manta.com/c/mm34h16/summerlin-apartments-homes",
+          "snippet": "Summerlinn apartments, West Linn Oregon are your final stop for housing needs! We have the best amenities and service around."
         }
       ],
       "news": [
         {
-          "date": "2025-07-24T03:00:31+00:00",
+          "date": "2026-08-18T21:51:22+00:00",
+          "title": "Jennifer Fidler Recognized Among Portland Metro’s Top REALTORS as Oregon Housing Market Returns to a Healthier Balance",
+          "url": "https://digitalmarketreports.com/news/89590/jennifer-fidler-recognized-among-portland-metros-top-realtors-as-oregon-housing-market-returns-to-a-healthier-balance/",
+          "source": "DMR News",
+          "snippet": "As the Portland metropolitan housing market transitions toward a healthier, more balanced environment, Jennifer Fidler remains a trusted resource for buyers ..."
+        },
+        {
+          "date": "2026-07-27T00:00:00+00:00",
+          "title": "Watch: New Oregon housing law causing controversy in West Linn",
+          "url": "https://www.yahoo.com/news/politics/articles/watch-oregon-housing-law-causing-203532861.html",
+          "source": "Yahoo",
+          "snippet": "A lawyer for two West Linn residents who oppose the Tannler Drive redevelopment issued a letter to the city decrying the law as \"blatantly unconstitutional\" because it effectively blocks residents ..."
+        },
+        {
+          "date": "2026-07-24T00:00:00+00:00",
+          "title": "‘Don’t want to be like the middle of Portland’: West Linn housing developments spur pushback",
+          "url": "https://www.opb.org/article/2026/07/24/west-linn-portland-oregon-housing-rent-apartments/",
+          "source": "OPB",
+          "snippet": "Two proposals would bring 365 new homes to the city, marking a significant uptick in West Linn’s housing production rate. Dean Suhr, left, talks with Jim Driscoll as Suhr walks his son's dogs through ..."
+        },
+        {
+          "date": "2025-08-20T21:51:23+00:00",
           "title": "A boomer escaped California's tricky housing market with over $1 million in...",
           "url": "https://www.yahoo.com/lifestyle/triple-home-half-price-boomer-080102080.html",
           "source": "Business Insider · via Yahoo News",
           "snippet": "Jeremy Smith's home in West Linn, Oregon, was half the price and almost triple the square footage of..."
         },
         {
-          "date": "2025-11-26T03:00:31+00:00",
+          "date": "2025-11-23T21:51:23+00:00",
           "title": "Housing authority to sell housing near TQL Stadium to rehab City West",
           "url": "https://www.yahoo.com/news/articles/city-sell-housing-near-tql-060147573.html",
           "source": "The Enquirer · via Yahoo News",
           "snippet": "Editor's note: The headline and story was corrected to reflect who is selling the housing...."
         },
         {
-          "date": "2026-06-24T03:00:31+00:00",
+          "date": "2026-06-21T21:51:23+00:00",
           "title": "Secret six-figure side hustle that has Angelenos swimming in money",
           "url": "https://www.yahoo.com/lifestyle/articles/secret-six-figure-side-hustle-231358435.html",
           "source": "NY Post · via Yahoo News",
@@ -463,9 +557,9 @@
           "snippet": "Living in West Linn offers residents a sparse suburban feel and most residents own their homes. In West Linn there are a lot of bars, restaurants, coffee shops, and parks. Residents of West Linn tend to be liberal."
         },
         {
-          "title": "Living in West Linn Oregon - Pros & Cons, FAQs, Neighborhoods and More!",
-          "url": "https://www.livinginoregon.net/livinginwestlinn",
-          "snippet": "The city offers its residents a mix of suburban and rural living, abundant outdoor activities, and a friendly community, making West Linn one of the desirable cities to live in, in the Portland Metro Area. Published November 13, 2025"
+          "title": "Community Facts | City of West Linn Oregon Official Website",
+          "url": "https://westlinnoregon.gov/economicdevelopment/community-facts",
+          "snippet": "West Linn boasts a high standard of living and an educated population. With amenities like the revitalized Historic Willamette downtown area, the Music in the Park concert series, the annual Street Dance, and waterfront activities, West Linn is the perfect location for your business and your home."
         },
         {
           "title": "Moving to West Linn, OR | Living in West Linn, OR",
@@ -473,9 +567,9 @@
           "snippet": "June 21, 2023 - Moving to West Linn, OR? Livability helps people find their best place to live, work and visit. Find out why West Linn, OR is a great place to live."
         },
         {
-          "title": "Living in West Linn, Oregon: 20 Things to Love About West Linn!",
-          "url": "https://www.livinginoregon.net/post/20-things-to-love-about-west-linn-oregon",
-          "snippet": "May 10, 2025 - What to Love About West Linn OregonIf ... could be for you. Nestled between the Willamette and Tualatin rivers, this charming city offers a unique blend of natural beauty, rich history, and modern amenities...."
+          "title": "Living in West Linn Oregon - Pros & Cons, FAQs, Neighborhoods and More!",
+          "url": "https://www.livinginoregon.net/livinginwestlinn",
+          "snippet": "The city offers its residents a mix of suburban and rural living, abundant outdoor activities, and a friendly community, making West Linn one of the desirable cities to live in, in the Portland Metro Area. Published: November 13, 2025"
         },
         {
           "title": "West Linn, OR | The 2026 Ultimate Living In & Moving To Guide | PDX Movers",
@@ -483,9 +577,9 @@
           "snippet": "March 2, 2026 - Other great options include Parker Crest in the center of the city with the community of Savanna Oaks directly south of it. As well as Bolton and Sunset on the east side, closest to Oregon City. Willamette is another great neighborhood on the south side of town along the river. West Linn is part of Clackamas County and zip codes of 97034 and 97068."
         },
         {
-          "title": "Community Facts | City of West Linn Oregon Official Website",
-          "url": "https://westlinnoregon.gov/economicdevelopment/community-facts",
-          "snippet": "West Linn boasts a high standard of living and an educated population. With amenities like the revitalized Historic Willamette downtown area, the Music in the Park concert series, the annual Street Dance, and waterfront activities, West Linn is the perfect location for your business and your home."
+          "title": "Living in West Linn, Oregon: 20 Things to Love About West Linn!",
+          "url": "https://www.livinginoregon.net/post/20-things-to-love-about-west-linn-oregon",
+          "snippet": "May 10, 2025 - What to Love About West Linn OregonIf ... could be for you. Nestled between the Willamette and Tualatin rivers, this charming city offers a unique blend of natural beauty, rich history, and modern amenities...."
         },
         {
           "title": "West Linn, OR City Guide | About Living in West Linn - Homes.com",
@@ -494,76 +588,45 @@
         },
         {
           "title": "Living in West Linn Oregon (2026) – Pros, Cons, Neighborhoods & Home Prices",
-          "url": "https://cities.livinginoregon.net/livinginwestlinn.html",
-          "snippet": "May 6, 2026 - Moving to West Linn is rarely a value calculation — it is a deliberate choice to pay for a specific combination of setting, schools, and community character that the market prices in consistently. Oregon's lack of a sales tax is a statewide factor, but the household income profile here — among the highest in the county — means the cost of entry is understood and accepted rather than negotiated around."
+          "url": "https://cities.livinginoregon.net/livinginwestlinn",
+          "snippet": "May 6, 2026 - OR-43 connects north along the Willamette toward Lake Oswego and Portland, and I-205 provides freeway access north toward Portland and east toward Oregon City. Most working residents commute north toward Portland or west across the Willamette toward Lake Oswego and the Washington County technology corridor. The city's income profile reflects a workforce concentrated in high-earning professional occupations — law, medicine, finance, and technology — with limited local employment within the city itself. The West Linn-Wilsonville School District is consistently ranked among the top in Oregon, and school district reputation is a primary driver of housing demand alongside the river and hill setting."
         }
       ],
-      "news": [
-        {
-          "date": "2025-09-27T03:00:35+00:00",
-          "title": "Sumner (WA) vs. West Linn (OR) live stream and start time for high school...",
-          "url": "https://sports.yahoo.com/article/sumner-wa-vs-west-linn-070002877.html",
-          "source": "The Sporting News · via Yahoo Sports",
-          "snippet": "Sumner (WA) vs. West Linn (OR) live stream and start time for high school football game originally..."
-        },
-        {
-          "date": "2026-07-10T03:00:35+00:00",
-          "title": "These are the 10 safest Oregon cities to live in, report says",
-          "url": "https://www.yahoo.com/news/us/articles/10-safest-oregon-cities-live-121517788.html",
-          "source": "Statesman Journal · via Yahoo News",
-          "snippet": "Oregon residents considering a move in 2026 because of safety concerns but who still want to remain..."
-        },
-        {
-          "date": "2024-07-24T03:00:35+00:00",
-          "title": "Oregon high school football scores: Eugene-area live updates from state...",
-          "url": "https://sports.yahoo.com/oregon-high-school-football-scores-003029549.html",
-          "source": "The Register-Guard · via Yahoo Sports",
-          "snippet": "The Oregon high school football postseason has reached the quarterfinals. Third-seeded Sheldon (9-0)..."
-        },
-        {
-          "date": "2026-01-25T03:00:35+00:00",
-          "title": "Oregon’s U.S. Rep. Bynum pitches patchwork ‘K-30’ plan to tackle generational af...",
-          "url": "https://www.yahoo.com/news/articles/oregon-u-rep-bynum-pitches-235321791.html",
-          "source": "Oregon Capital Chronicle · via Yahoo News",
-          "snippet": "WEST LINN, Ore.— At a library in suburban West Linn, nursing students, millennial parents and recent..."
-        },
-        {
-          "date": "2026-02-24T03:00:35+00:00",
-          "title": "20 Best West Coast Cities for Rich Young People To Live",
-          "url": "https://www.yahoo.com/lifestyle/articles/20-best-west-coast-cities-140006332.html",
-          "source": "GOBankingRates · via Yahoo News",
-          "snippet": "To be young and wealthy is great. To live on America’s beautiful West Coast? Even better. Where are ..."
-        },
-        {
-          "date": "2026-07-03T03:00:35+00:00",
-          "title": "Idyllic Oregon Estate That Starred in Bruce Willis and Cate Blanchett’s Movie ‘B...",
-          "url": "https://www.yahoo.com/lifestyle/articles/idyllic-oregon-estate-starred-bruce-165138910.html",
-          "source": "Realtor.com · via Yahoo News",
-          "snippet": "An Oregon estate that prominently featured alongside Bruce Willis, Billy Bob Thornton, and Cate Blan..."
-        }
-      ]
+      "news": []
     }
   },
   "tidings_rss": {
     "source_url": "https://news.google.com/rss/search?q=%22West+Linn%22+Oregon&hl=en-US&gl=US&ceid=US:en",
     "items": [
       {
-        "title": "This Portland-area suburb was named ‘Oregon’s safest city’ - KOIN.com",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOSndhU3Y1cUJsOHdjb1VGVk5GSXRCQTluNzZ2aXY3bVoxbC01Wm9UOUZfeE5NaE9OMVpMTUNVbDBKUFJkaS1WQUEzTk5sajcyZnhDMHU3d193UHBYenN6eVhubW9aSUp5bC05ZkxXMkJXVDFhT2lFMUdBWmZsQjNlUEliQ3dHWHNpU3JZVjhHdm1PaVlnU2lFVDJiX0FtanJPdVE?oc=5",
-        "date": "Sat, 18 Jul 2026 19:57:23 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxOSndhU3Y1cUJsOHdjb1VGVk5GSXRCQTluNzZ2aXY3bVoxbC01Wm9UOUZfeE5NaE9OMVpMTUNVbDBKUFJkaS1WQUEzTk5sajcyZnhDMHU3d193UHBYenN6eVhubW9aSUp5bC05ZkxXMkJXVDFhT2lFMUdBWmZsQjNlUEliQ3dHWHNpU3JZVjhHdm1PaVlnU2lFVDJiX0FtanJPdVE?oc=5\" target=\"_blank\">This Portland-area suburb was named ‘Oregon’s safest city’</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">KOIN.com</fo"
+        "title": "Lakeridge, West Linn stars second at American Legion Series - Your Oregon News",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOYWdhY2VhNFFuUVlDY0hfaDJvSXlsbmZCNDBPNHRJb2pTdWtscEZUenM3ZVVPME5raHU2WWRacnMxYzltMmp2NzRJUG9CTWZKbk43OVpIVDlONFY3M3kxM1pyWGxLUTNWM3E1UDFrMnp4WEFLcHBZTWFLX2U5cHlNTUNfcF9TMWEteTVLSjgwbUJ4eWp2UVRkWmdERC1TZw?oc=5",
+        "date": "Wed, 19 Aug 2026 07:14:59 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxOYWdhY2VhNFFuUVlDY0hfaDJvSXlsbmZCNDBPNHRJb2pTdWtscEZUenM3ZVVPME5raHU2WWRacnMxYzltMmp2NzRJUG9CTWZKbk43OVpIVDlONFY3M3kxM1pyWGxLUTNWM3E1UDFrMnp4WEFLcHBZTWFLX2U5cHlNTUNfcF9TMWEteTVLSjgwbUJ4eWp2UVRkWmdERC1TZw?oc=5\" target=\"_blank\">Lakeridge, West Linn stars second at American Legion Series</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Your Oregon News"
       },
       {
-        "title": "Trump bars Oregon from issuing temporary commercial drivers licenses - West Linn Tidings",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNV285SGZSZ2NGc0hFRzVXV0RJT3ZMRkpXVkRtTzBkRmlxbDRaOGlFb0FIOVprT2RtRmExMTZrYjZlU3Q5c2JIZjJudTVtd2hraF9Pb0l4bWIxZFFNS0pvamo4Y1lRWG0tUmNZZW5KTzNuN1g1NEo0bFFLalVsTEhVMHJucmxVcVNkSWZZZGVQUlpCb1RaOWhnYW1NYjRpT0NsX2FXcGtzeHpFUC1TWHc?oc=5",
-        "date": "Thu, 23 Jul 2026 17:24:23 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNV285SGZSZ2NGc0hFRzVXV0RJT3ZMRkpXVkRtTzBkRmlxbDRaOGlFb0FIOVprT2RtRmExMTZrYjZlU3Q5c2JIZjJudTVtd2hraF9Pb0l4bWIxZFFNS0pvamo4Y1lRWG0tUmNZZW5KTzNuN1g1NEo0bFFLalVsTEhVMHJucmxVcVNkSWZZZGVQUlpCb1RaOWhnYW1NYjRpT0NsX2FXcGtzeHpFUC1TWHc?oc=5\" target=\"_blank\">Trump bars Oregon from issuing temporary commercial drivers licenses</a>&nbsp;&nbsp;<font co"
+        "title": "‘Don’t want to be like the middle of Portland’: West Linn housing developments spur pushback - Oregon Public Broadcasting - OPB",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOd3pIMlQtY1lGMl9abU1zcUdiaTZkMTJjZVh2Y0tJWmp5LU00UUNxMjBKOWZFNDd5MEVPblRoQUdtc0ZRLXl2dzB5WTVaeENBMUUzd2tySGtaTUg4R01Yd0hKTTJqRm56U0wwX0pfaHVYS0RjQklZNWZQa19RZllpbzk3SUF4cmVVMjdhRTY4T1o2X00?oc=5",
+        "date": "Fri, 24 Jul 2026 07:00:00 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxOd3pIMlQtY1lGMl9abU1zcUdiaTZkMTJjZVh2Y0tJWmp5LU00UUNxMjBKOWZFNDd5MEVPblRoQUdtc0ZRLXl2dzB5WTVaeENBMUUzd2tySGtaTUg4R01Yd0hKTTJqRm56U0wwX0pfaHVYS0RjQklZNWZQa19RZllpbzk3SUF4cmVVMjdhRTY4T1o2X00?oc=5\" target=\"_blank\">‘Don’t want to be like the middle of Portland’: West Linn housing developments spur pushback</a>&nbsp;&nbsp;<font color=\"#6f6f6f"
       },
       {
-        "title": "The Finisher: West Linn’s Reese Jordan is Named Athlete of the Year - Your Oregon News",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQZW5QQ1NRY2d1Vy04bl9tYTE0SHVWdm1CbU5sUXktbW1XaWNZU1Nuc245OGFBZ0QxVE9ubHFSaHhGeThJeU1JR3dCNFhTeE1Lemgxa3ZmR3hycnVDVW01RGt0VjBmTFoyV0ZiSU96TEJ3MlVKWFN2d3NELVZnX3QxcnV5OGF4WGZ1N25LRkFPVTZnUTh5SmdxZmZvMlhRMU9wVkZ1cXBNMA?oc=5",
-        "date": "Thu, 23 Jul 2026 00:20:01 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxQZW5QQ1NRY2d1Vy04bl9tYTE0SHVWdm1CbU5sUXktbW1XaWNZU1Nuc245OGFBZ0QxVE9ubHFSaHhGeThJeU1JR3dCNFhTeE1Lemgxa3ZmR3hycnVDVW01RGt0VjBmTFoyV0ZiSU96TEJ3MlVKWFN2d3NELVZnX3QxcnV5OGF4WGZ1N25LRkFPVTZnUTh5SmdxZmZvMlhRMU9wVkZ1cXBNMA?oc=5\" target=\"_blank\">The Finisher: West Linn’s Reese Jordan is Named Athlete of the Year</a>&nbsp;&nbsp;<font color=\"#6f6f"
+        "title": "Oregon lawmaker says she’ll push for more cannabis regulations in 2027 to protect kids - West Linn Tidings",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNU3hsbTJ4b0NTOG5FWFRMQVBqTWwyV1FHcThuRkJXX2dxcDVPNXFmV0tLYVUyYXREMDJHNk81SEtYWEZFQ29pSjVrbFJxRVIwMm9YWjNuNEZ2d2FrQVpUbG5FaGhBS2JnVzg5WjNNcHZYVkx4M0F4MTRiOTBQcjhHVzBDaFBxRTJaRF84NzNuNm1IMXd1QllmQ19QWUNJRERaU01DMXV1aVYyM1l4TnRxMExBYW1XY1paTUVuQ1ZmUFAyM3M?oc=5",
+        "date": "Thu, 20 Aug 2026 17:03:09 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxNU3hsbTJ4b0NTOG5FWFRMQVBqTWwyV1FHcThuRkJXX2dxcDVPNXFmV0tLYVUyYXREMDJHNk81SEtYWEZFQ29pSjVrbFJxRVIwMm9YWjNuNEZ2d2FrQVpUbG5FaGhBS2JnVzg5WjNNcHZYVkx4M0F4MTRiOTBQcjhHVzBDaFBxRTJaRF84NzNuNm1IMXd1QllmQ19QWUNJRERaU01DMXV1aVYyM1l4TnRxMExBYW1XY1paTUVuQ1ZmUFAyM3M?oc=5\" target=\"_blank\">Oregon lawmaker says she’ll push for more cannabis regulations i"
+      },
+      {
+        "title": "West Linn man, 46, found dead after reentering burning house to save dog - OregonLive.com",
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQdTZWN3NVNElNRWJBTVBzWTRwcnA1RjNmOVlLWEdaalVjZWFYSGgxRlBTZkwtSzlvNlJsRVhXaTNOTEVtWFNSbGpwNl9adlZNSU5xeDJrS2RFSGhqX2kzY2U0QUNmcGF1RHRWaU1tb2dSVFhqZ21ERG9XZmIzNzRuOVdsTUdtRDg4ZDFDR1lRZ2dYU2xjNVVzSVBkT3pyTDJHelVZU2tCeDRIUWFmTkF4MXFad1YxQW40OUtjT2xQbHRCdF9R?oc=5",
+        "date": "Sat, 01 Aug 2026 07:00:00 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQdTZWN3NVNElNRWJBTVBzWTRwcnA1RjNmOVlLWEdaalVjZWFYSGgxRlBTZkwtSzlvNlJsRVhXaTNOTEVtWFNSbGpwNl9adlZNSU5xeDJrS2RFSGhqX2kzY2U0QUNmcGF1RHRWaU1tb2dSVFhqZ21ERG9XZmIzNzRuOVdsTUdtRDg4ZDFDR1lRZ2dYU2xjNVVzSVBkT3pyTDJHelVZU2tCeDRIUWFmTkF4MXFad1YxQW40OUtjT2xQbHRCdF9R?oc=5\" target=\"_blank\">West Linn man, 46, found dead after reentering burning house to"
+      },
+      {
+        "title": "Person found dead one day after West Linn house fire - KOIN.com",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPcGtqUktWbTM2N1QtZ2E0elF3cWdPbTN3SDUtNF8ybjR0UmJwRVdjczNFNG1ISlV6ODVaM1NURmF4ckVBNjRvNkxMMTFZaGxzV3pqcEo1eWhTR0dFX3l6MzI1ZmdNYjg1dlhOS1VWcTNBb1VKbndkNW9CWHlIMlVwYXNoajNLNkJZeDRpd252blVVbnhtUG9IeDZSSFFFQdIBowFBVV95cUxQYUc1QmxjaEdNaFJUbUl4ZXRfVllBN1hGanR1TWQ2YTR0NlJKSGZRWHVrX0V6Szk1Z2VNM2RiUklCNHFhOWt6VnNHaEMzRUNrNE5wZXZuTHdsQzRyUWFjTy1lX09INnNjcEJkcVVVWkFJSFNiUFU2TjFOZzI1bDZ1em9FREJFYVcwWXY4Vm5MNnE4OFNMelV3dGdDUmdKOWdwUWhF?oc=5",
+        "date": "Fri, 31 Jul 2026 07:00:00 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxPcGtqUktWbTM2N1QtZ2E0elF3cWdPbTN3SDUtNF8ybjR0UmJwRVdjczNFNG1ISlV6ODVaM1NURmF4ckVBNjRvNkxMMTFZaGxzV3pqcEo1eWhTR0dFX3l6MzI1ZmdNYjg1dlhOS1VWcTNBb1VKbndkNW9CWHlIMlVwYXNoajNLNkJZeDRpd252blVVbnhtUG9IeDZSSFFFQdIBowFBVV95cUxQYUc1QmxjaEdNaFJUbUl4ZXRfVllBN1hGanR1TWQ2YTR0NlJKSGZRWHVrX0V6Szk1Z2VNM2RiUklCNHFhOWt6VnNHaEMzRUNrNE5wZXZuTHdsQzRyUWFjTy1lX0"
       },
       {
         "title": "Man struck by lightning while golfing in West Linn - KPTV",
@@ -572,94 +635,100 @@
         "snippet": "<a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxOTk8tTzBucmNoTlpqa3dFLWdxekNfeTFnU0xQdWJoazZ3bTBIZ2dKdzhPUXlGUWpyY0RIcFVUTXZPdlBRdVIzQ1JJN3oyamJEZjM4alVIOWdEem8tUVNiRGFzd2pnODRtZHIwejVzNlFjYzA5bDA5QnMyNFlUclhDMWh3UdIBlwFBVV95cUxPNWZINWQtdjR5LUtKR2F0c0FpVVliaVRaRFJ0d3hTU1BDcTlvb0JURFFVVEtrdWROckZybzYzWXFKQkRody1JLWEwVGJPYTVUVXp6dlJfT2VNWl9qOXI4U3QxTjlMS2xLNVBsdjJ2Y0duYTJWRFk0UUpsdHpfOG"
       },
       {
-        "title": "Tualatin Boys Varsity Soccer @ West Linn - MaxPreps",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNTkR5Y3FxeTN0cnFrbXUyRlg2Smh5RU5wcllmSElwSDRIZ2pnVUdnOEVnNUxFNW16cW1FeVJ5a0QtbGs2N0ZKbWlVb2RXMmcwVXozdG5kU1FfYzUzX0ljSlU4anc0UFVkbzRLQV9RUFdIR2pTWVFxbEJwZHpXOFZ4eHlOZ2ZvT2lqVXNxUTFtRUdxYmpSZUNFQkxtQWVFTHIwQnkyYkRnZW52S00yX3dRZ0N3?oc=5",
-        "date": "Mon, 20 Jul 2026 11:47:24 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNTkR5Y3FxeTN0cnFrbXUyRlg2Smh5RU5wcllmSElwSDRIZ2pnVUdnOEVnNUxFNW16cW1FeVJ5a0QtbGs2N0ZKbWlVb2RXMmcwVXozdG5kU1FfYzUzX0ljSlU4anc0UFVkbzRLQV9RUFdIR2pTWVFxbEJwZHpXOFZ4eHlOZ2ZvT2lqVXNxUTFtRUdxYmpSZUNFQkxtQWVFTHIwQnkyYkRnZW52S00yX3dRZ0N3?oc=5\" target=\"_blank\">Tualatin Boys Varsity Soccer @ West Linn</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">MaxPreps<"
-      },
-      {
-        "title": "Crash closes parts of I-205 southbound in West Linn - KGW",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNZUUydC1XV2FZdUsxdkVOS080Y21DdWdnVTlYc29WYTZRLVNqblV1S3pFc0J3bEJldzVPelRPQmU5OWR0UzVQZ3lsZkd6aXM5ZXlGc2luMmt5WVRBZWk5eHlCMVFmWU02NEJRdjFfQUVfcl91akp5Z0tHc0xUbFVadkZQLTFnT2h5akVodUtOblp5UWp5RG5sWHV0akJXR0Rzc2ExN29HSndyYXIxYnRPV0VxWXU3VGc?oc=5",
-        "date": "Fri, 10 Jul 2026 07:00:00 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxNZUUydC1XV2FZdUsxdkVOS080Y21DdWdnVTlYc29WYTZRLVNqblV1S3pFc0J3bEJldzVPelRPQmU5OWR0UzVQZ3lsZkd6aXM5ZXlGc2luMmt5WVRBZWk5eHlCMVFmWU02NEJRdjFfQUVfcl91akp5Z0tHc0xUbFVadkZQLTFnT2h5akVodUtOblp5UWp5RG5sWHV0akJXR0Rzc2ExN29HSndyYXIxYnRPV0VxWXU3VGc?oc=5\" target=\"_blank\">Crash closes parts of I-205 southbound in West Linn</a>&nbsp;&nbsp;<font color=\""
-      },
-      {
         "title": "West Linn Air Quality Index (AQI) and USA Air Pollution - IQAir",
         "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE55cmpmV3FzWEdjSjBpMTFfeEgwdWthc1lyWTF5bkNBWjJlaVVpMjhOaVYxclgwNXMtRmR3c0xDMDBqNHIzOG9mb1JaUHpCdy1VMFhXQlFmYjluNjFjT0dIcG8zX20?oc=5",
         "date": "Tue, 23 Jun 2026 15:02:45 GMT",
         "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE55cmpmV3FzWEdjSjBpMTFfeEgwdWthc1lyWTF5bkNBWjJlaVVpMjhOaVYxclgwNXMtRmR3c0xDMDBqNHIzOG9mb1JaUHpCdy1VMFhXQlFmYjluNjFjT0dIcG8zX20?oc=5\" target=\"_blank\">West Linn Air Quality Index (AQI) and USA Air Pollution</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">IQAir</font>"
       },
       {
-        "title": "West Linn police seek other victims in kidnapping, strangulation case - KPTV",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPTnQ3SUlEVlkyTGJiYWgtOXFWU2NpYmZId2UydXc4Vy01UVMwZS05RHJXdTJpLVZGTEZfa1dSM3JUTVVsdmo1RTNFTUcwSFFMTXBKU2xVNGxNNFFhRnNQV0hvbXl0Y19qVDZyTy1zRmJWaWlrNUx1czF2MEw0di1SenFfZUpVd0dIV2ZMZ1d2ZnJBeTZ2Rk9oOUgxNy1NVzDSAbMBQVVfeXFMTXpIZVUyV1VPa3kyQTlsUzIzRWp1OVFrVldKT0FieVEyZ2NTWmR3aDZzSHJuTnlHcG9Gd1ZSaHdOVmJJTktkZF82aTFUV2UxT1lUU3loNnBHa1hmLUVTSWhZWTlQMlZPZWRMSzZQYVV4RFlDOTFaOFg0bDBaZkticlAtYzJ5WllyNzlBMlFqYUVUb0paalhhTHllRV9jWF9ab2xwQXZYUFVwU2Z0VWZEYmhLcFU?oc=5",
-        "date": "Thu, 16 Jul 2026 01:48:00 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxPTnQ3SUlEVlkyTGJiYWgtOXFWU2NpYmZId2UydXc4Vy01UVMwZS05RHJXdTJpLVZGTEZfa1dSM3JUTVVsdmo1RTNFTUcwSFFMTXBKU2xVNGxNNFFhRnNQV0hvbXl0Y19qVDZyTy1zRmJWaWlrNUx1czF2MEw0di1SenFfZUpVd0dIV2ZMZ1d2ZnJBeTZ2Rk9oOUgxNy1NVzDSAbMBQVVfeXFMTXpIZVUyV1VPa3kyQTlsUzIzRWp1OVFrVldKT0FieVEyZ2NTWmR3aDZzSHJuTnlHcG9Gd1ZSaHdOVmJJTktkZF82aTFUV2UxT1lUU3loNnBHa1hmLUVTSWhZWT"
+        "title": "West Linn resident found dead after trying to rescue dog from burning home - KATU",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxONkZUQzdfaFJLTGk4eVRVUEhzbk9UeDQydm1sa2tuRTlSNm1nLWhrLUxCeng5RktNeXJ0OFBnTTZ4VU4wQW1FZGNUTTlNdzhxM1dpU3pGSFdsSUJzeWZyMGhmbVBXZEVKd0FRM201bzBLc0hrdjdNQlZJQ2RDRnktWUE2ZTRFMVptU2ZiZlpmTWdlRHIyYUIyZDJhZkExY3dqRGtweg?oc=5",
+        "date": "Fri, 31 Jul 2026 07:00:00 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxONkZUQzdfaFJLTGk4eVRVUEhzbk9UeDQydm1sa2tuRTlSNm1nLWhrLUxCeng5RktNeXJ0OFBnTTZ4VU4wQW1FZGNUTTlNdzhxM1dpU3pGSFdsSUJzeWZyMGhmbVBXZEVKd0FRM201bzBLc0hrdjdNQlZJQ2RDRnktWUE2ZTRFMVptU2ZiZlpmTWdlRHIyYUIyZDJhZkExY3dqRGtweg?oc=5\" target=\"_blank\">West Linn resident found dead after trying to rescue dog from burning home</a>&nbsp;&nbsp;<font color=\"#6"
       },
       {
-        "title": "Commentary: The Oregon prosperity council’s bait-and-switch - West Linn Tidings",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPcHpWc2VqYnRPWXJfVWxPYjA3d0NhY1otdk9ZaWhTU18yNFNZdTEtVk81cFEyeDFFUEw0T2NTWGxScVBGeVhQc2p0Njlyb3ZCUzBGWjVIX1BKS1pZR1U5Q2dpYmN0Y3Jqc0MxSG5iMHEyRXRicWk4MlVWdG1qeU51U2hROE9lckpUVHRQa0ZJZVphODlXRDF2OEprRzRrQQ?oc=5",
-        "date": "Mon, 20 Jul 2026 18:53:16 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxPcHpWc2VqYnRPWXJfVWxPYjA3d0NhY1otdk9ZaWhTU18yNFNZdTEtVk81cFEyeDFFUEw0T2NTWGxScVBGeVhQc2p0Njlyb3ZCUzBGWjVIX1BKS1pZR1U5Q2dpYmN0Y3Jqc0MxSG5iMHEyRXRicWk4MlVWdG1qeU51U2hROE9lckpUVHRQa0ZJZVphODlXRDF2OEprRzRrQQ?oc=5\" target=\"_blank\">Commentary: The Oregon prosperity council’s bait-and-switch</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">West Linn Tiding"
+        "title": "Lakeridge, West Linn stars lead the way in the Series - Your Oregon News",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOU2xqMjVIOVF5cHI1cDhJNkZpVTY1T25UbkFCZlc5UlI3LWo1T08xbzZsOFZvNFQzRktsUEsxRkpNV1o3bU04VVI5bEZKTkZNZkkwUF91UWNfUzdMZVRTLUNOYWFvY1B6YTlRalRIZGtaQ3RjcHg3QXA3a0FtcjZZQms4ZGpLSlNnRk05WHI4SzFtam5DcUE?oc=5",
+        "date": "Mon, 17 Aug 2026 08:11:47 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxOU2xqMjVIOVF5cHI1cDhJNkZpVTY1T25UbkFCZlc5UlI3LWo1T08xbzZsOFZvNFQzRktsUEsxRkpNV1o3bU04VVI5bEZKTkZNZkkwUF91UWNfUzdMZVRTLUNOYWFvY1B6YTlRalRIZGtaQ3RjcHg3QXA3a0FtcjZZQms4ZGpLSlNnRk05WHI4SzFtam5DcUE?oc=5\" target=\"_blank\">Lakeridge, West Linn stars lead the way in the Series</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Your Oregon News</font>"
       },
       {
-        "title": "Oregon City Girls Varsity Volleyball @ West Linn - MaxPreps",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxORWstUkZfVFdfUEduR0JIZF9rc2JaWFB1b29VdGU2OVZ3ZjNHbWRWaUdGdXEyRjd4NjZEc2xCekVWODZKbS13VWdwV3p1ZXF3NG5aM1NQUmJPWUtKR0kwQ3ZrU1A5V291OV8wR0JyNEVNdVROZVhSblE0TXhobzFmMHpDZVhmV1MxSDJpSmE4RTQ2akx5MDJKSERIbjBnRlBqTHZCSHFqS21lVE1zUk5uVm1SaS1Sd003YzFhOQ?oc=5",
-        "date": "Sun, 19 Jul 2026 15:55:55 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxORWstUkZfVFdfUEduR0JIZF9rc2JaWFB1b29VdGU2OVZ3ZjNHbWRWaUdGdXEyRjd4NjZEc2xCekVWODZKbS13VWdwV3p1ZXF3NG5aM1NQUmJPWUtKR0kwQ3ZrU1A5V291OV8wR0JyNEVNdVROZVhSblE0TXhobzFmMHpDZVhmV1MxSDJpSmE4RTQ2akx5MDJKSERIbjBnRlBqTHZCSHFqS21lVE1zUk5uVm1SaS1Sd003YzFhOQ?oc=5\" target=\"_blank\">Oregon City Girls Varsity Volleyball @ West Linn</a>&nbsp;&nbsp;<font col"
+        "title": "Diane Wilt Obituary (03/29/1945 - 08/07/2026) - West Linn, OR - OregonLive.com",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQZ1BWYXN5T09LOWRUbUE3b3FsTzgzVnk5a09xLU94YW0zQXQxd2RCSGZnTm5pT1Zqb2tObWQ0WU5fMUV2M0VDLTROTUd2c1BNY3NBOGJiLWMzRnZsc2w1dXEyRlRMNWFrLVhuS2U2US1CNGV6WXp2WjhxU3BLQS16TERkWGVxeU5NVGNrZnJKSQ?oc=5",
+        "date": "Tue, 18 Aug 2026 03:39:05 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxQZ1BWYXN5T09LOWRUbUE3b3FsTzgzVnk5a09xLU94YW0zQXQxd2RCSGZnTm5pT1Zqb2tObWQ0WU5fMUV2M0VDLTROTUd2c1BNY3NBOGJiLWMzRnZsc2w1dXEyRlRMNWFrLVhuS2U2US1CNGV6WXp2WjhxU3BLQS16TERkWGVxeU5NVGNrZnJKSQ?oc=5\" target=\"_blank\">Diane Wilt Obituary (03/29/1945 - 08/07/2026) - West Linn, OR</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">OregonLive.com</font>"
       },
       {
-        "title": "Willamette River ‘mega-mansion’ sits unfinished 30 years later - KOIN.com",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNTDlRTTUtcHlSZ0NkNkNUSnoxNzVxdld2eDFJQ1N0Sm9MLXF1dlA2RWl5T0ZuY0p0Q2QyTGRIQ3NMVktQWGJYcXJ4Q3dYalljLVBuc1J2aTh5NG9RWVZBdVhJTXJmcXA4dkxCMW5vekRhS1oyQjhNdE9tQmstRU5HNFdQVXNoUTlfWHdkYlpqZmhxSGkwQUY2eNIBngFBVV95cUxOdnNHRE1QU3Q1aEFtLXdBemxMbXJPUDNBMDFGdndQTFJDX0wyVThuWHBuQzBVQk0tbmhndE0tSkgwbTNSRU8zWllETDdwZno3ajdjaFBtZHBHcVZuUlo4UUFhbExhX0xLekpoQ2tudkZXdWR1LUxvOTdWSktvbF9nWW9ZZEdrUjVQbEpvZV9pWmo0Y1p4aHZNdEJfSlF5dw?oc=5",
-        "date": "Thu, 09 Jul 2026 07:00:00 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxNTDlRTTUtcHlSZ0NkNkNUSnoxNzVxdld2eDFJQ1N0Sm9MLXF1dlA2RWl5T0ZuY0p0Q2QyTGRIQ3NMVktQWGJYcXJ4Q3dYalljLVBuc1J2aTh5NG9RWVZBdVhJTXJmcXA4dkxCMW5vekRhS1oyQjhNdE9tQmstRU5HNFdQVXNoUTlfWHdkYlpqZmhxSGkwQUY2eNIBngFBVV95cUxOdnNHRE1QU3Q1aEFtLXdBemxMbXJPUDNBMDFGdndQTFJDX0wyVThuWHBuQzBVQk0tbmhndE0tSkgwbTNSRU8zWllETDdwZno3ajdjaFBtZHBHcVZuUlo4UUFhbExhX0xLek"
+        "title": "Oregon congresswoman proposes program to support first responder mental health - West Linn Tidings",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNUWREQzB6RlItMjl6NWhSY2VCOHVYQ0FJVTFnZWI1MTRCa2E3Z2dWdDRIeWM1TE9iaU5Jb0Z5aFhxMGpYdUp2M3d1TTJuR18yNW5ZRWpha2t5Sy1xbEc5bUw3SmlvSjladmd4Um03WmhCOV9kM3Y5SjEyRGNFc1BlWVBNb1FQcHJJUTJ3bE5BNGpEYURPd2VkYUYzNjdRUW1qb25wRDFsV3BpRkdhRzZLVkt2aDZPTjF0SGc?oc=5",
+        "date": "Tue, 18 Aug 2026 20:18:07 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNUWREQzB6RlItMjl6NWhSY2VCOHVYQ0FJVTFnZWI1MTRCa2E3Z2dWdDRIeWM1TE9iaU5Jb0Z5aFhxMGpYdUp2M3d1TTJuR18yNW5ZRWpha2t5Sy1xbEc5bUw3SmlvSjladmd4Um03WmhCOV9kM3Y5SjEyRGNFc1BlWVBNb1FQcHJJUTJ3bE5BNGpEYURPd2VkYUYzNjdRUW1qb25wRDFsV3BpRkdhRzZLVkt2aDZPTjF0SGc?oc=5\" target=\"_blank\">Oregon congresswoman proposes program to support first responder mental heal"
       },
       {
-        "title": "Oregon City Boys Varsity Basketball @ West Linn - MaxPreps",
-        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOeFY2bHRsMVNZZEFiTDZRMjIxTDRGd1R1YTJ6bHZ1ZkFUZGVuUl8zV3g0TXlIaHBwUUQzMXNuaGQwckFxVE4wQ1NmdDlDQlNKN1VDU0ZRRFZENnRFbVRiRTNZam5VOF9SRTFmQ05PX0ZCYTNLZ2J3b1BoNk9iTDlwNHluX3RuektLZjEwbDI0a3ZSSDU3RWV5VU5zTlJUTzc2X1ljdjA0c0VNSk16M3BLcEZiX3NFajEx?oc=5",
-        "date": "Sun, 19 Jul 2026 16:33:23 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOeFY2bHRsMVNZZEFiTDZRMjIxTDRGd1R1YTJ6bHZ1ZkFUZGVuUl8zV3g0TXlIaHBwUUQzMXNuaGQwckFxVE4wQ1NmdDlDQlNKN1VDU0ZRRFZENnRFbVRiRTNZam5VOF9SRTFmQ05PX0ZCYTNLZ2J3b1BoNk9iTDlwNHluX3RuektLZjEwbDI0a3ZSSDU3RWV5VU5zTlJUTzc2X1ljdjA0c0VNSk16M3BLcEZiX3NFajEx?oc=5\" target=\"_blank\">Oregon City Boys Varsity Basketball @ West Linn</a>&nbsp;&nbsp;<font color=\"#6f"
+        "title": "Man found dead after destructive 2-alarm West Linn house fire - KPTV",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPYUpNNWhHUmdDd2hEd3dNc1NkNkpUalZ4bFFnVHNvRDJrYUh0UDZ5bFlyaFZfdjFTY3B4WElkSlRTcWlja3RkcjZjTlN3YVBTZFJfYTQ0clR6aVBiZ0Mza0Q4cXVoVW9FYTQ4VVllY1hKWFBwMlVhZEhpMGlnTFNJM0QtVVJ4bXZ3TnI3dVhCd9IBowFBVV95cUxPR083aWVrYmtWNFJENFZCMl9scW5WcjVpYkdLc2NBZmhxTDdtZENOQm5ZTnJwQU0zMlFqWmJYcklNQ3VaSENfeUVsS2JJQmNnLWgwWE0zb2hwZk5pb3o2YlQwUnhKa2JPbjRNSVZ4b0VSZ011M0IxTENhMDZPRHNhUE45azlUMWZ6aGMwWWhDT1FqNnloMmJkcXY2Q3JsLTNod2JB?oc=5",
+        "date": "Thu, 30 Jul 2026 07:00:00 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxPYUpNNWhHUmdDd2hEd3dNc1NkNkpUalZ4bFFnVHNvRDJrYUh0UDZ5bFlyaFZfdjFTY3B4WElkSlRTcWlja3RkcjZjTlN3YVBTZFJfYTQ0clR6aVBiZ0Mza0Q4cXVoVW9FYTQ4VVllY1hKWFBwMlVhZEhpMGlnTFNJM0QtVVJ4bXZ3TnI3dVhCd9IBowFBVV95cUxPR083aWVrYmtWNFJENFZCMl9scW5WcjVpYkdLc2NBZmhxTDdtZENOQm5ZTnJwQU0zMlFqWmJYcklNQ3VaSENfeUVsS2JJQmNnLWgwWE0zb2hwZk5pb3o2YlQwUnhKa2JPbjRNSVZ4b0VSZ0"
       },
       {
-        "title": "How should Oregon look to other states for economic prosperity? Some analysts are split - West Linn Tidings",
-        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQZl9fMVhiZ3lCenRWN1FLb21URnlDaXQycjJicER6UzR0clRsMkRrbUVWWUlOYlRoeW42amhZeENjQW42Y1J0TDE0MXp3c0RMdGlkZE01RUZvQ3lwajgzdi1CWWVUYk5NNFNlSk5ua0toUkt6MFoxeDc5bGZQTFV6RHVFbDlndXI2OFIxNU1STU1oRElHdzN5anhCN3lLWkp6c3phS0s4OU8zQmJjeGl3VFU5bnIyMVZndS1EQnl1TGxjaTI5?oc=5",
-        "date": "Mon, 20 Jul 2026 18:43:16 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQZl9fMVhiZ3lCenRWN1FLb21URnlDaXQycjJicER6UzR0clRsMkRrbUVWWUlOYlRoeW42amhZeENjQW42Y1J0TDE0MXp3c0RMdGlkZE01RUZvQ3lwajgzdi1CWWVUYk5NNFNlSk5ua0toUkt6MFoxeDc5bGZQTFV6RHVFbDlndXI2OFIxNU1STU1oRElHdzN5anhCN3lLWkp6c3phS0s4OU8zQmJjeGl3VFU5bnIyMVZndS1EQnl1TGxjaTI5?oc=5\" target=\"_blank\">How should Oregon look to other states for economic prosperity?"
+        "title": "Ridership of new Wilsonville transit line that runs through West Linn exceeds expectations - Your Oregon News",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPS2lIdERFb3cyX0ZLeXdFZWNpSDB2YVJJZy1IN0NRTWdrT1pscmRpVk02Wk5SYkgtejJyUlRVVWJxR3FsQloxTWE4VkpmbGFieE1xOUtqZVljSVlkcEE3ZXNiaDBKdVMwa2RVRG1MRHpKN2s2R1FDU0ZfMjhDTFl0ZHJBcmxSVzF5S2lKTG5PSXdJVU8xSUFDQlVLMlRhTHRTbjZNRjRWZmxZTnRHNEJVWEREdmk5Z0NLbko0NnBfVXBaSGhYSGloNQ?oc=5",
+        "date": "Tue, 18 Aug 2026 00:10:20 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxPS2lIdERFb3cyX0ZLeXdFZWNpSDB2YVJJZy1IN0NRTWdrT1pscmRpVk02Wk5SYkgtejJyUlRVVWJxR3FsQloxTWE4VkpmbGFieE1xOUtqZVljSVlkcEE3ZXNiaDBKdVMwa2RVRG1MRHpKN2s2R1FDU0ZfMjhDTFl0ZHJBcmxSVzF5S2lKTG5PSXdJVU8xSUFDQlVLMlRhTHRTbjZNRjRWZmxZTnRHNEJVWEREdmk5Z0NLbko0NnBfVXBaSGhYSGloNQ?oc=5\" target=\"_blank\">Ridership of new Wilsonville transit line that runs throu"
       },
       {
-        "title": "Oregon City Girls Varsity Basketball @ West Linn - MaxPreps",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNZW9VMG9CUnFXWm9KMEtESkJINlV2bVBHLVNBYzlveUNzbjZlQTUzSmRGR20xZTZ2Tnl5Z3ZEeGRrZlVLd2NTVWp1MEl1eXpsdlBoTmk0TFZOV2VSV1VWc3BCNjJLd3JQYjJDaXNYbWQ4V1dXNU5tcTRFbjhaWHR3YmZBajJnNlUzZzVwVlg2Ym8yUzhBT05fbDFfcERRUWk2NUxzYzFVOG9ZMTVYX1Mzbm5VXzVNZjUzSmNkUlVxWFJ3QQ?oc=5",
-        "date": "Sun, 19 Jul 2026 03:55:18 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNZW9VMG9CUnFXWm9KMEtESkJINlV2bVBHLVNBYzlveUNzbjZlQTUzSmRGR20xZTZ2Tnl5Z3ZEeGRrZlVLd2NTVWp1MEl1eXpsdlBoTmk0TFZOV2VSV1VWc3BCNjJLd3JQYjJDaXNYbWQ4V1dXNU5tcTRFbjhaWHR3YmZBajJnNlUzZzVwVlg2Ym8yUzhBT05fbDFfcERRUWk2NUxzYzFVOG9ZMTVYX1Mzbm5VXzVNZjUzSmNkUlVxWFJ3QQ?oc=5\" target=\"_blank\">Oregon City Girls Varsity Basketball @ West Linn</a>&nbsp;&nbsp;<"
+        "title": "Oregon policy among state laws slowing private equity healthcare deals, report finds - West Linn Tidings",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOFJ6R2lVTmRrY2JfemduLXdWbm84X1dvclR4MkFwaEtHWEVzcVpvMDN3RlBjaHh4WDFZekhwZVBITkxfaXF5QmRBNEN2cU1nYzJnUTBWTUM5UlFXTDNXc19hbEMya1Zwc3M4dnRLWUpESEZrTWVWY1BmTEJfY3owU2NDZi0yVmswWkJubUpzdFVMc3drc0hDUFB6bTJwQlBBVklWdFFIdjVTREdqU01NUWo4TDZMM0N1UElUZDViRWg?oc=5",
+        "date": "Wed, 19 Aug 2026 15:58:07 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOFJ6R2lVTmRrY2JfemduLXdWbm84X1dvclR4MkFwaEtHWEVzcVpvMDN3RlBjaHh4WDFZekhwZVBITkxfaXF5QmRBNEN2cU1nYzJnUTBWTUM5UlFXTDNXc19hbEMya1Zwc3M4dnRLWUpESEZrTWVWY1BmTEJfY3owU2NDZi0yVmswWkJubUpzdFVMc3drc0hDUFB6bTJwQlBBVklWdFFIdjVTREdqU01NUWo4TDZMM0N1UElUZDViRWg?oc=5\" target=\"_blank\">Oregon policy among state laws slowing private equity healthcare dea"
       },
       {
-        "title": "No new fireworks restrictions in Oregon ahead of July Fourth as fire warnings go up across the West - West Linn Tidings",
-        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQbmE4dF90aElSTUw1alIwV2xweW1VMkhfNkxlU0wwdS1TUWQwVTZnNTIyTGRBZFRLc01IaHRReHlPdk5HWkRRWjJJYXFrTTJVZ1U5SVlaMmM0T1BybmdVZG1DdWtHSFhLSzN6cHFsZ3F4QTZtMkJvNDVhWUtFalNqZGRDMk5talBfbFpzVXYtYmFZT0l3MDdCdE83WmxOYUpOenh4X2c5LTdiNmo5RTUwcU9icTFFSWZGYVM1TndJQ2toRHVMTW5JaTlPaDFVbnBVb2I1WnpR?oc=5",
-        "date": "Thu, 02 Jul 2026 17:52:21 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxQbmE4dF90aElSTUw1alIwV2xweW1VMkhfNkxlU0wwdS1TUWQwVTZnNTIyTGRBZFRLc01IaHRReHlPdk5HWkRRWjJJYXFrTTJVZ1U5SVlaMmM0T1BybmdVZG1DdWtHSFhLSzN6cHFsZ3F4QTZtMkJvNDVhWUtFalNqZGRDMk5talBfbFpzVXYtYmFZT0l3MDdCdE83WmxOYUpOenh4X2c5LTdiNmo5RTUwcU9icTFFSWZGYVM1TndJQ2toRHVMTW5JaTlPaDFVbnBVb2I1WnpR?oc=5\" target=\"_blank\">No new fireworks restrictions in Oregon"
+        "title": "West Linn says it will allow testimony on retail, not housing, in 320-unit proposal - OregonLive.com",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNd1JHVFVobkJCdlhVcmp6emVyM3JLb0ZMOXRWdnJzeHJ6dndHZDNOSkZqaWNPSTlWRkNnb0ZCajYyTXJLaFZyQjNfXzgzVUhHeHE2NEpDSXdWWjFjbWwtVkVTYVZaYjFkU3cxcW9FLVhKSEhvVUJFRngyMEN0by0tUVRINWtwY0pWeGdmNENYUU5neGxnYUY5ZW5KVHpDWFhGeXh2VjdCaXZUeEZud1NmeHJCMEZOcGxkRHRocGVjX3VQbmEzX1RKSWxR0gHeAUFVX3lxTE1reXF6RXdNWFV6cDQ3RXFoSi1nR2YxUGoxVmRaYjJ5algwYkw5dllReHBzanBYZmxUN3hjX0pLM1hiM0xmUG12UWJZb0Jmd0F2LUNGSE9yMGxoenhXdXFMN1duV2VmUW1sMkF1U1Vmak5adW9qeVRDYkdXYTYyc0JaMl9pYnBKWlNXYTJ3M3p6TUJUcUhfV0pHQ2xjLThaa0pGdzlSZVBVVjZxMVYtT2UxV2ZDSFZNSTBXci04Z1hZVHl6ZldoNzA3M1Z5TUN5eG9DYXFIbG9YaTB3R2x2UQ?oc=5",
+        "date": "Mon, 27 Jul 2026 07:00:00 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNd1JHVFVobkJCdlhVcmp6emVyM3JLb0ZMOXRWdnJzeHJ6dndHZDNOSkZqaWNPSTlWRkNnb0ZCajYyTXJLaFZyQjNfXzgzVUhHeHE2NEpDSXdWWjFjbWwtVkVTYVZaYjFkU3cxcW9FLVhKSEhvVUJFRngyMEN0by0tUVRINWtwY0pWeGdmNENYUU5neGxnYUY5ZW5KVHpDWFhGeXh2VjdCaXZUeEZud1NmeHJCMEZOcGxkRHRocGVjX3VQbmEzX1RKSWxR0gHeAUFVX3lxTE1reXF6RXdNWFV6cDQ3RXFoSi1nR2YxUGoxVmRaYjJ5algwYkw5dllReHBzanBYZm"
       },
       {
-        "title": "Oregon City Girls Varsity Volleyball @ West Linn - MaxPreps",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNQ1BUVjdNRHp0OFlRcFdtMHY0YVNva3VNelppdFlRYTlUNmoxaVJqQzNXbnpLdk5adGRyUWpHU0ZjMG9SdWJjUXBZNG1ra2JPbW1tSFRKNlpxVW04OGpVT29TV2hSSWZTZVpUekxBcUdsQUwzQmN5S0d6dmxfZXdWdklBQWR5RVZoNHd2WVJ3dExyMlcxVlp4WEFGNjVoRmgzUTZaZWJQQlh4NkhjSmRpSTNoa3VzYzVmRGc?oc=5",
-        "date": "Sun, 19 Jul 2026 15:37:44 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNQ1BUVjdNRHp0OFlRcFdtMHY0YVNva3VNelppdFlRYTlUNmoxaVJqQzNXbnpLdk5adGRyUWpHU0ZjMG9SdWJjUXBZNG1ra2JPbW1tSFRKNlpxVW04OGpVT29TV2hSSWZTZVpUekxBcUdsQUwzQmN5S0d6dmxfZXdWdklBQWR5RVZoNHd2WVJ3dExyMlcxVlp4WEFGNjVoRmgzUTZaZWJQQlh4NkhjSmRpSTNoa3VzYzVmRGc?oc=5\" target=\"_blank\">Oregon City Girls Varsity Volleyball @ West Linn</a>&nbsp;&nbsp;<font color="
+        "title": "The historic Willamette Falls Locks closed 15 years ago. This group is trying to reopen them - OregonLive.com",
+        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOTTFObWNJNEEtRU84TGxKVWV5bEEzMHNUeVRYdm9LQ2VIZXRKRDIxRkVObGhDT3R4RDJ2S2pfZEdhWDRLcmRfQ0lpcF9wSjUyMkE2NW9Ka3NmeXFCNE4zdmhDU3FZeWR3ZzJHclV0SndRZlRZV2s2TURZYlRaTkxPX0NmdDg1MzVYZmVOZXVXMmliMnFXWEpiOEQ0V2VteUZKZkljVE5zeUhuYUNFcF9QQzVNaXpTdk5MRm1adS1BT2tfdFQxcUpZalZtMTF3cXFTNjNxLVoyd9IB6wFBVV95cUxPOVlNdHdnUFpkaktxUzdoRFI4R2dCS0hVeGdocm1PLVVQLV9NSy1OU3dDM1U2dlBNVk5fakplVkYzMEtnd1RpMjdTbFVtOVZnWURIVkZxMGw5MXNFdUdFOE45TEQwS3hmWjJROVdLR0VYZ05hRU03WEthN2tWZFUxZjJ2VlUzUWJlZXJTc2RZUlp1bkhIYXNWNHRYbHFjRmV2U2EtVHZfLXVic2p4WWx5TGZsc2pWMVUwbDhOZ3dfaVE2ZDREYkxmNHUyajFIZXNPOEdDMUxRNUxRNGxMNjkxWWhCa0pwQTZLNldV?oc=5",
+        "date": "Mon, 17 Aug 2026 20:59:00 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxOTTFObWNJNEEtRU84TGxKVWV5bEEzMHNUeVRYdm9LQ2VIZXRKRDIxRkVObGhDT3R4RDJ2S2pfZEdhWDRLcmRfQ0lpcF9wSjUyMkE2NW9Ka3NmeXFCNE4zdmhDU3FZeWR3ZzJHclV0SndRZlRZV2s2TURZYlRaTkxPX0NmdDg1MzVYZmVOZXVXMmliMnFXWEpiOEQ0V2VteUZKZkljVE5zeUhuYUNFcF9QQzVNaXpTdk5MRm1adS1BT2tfdFQxcUpZalZtMTF3cXFTNjNxLVoyd9IB6wFBVV95cUxPOVlNdHdnUFpkaktxUzdoRFI4R2dCS0hVeGdocm1PLVVQLV"
       },
       {
-        "title": "‘Not about improving elections’: Oregon secretary of state slams new Trump election threats - West Linn Tidings",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPcEhPd1FYakxkbG5scWRsZmRvUDgzOC1UTE1hS3dSUUFxa1dMb29CS19rb0pGWlFVU2ltMUtTQmJYeTdCOW8xcW5JRnpyRFBNWWFMNWRoVmV5NVlSSHVOSmNGMVgwdzhBdlhSS252YS1OYTZBMDFsWHdYSklDV3VTeHRyRjBRRDJsZXZ4MWFreE9yUmQ2RG1JOTlIazVBcGc4SkJnYkpOaFFqQ1RreHJRQWNibm50azYwNVJqSmVNMmxuYVMtRlJZ?oc=5",
-        "date": "Tue, 21 Jul 2026 00:28:21 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPcEhPd1FYakxkbG5scWRsZmRvUDgzOC1UTE1hS3dSUUFxa1dMb29CS19rb0pGWlFVU2ltMUtTQmJYeTdCOW8xcW5JRnpyRFBNWWFMNWRoVmV5NVlSSHVOSmNGMVgwdzhBdlhSS252YS1OYTZBMDFsWHdYSklDV3VTeHRyRjBRRDJsZXZ4MWFreE9yUmQ2RG1JOTlIazVBcGc4SkJnYkpOaFFqQ1RreHJRQWNibm50azYwNVJqSmVNMmxuYVMtRlJZ?oc=5\" target=\"_blank\">‘Not about improving elections’: Oregon secretary of state "
+        "title": "New survey asks Oregonians how they want transportation dollars spent - West Linn Tidings",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQSDRCc2pSNHRaNnp5U3F0UF9NcFdQdnpzUXpCdWptN0ZuYXZyZl91Y1ZKRXBzN28teDJ4dnJWZW9CSWZsLXdWTWJ0a0UzMUQ0eFVEVmVnSXpPd3Q5bEhHV3NlWW5qQXNZTUF6OGtWU2tPdS00LWZHMVZ5dmZSaHdfN2V5bTd2MEQyX01PLVNYQlhpTDd3YlFMandidTBDYUVrd0RmMzgwanAwNUpNX0E?oc=5",
+        "date": "Tue, 18 Aug 2026 17:33:05 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQSDRCc2pSNHRaNnp5U3F0UF9NcFdQdnpzUXpCdWptN0ZuYXZyZl91Y1ZKRXBzN28teDJ4dnJWZW9CSWZsLXdWTWJ0a0UzMUQ0eFVEVmVnSXpPd3Q5bEhHV3NlWW5qQXNZTUF6OGtWU2tPdS00LWZHMVZ5dmZSaHdfN2V5bTd2MEQyX01PLVNYQlhpTDd3YlFMandidTBDYUVrd0RmMzgwanAwNUpNX0E?oc=5\" target=\"_blank\">New survey asks Oregonians how they want transportation dollars spent</a>&nbsp;&nbsp;<font c"
       },
       {
-        "title": "Oregon City Boys Varsity Soccer @ West Linn - MaxPreps",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOendvVVprVGFJaS1jWmF3TU5leGt6QmNadHZRSDRNT3lRNXhvYm8yaUN1dzByMzVfenlKMTV6M0NnYWxhV3JhQUdibzNKYTR0NmV2bGhya2xUcjlwZ3dDRXdrWjloTFZPN3ZEQzJtUElmbzZhUmlkXzVudXZFQTFZS0hGRnAzZVh5d0czd05SNFpNRzg1WWNsNXQwNjZ5alkzQ19BWEpQS1k1azhwMUhaNFNUQjJHdw?oc=5",
-        "date": "Sat, 18 Jul 2026 21:01:38 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOendvVVprVGFJaS1jWmF3TU5leGt6QmNadHZRSDRNT3lRNXhvYm8yaUN1dzByMzVfenlKMTV6M0NnYWxhV3JhQUdibzNKYTR0NmV2bGhya2xUcjlwZ3dDRXdrWjloTFZPN3ZEQzJtUElmbzZhUmlkXzVudXZFQTFZS0hGRnAzZVh5d0czd05SNFpNRzg1WWNsNXQwNjZ5alkzQ19BWEpQS1k1azhwMUhaNFNUQjJHdw?oc=5\" target=\"_blank\">Oregon City Boys Varsity Soccer @ West Linn</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">"
+        "title": "Planning commission chair announces West Linn City Council candidacy - Your Oregon News",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQkVFNnF2YnFUTW9Yd21JSjNWaEFuclJkSHpmcGx5SC1BM3lnLUcwMExpRmZvZVhpeE1hd2dBUkRFOXkwd0pnOW5WWnA2RzB5T01HWFV2N2xSVEJyRlNBN1YtTGU5UUVuSkd3MDIzT1I0WG55UUd1UVdIZFRXSlFocjlkZ2UxOW9xUWlST3o0cUxvcElPWnpUSzN6RVNnd2Ixa083SFhOOWhHRUk?oc=5",
+        "date": "Tue, 11 Aug 2026 22:24:12 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQkVFNnF2YnFUTW9Yd21JSjNWaEFuclJkSHpmcGx5SC1BM3lnLUcwMExpRmZvZVhpeE1hd2dBUkRFOXkwd0pnOW5WWnA2RzB5T01HWFV2N2xSVEJyRlNBN1YtTGU5UUVuSkd3MDIzT1I0WG55UUd1UVdIZFRXSlFocjlkZ2UxOW9xUWlST3o0cUxvcElPWnpUSzN6RVNnd2Ixa083SFhOOWhHRUk?oc=5\" target=\"_blank\">Planning commission chair announces West Linn City Council candidacy</a>&nbsp;&nbsp;<font color="
       },
       {
-        "title": "Golfer struck by lightning on course near West Linn - KATU",
-        "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNcEVtYndRWHlHR2dudE4tYXdiNzlTbGVSVExwY1JtcVRzVjc5dkFUY2c5eTBqVENiY1l3a0RzcGU3amlXRWRxNzV0YjJzVDNhdXNqR0pTZlpsaWRvSHdwMkZVWlFDSXNRUUg2OEh3THlGQ0JoZDgwR0RhQ1ZKUVpVTFctRmFrWjlnWXkxRUUzZkMtWjYyaGNkaHJFZlpUMFctMWs2LURuM0RrcWh4Nmxtalc0Wlk0dzQwNlJSTDVXdmdpUGZKVUdTcXRZQWZoMHhTYXFYWXNoTFFOMVU3YktXWXd6YmlrRmpWUXdfWXlNV2QwT0RxUkxnRw?oc=5",
-        "date": "Sat, 27 Jun 2026 07:00:00 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMi-AFBVV95cUxNcEVtYndRWHlHR2dudE4tYXdiNzlTbGVSVExwY1JtcVRzVjc5dkFUY2c5eTBqVENiY1l3a0RzcGU3amlXRWRxNzV0YjJzVDNhdXNqR0pTZlpsaWRvSHdwMkZVWlFDSXNRUUg2OEh3THlGQ0JoZDgwR0RhQ1ZKUVpVTFctRmFrWjlnWXkxRUUzZkMtWjYyaGNkaHJFZlpUMFctMWs2LURuM0RrcWh4Nmxtalc0Wlk0dzQwNlJSTDVXdmdpUGZKVUdTcXRZQWZoMHhTYXFYWXNoTFFOMVU3YktXWXd6YmlrRmpWUXdfWXlNV2QwT0RxUkxnRw?oc=5\" target=\"_"
+        "title": "Watch: New Oregon housing law causing controversy in West Linn - OregonLive.com",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQS3RPRENsR05MV0ZkZkdUZUFRWUZXRnlwNkhWUHZaU01LWmlJc2xGNlRsTWNjbE1qY3pQbDdwZVZyUElXZzVmSU15QXBoUnFoUkFibVVrczg4NUR2a0V5aC1pNEgxZ1hXdk4tU1F5dFlRMG13Nm5ab0Y2S3diemR4VEVmQXQ4RW44ZkdDY1BLSXVtTHdhWEIwSTUzN085YjlEYW9mdUJrV1A5dEZnUkRN0gHDAUFVX3lxTE5GOFVYRVVyR0JQODlOYTFVeE5RSXI2ZWlPVTlEU2gwdFNCX21Well3SXRpVjNZZUJYN3BrSTZaVXNfNzg0N2RxaUpVNmVmVFlPSC1wSnBtekltR2tPYVhTZzBCVlZpMDhZenRocTBoWjNidDdWY2tkckRyMzh4a2Nad21laVR0blhmYmlGd2ZDaGEwaERjckkyRjByaldnbTI5emw3S1d6X1AxSi1tcEo0UEtLZ1UxbVcyU0lweFJNcFZjOA?oc=5",
+        "date": "Mon, 27 Jul 2026 07:00:00 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQS3RPRENsR05MV0ZkZkdUZUFRWUZXRnlwNkhWUHZaU01LWmlJc2xGNlRsTWNjbE1qY3pQbDdwZVZyUElXZzVmSU15QXBoUnFoUkFibVVrczg4NUR2a0V5aC1pNEgxZ1hXdk4tU1F5dFlRMG13Nm5ab0Y2S3diemR4VEVmQXQ4RW44ZkdDY1BLSXVtTHdhWEIwSTUzN085YjlEYW9mdUJrV1A5dEZnUkRN0gHDAUFVX3lxTE5GOFVYRVVyR0JQODlOYTFVeE5RSXI2ZWlPVTlEU2gwdFNCX21Well3SXRpVjNZZUJYN3BrSTZaVXNfNzg0N2RxaUpVNmVmVFlPSC"
+      },
+      {
+        "title": "Fire department determines cause of West Linn fire that killed one person - Your Oregon News",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPN3g0a2dzSkgxV2pLYzY5NGFIQk9VbHFLdjF5OWxwS3U3OWdmODVGY3lsUWV5N2FrVVVwSktKSzNxVkhoZXJGM1ZMS0xuX3hGWHJGNmxtMVlNbmN6MWZwb19QSV82amVRbUhUZzJ3TGJRYnVKYmFxTkozR2Z3cmxyc2tiRzZhcWlBcFlWMG1nLWNzWE1hckE5M0Z1VHg5TC1Fb2lScTlNNWk3TktzcWRfZ0Rn?oc=5",
+        "date": "Thu, 13 Aug 2026 21:52:33 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPN3g0a2dzSkgxV2pLYzY5NGFIQk9VbHFLdjF5OWxwS3U3OWdmODVGY3lsUWV5N2FrVVVwSktKSzNxVkhoZXJGM1ZMS0xuX3hGWHJGNmxtMVlNbmN6MWZwb19QSV82amVRbUhUZzJ3TGJRYnVKYmFxTkozR2Z3cmxyc2tiRzZhcWlBcFlWMG1nLWNzWE1hckE5M0Z1VHg5TC1Fb2lScTlNNWk3TktzcWRfZ0Rn?oc=5\" target=\"_blank\">Fire department determines cause of West Linn fire that killed one person</a>&nbsp;&nbs"
+      },
+      {
+        "title": "Downward trend in employment for women nationwide, in Oregon, raising questions - West Linn Tidings",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQT045ZWJveDhoU2NsQVgzcTVTVzZkeUR4cXdXZ2Q5OVJsREE1SDhoVUFGbE81YkZVMHpqR0ZoZk1KcEgyc1ZjV0xDdlBlWVUxSmR1dEJVM1pmbnl1XzlMRnFRN25ITEtkLUVjTDdicU1FY0lYUlMzbUVyQ2oxVTF6UWx5UTJ6cm5Ua2dfUy1PUzB6azRlQVhnX1hWVHBvWTlKdFpEYkRfclJTWms3ekhKZzg3ejlhV3Jn?oc=5",
+        "date": "Fri, 14 Aug 2026 15:45:32 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQT045ZWJveDhoU2NsQVgzcTVTVzZkeUR4cXdXZ2Q5OVJsREE1SDhoVUFGbE81YkZVMHpqR0ZoZk1KcEgyc1ZjV0xDdlBlWVUxSmR1dEJVM1pmbnl1XzlMRnFRN25ITEtkLUVjTDdicU1FY0lYUlMzbUVyQ2oxVTF6UWx5UTJ6cm5Ua2dfUy1PUzB6azRlQVhnX1hWVHBvWTlKdFpEYkRfclJTWms3ekhKZzg3ejlhV3Jn?oc=5\" target=\"_blank\">Downward trend in employment for women nationwide, in Oregon, raising questions"
+      },
+      {
+        "title": "West Linn police seek additional victims of kidnapping, strangulation suspect - KOIN.com",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNSGhueWJRWjBtcmZmNDlEalVhZ01LSzZYcWhhWVNLdTNxNWp0V2NoS3d4cUNhSE5WaEJ4MnVpN2Q3UVdkS2hkVG9taUF4QkNmWUtuR3p1ZHRxQ2gtV1dPMHFDUzJndjdPVnF2c055WXZMX3NBdlVjQUNGd1ZiRGV3aVpvOW9mV2VFa1Q2RUs2ejRMaEp5eThpZm8xRzEyY0JtZU1uV0RyejR0LUU1RmFV0gG0AUFVX3lxTFBpQnZ6aVA1aFN2MDQxVWhjV0hvUFpzbGVJb3NIeTRSNEhIU3JXWmZXUmx4VjgzWXRONWNMRlRBOHFGTm9lN25IZS1RUFF0MGx5ODdyZFdPZWI4U0dURFJCeGlkR3JkcDltMUFGTVpUYlp2ZmN2NV96eVFZSGs0aHlVNzFVV2RXb0VaLWlMUG5oQ0Y3RHpQX1VGbWw3Zmh4SUItWEswZE52YmwyVXdjZXl4OWg2Wg?oc=5",
+        "date": "Thu, 16 Jul 2026 07:00:00 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxNSGhueWJRWjBtcmZmNDlEalVhZ01LSzZYcWhhWVNLdTNxNWp0V2NoS3d4cUNhSE5WaEJ4MnVpN2Q3UVdkS2hkVG9taUF4QkNmWUtuR3p1ZHRxQ2gtV1dPMHFDUzJndjdPVnF2c055WXZMX3NBdlVjQUNGd1ZiRGV3aVpvOW9mV2VFa1Q2RUs2ejRMaEp5eThpZm8xRzEyY0JtZU1uV0RyejR0LUU1RmFV0gG0AUFVX3lxTFBpQnZ6aVA1aFN2MDQxVWhjV0hvUFpzbGVJb3NIeTRSNEhIU3JXWmZXUmx4VjgzWXRONWNMRlRBOHFGTm9lN25IZS1RUFF0MGx5OD"
       },
       {
         "title": "Appeal heard over West Linn plan to build on landslide site - OregonLive.com",
@@ -668,34 +737,16 @@
         "snippet": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNdXBCdVV2a1JqOHNpal9waHNFYnZaclRUZW5xUGM3UzV6ZFhweUR1Z1doLW1uSFdxdy05aWJKbEhyNmgyMWhrcDNpeS1IbEhuZXFON3FCWlBVc2VGLUVfWDY3dVRHYjB6UGU0YlhKQV9JM1VhV0tPTTlaaHhjSV9tVTUtemNLRm40cVVkdUVYc3B6aC01dHkwNkptOV9vZHFQUzVTU2VBalA0ZGZSTkdEVW1vTmdQQQ?oc=5\" target=\"_blank\">Appeal heard over West Linn plan to build on landslide site</a>&nbsp;&nbsp;<font "
       },
       {
-        "title": "West Linn’s Ryan VandenBrink ready for his next move - West Linn Tidings",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPMjVFbkN4VmliUjNZQjlzLXhpT3lldlZ3MzU4TFZQZU5LMW9YdGxBaC1qM0tJMW5fa1RXdVRxNExoQmo1aS1jMmRwTmw0bmJYTGhHZXZmS3ppejBKdlJudXBxMVp6RGMwTDVhR3B2QXV1M2VyS19weWFoaDFLSjVuRHh6dnZVOEp4aUg1bnY3ZTV3VUZjT3c?oc=5",
-        "date": "Sun, 12 Jul 2026 06:45:02 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxPMjVFbkN4VmliUjNZQjlzLXhpT3lldlZ3MzU4TFZQZU5LMW9YdGxBaC1qM0tJMW5fa1RXdVRxNExoQmo1aS1jMmRwTmw0bmJYTGhHZXZmS3ppejBKdlJudXBxMVp6RGMwTDVhR3B2QXV1M2VyS19weWFoaDFLSjVuRHh6dnZVOEp4aUg1bnY3ZTV3VUZjT3c?oc=5\" target=\"_blank\">West Linn’s Ryan VandenBrink ready for his next move</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">West Linn Tidings</font>"
-      },
-      {
-        "title": "What were Lake Oswego, West Linn and Wilsonville restaurants’ June food inspection scores? - West Linn Tidings",
-        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPY2xGNHQtVGZUM3VrR0E0dzZmd1NvU0dqSmd6MTFURHNzTUljeFRwUVpnQmdyWl9oUi11bll2XzJ0dXJCczNsM0loNUhQM215QThMR2s5SWhEVFQzQi14YU5jdFRKbjRTc3o2NHJMaU5vQmpSVUUtWG1KbExBa1dJWWpLbnNiQ0hfZ2xINW9kZGE1a05EMnZfeE4zMldiQXdjMmxFaFJWZFY1d0FBckdVSVN0V0J6UU9lT1JFNDcxdkotdkYxR2c?oc=5",
-        "date": "Sat, 11 Jul 2026 12:04:59 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPY2xGNHQtVGZUM3VrR0E0dzZmd1NvU0dqSmd6MTFURHNzTUljeFRwUVpnQmdyWl9oUi11bll2XzJ0dXJCczNsM0loNUhQM215QThMR2s5SWhEVFQzQi14YU5jdFRKbjRTc3o2NHJMaU5vQmpSVUUtWG1KbExBa1dJWWpLbnNiQ0hfZ2xINW9kZGE1a05EMnZfeE4zMldiQXdjMmxFaFJWZFY1d0FBckdVSVN0V0J6UU9lT1JFNDcxdkotdkYxR2c?oc=5\" target=\"_blank\">What were Lake Oswego, West Linn and Wilsonville restaurants"
-      },
-      {
-        "title": "Oregon City Girls Varsity Soccer @ West Linn - MaxPreps",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOMTl2ZlZpbFZNVm9XbW9ocVJxNWlmUXRybUNIS1p2QzUxM3RIZmMxZ0dROFhFakltSHpDcHZfUHl0UHZaTDExZk1udnZXcHlKbDF4NlU3SUhUR3pxcGpxWjd5aW0wSnRaX3E1enZEWEJWMG5DeUVhN29VZm11U1NWMGIwYVR3bk5LZWhESWhFemtQb1Y3empfSVl6bmszUEVwQ2N6a3RpNjBUZE9Kb0VjS3FyVjNZb1FZb1RDcUFR?oc=5",
-        "date": "Sat, 18 Jul 2026 06:34:28 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxOMTl2ZlZpbFZNVm9XbW9ocVJxNWlmUXRybUNIS1p2QzUxM3RIZmMxZ0dROFhFakltSHpDcHZfUHl0UHZaTDExZk1udnZXcHlKbDF4NlU3SUhUR3pxcGpxWjd5aW0wSnRaX3E1enZEWEJWMG5DeUVhN29VZm11U1NWMGIwYVR3bk5LZWhESWhFemtQb1Y3empfSVl6bmszUEVwQ2N6a3RpNjBUZE9Kb0VjS3FyVjNZb1FZb1RDcUFR?oc=5\" target=\"_blank\">Oregon City Girls Varsity Soccer @ West Linn</a>&nbsp;&nbsp;<font color"
-      },
-      {
-        "title": "Golfer struck by lightning in West Linn - KGW",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQTFhrQ0ExOUJ3eWdzSTRrSUhrSEF5bUJ2dUVSTlF3Y3B2MTNBNFpjZXFPSUFKWEIyWTVpRm9qMzhheVJETEtNZ3dERnJ5YURkMTM2dy13V196b2xqYUZxUzAwUVduZ1lYQzJBeUc1UlJRLWRVNVc1LWw0RlNpZ3d5eE41N3VuZW9pZm9xZkttekdYSC1yOUJVZFY0bVJuX21MZnZrUzhrR3EzQkh1bExqZGc2X0lhc2FaMWRFM0UzY3p1QWo4UVp4YjVGaEYxZw?oc=5",
+        "title": "West Linn’s out-of-this-world history - West Linn Tidings",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQM0ZtUlhDb05iWmZYOFNHeGdFNTZLUmswVVJDSnFMLTROZ1RWMW9ldWowR01OVXp2UmowcXRvaHpGRkRhaHljYkplTlF6SEZIa0lmaDVnYlZqYll1NERlYTJWdlF5YWxLUDI3WGhKTWxTbDFxQms4ZUFSd3JNUk80RTNR?oc=5",
         "date": "Sat, 27 Jun 2026 07:00:00 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxQTFhrQ0ExOUJ3eWdzSTRrSUhrSEF5bUJ2dUVSTlF3Y3B2MTNBNFpjZXFPSUFKWEIyWTVpRm9qMzhheVJETEtNZ3dERnJ5YURkMTM2dy13V196b2xqYUZxUzAwUVduZ1lYQzJBeUc1UlJRLWRVNVc1LWw0RlNpZ3d5eE41N3VuZW9pZm9xZkttekdYSC1yOUJVZFY0bVJuX21MZnZrUzhrR3EzQkh1bExqZGc2X0lhc2FaMWRFM0UzY3p1QWo4UVp4YjVGaEYxZw?oc=5\" target=\"_blank\">Golfer struck by lightning in West Linn</a>&nbsp;"
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxQM0ZtUlhDb05iWmZYOFNHeGdFNTZLUmswVVJDSnFMLTROZ1RWMW9ldWowR01OVXp2UmowcXRvaHpGRkRhaHljYkplTlF6SEZIa0lmaDVnYlZqYll1NERlYTJWdlF5YWxLUDI3WGhKTWxTbDFxQms4ZUFSd3JNUk80RTNR?oc=5\" target=\"_blank\">West Linn’s out-of-this-world history</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">West Linn Tidings</font>"
       },
       {
-        "title": "Oregon City Girls Varsity Volleyball @ West Linn - MaxPreps",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOaTByU3U2MFVvbklfMjhKSFluVHNMTjk0ZTk1TjVUNHhVdDFMQzJPaXdtNFd4dGVYMkNscU9veHlsbFVwbmFMcURaSTNmZkh1MHVCRk52aFZOcUJTdjR3UmdxQ2g4U3BuWDRNclZKOVg3MTNnQThVbXpXZlJlcVp1UFNSQ2xHMUltMmhsTXBZU0RYOXlJZVpBbDdGZFdFeVFRdG9WMlNmMHN0V1EzNFdBc2R3MFd0ZldMbWlDcQ?oc=5",
-        "date": "Sat, 18 Jul 2026 01:19:20 GMT",
-        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOaTByU3U2MFVvbklfMjhKSFluVHNMTjk0ZTk1TjVUNHhVdDFMQzJPaXdtNFd4dGVYMkNscU9veHlsbFVwbmFMcURaSTNmZkh1MHVCRk52aFZOcUJTdjR3UmdxQ2g4U3BuWDRNclZKOVg3MTNnQThVbXpXZlJlcVp1UFNSQ2xHMUltMmhsTXBZU0RYOXlJZVpBbDdGZFdFeVFRdG9WMlNmMHN0V1EzNFdBc2R3MFd0ZldMbWlDcQ?oc=5\" target=\"_blank\">Oregon City Girls Varsity Volleyball @ West Linn</a>&nbsp;&nbsp;<font col"
+        "title": "Former West Linn councilor announces candidacy for open seat - Your Oregon News",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNTHNzd0RBZk5SU3RnR2ZJaEE3T1ZwbHNBWERRYnByYTk4ZGI1dWhIMnRoZUxtMFhucU9jZ2laeERXQzUtYkxRMjNHeXpmNU9Lc2ZBR3BIdEJMQm1MNkpBWEczRFNTd0dPdTQxMGRPb0N2NDdKMjgta2tGYjRudHpBZ2pkeVhxMU80SW9DMzgzcU1VSnNCamhVYlRfRzh0MlZh?oc=5",
+        "date": "Thu, 13 Aug 2026 12:20:40 GMT",
+        "snippet": "<a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxNTHNzd0RBZk5SU3RnR2ZJaEE3T1ZwbHNBWERRYnByYTk4ZGI1dWhIMnRoZUxtMFhucU9jZ2laeERXQzUtYkxRMjNHeXpmNU9Lc2ZBR3BIdEJMQm1MNkpBWEczRFNTd0dPdTQxMGRPb0N2NDdKMjgta2tGYjRudHpBZ2pkeVhxMU80SW9DMzgzcU1VSnNCamhVYlRfRzh0MlZh?oc=5\" target=\"_blank\">Former West Linn councilor announces candidacy for open seat</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Your Oregon N"
       }
     ]
   }
