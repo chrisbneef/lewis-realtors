@@ -57,9 +57,11 @@ export async function GET() {
         L.push("");
         L.push(`Right for: ${h.rightFor.join("; ")}.`);
       }
-    } else {
-      L.push("Full market report publishing soon.");
     }
+    // Report status follows the DATA, not h.complete (which only means the
+    // narrative copy is written). Saying "publishing soon" under a live median
+    // contradicted the line above it.
+    if (!m?.publishable) L.push("Full market report publishing soon.");
     L.push("");
   }
 

@@ -21,8 +21,16 @@ import neighborhoods from "../data/neighborhoods.json";
 import services from "../data/services.json";
 import faq from "../data/faq.json";
 import { realEstateAgent, faqSchema } from "../lib/schema.js";
+import { reportReady } from "../lib/market.js";
 
 const hoods = [...neighborhoods].sort((a, b) => a.order - b.order);
+// Spoken count of neighborhoods with live, publishable figures. Derived so the
+// lead copy can never drift from the cards below it as the monthly refresh
+// moves neighborhoods past MIN_FOR_MEDIAN.
+const WORDS = ["none", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",
+  "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen"];
+const readyCount = hoods.filter((h) => reportReady(h.slug)).length;
+const readyWord = WORDS[readyCount] ?? String(readyCount);
 const jsonLd = [realEstateAgent(), faqSchema(faq)];
 ---
 
@@ -44,7 +52,7 @@ const jsonLd = [realEstateAgent(), faqSchema(faq)];
         <SectionHead
           eyebrow="The neighborhoods"
           title={`Seventeen West Linn neighborhoods,<br/>each with its own <span class="script">report</span>.`}
-          lead="Every West Linn neighborhood has its own character and its own market, from Stafford acreage to historic Bolton. Start with the one you're watching and pull its report. Bolton's live now, and the rest publish as each month's data comes in."
+          lead={`Every West Linn neighborhood has its own character and its own market, from Stafford acreage to historic Bolton. Start with the one you're watching and pull its report. ${readyWord} of the seventeen are live now, and the rest publish as each month's data comes in.`}
         />
         <a class="btn btn--ghost" href="/market-reports">All market reports</a>
       </div>

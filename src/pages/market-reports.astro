@@ -4,10 +4,10 @@ import PageHero from "../components/PageHero.astro";
 import NeighborhoodCard from "../components/NeighborhoodCard.astro";
 import neighborhoods from "../data/neighborhoods.json";
 import { realEstateAgent } from "../lib/schema.js";
-import { latestSold, rmlsSold } from "../lib/market.js";
+import { latestSold, rmlsSold, reportReady } from "../lib/market.js";
 
 const hoods = [...neighborhoods].sort((a, b) => a.order - b.order);
-const ready = hoods.filter((h) => h.complete).length;
+const ready = hoods.filter((h) => reportReady(h.slug)).length;
 
 const sold = latestSold();
 const money = (n) => (n == null ? null : `$${Math.round(n).toLocaleString()}`);

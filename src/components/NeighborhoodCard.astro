@@ -1,5 +1,5 @@
 ---
-import { priceLabel } from "../lib/market.js";
+import { priceLabel, reportReady } from "../lib/market.js";
 const { hood } = Astro.props;
 const href = `/neighborhoods/${hood.slug}`;
 const num = String(hood.order).padStart(2, "0");
@@ -13,7 +13,7 @@ const range = priceLabel(hood.slug);
       : <span class="hood-photo-mark" aria-hidden="true">{hood.character}</span>}
     <span class="hood-scrim" aria-hidden="true"></span>
     <span class="hood-num">{num}</span>
-    {hood.complete
+    {reportReady(hood.slug)
       ? <span class="pill pill--gold">Report ready</span>
       : <span class="pill pill--placeholder">Report soon</span>}
   </div>

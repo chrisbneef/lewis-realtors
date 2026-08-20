@@ -52,3 +52,16 @@ export function priceLabel(slug) {
   // rather than exposing a thin count like "3 active listings".
   return "Market data soon";
 }
+
+/**
+ * Whether a neighborhood's report is backed by live, publishable figures.
+ *
+ * This is deliberately NOT `hood.complete` from neighborhoods.json. That flag
+ * means "has hand-written narrative copy" and still gates the editorial
+ * sections; using it here mislabeled nine data-complete neighborhoods as
+ * "publishing soon". Report status follows the data, so it flips on its own
+ * as the monthly refresh moves a neighborhood past MIN_FOR_MEDIAN.
+ */
+export function reportReady(slug) {
+  return hoodMarket(slug)?.publishable === true;
+}

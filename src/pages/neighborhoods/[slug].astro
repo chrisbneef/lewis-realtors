@@ -10,7 +10,7 @@ import marketHistory from "../../data/market-history.json";
 import boundaries from "../../data/neighborhood-boundaries.json";
 import services from "../../data/services.json";
 import faq from "../../data/faq.json";
-import { priceLabel } from "../../lib/market.js";
+import { priceLabel, reportReady } from "../../lib/market.js";
 import { realEstateAgent, placeSchema, faqSchema, breadcrumb } from "../../lib/schema.js";
 
 export function getStaticPaths() {
@@ -107,7 +107,7 @@ const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
           <div class="nb-meta">
             <span class="pill pill--gold">{range}</span>
             <span class="pill pill--azure">Fits: {hood.serviceFit}</span>
-            {hood.complete
+            {reportReady(hood.slug)
               ? <span class="pill pill--gold">Report ready</span>
               : <span class="pill pill--placeholder">Report publishing soon</span>}
           </div>
