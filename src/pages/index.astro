@@ -10,7 +10,7 @@ import MeetMelissa from "../components/MeetMelissa.astro";
 import MarketReportForm from "../components/MarketReportForm.astro";
 import ValuationCTA from "../components/ValuationCTA.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
-import Testimonial from "../components/Testimonial.astro";
+import GoogleReviews from "../components/GoogleReviews.astro";
 import LocalProsBridge from "../components/LocalProsBridge.astro";
 import LeadMagnets from "../components/LeadMagnets.astro";
 import LifeInWestLinn from "../components/LifeInWestLinn.astro";
@@ -161,12 +161,8 @@ const jsonLd = [realEstateAgent(), faqSchema(faq)];
   <!-- Valuation -->
   <ValuationCTA />
 
-  <!-- Testimonial -->
-  <Testimonial
-    quote="Melissa knew our street better than we did. She priced it right, negotiated hard, and made the whole thing feel easy."
-    name="A West Linn seller"
-    detail="Replace with a verified client review before launch"
-  />
+  <!-- Reviews: verified Google rating (data in src/data/google-reviews.json) -->
+  <GoogleReviews />
 
   <!-- FAQ -->
   <section class="section" id="faq">

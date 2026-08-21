@@ -1,0 +1,9 @@
+{
+  "_note": "Google Business Profile reviews for Lewis Realtors. placeId verified 2026-08-21 (the similarly named 'Mai Lewis, NextHome' profile is NOT ours). 'reviews' starts empty on purpose: Google's API only exposes 5 reviews, so the full set comes from Melissa's owner export (Google Takeout > Business Profile, or the Business Profile API). Paste entries as {name, when, text} exactly as written on Google; never invent or edit review text. While 'reviews' is empty the homepage section links out to Google instead of opening the on-site reader.",
+  "placeId": "ChIJAQCMGHR0lVQRw2O2xRqYkKo",
+  "rating": "5.0",
+  "count": 90,
+  "reviewsUrl": "https://search.google.com/local/reviews?placeid=ChIJAQCMGHR0lVQRw2O2xRqYkKo",
+  "writeReviewUrl": "https://search.google.com/local/writereview?placeid=ChIJAQCMGHR0lVQRw2O2xRqYkKo",
+  "reviews": []
+}

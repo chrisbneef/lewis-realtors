@@ -1,0 +1,261 @@
+---
+// The homepage reviews moment: Lewis Realtors' Google rating, stated plainly.
+// Content comes from src/data/google-reviews.json. While `reviews` is empty the
+// primary button links straight to the Google reviews panel; once the owner
+// export is pasted in, the same button opens the on-site reader dialog and the
+// two most recent reviews appear as featured quotes. Review text is rendered
+// verbatim and server-side so crawlers and answer engines can read it.
+import data from "../data/google-reviews.json";
+
+const { rating, count, reviewsUrl, writeReviewUrl } = data;
+const reviews = data.reviews ?? [];
+const hasReviews = reviews.length > 0;
+const featured = reviews.slice(0, 2);
+---
+
+<section class="greviews section--ink" id="reviews" aria-labelledby="greviews-title">
+  <div class="wrap greviews-inner" data-reveal>
+    <div class="greviews-score">
+      <span class="greviews-rating script" aria-hidden="true">{rating}</span>
+      <span class="greviews-stars" role="img" aria-label={`Rated ${rating} out of 5 stars on Google`}>
+        {Array.from({ length: 5 }).map(() => (
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z"/></svg>
+        ))}
+      </span>
+      <span class="greviews-source">
+        <svg class="greviews-g" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#4285F4" d="M23.5 12.3c0-.9-.1-1.5-.3-2.2H12v4.1h6.5c-.1 1.1-.8 2.7-2.4 3.8l-.02.15 3.5 2.7.24.03c2.2-2.1 3.5-5.1 3.5-8.6z"/>
+          <path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.8-2.9c-1 .7-2.4 1.2-4.1 1.2-3.2 0-5.8-2.1-6.8-5l-.14.01-3.7 2.8-.05.13C3.3 21.3 7.3 24 12 24z"/>
+          <path fill="#FBBC05" d="M5.2 14.4c-.25-.7-.4-1.5-.4-2.4s.15-1.6.4-2.4l-.01-.16-3.7-2.9-.12.06C.5 8.2 0 10 0 12s.5 3.8 1.3 5.4l3.9-3z"/>
+          <path fill="#EA4335" d="M12 4.6c2.3 0 3.8 1 4.7 1.8l3.4-3.3C18 1.2 15.2 0 12 0 7.3 0 3.3 2.7 1.3 6.6l3.9 3c1-2.9 3.6-5 6.8-5z"/>
+        </svg>
+        on Google
+      </span>
+    </div>
+
+    <div class="greviews-body">
+      <p class="eyebrow">What clients say</p>
+      <h2 class="greviews-title" id="greviews-title">
+        Five stars.
+        <span class="script">All {count} of them.</span>
+      </h2>
+      <p class="greviews-lead">
+        Every one of the {count} Google reviews clients have left Lewis Realtors
+        is five stars. We would rather show you than tell you.
+      </p>
+
+      {hasReviews && (
+        <div class="greviews-featured">
+          {featured.map((r) => (
+            <figure class="greviews-quote">
+              <blockquote>&ldquo;{r.text}&rdquo;</blockquote>
+              <figcaption>{r.name} &middot; Google review</figcaption>
+            </figure>
+          ))}
+        </div>
+      )}
+
+      <div class="greviews-actions">
+        {hasReviews ? (
+          <button class="btn btn--gold btn--lg" type="button" data-greviews-open>
+            Read all {count} reviews
+          </button>
+        ) : (
+          <a class="btn btn--gold btn--lg" href={reviewsUrl} target="_blank" rel="noopener noreferrer">
+            Read all {count} on Google
+          </a>
+        )}
+        <a class="btn btn--ghost btn--lg" href={writeReviewUrl} target="_blank" rel="noopener noreferrer">
+          Share your experience
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {hasReviews && (
+    <dialog class="greviews-dialog" aria-label="Google reviews for Lewis Realtors">
+      <div class="greviews-dialog-head">
+        <p class="greviews-dialog-title">
+          {rating} on Google
+          <span class="greviews-dialog-sub">{count} reviews, all five stars</span>
+        </p>
+        <button class="greviews-close" type="button" data-greviews-close aria-label="Close reviews">&times;</button>
+      </div>
+      <div class="greviews-list">
+        {reviews.map((r) => (
+          <article class="greviews-item">
+            <header>
+              <span class="greviews-item-name">{r.name}</span>
+              {r.when && <span class="greviews-item-when">{r.when}</span>}
+              <span class="greviews-item-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+            </header>
+            <p>{r.text}</p>
+          </article>
+        ))}
+      </div>
+      <div class="greviews-dialog-foot">
+        <a href={reviewsUrl} target="_blank" rel="noopener noreferrer">See these reviews on Google</a>
+      </div>
+    </dialog>
+  )}
+</section>
+
+<script>
+  const section = document.querySelector(".greviews");
+  const dialog = section?.querySelector(".greviews-dialog");
+  if (dialog instanceof HTMLDialogElement) {
+    section.querySelector("[data-greviews-open]")?.addEventListener("click", () => dialog.showModal());
+    section.querySelector("[data-greviews-close]")?.addEventListener("click", () => dialog.close());
+    // Click on the backdrop (the dialog element itself, outside its children) closes.
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  }
+</script>
+
+<style>
+  .greviews { padding-block: clamp(4rem, 3rem + 5vw, 7rem); }
+  .greviews-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: clamp(2.4rem, 2rem + 3vw, 5rem);
+    align-items: center;
+    max-width: 62rem;
+  }
+  @media (max-width: 720px) {
+    .greviews-inner { grid-template-columns: 1fr; text-align: center; }
+    .greviews-score { margin-inline: auto; }
+    .greviews-actions { justify-content: center; }
+  }
+
+  .greviews-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .greviews-rating {
+    font-size: clamp(4.6rem, 3.6rem + 4vw, 7rem);
+    line-height: 1;
+    color: var(--gold-bright);
+  }
+  .greviews-stars { display: flex; gap: 0.3rem; }
+  .greviews-stars svg { width: 1.35rem; height: 1.35rem; fill: var(--gold-bright); }
+  .greviews-source {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-onDark-soft);
+  }
+  .greviews-g { width: 1.05rem; height: 1.05rem; }
+
+  .greviews-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(2rem, 1.5rem + 2.4vw, 3.4rem);
+    line-height: 1.12;
+    color: var(--ink-onDark);
+    margin: 0.9rem 0 0;
+  }
+  .greviews-title .script { display: block; }
+  .greviews-lead {
+    max-width: 44ch;
+    margin-top: 1.1rem;
+    color: var(--ink-onDark-soft);
+    line-height: 1.65;
+  }
+  @media (max-width: 720px) { .greviews-lead { margin-inline: auto; } }
+
+  .greviews-featured {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.6rem;
+  }
+  .greviews-quote { margin: 0; }
+  .greviews-quote blockquote {
+    margin: 0;
+    font-style: italic;
+    color: var(--ink-onDark);
+    line-height: 1.6;
+  }
+  .greviews-quote figcaption {
+    margin-top: 0.4rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+  }
+
+  .greviews-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 1.8rem;
+  }
+
+  /* Reader dialog */
+  .greviews-dialog {
+    /* display:flex below overrides the UA stylesheet, which also loses the
+       default auto-centering; restore it explicitly. */
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: min(40rem, calc(100vw - 2rem));
+    max-height: min(80dvh, 44rem);
+    border: none;
+    border-radius: 1rem;
+    padding: 0;
+    /* The dialog sits inside the ink section, so color must be explicit or it
+       inherits the on-dark cream text onto a light background. */
+    background: #fffdf5;
+    color: var(--noir-soft);
+    display: none;
+    flex-direction: column;
+  }
+  .greviews-dialog[open] { display: flex; }
+  .greviews-dialog::backdrop { background: rgba(10, 10, 10, 0.66); }
+  .greviews-dialog-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 1.4rem;
+    border-bottom: 1px solid var(--cream-deep);
+  }
+  .greviews-dialog-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+  }
+  .greviews-dialog-sub {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--gold-deep);
+    margin-top: 0.15rem;
+  }
+  .greviews-close {
+    border: none;
+    background: none;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+  }
+  .greviews-list { overflow-y: auto; padding: 0.4rem 1.4rem; }
+  .greviews-item { padding: 1rem 0; border-bottom: 1px solid var(--cream-deep); }
+  .greviews-item:last-child { border-bottom: none; }
+  .greviews-item header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.6rem; }
+  .greviews-item-name { font-weight: 500; }
+  .greviews-item-when { font-size: 0.78rem; opacity: 0.65; }
+  .greviews-item-stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 0.15em; }
+  .greviews-item p { margin: 0.45rem 0 0; line-height: 1.6; }
+  .greviews-dialog-foot {
+    padding: 0.9rem 1.4rem;
+    border-top: 1px solid var(--cream-deep);
+    font-size: 0.85rem;
+  }
+</style>
