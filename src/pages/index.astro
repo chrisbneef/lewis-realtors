@@ -14,7 +14,6 @@ import GoogleReviews from "../components/GoogleReviews.astro";
 import LocalProsBridge from "../components/LocalProsBridge.astro";
 import LeadMagnets from "../components/LeadMagnets.astro";
 import LifeInWestLinn from "../components/LifeInWestLinn.astro";
-import FeatureVideo from "../components/FeatureVideo.astro";
 
 import site from "../data/site.json";
 import neighborhoods from "../data/neighborhoods.json";
@@ -66,6 +65,22 @@ const jsonLd = [realEstateAgent(), faqSchema(faq)];
   <!-- Life in West Linn (lifestyle video) -->
   <LifeInWestLinn />
 
+  <!-- Credibility stats. Moved out of the hero at Melissa's request so the top
+       of the page speaks to the visitor, not to her, and placed directly above
+       the "How we help" block. -->
+  <section class="section--tight cred section--ink">
+    <div class="wrap">
+      <ul class="cred-stats" role="list">
+        {site.agent.stats.map((s, i) => (
+          <li data-reveal style={`--reveal-delay: ${i * 80}ms`}>
+            <span class="cred-val">{s.value}</span>
+            <span class="cred-label">{s.label}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
   <!-- Services -->
   <section class="section section--cream" id="services">
     <div class="wrap svc-layout">
@@ -115,23 +130,6 @@ const jsonLd = [realEstateAgent(), faqSchema(faq)];
 
   <!-- Meet Melissa -->
   <MeetMelissa />
-
-  <!-- Meet Melissa in the field (video) -->
-  <section class="section section--cream">
-    <div class="wrap mm-video" data-reveal>
-      <SectionHead
-        eyebrow="On camera"
-        title={`West Linn, in her <span class="script">words</span>.`}
-        lead="A moment with Melissa on the Willamette, sharing what makes West Linn feel like home."
-        align="center"
-      />
-      <FeatureVideo
-        src="/assets/video/meet-melissa.mp4"
-        poster="/assets/video/meet-melissa.jpg"
-        label="Watch Melissa on the river"
-      />
-    </div>
-  </section>
 
   <!-- Market report conversion band -->
   <section class="section section--ink" id="market-report">
@@ -251,6 +249,30 @@ const jsonLd = [realEstateAgent(), faqSchema(faq)];
   .feeder-name { font-family: var(--font-display); font-size: 1.35rem; font-weight: 500; }
 
   .report-layout { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 1rem + 4vw, 4.5rem); align-items: center; }
+  .cred { padding-block: clamp(2.4rem, 1.8rem + 2vw, 3.6rem); }
+  .cred-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: clamp(1.5rem, 1rem + 2vw, 3rem);
+  }
+  .cred-val {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 1.5rem + 1.4vw, 2.8rem);
+    font-weight: 500;
+    line-height: 1;
+    color: var(--gold-bright);
+    text-transform: uppercase;
+  }
+  .cred-label {
+    display: block;
+    margin-top: 0.55rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-onDark-soft);
+    max-width: 18ch;
+  }
   .report-lead { color: var(--ink-onDark-soft); margin-top: 1.4rem; }
   .report-points { margin-top: 1.8rem; display: flex; flex-direction: column; gap: 0.9rem; }
   .report-points li {
