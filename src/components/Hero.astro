@@ -71,7 +71,7 @@ const heroPoints = [
 
     <ul class="hero-points" role="list" data-reveal style="--reveal-delay: 380ms">
       {heroPoints.map((point) => (
-        <li><span class="pill hero-point">{point}</span></li>
+        <li class="hero-point">{point}</li>
       ))}
     </ul>
   </div>
@@ -159,14 +159,26 @@ const heroPoints = [
     padding-top: 1.7rem;
     border-top: 1px solid var(--line-onDark);
     max-width: 34rem;
+    list-style: none;
+    padding-inline: 0;
   }
-  /* The shared pill sets its text to gold-deep, which is a text colour for
-     cream. On the hero scrim it needs the bright variant. */
+  /* Self-contained rather than extending the global .pill: that class sets a
+     border shorthand and its own colour, and depending on it made these
+     render as bare text whenever its rules won the cascade. */
   .hero-point {
-    border-color: color-mix(in srgb, var(--gold) 62%, transparent);
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45em 0.9em;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    line-height: 1.2;
     color: var(--gold-bright);
     background: rgba(10, 10, 10, 0.34);
-    font-size: 0.68rem;
+    border: 1px solid color-mix(in srgb, var(--gold) 62%, transparent);
+    border-radius: 100px;
   }
 
   .hero-figure { position: relative; margin: 0; justify-self: end; width: 100%; max-width: 540px; }
