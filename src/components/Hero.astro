@@ -1,25 +1,25 @@
 ---
 import site from "../data/site.json";
-import neighborhoods from "../data/neighborhoods.json";
 import BgVideo from "./BgVideo.astro";
 import FeatureVideo from "./FeatureVideo.astro";
-import { market, moneyFull } from "../lib/market.js";
 
-// Stats about West Linn, not about Melissa: her credibility figures moved down
-// to their own band. Every value below is read live from market.json, so the
-// monthly refresh updates the hero on its own and nothing here is hand-typed.
-// All four are ASKING-side from the one dataset, so they never contradict each
-// other; the city-wide SOLD figures live in their own labelled band further
-// down. Days on market is deliberately omitted: active-listing DOM and
-// sold DOM are different measures and reading as a contradiction is worse than
-// leaving it out.
-const city = market.cityData ?? {};
-const heroStats = [
-  { value: String(neighborhoods.length), label: "West Linn neighborhoods" },
-  { value: moneyFull(city.medianAskingPrice), label: "Median asking price" },
-  { value: city.totalListings ? String(city.totalListings) : null, label: "Homes on the market" },
-  { value: moneyFull(city.medianPricePerSqft), label: "Asking price per sq ft" },
-].filter((s) => s.value);
+// Four things about West Linn itself, not about Melissa and not market data.
+// Written as facts rather than judgements, matching how the schools section
+// below already handles this: it names the district and documents each
+// neighborhood's school path instead of rating anything.
+//
+// A public-safety point was requested and is deliberately absent. Safety and
+// crime framing is the one claim a licensed broker cannot make about an area
+// (CLAUDE.md's Fair Housing rule, and PRODUCT.md lists it as a design
+// constraint), because it functions as a proxy for protected characteristics.
+// Commute stands in its place; see the note to Chris rather than restoring it
+// without a decision.
+const heroPoints = [
+  "West Linn-Wilsonville schools",
+  "Historic Willamette Main Street",
+  "Two rivers, parks, and trails",
+  "25 minutes to Portland",
+];
 ---
 
 <section class="hero">
@@ -69,12 +69,9 @@ const heroStats = [
       <a class="btn btn--ghost btn--lg" href={site.teamSite.homeSearch} target="_blank" rel="noopener noreferrer">Start my home search</a>
     </div>
 
-    <ul class="hero-proof" role="list" data-reveal style="--reveal-delay: 380ms">
-      {heroStats.map((s) => (
-        <li>
-          <span class="proof-val">{s.value}</span>
-          <span class="proof-label">{s.label}</span>
-        </li>
+    <ul class="hero-points" role="list" data-reveal style="--reveal-delay: 380ms">
+      {heroPoints.map((point) => (
+        <li><span class="pill hero-point">{point}</span></li>
       ))}
     </ul>
   </div>
@@ -116,7 +113,7 @@ const heroStats = [
   .hero h1      { grid-column: 1; grid-row: 2; }
   .hero-lead    { grid-column: 1; grid-row: 3; }
   .hero-actions { grid-column: 1; grid-row: 4; }
-  .hero-proof   { grid-column: 1; grid-row: 5; }
+  .hero-points  { grid-column: 1; grid-row: 5; }
   .hero-figure  { grid-column: 2; grid-row: 1 / -1; align-self: center; }
   .hero h1 {
     margin-block: 1rem 0;
@@ -154,31 +151,22 @@ const heroStats = [
   .hero-actions .btn--ghost { color: var(--ink-onDark); border-color: var(--line-onDark); }
 
   /* Wider than the old portrait card: this column now holds a 16:9 video. */
-  .hero-proof {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.35rem clamp(1.5rem, 1rem + 2vw, 2.75rem);
+  .hero-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
     margin-top: 2rem;
     padding-top: 1.7rem;
     border-top: 1px solid var(--line-onDark);
-    max-width: 30rem;
+    max-width: 34rem;
   }
-  .proof-val {
-    display: block;
-    font-family: var(--font-display);
-    font-size: clamp(1.6rem, 1.35rem + 1vw, 2.2rem);
-    font-weight: 400;
+  /* The shared pill sets its text to gold-deep, which is a text colour for
+     cream. On the hero scrim it needs the bright variant. */
+  .hero-point {
+    border-color: color-mix(in srgb, var(--gold) 62%, transparent);
     color: var(--gold-bright);
-    line-height: 1;
-    text-shadow: 0 1px 24px rgba(0, 0, 0, 0.4);
-  }
-  .proof-label {
-    display: block;
-    margin-top: 0.45rem;
-    font-size: 0.7rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-onDark-soft);
+    background: rgba(10, 10, 10, 0.34);
+    font-size: 0.68rem;
   }
 
   .hero-figure { position: relative; margin: 0; justify-self: end; width: 100%; max-width: 540px; }
@@ -214,7 +202,7 @@ const heroStats = [
       padding-block: clamp(2rem, 1.5rem + 3vw, 3.5rem);
     }
     .hero-inner { grid-template-columns: 1fr; grid-template-rows: none; }
-    .hero-eyebrow, .hero h1, .hero-lead, .hero-actions, .hero-proof, .hero-figure {
+    .hero-eyebrow, .hero h1, .hero-lead, .hero-actions, .hero-points, .hero-figure {
       grid-column: 1;
       grid-row: auto;
     }
