@@ -11,7 +11,7 @@ keywords:
   - "West Linn average home price"
   - "West Linn house prices"
   - "West Linn housing market"
-heroImage: "/assets/video/hero-westlinn.jpg"
+heroImage: "/assets/blog/west-linn-valley.jpg"
 sources:
   - label: "Lewis Realtors West Linn market reports, active listing data refreshed monthly (asking prices)"
     url: "https://lewisrealtors.com/market-reports"

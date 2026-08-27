@@ -11,7 +11,7 @@ keywords:
   - "West Linn 320 unit apartments"
   - "Oregon HB 4037"
   - "West Linn housing market"
-heroImage: "/assets/video/hero-westlinn.jpg"
+heroImage: "/assets/blog/west-linn-neighborhood.jpg"
 sources:
   - label: "OPB, 'Don't want to be like the middle of Portland': West Linn housing developments spur pushback (July 24, 2026)"
     url: "https://www.opb.org/article/2026/07/24/west-linn-portland-oregon-housing-rent-apartments/"

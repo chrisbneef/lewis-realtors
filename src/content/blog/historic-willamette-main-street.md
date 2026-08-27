@@ -11,7 +11,7 @@ keywords:
   - "things to do in West Linn"
   - "restaurants Willamette area West Linn"
   - "Wednesdays in Willamette"
-heroImage: "/assets/video/life-countryside.jpg"
+heroImage: "/assets/blog/historic-willamette.jpg"
 sources:
   - label: "Historic Willamette Main Street (district association)"
     url: "https://www.historicwillamette.com/"
