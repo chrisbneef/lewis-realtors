@@ -3,22 +3,16 @@ import site from "../data/site.json";
 import BgVideo from "./BgVideo.astro";
 import FeatureVideo from "./FeatureVideo.astro";
 
-// Four things about West Linn itself, not about Melissa and not market data.
-// Written as facts rather than judgements, matching how the schools section
-// below already handles this: it names the district and documents each
-// neighborhood's school path instead of rating anything.
-//
-// A public-safety point was requested and is deliberately absent. Safety and
-// crime framing is the one claim a licensed broker cannot make about an area
-// (CLAUDE.md's Fair Housing rule, and PRODUCT.md lists it as a design
-// constraint), because it functions as a proxy for protected characteristics.
-// Commute stands in its place; see the note to Chris rather than restoring it
-// without a decision.
+// Four selling points for West Linn itself, wording chosen by Chris 2026-08-27.
+// A public-safety point was in the first draft of this list and was dropped:
+// safety and crime claims are the one area characterisation a licensed broker
+// cannot make (CLAUDE.md's Fair Housing rule, carried in PRODUCT.md as a design
+// constraint). Do not reinstate it without an explicit decision from Melissa.
 const heroPoints = [
-  "West Linn-Wilsonville schools",
-  "Historic Willamette Main Street",
-  "Two rivers, parks, and trails",
-  "25 minutes to Portland",
+  "Top-tier public education",
+  "Historic downtown and local culture",
+  "Abundant parks and river access",
+  "Vibrant community events",
 ];
 ---
 
@@ -158,7 +152,8 @@ const heroPoints = [
     margin-top: 2rem;
     padding-top: 1.7rem;
     border-top: 1px solid var(--line-onDark);
-    max-width: 34rem;
+    /* No cap: the grid column already bounds this, and a tighter cap forced the
+       longer labels onto three uneven rows. */
     list-style: none;
     padding-inline: 0;
   }
