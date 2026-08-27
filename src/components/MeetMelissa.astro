@@ -44,6 +44,10 @@ const a = site.agent;
 </section>
 
 <style>
+  /* This section carries section--cream for the background but never carried
+     the .section class, so it had no vertical padding at all: the copy ran
+     straight into the ink bands above and below it. */
+  .melissa { padding-block: var(--section-y); }
   .melissa-inner {
     display: grid;
     grid-template-columns: 0.85fr 1.15fr;
