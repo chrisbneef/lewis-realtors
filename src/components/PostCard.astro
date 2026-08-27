@@ -18,6 +18,7 @@ const themeLabel = d.theme === "real-estate" ? "Real estate" : "Lifestyle";
   <div class="post-body">
     <div class="post-meta-top">
       <span class:list={["pill", d.theme === "real-estate" ? "pill--gold" : "pill--azure"]}>{themeLabel}</span>
+      {d.draft && <span class="pill pill--placeholder">Draft</span>}
       <time datetime={dt.toISOString()}>{dateLabel}</time>
     </div>
     <h3 class="post-title">{d.title}</h3>
