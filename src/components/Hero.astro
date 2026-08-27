@@ -1,7 +1,25 @@
 ---
 import site from "../data/site.json";
+import neighborhoods from "../data/neighborhoods.json";
 import BgVideo from "./BgVideo.astro";
 import FeatureVideo from "./FeatureVideo.astro";
+import { market, moneyFull } from "../lib/market.js";
+
+// Stats about West Linn, not about Melissa: her credibility figures moved down
+// to their own band. Every value below is read live from market.json, so the
+// monthly refresh updates the hero on its own and nothing here is hand-typed.
+// All four are ASKING-side from the one dataset, so they never contradict each
+// other; the city-wide SOLD figures live in their own labelled band further
+// down. Days on market is deliberately omitted: active-listing DOM and
+// sold DOM are different measures and reading as a contradiction is worse than
+// leaving it out.
+const city = market.cityData ?? {};
+const heroStats = [
+  { value: String(neighborhoods.length), label: "West Linn neighborhoods" },
+  { value: moneyFull(city.medianAskingPrice), label: "Median asking price" },
+  { value: city.totalListings ? String(city.totalListings) : null, label: "Homes on the market" },
+  { value: moneyFull(city.medianPricePerSqft), label: "Asking price per sq ft" },
+].filter((s) => s.value);
 ---
 
 <section class="hero">
@@ -29,18 +47,20 @@ import FeatureVideo from "./FeatureVideo.astro";
          the first screen as intended. On desktop it is placed into the right column
          explicitly, so reading order and visual order can differ without a hack. -->
     <figure class="hero-figure" data-reveal style="--reveal-delay: 220ms">
-      <figcaption class="hero-video-head">
-        <h2 class="hero-video-title">Discover Life in West Linn</h2>
-        <p class="hero-video-lead">
-          Get a local perspective on the lifestyle, community, and character that make
-          West Linn feel like home.
-        </p>
-      </figcaption>
-      <FeatureVideo
-        src="/assets/video/discover-west-linn.mp4"
-        poster="/assets/video/discover-west-linn.jpg"
-        label="Watch: life in West Linn"
-      />
+      <div class="hero-card">
+        <figcaption class="hero-video-head">
+          <h2 class="hero-video-title">Discover Life in West Linn</h2>
+          <p class="hero-video-lead">
+            Get a local perspective on the lifestyle, community, and character that
+            make West Linn feel like home.
+          </p>
+        </figcaption>
+        <FeatureVideo
+          src="/assets/video/discover-west-linn.mp4"
+          poster="/assets/video/discover-west-linn.jpg"
+          label="Watch: life in West Linn"
+        />
+      </div>
     </figure>
 
     <div class="hero-actions" data-reveal style="--reveal-delay: 280ms">
@@ -48,6 +68,15 @@ import FeatureVideo from "./FeatureVideo.astro";
       <a class="btn btn--ghost btn--lg" href="/home-value">What is my home worth?</a>
       <a class="btn btn--ghost btn--lg" href={site.teamSite.homeSearch} target="_blank" rel="noopener noreferrer">Start my home search</a>
     </div>
+
+    <ul class="hero-proof" role="list" data-reveal style="--reveal-delay: 380ms">
+      {heroStats.map((s) => (
+        <li>
+          <span class="proof-val">{s.value}</span>
+          <span class="proof-label">{s.label}</span>
+        </li>
+      ))}
+    </ul>
   </div>
 </section>
 
@@ -79,7 +108,7 @@ import FeatureVideo from "./FeatureVideo.astro";
     /* Copy stacks in column one; the video spans the full height of column two.
        Explicit placement lets DOM order stay phone-correct. */
     grid-template-columns: 1.05fr 0.95fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
     align-content: center;
     column-gap: clamp(2rem, 1rem + 4vw, 5rem);
   }
@@ -87,6 +116,7 @@ import FeatureVideo from "./FeatureVideo.astro";
   .hero h1      { grid-column: 1; grid-row: 2; }
   .hero-lead    { grid-column: 1; grid-row: 3; }
   .hero-actions { grid-column: 1; grid-row: 4; }
+  .hero-proof   { grid-column: 1; grid-row: 5; }
   .hero-figure  { grid-column: 2; grid-row: 1 / -1; align-self: center; }
   .hero h1 {
     margin-block: 1rem 0;
@@ -124,22 +154,58 @@ import FeatureVideo from "./FeatureVideo.astro";
   .hero-actions .btn--ghost { color: var(--ink-onDark); border-color: var(--line-onDark); }
 
   /* Wider than the old portrait card: this column now holds a 16:9 video. */
-  .hero-figure { position: relative; margin: 0; justify-self: end; width: 100%; max-width: 580px; }
-  .hero-video-head { margin-bottom: 1rem; }
-  .hero-video-title {
-    font-size: clamp(1.7rem, 1.45rem + 0.8vw, 2.05rem);
-    line-height: var(--leading-snug);
-    color: var(--ink-onDark);
+  .hero-proof {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.35rem clamp(1.5rem, 1rem + 2vw, 2.75rem);
+    margin-top: 2rem;
+    padding-top: 1.7rem;
+    border-top: 1px solid var(--line-onDark);
+    max-width: 30rem;
+  }
+  .proof-val {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 1.35rem + 1vw, 2.2rem);
+    font-weight: 400;
+    color: var(--gold-bright);
+    line-height: 1;
     text-shadow: 0 1px 24px rgba(0, 0, 0, 0.4);
+  }
+  .proof-label {
+    display: block;
+    margin-top: 0.45rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-onDark-soft);
+  }
+
+  .hero-figure { position: relative; margin: 0; justify-self: end; width: 100%; max-width: 540px; }
+  /* Media panel: the one place the system's resting shadow is correct. */
+  .hero-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 1.1rem;
+    box-shadow: var(--shadow-lg);
+  }
+  .hero-card :global(.fvideo) {
+    border-radius: var(--radius);
+    box-shadow: none;
+  }
+  /* Inside the card the head sits on paper, so it takes the ink ramp. */
+  .hero-video-head { padding: 0.35rem 0.45rem 1rem; }
+  .hero-video-title {
+    font-size: clamp(1.55rem, 1.35rem + 0.7vw, 1.9rem);
+    line-height: var(--leading-snug);
+    color: var(--ink);
   }
   .hero-video-lead {
     margin-top: 0.5rem;
-    max-width: 46ch;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     line-height: 1.55;
-    font-weight: 300;
-    color: var(--ink-onDark-soft);
-    text-shadow: 0 1px 20px rgba(0, 0, 0, 0.35);
+    color: var(--ink-soft);
   }
 
   @media (max-width: 900px) {
@@ -148,7 +214,7 @@ import FeatureVideo from "./FeatureVideo.astro";
       padding-block: clamp(2rem, 1.5rem + 3vw, 3.5rem);
     }
     .hero-inner { grid-template-columns: 1fr; grid-template-rows: none; }
-    .hero-eyebrow, .hero h1, .hero-lead, .hero-actions, .hero-figure {
+    .hero-eyebrow, .hero h1, .hero-lead, .hero-actions, .hero-proof, .hero-figure {
       grid-column: 1;
       grid-row: auto;
     }
