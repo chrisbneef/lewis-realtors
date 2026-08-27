@@ -1,20 +1,31 @@
 ---
-// Click-to-play feature video (with sound). Nothing downloads until the visitor
-// hits play (preload="none"), so it costs nothing on page load. Poster + play
-// button until clicked, then native controls.
-const { src, poster, label = "Play video", ratio = "16 / 9" } = Astro.props;
+// Poster tile that opens the video in a centered lightbox. The tile itself is a
+// still image, so the page costs one JPEG on load; the <video> lives in a
+// <dialog> with preload="none" and downloads nothing until the visitor opens it.
+// Uses the native dialog element, matching GoogleReviews, so Escape, the top
+// layer, and focus trapping come from the platform rather than from script.
+const { src, poster, label = "Play video", ratio = "16 / 9", title } = Astro.props;
 ---
 
 <div class="fvideo" data-fvideo style={`--ratio: ${ratio}`}>
-  <video class="fvideo-el" preload="none" playsinline poster={poster}>
-    <source src={src} type="video/mp4" />
-  </video>
-  <button class="fvideo-play" type="button" aria-label={label}>
+  <img class="fvideo-poster" src={poster} alt="" loading="lazy" decoding="async" />
+  <button class="fvideo-play" type="button" data-fvideo-open aria-label={label}>
     <span class="fvideo-icon" aria-hidden="true">
       <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
     </span>
     <span class="fvideo-label">{label}</span>
   </button>
+
+  <dialog class="fvideo-dialog" data-fvideo-dialog aria-label={title ?? label}>
+    <button class="fvideo-close" type="button" data-fvideo-close aria-label="Close video">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" stroke-linecap="round" />
+      </svg>
+    </button>
+    <video class="fvideo-el" preload="none" playsinline controls poster={poster}>
+      <source src={src} type="video/mp4" />
+    </video>
+  </dialog>
 </div>
 
 <style>
@@ -27,7 +38,7 @@ const { src, poster, label = "Play video", ratio = "16 / 9" } = Astro.props;
     box-shadow: var(--shadow-lg);
     background: var(--noir);
   }
-  .fvideo-el { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .fvideo-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .fvideo-play {
     position: absolute; inset: 0; z-index: 1;
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;
@@ -51,18 +62,86 @@ const { src, poster, label = "Play video", ratio = "16 / 9" } = Astro.props;
     font-size: 0.74rem; font-weight: 500; letter-spacing: var(--tracking-label);
     text-transform: uppercase; text-shadow: 0 1px 10px rgba(0,0,0,0.5);
   }
-  .fvideo[data-playing] .fvideo-play { display: none; }
+
+  /* --- Lightbox ---------------------------------------------------------- */
+  .fvideo-dialog {
+    /* The UA centres a dialog until its display is overridden; set explicitly. */
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: min(1100px, calc(100vw - 2rem));
+    max-width: calc((min(86dvh, 46rem)) * 16 / 9);
+    border: none;
+    padding: 0;
+    background: var(--noir);
+    border-radius: var(--radius-lg);
+    overflow: visible;
+    box-shadow: var(--shadow-lg);
+  }
+  .fvideo-dialog::backdrop { background: rgba(10, 10, 10, 0.82); }
+  .fvideo-dialog .fvideo-el {
+    display: block;
+    width: 100%;
+    aspect-ratio: var(--ratio);
+    max-height: min(86dvh, 46rem);
+    border-radius: var(--radius-lg);
+    background: var(--noir);
+  }
+  .fvideo-close {
+    position: absolute;
+    top: -0.75rem;
+    right: -0.75rem;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid var(--line-onDark);
+    background: var(--noir-soft);
+    color: var(--ink-onDark);
+    cursor: pointer;
+    transition: background var(--dur) var(--ease), color var(--dur) var(--ease), transform var(--dur) var(--ease);
+  }
+  .fvideo-close:hover { background: var(--gold); color: var(--noir); transform: scale(1.06); }
+  .fvideo-close:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  @media (max-width: 640px) {
+    .fvideo-dialog { width: calc(100vw - 1.5rem); }
+    .fvideo-close { top: -0.6rem; right: -0.35rem; width: 2.25rem; height: 2.25rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .fvideo-play, .fvideo-icon, .fvideo-close { transition: none; }
+    .fvideo-play:hover .fvideo-icon, .fvideo-close:hover { transform: none; }
+  }
 </style>
 
 <script>
   document.querySelectorAll("[data-fvideo]").forEach((box) => {
+    const dialog = box.querySelector("[data-fvideo-dialog]");
     const video = box.querySelector("video");
-    const btn = box.querySelector(".fvideo-play");
-    btn?.addEventListener("click", () => {
-      box.setAttribute("data-playing", "");
+    const openBtn = box.querySelector("[data-fvideo-open]");
+    if (!(dialog instanceof HTMLDialogElement) || !video || !openBtn) return;
+
+    openBtn.addEventListener("click", () => {
+      dialog.showModal();
       video.preload = "auto";
-      video.setAttribute("controls", "");
+      // Autoplay with sound is permitted here because the click is the gesture.
       video.play?.().catch(() => {});
+    });
+
+    box.querySelector("[data-fvideo-close]")?.addEventListener("click", () => dialog.close());
+    // A click landing on the dialog itself is the backdrop, not the video.
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+
+    // Covers the close button, the backdrop, and Escape in one place, so audio
+    // can never keep playing behind a closed dialog.
+    dialog.addEventListener("close", () => {
+      video.pause?.();
+      video.currentTime = 0;
+      openBtn.focus({ preventScroll: true });
     });
   });
 </script>
