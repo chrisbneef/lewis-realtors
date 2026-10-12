@@ -32,6 +32,22 @@
         "savanna-oaks": 1224500,
         "stafford": 2250000
       }
+    },
+    "2026-10": {
+      "generatedAt": "2026-10-12T20:30:25.831Z",
+      "city": 1009088,
+      "neighborhoods": {
+        "bolton": 750000,
+        "willamette": 812450,
+        "robinwood": 1222490,
+        "sunset": 728900,
+        "rosemont-summit": 925000,
+        "hidden-springs": 799000,
+        "parker-crest": 883944,
+        "skyline-ridge": 945000,
+        "savanna-oaks": 1199900,
+        "stafford": 2147450
+      }
     }
   }
 }
