@@ -3,7 +3,6 @@ title: "West Linn home prices by neighborhood, and why the range is so wide"
 description: "What West Linn homes are actually asking, neighborhood by neighborhood, plus the city-wide closed-sale numbers from the office RMLS pull and why the two figures are not the same thing."
 theme: "real-estate"
 publishDate: 2026-07-31
-draft: true
 author: "Melissa Shaw"
 keywords:
   - "West Linn home prices"

@@ -3,7 +3,6 @@ title: "A walk down Historic Willamette, the closest thing West Linn has to a do
 description: "The Main Street district in West Linn's Willamette neighborhood: the Wednesday summer street market, the food and drink, the historic buildings, and how the river shaped the whole thing."
 theme: "lifestyle"
 publishDate: 2026-08-07
-draft: true
 author: "Melissa Shaw"
 keywords:
   - "Willamette neighborhood West Linn"
