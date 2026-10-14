@@ -1,0 +1,45 @@
+name: Refresh market data
+
+# Monthly on the 1st at 09:00 UTC. Each run costs ~14 of the 50 free RentCast
+# requests per month, so do NOT trigger this repeatedly within a single month.
+# Committing src/data/market.json makes Vercel redeploy the static site.
+on:
+  schedule:
+    - cron: "0 9 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-market-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch latest market data
+        env:
+          RENTCAST_API_KEY: ${{ secrets.RENTCAST_API_KEY }}
+        run: node scripts/refresh-market-data.mjs
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- src/data/market.json src/data/market-history.json; then
+            echo "No market data changes; nothing to commit."
+            exit 0
+          fi
+          git config user.name  "lewis-realtors-bot"
+          git config user.email "actions@github.com"
+          # market-history.json accumulates a monthly snapshot per neighborhood so
+          # the charts can switch to real per-neighborhood trends over time.
+          git add src/data/market.json src/data/market-history.json
+          git commit -m "chore(data): refresh West Linn market data"
+          git push
