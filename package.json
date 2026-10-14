@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "refresh:market": "node scripts/refresh-market-data.mjs",
-    "refresh:market:dry": "node scripts/refresh-market-data.mjs --dry-run"
+    "refresh:market:dry": "node scripts/refresh-market-data.mjs --dry-run",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "engines": {
     "node": ">=20 <23"

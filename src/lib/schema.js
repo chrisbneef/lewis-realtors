@@ -6,6 +6,33 @@ import { SITE_URL } from "./site-url.js";
 const ORIGIN = SITE_URL;
 const AGENT_ID = `${ORIGIN}/#agent`;
 const SITE_ID = `${ORIGIN}/#website`;
+const PERSON_ID = `${ORIGIN}/#melissa-shaw`;
+
+// Melissa as one Person entity. Every author byline and the agent's founder
+// point at this @id so search engines read one person, not several. Only
+// facts the site itself states, plus profiles confirmed to be hers.
+function personNode() {
+  return {
+    "@type": "Person",
+    "@id": PERSON_ID,
+    name: site.agent.name,
+    jobTitle: site.agent.designations[0],
+    description: `${site.agent.role}. ${site.agent.designations.join(" and ")}. ${site.agent.resident}.`,
+    image: `${ORIGIN}${site.agent.headshot}`,
+    url: `${ORIGIN}/about`,
+    worksFor: { "@id": AGENT_ID },
+    knowsAbout: [
+      "West Linn real estate",
+      "home valuation",
+      "neighborhood market analysis",
+    ],
+    ...(site.agent.sameAs?.length ? { sameAs: site.agent.sameAs } : {}),
+  };
+}
+
+// Lightweight reference used by bylines on every page (the full node rides
+// on the agent's founder field, which every page also includes).
+const personRef = () => ({ "@type": "Person", "@id": PERSON_ID, name: site.agent.name, url: `${ORIGIN}/about` });
 
 // Real social/authority profiles only (placeholders are filtered out). The team
 // hub site is included so search engines connect the two Lewis Realtors entities.
@@ -44,16 +71,7 @@ function agentNode() {
       postalCode: site.zip,
       addressCountry: "US",
     },
-    founder: {
-      "@type": "Person",
-      name: site.agent.name,
-      jobTitle: site.agent.role,
-      knowsAbout: [
-        "West Linn real estate",
-        "home valuation",
-        "neighborhood market analysis",
-      ],
-    },
+    founder: personNode(),
     knowsAbout: [
       `${site.city}, ${site.state} real estate`,
       "neighborhood market reports",
@@ -96,12 +114,7 @@ export function webPage({ path = "/", name, dateModified }) {
     about: { "@id": AGENT_ID },
     inLanguage: "en-US",
     ...(dateModified ? { dateModified, datePublished: dateModified } : {}),
-    author: {
-      "@type": "Person",
-      name: site.agent.name,
-      jobTitle: site.agent.role,
-      url: `${ORIGIN}/about`,
-    },
+    author: personRef(),
     publisher: { "@id": AGENT_ID },
   };
 }
@@ -172,12 +185,7 @@ export function blogPosting({ title, description, path, datePublished, dateModif
     mainEntityOfPage: { "@type": "WebPage", "@id": `${url}#webpage` },
     datePublished,
     dateModified: dateModified || datePublished,
-    author: {
-      "@type": "Person",
-      name: site.agent.name,
-      jobTitle: site.agent.role,
-      url: `${ORIGIN}/about`,
-    },
+    author: personRef(),
     publisher: { "@id": AGENT_ID },
     inLanguage: "en-US",
     ...(keywords && keywords.length ? { keywords: keywords.join(", ") } : {}),

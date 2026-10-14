@@ -14,6 +14,10 @@ const {
 
 const fullTitle = title ? `${title} | ${site.brand}` : `${site.brand} | West Linn, Oregon Real Estate`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+// Link previews and some crawlers ignore a relative og:image, so resolve it.
+const ogImageUrl = new URL(ogImage, Astro.site).href;
+// Search Console / Bing Webmaster URL-prefix verification. Empty = no tag.
+const verify = site.searchVerification ?? {};
 
 // Build-time freshness stamp; refreshes on every deploy.
 const buildDate = new Date().toISOString();
@@ -38,9 +42,12 @@ const schemas = [
     <meta property="og:type" content="website" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={ogImageUrl} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImageUrl} />
+    {verify.google && <meta name="google-site-verification" content={verify.google} />}
+    {verify.bing && <meta name="msvalidate.01" content={verify.bing} />}
 
     <link rel="icon" href="/assets/lewis-logo.png" />
 
