@@ -68,13 +68,24 @@ const trendCaption = useNbTrend
   ? `Median asking price for single-family and multi-family homes in ${hood.name}, from monthly snapshots.`
   : "Median asking price across all West Linn home types.";
 
+const schoolLocator = "https://www.wlwv.k12.or.us/forms-systems/registration-information/school-boundaries";
+
 const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
   month: "long", day: "numeric", year: "numeric",
 });
+
+// One dated, self-contained sentence that an answer engine can quote on its own.
+// Asking prices only (RentCast active listings); never call these sale prices.
+const cityLine = `the median asking price for a West Linn house was ${money(city.medianAskingPrice)} across ${city.totalListings} listings`;
+const summary = showNeighborhood
+  ? `As of ${refreshed}, ${nb.activeListings} houses were listed for sale in ${hood.name}, West Linn, with a median asking price of ${money(nb.medianAskingPrice)} and a median of ${nb.medianDaysOnMarket} days on the market.`
+  : nb
+    ? `As of ${refreshed}, only ${nb.activeListings} ${nb.activeListings === 1 ? "house was" : "houses were"} listed in ${hood.name}, too few for a reliable median; city-wide, ${cityLine}.`
+    : `As of ${refreshed}, city-wide ${cityLine}. ${hood.name} gets its own figures once its official boundary is mapped.`;
 ---
 
 <Base
-  title={`${hood.name}, West Linn`}
+  title={`${hood.name}, West Linn: Neighborhood Guide & Market Data`}
   description={`${hood.name}, West Linn OR: ${hood.character}. ${range}. Get the monthly ${hood.name} market report from Lewis Realtors.`}
   jsonLd={jsonLd}
 >
@@ -104,6 +115,7 @@ const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
           <h1>{hood.name}</h1>
           <p class="nb-tagline">{hood.tagline}</p>
           {hood.description && <p class="nb-desc measure">{hood.description}</p>}
+          <p class="nb-desc measure">{summary} Asking prices from active listings, not sale prices.</p>
           <div class="nb-meta">
             <span class="pill pill--gold">{range}</span>
             <span class="pill pill--azure">Fits: {hood.serviceFit}</span>
@@ -148,6 +160,14 @@ const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
             <SectionHead eyebrow="The read" title={`Who ${hood.name} is <span class="script">right for</span>.`} />
             <div class="nb-story-body stack">
               {hood.narrative.map((p) => <p>{p}</p>)}
+              {hood.sources?.length > 0 && (
+                <p class="nb-map-note">
+                  Sources:{" "}
+                  {hood.sources.map((src, i) => (
+                    <>{i > 0 && "; "}<a href={src.url} target="_blank" rel="noopener noreferrer">{src.label}</a></>
+                  ))}
+                </p>
+              )}
             </div>
           </div>
           <aside class="nb-fit card" data-reveal style="--reveal-delay: 100ms">
@@ -170,13 +190,23 @@ const refreshed = new Date(market.generatedAt).toLocaleDateString("en-US", {
           <div class="nb-schools-head">
             <p class="eyebrow">Schools</p>
             <h2 class="nb-schools-title">{site.district}</h2>
-            <p class="nb-schools-sub">The elementary, middle, and high school path for {hood.name}.</p>
+            <p class="nb-schools-sub">
+              {hood.schools
+                ? `The elementary, middle, and high school path for most of ${hood.name}.`
+                : `School assignment in ${hood.name} depends on the exact address, so we don't list one path for the whole neighborhood.`}
+            </p>
           </div>
-          <ol class="feeder-path" role="list">
-            <li class="feeder-card"><span class="feeder-step">Elementary</span><span class="feeder-name">{hood.schools.elementary}</span></li>
-            <li class="feeder-card"><span class="feeder-step">Middle</span><span class="feeder-name">{hood.schools.middle}</span></li>
-            <li class="feeder-card"><span class="feeder-step">High</span><span class="feeder-name">{hood.schools.high}</span></li>
-          </ol>
+          {hood.schools && (
+            <ol class="feeder-path" role="list">
+              <li class="feeder-card"><span class="feeder-step">Elementary</span><span class="feeder-name">{hood.schools.elementary}</span></li>
+              <li class="feeder-card"><span class="feeder-step">Middle</span><span class="feeder-name">{hood.schools.middle}</span></li>
+              <li class="feeder-card"><span class="feeder-step">High</span><span class="feeder-name">{hood.schools.high}</span></li>
+            </ol>
+          )}
+          <p class="nb-map-note">
+            Boundaries change, and the district set new primary school boundaries for the 2026-27 year.
+            Confirm any address with the district's <a href={schoolLocator} target="_blank" rel="noopener noreferrer">school locator</a>.
+          </p>
         </div>
       </section>
 

@@ -42,7 +42,7 @@
   {
     "slug": "willamette",
     "name": "Willamette",
-    "complete": false,
+    "complete": true,
     "order": 4,
     "tagline": "The heart of West Linn's original downtown.",
     "character": "Historic downtown, walkable",
@@ -55,7 +55,49 @@
       "Victorian",
       "Cottage"
     ],
-    "image": "/assets/neighborhoods/willamette.jpg"
+    "image": "/assets/neighborhoods/willamette.jpg",
+    "narrative": [
+      "Willamette started life as its own town. It was platted in 1893, incorporated in 1908, and joined West Linn in 1916, and you can still feel that history on the streets between Willamette Falls Drive and the Tualatin River. At its heart is a National Register historic district, listed in 2009, where the homes date from about 1895 to 1929: late Victorian Queen Anne and Stick-style houses, Craftsman homes and bungalows.",
+      "Daily life here centers on Willamette Falls Drive, the old main street, with its Wednesday summer street market, spring and autumn wine walks, and the Old Time Fair parade in July. Willamette Park sits right where the Tualatin meets the Willamette, with a boat ramp at Bernert Landing, and Fields Bridge Park follows the Tualatin with community garden plots, ball fields and paths.",
+      "One thing worth knowing before you buy: inside the historic district, exterior changes need city approval first. Smaller projects get staff review, while additions and new construction go to the Historic Review Board. It's what keeps these streets looking the way they do, and it's worth planning for if you're dreaming of an addition."
+    ],
+    "rightFor": [
+      "Buyers who want to walk to coffee, dinner and a summer street market",
+      "Lovers of historic homes who are comfortable with design review",
+      "Anyone who wants river parks and a boat ramp close to home"
+    ],
+    "propertyTypes": [
+      "Queen Anne and Stick-style Victorians",
+      "Craftsman homes and bungalows",
+      "Homes from the 1930s to 1950s",
+      "Newer infill"
+    ],
+    "sources": [
+      {
+        "label": "City of West Linn, Willamette Historic District educational materials (2022)",
+        "url": "https://westlinnoregon.gov/sites/default/files/fileattachments/planning/meeting/54806/hrb_clg_grant_website-educational_materials_05.17.2022.pdf"
+      },
+      {
+        "label": "City of West Linn, Historic landmarks",
+        "url": "https://westlinnoregon.gov/planning/historic-landmarks"
+      },
+      {
+        "label": "City of West Linn, Historic design review staff report HDR-26-01 (2026)",
+        "url": "https://westlinnoregon.gov/sites/default/files/fileattachments/planning/project/58019/hdr-26-01_staff_report.pdf"
+      },
+      {
+        "label": "City of West Linn, Willamette Park",
+        "url": "https://westlinnoregon.gov/parksrec/willamette-park"
+      },
+      {
+        "label": "City of West Linn, Fields Bridge Park",
+        "url": "https://westlinnoregon.gov/parksrec/fields-bridge-park"
+      },
+      {
+        "label": "Historic Willamette Main Street, 2026 events",
+        "url": "https://www.historicwillamette.com"
+      }
+    ]
   },
   {
     "slug": "robinwood",
@@ -223,7 +265,7 @@
   {
     "slug": "savanna-oaks",
     "name": "Savanna Oaks",
-    "complete": false,
+    "complete": true,
     "order": 15,
     "tagline": "Quiet streets surrounded by natural beauty.",
     "character": "Newer homes, green spaces",
@@ -234,7 +276,41 @@
       "Craftsman",
       "Traditional"
     ],
-    "image": "/assets/neighborhoods/savanna-oaks.jpg"
+    "image": "/assets/neighborhoods/savanna-oaks.jpg",
+    "narrative": [
+      "Savanna Oaks sits on a ridge on West Linn's west side, about 354 acres looking out over the Willamette and Tualatin rivers. The ground runs from flat to very steep, Salamo Creek winds through the western part, and some parcels along the edge are still outside city limits, which helps explain the green, open feel.",
+      "The neighborhood takes its name from the White Oak Savanna, about 20 acres on Tannler Drive with trails, picnic tables and benches at the viewpoints. Neighbors have put more than 20,000 volunteer hours into restoring it. Savanna Oaks is also a certified Firewise community, a sign of how seriously people here take wildfire preparedness on a wooded ridge.",
+      "The homes are mostly newer, in Craftsman and traditional styles, and lots vary with the terrain. One thing to know: parts of the neighborhood are zoned R-7, where Oregon's middle housing laws now allow duplexes and similar homes, so a nearby lot can add homes over time."
+    ],
+    "rightFor": [
+      "Buyers who want newer construction and room to breathe",
+      "Walkers who want an oak savanna preserve close to home",
+      "Move-up buyers shopping above West Linn's median price"
+    ],
+    "propertyTypes": [
+      "Newer single-family homes",
+      "Craftsman-style homes",
+      "Traditional homes",
+      "Hillside and view lots"
+    ],
+    "sources": [
+      {
+        "label": "City of West Linn, Savanna Oaks neighborhood plan page",
+        "url": "https://westlinnoregon.gov/savannaoaks/neighborhood-plan"
+      },
+      {
+        "label": "City of West Linn, Savanna Oaks Neighborhood Association",
+        "url": "https://westlinnoregon.gov/savannaoaks"
+      },
+      {
+        "label": "City of West Linn, White Oak Savanna",
+        "url": "https://westlinnoregon.gov/parksrec/white-oak-savanna"
+      },
+      {
+        "label": "Savanna Oaks Neighborhood Association minutes, November 7, 2023",
+        "url": "https://westlinnoregon.gov/sites/default/files/fileattachments/savanna_oaks/meeting/55933/sona_meeting_minutes_11-07-2023_approved.pdf"
+      }
+    ]
   },
   {
     "slug": "hidden-creek",
