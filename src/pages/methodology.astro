@@ -1,0 +1,109 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import market from "../data/market.json";
+import { rmlsSold, latestSold } from "../lib/market.js";
+import { realEstateAgent, breadcrumb } from "../lib/schema.js";
+
+// Every figure on this page is read from the data files, so the page cannot
+// drift from what the market reports actually publish.
+const fmt = (d) => new Date(d).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+const asOf = fmt(market.generatedAt);
+const sold = latestSold();
+const soldPulled = sold ? fmt(sold.pulledOn + "T12:00:00") : null;
+---
+
+<Base
+  title="How We Measure the West Linn Housing Market"
+  description="Where Lewis Realtors' West Linn market figures come from: RentCast active listings for asking prices, the RMLS Market Trend Report for closed sales, official neighborhood boundaries, and what each number does and does not mean."
+  jsonLd={[
+    realEstateAgent(),
+    breadcrumb([
+      { name: "Home", path: "/" },
+      { name: "Market Reports", path: "/market-reports" },
+      { name: "How we measure", path: "/methodology" },
+    ]),
+  ]}
+>
+  <PageHero
+    crumb="How we measure"
+    eyebrow="Methodology"
+    title={`How we <span class="script">measure</span>.`}
+    lead="Every West Linn number on this site comes from one of two sources, and we always say which. Here is where the figures come from, what they include, and what they can't tell you."
+  />
+
+  <section class="section--tight">
+    <div class="wrap method">
+      <h2>Two sources, never mixed</h2>
+      <p>
+        The site carries two different kinds of numbers. <strong>Asking prices</strong> come from active
+        listings, refreshed monthly. <strong>Sold prices</strong> come from closed sales in the RMLS
+        Market Trend Report. They measure different things, so we label each one every time it appears.
+      </p>
+
+      <h2>Asking prices: active listings</h2>
+      <p>
+        Neighborhood figures come from active listing data supplied by RentCast. The listing records
+        originate from RMLS, the regional multiple listing service. The latest pull was taken on
+        {" "}{asOf}.
+      </p>
+      <ul>
+        <li><strong>What's counted:</strong> single-family and multi-family homes for sale. Condos, townhouses, manufactured homes and land are left out, so a neighborhood's figure reflects its houses.</li>
+        <li><strong>Where:</strong> each listing is placed in a neighborhood by its location inside the official boundary from Oregon Metro and Clackamas County GIS. Listings outside every mapped boundary count only toward the city-wide figures.</li>
+        <li><strong>Minimum sample:</strong> a neighborhood needs at least {market.minListingsForMedian} active listings before we publish its median. Below that, we say so instead of estimating.</li>
+        <li><strong>Days on market:</strong> for active listings, this is how long the homes still for sale have been listed. Homes that sell quickly drop out of this count, so it runs longer than the days on market for sold homes.</li>
+      </ul>
+
+      <h2>Sold prices: the RMLS Market Trend Report</h2>
+      <p>
+        City-wide closed sale figures come from the RMLS Market Trend Report that Melissa Shaw pulls
+        for {rmlsSold.criteria.city}, {rmlsSold.criteria.state}.
+        {sold && <> The most recent month loaded is {sold.label}, pulled {soldPulled}.</>}
+      </p>
+      <ul>
+        <li><strong>What's counted:</strong> {rmlsSold.criteria.note}</li>
+        <li><strong>Why it matters:</strong> Oregon is a non-disclosure state, so closed sale prices are not in public records. RMLS is where the real closed prices live, which is why many sites can only show asking prices.</li>
+        <li><strong>Area:</strong> RMLS area {rmlsSold.criteria.area} and ZIP {rmlsSold.criteria.zip}. These follow RMLS and postal lines, which don't match city limits exactly.</li>
+        <li><strong>Attribution:</strong> {rmlsSold.attribution}</li>
+      </ul>
+
+      <h2>Median, average and what they hide</h2>
+      <p>
+        We lead with the median, the middle home in the list, because a few very expensive homes can
+        pull an average far above what's typical. A city-wide median also blends very different
+        neighborhoods together, which is why every neighborhood gets its own page.
+      </p>
+
+      <h2>When the numbers update</h2>
+      <p>
+        Active listing data refreshes monthly. Sold data is added as each monthly RMLS report comes in.
+        Every page that shows a figure carries the date it was pulled.
+      </p>
+
+      <h2>What we never do</h2>
+      <ul>
+        <li>We never call an asking price a sale price.</li>
+        <li>We never estimate or fill in a missing number. If a figure isn't confirmed, the page says so.</li>
+        <li>We don't publish other agents' or portals' numbers as our own.</li>
+      </ul>
+
+      <p class="method-more">
+        Spot something that looks off? Call <a href="tel:+15034898367">(503) 489-8367</a> or
+        <a href="/contact">send a message</a>, and we'll check it and correct it.
+        See the numbers on the <a href="/market-reports">market reports</a> page.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .method { max-width: 820px; }
+  .method h2 { font-size: var(--fs-h3); margin-top: 2.6rem; }
+  .method h2:first-child { margin-top: 0; }
+  .method p, .method li { color: var(--ink-soft); margin-top: 1rem; }
+  .method ul { margin-top: 0.4rem; padding-left: 1.2rem; }
+  .method li { margin-top: 0.7rem; }
+  .method-more { margin-top: 2.6rem; }
+  .method a { color: var(--gold-deep); }
+  .method a:hover { text-decoration: underline; }
+</style>

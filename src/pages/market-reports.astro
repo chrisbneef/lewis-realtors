@@ -5,6 +5,7 @@ import NeighborhoodCard from "../components/NeighborhoodCard.astro";
 import neighborhoods from "../data/neighborhoods.json";
 import { realEstateAgent } from "../lib/schema.js";
 import { latestSold, rmlsSold, reportReady } from "../lib/market.js";
+import market from "../data/market.json";
 
 const hoods = [...neighborhoods].sort((a, b) => a.order - b.order);
 const ready = hoods.filter((h) => reportReady(h.slug)).length;
@@ -21,10 +22,22 @@ const soldFigures = sold
       { v: String(sold.daysOnMarket.median), l: "Median days on market" },
     ]
   : [];
+
+// This month's asking-price snapshot: one dated sentence an answer engine can
+// quote on its own, then the neighborhood table behind it. Asking prices only.
+const city = market.cityData;
+const asOf = new Date(market.generatedAt).toLocaleDateString("en-US", {
+  month: "long", day: "numeric", year: "numeric",
+});
+const askingRows = hoods
+  .map((h) => ({ hood: h, nb: market.neighborhoods?.[h.slug] }))
+  .filter((r) => r.nb?.publishable === true)
+  .sort((a, b) => a.nb.medianAskingPrice - b.nb.medianAskingPrice);
+const askingSummary = `As of ${asOf}, ${city.totalListings} houses were listed for sale in West Linn, Oregon, with a median asking price of ${money(city.medianAskingPrice)}, a median of $${city.medianPricePerSqft} per square foot, and a median of ${city.medianDaysOnMarket} days on the market.`;
 ---
 
 <Base
-  title="Market Reports"
+  title="West Linn Housing Market Reports by Neighborhood"
   description="Monthly West Linn neighborhood market reports: median asking price, days on market, active inventory, and the twelve-month price trend, refreshed from live listing data."
   jsonLd={[realEstateAgent()]}
 >
@@ -34,6 +47,47 @@ const soldFigures = sold
     title={`Every West Linn<br/>neighborhood, <span class="script">measured</span>.`}
     lead="One report per neighborhood, refreshed every month from live listing data. Pick a neighborhood to see its snapshot and request the full report."
   />
+
+  <section class="section--tight">
+    <div class="wrap">
+      <div class="ask-panel card" data-reveal>
+        <p class="eyebrow">What sellers are asking &middot; {asOf}</p>
+        <h2 class="sold-title">West Linn asking prices this month</h2>
+        <p class="sold-lead measure">{askingSummary}</p>
+        <div class="ask-table-wrap">
+          <table class="ask-table">
+            <thead>
+              <tr>
+                <th scope="col">Neighborhood</th>
+                <th scope="col" class="ask-opt">Houses listed</th>
+                <th scope="col">Median asking price</th>
+                <th scope="col" class="ask-opt-md">Per sq ft</th>
+                <th scope="col">Median days listed</th>
+              </tr>
+            </thead>
+            <tbody>
+              {askingRows.map(({ hood, nb }) => (
+                <tr>
+                  <th scope="row"><a href={`/neighborhoods/${hood.slug}`}>{hood.name}</a></th>
+                  <td class="ask-opt">{nb.activeListings}</td>
+                  <td>{money(nb.medianAskingPrice)}</td>
+                  <td class="ask-opt-md">${Math.round(nb.medianPricePerSqft)}</td>
+                  <td>{nb.medianDaysOnMarket}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="sold-source">
+          Active single-family and multi-family listings from RentCast (records originate from RMLS),
+          assigned to neighborhoods by official boundary. Condos, townhouses and manufactured homes
+          are excluded, and neighborhoods with fewer than {market.minListingsForMedian} listings are
+          left out rather than estimated. These are asking prices, not sale prices.
+          {" "}<a href="/methodology">How we measure</a>.
+        </p>
+      </div>
+    </div>
+  </section>
 
   {sold && (
     <section class="section--tight">
@@ -66,7 +120,7 @@ const soldFigures = sold
           </p>
           <p class="sold-source">
             {rmlsSold.criteria.note} Pulled {new Date(sold.pulledOn + "T12:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}.
-            {" "}{rmlsSold.attribution}
+            {" "}{rmlsSold.attribution} This is the most recent month loaded; newer months are added as each RMLS report comes in.
           </p>
         </div>
       </div>
@@ -118,6 +172,26 @@ const soldFigures = sold
   .sold-source { margin-top: 1.2rem; font-size: 0.72rem; line-height: 1.7; color: var(--ink-muted); max-width: 90ch; }
   @media (max-width: 900px) { .sold-figs { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 520px) { .sold-figs { grid-template-columns: repeat(2, 1fr); } }
+
+  .ask-panel { padding: clamp(1.8rem, 1.2rem + 2.5vw, 3rem); border-top: 3px solid var(--gold-deep); margin-bottom: 1rem; }
+  .ask-table-wrap { overflow-x: auto; margin-top: 2rem; }
+  .ask-table { width: 100%; border-collapse: collapse; font-size: var(--fs-body); }
+  .ask-table th, .ask-table td { padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+  .ask-table th:first-child { text-align: left; }
+  .ask-table thead th { font-size: var(--fs-eyebrow); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); font-weight: 500; }
+  .ask-table tbody th a { color: var(--ink); }
+  .ask-panel .sold-source a { color: var(--gold-deep); }
+  .ask-panel .sold-source a:hover { text-decoration: underline; }
+  @media (max-width: 900px) {
+    .ask-opt-md { display: none; }
+    .ask-table thead th { white-space: normal; }
+  }
+  @media (max-width: 600px) {
+    .ask-opt { display: none; }
+    .ask-table th, .ask-table td { padding: 0.65rem 0.4rem; }
+    .ask-table thead th, .ask-table tbody th { white-space: normal; }
+    .ask-panel { padding-inline: 1.1rem; }
+  }
 
   .mr-status { display: flex; gap: 0.7rem; margin-bottom: 2.5rem; }
   .mr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }

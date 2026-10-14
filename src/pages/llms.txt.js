@@ -36,6 +36,7 @@ export async function GET() {
   L.push(`- [Contact](${u("/contact")}): phone, message, hours, and service area.`);
   L.push(`- [Financing partner](${u("/financing")}): mortgage referral so buyers shop pre-approved.`);
   L.push(`- [FAQ](${u("/faq")}): how the reports and the buying or selling process work.`);
+  L.push(`- [How we measure](${u("/methodology")}): data sources, definitions, and update schedule behind every market figure.`);
   L.push(`- [Journal](${u("/blog")}): weekly ${site.city} articles, alternating real estate and lifestyle.`);
   L.push("");
 
