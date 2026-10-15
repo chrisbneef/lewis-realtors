@@ -27,15 +27,17 @@
     attributionControl: true,
   });
 
-  // Carto Positron, a clean light basemap that suits the editorial palette.
-  L.tileLayer(
-    "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-    {
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      maxZoom: 19,
-    }
-  ).addTo(map);
+  // OpenStreetMap's standard tiles, muted to a quiet warm gray so the gold
+  // boundary carries the map. (CARTO's free basemap started requiring an API
+  // key in 2026 and served "API KEY REQUIRED" tiles instead.) OSM's tile
+  // policy allows light use like this with attribution; no key needed.
+  const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19,
+  }).addTo(map);
+  // Set inline: Leaflet builds the tile pane at runtime, outside Astro's
+  // scoped styles.
+  tiles.getContainer().style.filter = "grayscale(1) sepia(0.1) brightness(1.12) contrast(0.7)";
 
   // display is already MultiPolygon coordinates in [lng,lat]; L.geoJSON flips
   // to Leaflet's [lat,lng] internally, so no manual conversion here.
